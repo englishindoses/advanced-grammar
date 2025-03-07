@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inverted Conditionals in English</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+      margin-top: 30px;
+    }
+    .diagram {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .example {
+      background-color: #e8f4f8;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .error {
+      background-color: #fff3f0;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+    .correct {
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .incorrect {
+      color: #e74c3c;
+      text-decoration: line-through;
+    }
+    .tips {
+      background-color: #f0f7ff;
+      padding: 15px;
+      border-left: 4px solid #2980b9;
+      margin: 20px 0;
+    }
+    .tip-item {
+      margin-bottom: 10px;
+    }
+    
+    /* Quiz Styles */
+    .quiz-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 30px 0;
+    }
+    .quiz-title {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #f8fbfd;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .option {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .option:hover {
+      background-color: #eaf2f8;
+    }
+    .selected {
+      background-color: #d4e6f1;
+      border-color: #3498db;
+    }
+    .correct-answer {
+      background-color: #d4edda;
+      border-color: #28a745;
+    }
+    .wrong-answer {
+      background-color: #f8d7da;
+      border-color: #dc3545;
+    }
+    .feedback {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    .feedback.correct {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .feedback.incorrect {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      text-decoration: none;
+    }
+    .quiz-results {
+      text-align: center;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #f0f7ff;
+      display: none;
+    }
+    .quiz-score {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 10px 0;
+    }
+    .quiz-message {
+      margin: 10px 0;
+    }
+    .button {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 5px;
+      transition: background-color 0.2s;
+    }
+    .button:hover {
+      background-color: #2980b9;
+    }
+    .button:disabled {
+      background-color: #95a5a6;
+      cursor: not-allowed;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inverted Conditionals in English</h1>
+
+  <div class="section">
+    <h2>Introduction</h2>
+    <p>
+      Inverted conditionals are a more formal and literary way of expressing conditional sentences in English. 
+      Instead of using "if" at the beginning of a conditional clause, we invert the subject and auxiliary verb 
+      to create a more sophisticated structure. This is particularly common in written English, formal speeches, 
+      and literature.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Structure and Formation</h2>
+    <p>Inverted conditionals work by:</p>
+    <ol>
+      <li>Removing the "if"</li>
+      <li>Placing the auxiliary verb before the subject</li>
+      <li>Often using a comma to separate the conditional clause from the main clause</li>
+    </ol>
+
+    <div class="diagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="300">
+        <!-- Background -->
+        <rect width="800" height="400" fill="#f8f9fa" rx="10" ry="10"/>
+        
+        <!-- Title -->
+        <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Inverted Conditionals Structure</text>
+        
+        <!-- Standard vs Inverted Format -->
+        <rect x="50" y="70" width="700" height="80" fill="#e3f2fd" rx="5" ry="5" stroke="#90caf9" stroke-width="2"/>
+        <text x="400" y="95" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#0d47a1">Standard Format</text>
+        <text x="400" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">If + Subject + Verb (appropriate tense), Subject + Would/Could/Might + Verb</text>
+        
+        <rect x="50" y="170" width="700" height="80" fill="#e8f5e9" rx="5" ry="5" stroke="#a5d6a7" stroke-width="2"/>
+        <text x="400" y="195" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#1b5e20">Inverted Format</text>
+        <text x="400" y="230" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">Had/Were/Should + Subject + Verb/Complement, Subject + Would/Could/Might + Verb</text>
+        
+        <!-- The two red arrows have been removed -->
+      </svg>
+    </div>
+
+    <p>This inversion applies to three main types of conditional sentences:</p>
+
+    <h3>Second Conditional (Present/Future Unreal):</h3>
+    <div class="example">
+      <p><strong>Standard:</strong> If I had more time, I would learn Spanish.</p>
+      <p><strong>Inverted:</strong> Had I more time, I would learn Spanish.</p>
+    </div>
+
+    <h3>Third Conditional (Past Unreal):</h3>
+    <div class="example">
+      <p><strong>Standard:</strong> If I had known about the meeting, I would have attended.</p>
+      <p><strong>Inverted:</strong> Had I known about the meeting, I would have attended.</p>
+    </div>
+
+    <h3>Mixed Conditional:</h3>
+    <div class="example">
+      <p><strong>Standard:</strong> If I had studied medicine, I would be a doctor now.</p>
+      <p><strong>Inverted:</strong> Had I studied medicine, I would be a doctor now.</p>
+    </div>
+
+    <h3>Special Cases</h3>
+
+    <h4>1. With "should" (expressing possibility):</h4>
+    <div class="example">
+      <p><strong>Standard:</strong> If you should need anything, please call me.</p>
+      <p><strong>Inverted:</strong> Should you need anything, please call me.</p>
+    </div>
+
+    <h4>2. With "were" (subjunctive for hypothetical situations):</h4>
+    <div class="example">
+      <p><strong>Standard:</strong> If I were you, I would accept the offer.</p>
+      <p><strong>Inverted:</strong> Were I you, I would accept the offer.</p>
+    </div>
+
+    <h4>3. With "were to" (hypothetical future):</h4>
+    <div class="example">
+      <p><strong>Standard:</strong> If the train were to arrive late, we would miss our connection.</p>
+      <p><strong>Inverted:</strong> Were the train to arrive late, we would miss our connection.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Examples</h2>
+
+    <h3>Second Conditional (Present/Future Unreal)</h3>
+    <div class="example">
+      <p>1. "Were she to win the competition, it would change her career completely."</p>
+      <p>2. "Should they offer you the job, I would definitely accept it."</p>
+      <p>3. "Had we enough resources, we could expand our business internationally."</p>
+    </div>
+
+    <h3>Third Conditional (Past Unreal)</h3>
+    <div class="example">
+      <p>1. "Had they arrived earlier, they would have caught the train."</p>
+      <p>2. "Had I not forgotten my umbrella, I wouldn't have got soaked in the rain."</p>
+      <p>3. "Had the company invested in new technology, it would not have gone bankrupt."</p>
+    </div>
+
+    <h3>Mixed Conditional</h3>
+    <div class="example">
+      <p>1. "Had I chosen a different career path, I would be much happier now."</p>
+      <p>2. "Were it not for his quick thinking, we would still be trying to solve the problem."</p>
+      <p>3. "Had she taken my advice, she wouldn't be in this difficult situation now."</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Comprehensive Grammar Table</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Standard Conditional</th>
+            <th>Inverted Conditional</th>
+            <th>Function</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Second Conditional (Present/Future Unreal)</td>
+            <td>If + subject + past simple/past continuous, subject + would/could/might + base verb</td>
+            <td>Were/Had/Should + subject + infinitive/complement, subject + would/could/might + base verb</td>
+            <td>Expresses unreal or hypothetical situations in the present/future</td>
+            <td>Were I in your position, I would speak to the manager.</td>
+          </tr>
+          <tr>
+            <td>Third Conditional (Past Unreal)</td>
+            <td>If + subject + past perfect/past perfect continuous, subject + would/could/might + have + past participle</td>
+            <td>Had + subject + past participle, subject + would/could/might + have + past participle</td>
+            <td>Expresses regret or hypothetical situations in the past</td>
+            <td>Had we left earlier, we would have avoided the traffic.</td>
+          </tr>
+          <tr>
+            <td>Mixed Conditional</td>
+            <td>If + subject + past perfect, subject + would/could/might + base verb</td>
+            <td>Had + subject + past participle, subject + would/could/might + base verb</td>
+            <td>Links past conditions to present results</td>
+            <td>Had I studied harder at school, I would have better career options now.</td>
+          </tr>
+          <tr>
+            <td>With "should"</td>
+            <td>If + subject + should + base verb, subject + will/can/may + base verb</td>
+            <td>Should + subject + base verb, subject + will/can/may + base verb</td>
+            <td>Expresses future possibility that is not very likely but possible</td>
+            <td>Should you change your mind, please let me know.</td>
+          </tr>
+          <tr>
+            <td>With "were to"</td>
+            <td>If + subject + were to + base verb, subject + would/could/might + base verb</td>
+            <td>Were + subject + to + base verb, subject + would/could/might + base verb</td>
+            <td>Expresses hypothetical future situations</td>
+            <td>Were she to win the election, it would be historical.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Common Errors</h2>
+
+    <div class="error">
+      <p><strong>1. Using the wrong auxiliary verb:</strong></p>
+      <p class="incorrect">❌ Were I known about the party, I would have come.</p>
+      <p class="correct">✓ Had I known about the party, I would have come.</p>
+    </div>
+
+    <div class="error">
+      <p><strong>2. Forgetting to invert the subject and auxiliary:</strong></p>
+      <p class="incorrect">❌ I were in charge, I would change the policy.</p>
+      <p class="correct">✓ Were I in charge, I would change the policy.</p>
+    </div>
+
+    <div class="error">
+      <p><strong>3. Using "was" instead of "were" in subjunctive structures:</strong></p>
+      <p class="incorrect">❌ Was I taller, I could reach the top shelf.</p>
+      <p class="correct">✓ Were I taller, I could reach the top shelf.</p>
+    </div>
+
+    <div class="error">
+      <p><strong>4. Adding "if" when already using inversion:</strong></p>
+      <p class="incorrect">❌ If had they arrived on time, they wouldn't have missed the meeting.</p>
+      <p class="correct">✓ Had they arrived on time, they wouldn't have missed the meeting.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Useful Tips and Advice</h2>
+    <div class="tips">
+      <div class="tip-item">
+        <p><strong>1. Formality level:</strong> Save inverted conditionals for formal writing, academic work, and literature. They often sound too formal in everyday conversation.</p>
+      </div>
+      <div class="tip-item">
+        <p><strong>2. Learning approach:</strong> Master standard conditional forms first before attempting inverted structures.</p>
+      </div>
+      <div class="tip-item">
+        <p><strong>3. Limited auxiliaries:</strong> Remember that inversion works mainly with "had," "were," and "should" - not all auxiliaries can be inverted.</p>
+      </div>
+      <div class="tip-item">
+        <p><strong>4. Practice with classics:</strong> Reading classic literature can help you become more familiar with these structures as they appear frequently.</p>
+      </div>
+      <div class="tip-item">
+        <p><strong>5. Punctuation matters:</strong> Don't forget the comma between the conditional clause and the main clause.</p>
+      </div>
+    </div>
+  </div>
+
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverted Conditionals Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .intro {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .question {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .feedback {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .results {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .results h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .score-display {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .retry-btn {
+            background-color: #6c757d;
+        }
+        .retry-btn:hover {
+            background-color: #5a6268;
+        }
+        .try-again-btn {
+            background-color: #28a745;
+        }
+        .try-again-btn:hover {
+            background-color: #218838;
+        }
+        .buttons-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiple Choice Quiz: Inverted Conditionals</h1>
+    
+    <div class="intro">
+        <p>Test your understanding of inverted conditionals with this interactive quiz. Select the correct answer for each question and click "Check Answer" to see if you're right.</p>
+    </div>
+    
+    <div id="quiz-container">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+    
+    <div class="results" id="results" style="display: none;">
+        <h2>Quiz Results</h2>
+        <div class="score-display">
+            You scored <span id="score">0</span> out of <span id="total">12</span>
+        </div>
+        <div id="message"></div>
+        <div class="buttons-container">
+            <button class="try-again-btn" onclick="resetQuiz()">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizData = [
+            {
+                question: "________ more time, I would help you with your project.",
+                options: [
+                    "a) If I had",
+                    "b) Had I",
+                    "c) If I have",
+                    "d) Have I"
+                ],
+                correctAnswer: "b",
+                explanation: "This is an inverted third conditional. The standard form would be \"If I had more time, I would help you with your project.\""
+            },
+            {
+                question: "________ possible to change my flight, I would stay longer.",
+                options: [
+                    "a) If it were",
+                    "b) Were it",
+                    "c) If it was",
+                    "d) Was it"
+                ],
+                correctAnswer: "b",
+                explanation: "This is an inverted second conditional. The standard form would be \"If it were possible to change my flight, I would stay longer.\""
+            },
+            {
+                question: "________ any problems, please call this number.",
+                options: [
+                    "a) Should you have",
+                    "b) If you should",
+                    "c) If you would have",
+                    "d) Would you have"
+                ],
+                correctAnswer: "a",
+                explanation: "This is an inverted first conditional with \"should.\" The standard form would be \"If you should have any problems, please call this number.\""
+            },
+            {
+                question: "Complete the inverted conditional: \"________ to rain tomorrow, the match will be postponed.\"",
+                options: [
+                    "a) If it were",
+                    "b) Were it",
+                    "c) Should it",
+                    "d) Would it"
+                ],
+                correctAnswer: "c",
+                explanation: "This is an inverted first conditional with \"should.\" The standard form would be \"If it should rain tomorrow, the match will be postponed.\""
+            },
+            {
+                question: "Which is the correct inverted form of \"If I had known the truth, I wouldn't have believed him\"?",
+                options: [
+                    "a) Had I known the truth, I wouldn't have believed him.",
+                    "b) Did I know the truth, I wouldn't have believed him.",
+                    "c) If I would know the truth, I wouldn't have believed him.",
+                    "d) Have I known the truth, I wouldn't have believed him."
+                ],
+                correctAnswer: "a",
+                explanation: "This is the correct inverted form of a third conditional. It starts with \"Had\" followed by the subject \"I.\""
+            },
+            {
+                question: "________ the opportunity to study abroad, she would take it immediately.",
+                options: [
+                    "a) If she was given",
+                    "b) Were she given",
+                    "c) If she were giving",
+                    "d) Was she given"
+                ],
+                correctAnswer: "b",
+                explanation: "This is an inverted second conditional. The standard form would be \"If she were given the opportunity to study abroad, she would take it immediately.\""
+            },
+            {
+                question: "________ here earlier, you would have met the director.",
+                options: [
+                    "a) If you arrived",
+                    "b) Had you arrived",
+                    "c) If you had been arriving",
+                    "d) Did you arrive"
+                ],
+                correctAnswer: "b",
+                explanation: "This is an inverted third conditional. The standard form would be \"If you had arrived here earlier, you would have met the director.\""
+            },
+            {
+                question: "Choose the correct inverted conditional: \"If we should receive further information, we'll update you.\"",
+                options: [
+                    "a) Should we receive further information, we'll update you.",
+                    "b) We should receive further information, we'll update you.",
+                    "c) Would we receive further information, we'll update you.",
+                    "d) If we would receive further information, we'll update you."
+                ],
+                correctAnswer: "a",
+                explanation: "This is the correct inverted form using \"should\" for a possible future condition."
+            },
+            {
+                question: "Which sentence contains an inverted second conditional?",
+                options: [
+                    "a) Had they told me about the problem, I could have fixed it.",
+                    "b) Were I rich, I would buy a mansion.",
+                    "c) Should you change your mind, let me know.",
+                    "d) If only she had called me yesterday."
+                ],
+                correctAnswer: "b",
+                explanation: "This is an inverted second conditional using \"were\" for present unreal situations."
+            },
+            {
+                question: "Complete the sentence: \"________ for his help, we wouldn't have finished on time.\"",
+                options: [
+                    "a) If it wasn't",
+                    "b) Were it not",
+                    "c) Had it not been",
+                    "d) If it hadn't been"
+                ],
+                correctAnswer: "c",
+                explanation: "This is an inverted third conditional with a negative form. The standard form would be \"If it had not been for his help, we wouldn't have finished on time.\""
+            },
+            {
+                question: "\"________ not for the rain, we would have gone hiking.\"",
+                options: [
+                    "a) If it was",
+                    "b) Were it",
+                    "c) Had it been",
+                    "d) If it had been"
+                ],
+                correctAnswer: "b",
+                explanation: "This is an inverted second conditional. The standard form would be \"If it were not for the rain, we would have gone hiking.\""
+            },
+            {
+                question: "Which of the following is NOT an inverted conditional?",
+                options: [
+                    "a) Should you need anything, just ask.",
+                    "b) Were she to call, tell her I'm busy.",
+                    "c) If I would be in your position, I'd accept the offer.",
+                    "d) Had I realized the consequences, I wouldn't have agreed."
+                ],
+                correctAnswer: "c",
+                explanation: "This is not an inverted conditional. It's incorrect even as a standard conditional - it should be \"If I were in your position, I'd accept the offer.\""
+            }
+        ];
+
+        let currentScore = 0;
+        let allQuestionsAnswered = false;
+
+        // Function to create the quiz
+        function createQuiz() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Clear previous quiz if any
+            
+            quizData.forEach((questionData, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.id = `question-${index}`;
+                
+                const questionNumber = index + 1;
+                questionDiv.innerHTML = `
+                    <h3>Question ${questionNumber}</h3>
+                    <p>${questionData.question}</p>
+                    <div class="options">
+                        ${questionData.options.map(option => `
+                            <label>
+                                <input type="radio" name="q${index}" value="${option.charAt(0)}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <button onclick="checkAnswer(${index})">Check Answer</button>
+                    <div id="feedback-${index}" class="feedback"></div>
+                `;
+                
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        // Function to check answers
+        function checkAnswer(questionIndex) {
+            const selectedOption = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+            const feedbackDiv = document.getElementById(`feedback-${questionIndex}`);
+            
+            if (!selectedOption) {
+                alert("Please select an answer!");
+                return;
+            }
+            
+            const userAnswer = selectedOption.value;
+            const correctAnswer = quizData[questionIndex].correctAnswer;
+            
+            if (userAnswer === correctAnswer) {
+                feedbackDiv.innerHTML = `
+                    <strong>Correct!</strong> ${quizData[questionIndex].explanation}
+                `;
+                feedbackDiv.className = 'feedback correct';
+                
+                // Only increment score if this is the first correct answer for this question
+                if (!document.querySelector(`input[name="q${questionIndex}"]:disabled`)) {
+                    currentScore++;
+                }
+            } else {
+                feedbackDiv.innerHTML = `
+                    <strong>Incorrect.</strong> The correct answer is ${correctAnswer}. ${quizData[questionIndex].explanation}
+                `;
+                feedbackDiv.className = 'feedback incorrect';
+            }
+            
+            feedbackDiv.style.display = 'block';
+            
+            // Disable all options for this question
+            const options = document.querySelectorAll(`input[name="q${questionIndex}"]`);
+            options.forEach(option => {
+                option.disabled = true;
+            });
+            
+            // Check if all questions have been answered
+            const answeredQuestions = document.querySelectorAll('input[type="radio"]:disabled').length / 4;
+            if (answeredQuestions === quizData.length) {
+                allQuestionsAnswered = true;
+                showResults();
+            }
+        }
+
+        // Function to show results
+        function showResults() {
+            document.getElementById('score').textContent = currentScore;
+            document.getElementById('total').textContent = quizData.length;
+            
+            // Add a personalized message based on score
+            const messageElement = document.getElementById('message');
+            const percentage = (currentScore / quizData.length) * 100;
+            
+            let message;
+            if (percentage === 100) {
+                message = "Perfect score! You've mastered inverted conditionals!";
+            } else if (percentage >= 80) {
+                message = "Excellent job! You have a strong understanding of inverted conditionals.";
+            } else if (percentage >= 60) {
+                message = "Good work! With a bit more practice, you'll master inverted conditionals.";
+            } else if (percentage >= 40) {
+                message = "You're on the right track. Try reviewing the explanations and try again.";
+            } else {
+                message = "This topic can be challenging. Review the explanations carefully and try again!";
+            }
+            
+            messageElement.innerHTML = `<p>${message}</p>`;
+            document.getElementById('results').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({behavior: 'smooth'});
+        }
+
+        // Function to reset the quiz
+        function resetQuiz() {
+            // Reset score
+            currentScore = 0;
+            allQuestionsAnswered = false;
+            
+            // Hide results
+            document.getElementById('results').style.display = 'none';
+            
+            // Recreate quiz
+            createQuiz();
+            
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Initialize the quiz when the page loads
+        window.onload = createQuiz;
+  </script>
+</body>
+</html>
