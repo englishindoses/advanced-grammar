@@ -5,23 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Conditionals Quiz</title>
     <style>
+        :root {
+            --primary-color: #1B263B; /* Navy */
+            --secondary-color: #26A69A; /* Teal */
+            --accent-color: #26A69A; /* Teal */
+            --light-color: #ECECEC; /* Soft Gray */
+            --dark-color: #333333; /* Charcoal */
+            --background-color: #FFFFFF; /* White */
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
+            color: var(--dark-color);
+            background-color: var(--background-color);
         }
-        h1, h2, h3 {
-            color: #2c3e50;
+        h1 {
+            font-family: 'Liberation Sans', sans-serif;
+            font-size: 20pt;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        h2, h3 {
+            font-family: 'Liberation Sans', sans-serif;
+            font-size: 16pt;
+            font-weight: bold;
+            text-decoration: underline;
+            color: var(--secondary-color);
         }
         .conditional-type {
-            background-color: #f8f9fa;
+            background-color: var(--light-color);
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         table {
             width: 100%;
@@ -29,15 +48,15 @@
             margin: 20px 0;
         }
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid var(--dark-color);
             padding: 8px;
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: var(--light-color);
         }
         .quiz-container {
-            background-color: #f0f8ff;
+            background-color: var(--light-color);
             padding: 20px;
             border-radius: 5px;
             margin-top: 30px;
@@ -45,7 +64,7 @@
         .question {
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--dark-color);
         }
         .options {
             display: flex;
@@ -58,13 +77,13 @@
             align-items: center;
             gap: 8px;
             padding: 8px 12px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--dark-color);
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.2s;
         }
         .option:hover {
-            background-color: #e9f5fe;
+            background-color: var(--accent-color);
         }
         .feedback {
             margin-top: 15px;
@@ -83,7 +102,7 @@
             border: 1px solid #f5c6cb;
         }
         .selected {
-            border: 2px solid #3498db;
+            border: 2px solid var(--accent-color);
             font-weight: bold;
         }
         .show-result {
@@ -103,8 +122,8 @@
             display: block;
             margin: 20px auto;
             padding: 10px 15px;
-            background-color: #3498db;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--background-color);
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -112,6 +131,10 @@
         }
         .restart-btn:hover {
             background-color: #2980b9;
+        }
+        .example {
+            font-family: 'Courier New', monospace;
+            font-style: italic;
         }
     </style>
 </head>
@@ -128,7 +151,7 @@
             <li>When/Whenever + present simple, present simple</li>
         </ul>
         <p><strong>Examples</strong>:</p>
-        <ol>
+        <ol class="example">
             <li>If you heat water to 100°C, it boils.</li>
             <li>When students practice regularly, they improve faster.</li>
             <li>If people don't drink water, they become dehydrated.</li>
@@ -140,7 +163,7 @@
         <p><strong>Use</strong>: For possible future situations and their likely results.</p>
         <p><strong>Structure</strong>: If + present simple, will/may/might/can + verb</p>
         <p><strong>Examples</strong>:</p>
-        <ol>
+        <ol class="example">
             <li>If it rains tomorrow, we'll cancel the picnic.</li>
             <li>If you study hard, you will pass the exam.</li>
             <li>If she arrives late, she might miss the opening speech.</li>
@@ -152,7 +175,7 @@
         <p><strong>Use</strong>: For hypothetical or unlikely present/future situations.</p>
         <p><strong>Structure</strong>: If + past simple, would/could/might + verb</p>
         <p><strong>Examples</strong>:</p>
-        <ol>
+        <ol class="example">
             <li>If I won the lottery, I would travel around the world.</li>
             <li>If she spoke Chinese, she could get that job in Shanghai.</li>
             <li>If we had more time, we might visit the museum.</li>
@@ -164,7 +187,7 @@
         <p><strong>Use</strong>: For hypothetical situations in the past (things that didn't happen) and their imaginary results.</p>
         <p><strong>Structure</strong>: If + past perfect, would/could/might + have + past participle</p>
         <p><strong>Examples</strong>:</p>
-        <ol>
+        <ol class="example">
             <li>If I had studied harder, I would have passed the exam.</li>
             <li>If they had left earlier, they wouldn't have missed the train.</li>
             <li>If she had known about the problem, she could have helped you.</li>
@@ -180,7 +203,7 @@
             <li>Present → Past: If + past simple, would/could/might + have + past participle</li>
         </ul>
         <p><strong>Examples</strong>:</p>
-        <ol>
+        <ol class="example">
             <li>If I had chosen a different career, I would be happier now. (Past condition → Present result)</li>
             <li>If I were more organized, I wouldn't have missed the deadline yesterday. (Present condition → Past result)</li>
             <li>If they hadn't moved to Australia, we would still see them regularly. (Past condition → Present result)</li>
@@ -444,10 +467,3 @@
         }
 
         // Initialize the quiz
-        document.addEventListener('DOMContentLoaded', function() {
-            buildQuiz();
-            document.getElementById('restart').addEventListener('click', restartQuiz);
-        });
-    </script>
-</body>
-</html>
