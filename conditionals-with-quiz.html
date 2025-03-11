@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Conditionals Quiz</title>
     <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+       
         :root {
             --primary-color: #1B263B; /* Navy */
             --secondary-color: #26A69A; /* Teal */
@@ -12,442 +19,470 @@
             --light-color: #ECECEC; /* Soft Gray */
             --dark-color: #333333; /* Charcoal */
             --background-color: #FFFFFF; /* White */
+            --th-background-color: #2D3B57; /* background color for table header */
         }
+
         body {
-            font-family: Georgia, serif;
-            line-height: 1.6;
-            max-width: 800px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333333;
+            background-color: #F8F8F8;
+        }
+        
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            color: var(--dark-color);
-            background-color: var(--background-color);
+            padding: 2rem;
+            background-color: #F5F5F5;
+            border-radius: 10px;
         }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1B263B; /* Navy */
+            margin-bottom: 1rem;
+        }
+
         h1 {
-            font-family: 'Liberation Sans', sans-serif;
-            font-size: 20pt;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
         }
-        h2, h3 {
-            font-family: 'Liberation Sans', sans-serif;
-            font-size: 16pt;
-            font-weight: bold;
-            text-decoration: underline;
-            color: var(--secondary-color);
+        
+        .header h1 {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            padding-left: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
         }
-        .conditional-type {
-            background-color: var(--light-color);
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--accent-color);
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            border-bottom: 3px solid #F07D3E;
         }
+        
+        h3 {
+            font-size: 1.75rem;
+            margin-top: 2rem;
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Grammar examples */
+        .example {
+            font-family: 'Source Code Pro', monospace;
+            background-color: #ECECEC; /* Soft Gray */
+            padding: 0.75rem;
+            margin: 1rem 0 1rem 1.5rem;
+            border-left: 4px solid #26A69A; /* Teal */
+            border-radius: 10px;
+        }
+        
+        /* Table styles */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 2rem 0;
         }
+        
         th, td {
-            border: 1px solid var(--dark-color);
-            padding: 8px;
+            border: 1px solid #ccc;
+            padding: 0.75rem;
             text-align: left;
         }
+        
         th {
-            background-color: var(--light-color);
+            background-color: #2D3B57;
+            color: white;
         }
-        .quiz-container {
-            background-color: var(--light-color);
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
-        .question {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--dark-color);
+        
+        /* Error and correct examples */
+        .error {
+            color: #333333; /* Charcoal */
+            text-decoration: line-through;
+            margin-left: 1.5rem;
         }
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        .option {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border: 1px solid var(--dark-color);
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .option:hover {
-            background-color: var(--accent-color);
-        }
-        .feedback {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 4px;
-            display: none;
-        }
+        
         .correct {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            color: #333333; /* Charcoal */
+            margin-left: 1.5rem;
         }
-        .incorrect {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        .selected {
-            border: 2px solid var(--accent-color);
-            font-weight: bold;
-        }
-        .show-result {
-            display: block;
-        }
-        .score-display {
-            font-size: 1.2em;
-            font-weight: bold;
+        
+        /* SVG container */
+        .diagram-container {
+            width: 100%;
+            margin: 2rem 0;
             text-align: center;
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #e9f5fe;
-            border-radius: 5px;
-            display: none;
         }
-        .restart-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 15px;
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+        
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
         }
-        .restart-btn:hover {
-            background-color: #2980b9;
+        
+        /* Tips section */
+        .tips {
+            background-color: #fff;
+            border-left: 4px solid #F07D3E;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
         }
-        .example {
-            font-family: 'Courier New', monospace;
-            font-style: italic;
+        
+        .tips h3 {
+            color: #F07D3E;
+            margin-top: 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Conditional Sentences in English</h1>
-    <p>Conditional sentences express situations and their possible results. Let's explore the five main types: Zero, First, Second, Third, and Mixed Conditionals.</p>
-
-    <div class="conditional-type">
-        <h2>Zero Conditional</h2>
-        <p><strong>Use</strong>: For general truths, scientific facts, and situations that are always true.</p>
-        <p><strong>Structure</strong>:</p>
-        <ul>
-            <li>If + present simple, present simple</li>
-            <li>When/Whenever + present simple, present simple</li>
-        </ul>
-        <p><strong>Examples</strong>:</p>
-        <ol class="example">
-            <li>If you heat water to 100°C, it boils.</li>
-            <li>When students practice regularly, they improve faster.</li>
-            <li>If people don't drink water, they become dehydrated.</li>
-        </ol>
-    </div>
-
-    <div class="conditional-type">
-        <h2>First Conditional</h2>
-        <p><strong>Use</strong>: For possible future situations and their likely results.</p>
-        <p><strong>Structure</strong>: If + present simple, will/may/might/can + verb</p>
-        <p><strong>Examples</strong>:</p>
-        <ol class="example">
-            <li>If it rains tomorrow, we'll cancel the picnic.</li>
-            <li>If you study hard, you will pass the exam.</li>
-            <li>If she arrives late, she might miss the opening speech.</li>
-        </ol>
-    </div>
-
-    <div class="conditional-type">
-        <h2>Second Conditional</h2>
-        <p><strong>Use</strong>: For hypothetical or unlikely present/future situations.</p>
-        <p><strong>Structure</strong>: If + past simple, would/could/might + verb</p>
-        <p><strong>Examples</strong>:</p>
-        <ol class="example">
-            <li>If I won the lottery, I would travel around the world.</li>
-            <li>If she spoke Chinese, she could get that job in Shanghai.</li>
-            <li>If we had more time, we might visit the museum.</li>
-        </ol>
-    </div>
-
-    <div class="conditional-type">
-        <h2>Third Conditional</h2>
-        <p><strong>Use</strong>: For hypothetical situations in the past (things that didn't happen) and their imaginary results.</p>
-        <p><strong>Structure</strong>: If + past perfect, would/could/might + have + past participle</p>
-        <p><strong>Examples</strong>:</p>
-        <ol class="example">
-            <li>If I had studied harder, I would have passed the exam.</li>
-            <li>If they had left earlier, they wouldn't have missed the train.</li>
-            <li>If she had known about the problem, she could have helped you.</li>
-        </ol>
-    </div>
-
-    <div class="conditional-type">
-        <h2>Mixed Conditionals</h2>
-        <p><strong>Use</strong>: For mixing time references - typically past condition with present result, or present condition with past result.</p>
-        <p><strong>Structure</strong>:</p>
-        <ul>
-            <li>Past → Present: If + past perfect, would/could/might + verb</li>
-            <li>Present → Past: If + past simple, would/could/might + have + past participle</li>
-        </ul>
-        <p><strong>Examples</strong>:</p>
-        <ol class="example">
-            <li>If I had chosen a different career, I would be happier now. (Past condition → Present result)</li>
-            <li>If I were more organized, I wouldn't have missed the deadline yesterday. (Present condition → Past result)</li>
-            <li>If they hadn't moved to Australia, we would still see them regularly. (Past condition → Present result)</li>
-        </ol>
-    </div>
-
-    <h2>Visual Comparison of Conditionals</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Type</th>
-                <th>If Clause</th>
-                <th>Main Clause</th>
-                <th>Time Reference</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Zero</td>
-                <td>Present Simple</td>
-                <td>Present Simple</td>
-                <td>General time/always true</td>
-                <td>If you mix red and blue, you get purple.</td>
-            </tr>
-            <tr>
-                <td>First</td>
-                <td>Present Simple</td>
-                <td>Will/Can/May + verb</td>
-                <td>Future</td>
-                <td>If I finish work early, I'll call you.</td>
-            </tr>
-            <tr>
-                <td>Second</td>
-                <td>Past Simple</td>
-                <td>Would/Could/Might + verb</td>
-                <td>Present/Future hypothetical</td>
-                <td>If I had more time, I would learn Italian.</td>
-            </tr>
-            <tr>
-                <td>Third</td>
-                <td>Past Perfect</td>
-                <td>Would/Could/Might + have + past participle</td>
-                <td>Past hypothetical</td>
-                <td>If I had saved money, I could have bought that house.</td>
-            </tr>
-            <tr>
-                <td>Mixed (Past→Present)</td>
-                <td>Past Perfect</td>
-                <td>Would/Could/Might + verb</td>
-                <td>Past condition, Present result</td>
-                <td>If I had studied medicine, I would be a doctor now.</td>
-            </tr>
-            <tr>
-                <td>Mixed (Present→Past)</td>
-                <td>Past Simple</td>
-                <td>Would/Could/Might + have + past participle</td>
-                <td>Present condition, Past result</td>
-                <td>If I were more careful, I wouldn't have made that mistake.</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="quiz-container">
-        <h2>Interactive Conditionals Quiz</h2>
-        <p>Test your knowledge of conditional sentences by selecting the correct option for each question.</p>
-        
-        <div id="quiz">
-            <!-- Questions will be inserted here by JavaScript -->
+    <div class="container">
+        <div class="header">
+            <h1>Conditional Sentences in English</h1>
         </div>
-        
-        <div id="score" class="score-display"></div>
-        <button id="restart" class="restart-btn" style="display: none;">Restart Quiz</button>
-    </div>
+        <p>Conditional sentences express situations and their possible results. Let's explore the five main types: Zero, First, Second, Third, and Mixed Conditionals.</p>
 
-    <script>
-        // Quiz questions and answers
-        const questions = [
-            {
-                question: "1. If water _____ to 0°C, it freezes.",
-                options: ["freezes", "will freeze", "froze", "is frozen"],
-                correct: 0,
-                type: "Zero Conditional",
-                explanation: "Zero conditional for scientific facts requires present simple in both clauses."
-            },
-            {
-                question: "2. If I _____ the lottery tomorrow, I would quit my job.",
-                options: ["win", "will win", "won", "had won"],
-                correct: 2,
-                type: "Second Conditional",
-                explanation: "Second conditional for unlikely future situations uses past simple in the if-clause."
-            },
-            {
-                question: "3. If she _____ to the party last night, she would have met my brother.",
-                options: ["came", "comes", "would come", "had come"],
-                correct: 3,
-                type: "Third Conditional",
-                explanation: "Third conditional for past hypothetical situations uses past perfect in the if-clause."
-            },
-            {
-                question: "4. _____ she study harder, she will pass the exam.",
-                options: ["Should", "Would", "Will", "Might"],
-                correct: 0,
-                type: "First Conditional",
-                explanation: "This is a first conditional using 'should' to express a condition."
-            },
-            {
-                question: "5. If I were the CEO, I _____ the company differently.",
-                options: ["will manage", "would manage", "would have managed", "managed"],
-                correct: 1,
-                type: "Second Conditional",
-                explanation: "Second conditional with 'would' in the main clause for present hypothetical situations."
-            },
-            {
-                question: "6. If you hadn't helped me, I _____ able to finish on time.",
-                options: ["wouldn't be", "won't be", "wouldn't have been", "hadn't been"],
-                correct: 2,
-                type: "Third Conditional", 
-                explanation: "Third conditional with 'would have + past participle' in the main clause for past hypothetical situations."
-            },
-            {
-                question: "7. Ice melts if you _____ it.",
-                options: ["will heat", "heat", "would heat", "heated"],
-                correct: 1,
-                type: "Zero Conditional",
-                explanation: "Zero conditional uses present simple in both clauses for general truths."
-            },
-            {
-                question: "8. If I _____ rich, I would be traveling right now instead of working.",
-                options: ["am", "will be", "were", "had been"],
-                correct: 2,
-                type: "Second Conditional",
-                explanation: "Second conditional uses past simple in the if-clause for present hypothetical situations."
-            },
-            {
-                question: "9. If Mark _____ the directions, he wouldn't be lost now.",
-                options: ["followed", "had followed", "follows", "would follow"],
-                correct: 1,
-                type: "Mixed Conditional",
-                explanation: "Mixed conditional: past condition (had followed) with present result (wouldn't be lost now)."
-            },
-            {
-                question: "10. I would have attended the conference if I _____ about it earlier.",
-                options: ["know", "knew", "had known", "would know"],
-                correct: 2,
-                type: "Third Conditional",
-                explanation: "Third conditional uses past perfect in the if-clause for past hypothetical situations."
-            }
-        ];
+        <div class="conditional-type">
+            <h2>Zero Conditional</h2>
+            <p><strong>Use</strong>: For general truths, scientific facts, and situations that are always true.</p>
+            <p><strong>Structure</strong>:</p>
+            <ul>
+                <li>If + present simple, present simple</li>
+                <li>When/Whenever + present simple, present simple</li>
+            </ul>
+            <p><strong>Examples</strong>:</p>
+            <ol class="example">
+                <li>If you heat water to 100°C, it boils.</li>
+                <li>When students practice regularly, they improve faster.</li>
+                <li>If people don't drink water, they become dehydrated.</li>
+            </ol>
+        </div>
 
-        // Function to build the quiz
-        function buildQuiz() {
-            const quizContainer = document.getElementById('quiz');
+        <div class="conditional-type">
+            <h2>First Conditional</h2>
+            <p><strong>Use</strong>: For possible future situations and their likely results.</p>
+            <p><strong>Structure</strong>: If + present simple, will/may/might/can + verb</p>
+            <p><strong>Examples</strong>:</p>
+            <ol class="example">
+                <li>If it rains tomorrow, we'll cancel the picnic.</li>
+                <li>If you study hard, you will pass the exam.</li>
+                <li>If she arrives late, she might miss the opening speech.</li>
+            </ol>
+        </div>
+
+        <div class="conditional-type">
+            <h2>Second Conditional</h2>
+            <p><strong>Use</strong>: For hypothetical or unlikely present/future situations.</p>
+            <p><strong>Structure</strong>: If + past simple, would/could/might + verb</p>
+            <p><strong>Examples</strong>:</p>
+            <ol class="example">
+                <li>If I won the lottery, I would travel around the world.</li>
+                <li>If she spoke Chinese, she could get that job in Shanghai.</li>
+                <li>If we had more time, we might visit the museum.</li>
+            </ol>
+        </div>
+
+        <div class="conditional-type">
+            <h2>Third Conditional</h2>
+            <p><strong>Use</strong>: For hypothetical situations in the past (things that didn't happen) and their imaginary results.</p>
+            <p><strong>Structure</strong>: If + past perfect, would/could/might + have + past participle</p>
+            <p><strong>Examples</strong>:</p>
+            <ol class="example">
+                <li>If I had studied harder, I would have passed the exam.</li>
+                <li>If they had left earlier, they wouldn't have missed the train.</li>
+                <li>If she had known about the problem, she could have helped you.</li>
+            </ol>
+        </div>
+
+        <div class="conditional-type">
+            <h2>Mixed Conditionals</h2>
+            <p><strong>Use</strong>: For mixing time references - typically past condition with present result, or present condition with past result.</p>
+            <p><strong>Structure</strong>:</p>
+            <ul>
+                <li>Past → Present: If + past perfect, would/could/might + verb</li>
+                <li>Present → Past: If + past simple, would/could/might + have + past participle</li>
+            </ul>
+            <p><strong>Examples</strong>:</p>
+            <ol class="example">
+                <li>If I had chosen a different career, I would be happier now. (Past condition → Present result)</li>
+                <li>If I were more organized, I wouldn't have missed the deadline yesterday. (Present condition → Past result)</li>
+                <li>If they hadn't moved to Australia, we would still see them regularly. (Past condition → Present result)</li>
+            </ol>
+        </div>
+
+        <h2>Visual Comparison of Conditionals</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>If Clause</th>
+                    <th>Main Clause</th>
+                    <th>Time Reference</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Zero</td>
+                    <td>Present Simple</td>
+                    <td>Present Simple</td>
+                    <td>General time/always true</td>
+                    <td>If you mix red and blue, you get purple.</td>
+                </tr>
+                <tr>
+                    <td>First</td>
+                    <td>Present Simple</td>
+                    <td>Will/Can/May + verb</td>
+                    <td>Future</td>
+                    <td>If I finish work early, I'll call you.</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>Past Simple</td>
+                    <td>Would/Could/Might + verb</td>
+                    <td>Present/Future hypothetical</td>
+                    <td>If I had more time, I would learn Italian.</td>
+                </tr>
+                <tr>
+                    <td>Third</td>
+                    <td>Past Perfect</td>
+                    <td>Would/Could/Might + have + past participle</td>
+                    <td>Past hypothetical</td>
+                    <td>If I had saved money, I could have bought that house.</td>
+                </tr>
+                <tr>
+                    <td>Mixed (Past→Present)</td>
+                    <td>Past Perfect</td>
+                    <td>Would/Could/Might + verb</td>
+                    <td>Past condition, Present result</td>
+                    <td>If I had studied medicine, I would be a doctor now.</td>
+                </tr>
+                <tr>
+                    <td>Mixed (Present→Past)</td>
+                    <td>Past Simple</td>
+                    <td>Would/Could/Might + have + past participle</td>
+                    <td>Present condition, Past result</td>
+                    <td>If I were more careful, I wouldn't have made that mistake.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="quiz-container">
+            <h2>Interactive Conditionals Quiz</h2>
+            <p>Test your knowledge of conditional sentences by selecting the correct option for each question.</p>
             
-            questions.forEach((q, index) => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                questionDiv.dataset.index = index;
+            <div id="quiz">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+            
+            <div id="score" class="score-display"></div>
+            <button id="restart" class="restart-btn" style="display: none;">Restart Quiz</button>
+        </div>
+
+        <script>
+            // Quiz questions and answers
+            const questions = [
+                {
+                    question: "1. If water _____ to 0°C, it freezes.",
+                    options: ["freezes", "will freeze", "froze", "is frozen"],
+                    correct: 0,
+                    type: "Zero Conditional",
+                    explanation: "Zero conditional for scientific facts requires present simple in both clauses."
+                },
+                {
+                    question: "2. If I _____ the lottery tomorrow, I would quit my job.",
+                    options: ["win", "will win", "won", "had won"],
+                    correct: 2,
+                    type: "Second Conditional",
+                    explanation: "Second conditional for unlikely future situations uses past simple in the if-clause."
+                },
+                {
+                    question: "3. If she _____ to the party last night, she would have met my brother.",
+                    options: ["came", "comes", "would come", "had come"],
+                    correct: 3,
+                    type: "Third Conditional",
+                    explanation: "Third conditional for past hypothetical situations uses past perfect in the if-clause."
+                },
+                {
+                    question: "4. _____ she study harder, she will pass the exam.",
+                    options: ["Should", "Would", "Will", "Might"],
+                    correct: 0,
+                    type: "First Conditional",
+                    explanation: "This is a first conditional using 'should' to express a condition."
+                },
+                {
+                    question: "5. If I were the CEO, I _____ the company differently.",
+                    options: ["will manage", "would manage", "would have managed", "managed"],
+                    correct: 1,
+                    type: "Second Conditional",
+                    explanation: "Second conditional with 'would' in the main clause for present hypothetical situations."
+                },
+                {
+                    question: "6. If you hadn't helped me, I _____ able to finish on time.",
+                    options: ["wouldn't be", "won't be", "wouldn't have been", "hadn't been"],
+                    correct: 2,
+                    type: "Third Conditional", 
+                    explanation: "Third conditional with 'would have + past participle' in the main clause for past hypothetical situations."
+                },
+                {
+                    question: "7. Ice melts if you _____ it.",
+                    options: ["will heat", "heat", "would heat", "heated"],
+                    correct: 1,
+                    type: "Zero Conditional",
+                    explanation: "Zero conditional uses present simple in both clauses for general truths."
+                },
+                {
+                    question: "8. If I _____ rich, I would be traveling right now instead of working.",
+                    options: ["am", "will be", "were", "had been"],
+                    correct: 2,
+                    type: "Second Conditional",
+                    explanation: "Second conditional uses past simple in the if-clause for present hypothetical situations."
+                },
+                {
+                    question: "9. If Mark _____ the directions, he wouldn't be lost now.",
+                    options: ["followed", "had followed", "follows", "would follow"],
+                    correct: 1,
+                    type: "Mixed Conditional",
+                    explanation: "Mixed conditional: past condition (had followed) with present result (wouldn't be lost now)."
+                },
+                {
+                    question: "10. I would have attended the conference if I _____ about it earlier.",
+                    options: ["know", "knew", "had known", "would know"],
+                    correct: 2,
+                    type: "Third Conditional",
+                    explanation: "Third conditional uses past perfect in the if-clause for past hypothetical situations."
+                }
+            ];
+
+            // Function to build the quiz
+            function buildQuiz() {
+                const quizContainer = document.getElementById('quiz');
                 
-                const questionText = document.createElement('p');
-                questionText.textContent = q.question;
-                questionDiv.appendChild(questionText);
-                
-                const optionsDiv = document.createElement('div');
-                optionsDiv.className = 'options';
-                
-                q.options.forEach((option, optIndex) => {
-                    const optionDiv = document.createElement('div');
-                    optionDiv.className = 'option';
-                    optionDiv.dataset.index = optIndex;
-                    optionDiv.textContent = `${String.fromCharCode(97 + optIndex)}) ${option}`;
+                questions.forEach((q, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
+                    questionDiv.dataset.index = index;
                     
-                    optionDiv.addEventListener('click', function() {
-                        selectAnswer(this, index, optIndex);
+                    const questionText = document.createElement('p');
+                    questionText.textContent = q.question;
+                    questionDiv.appendChild(questionText);
+                    
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.className = 'options';
+                    
+                    q.options.forEach((option, optIndex) => {
+                        const optionDiv = document.createElement('div');
+                        optionDiv.className = 'option';
+                        optionDiv.dataset.index = optIndex;
+                        optionDiv.textContent = `${String.fromCharCode(97 + optIndex)}) ${option}`;
+                        
+                        optionDiv.addEventListener('click', function() {
+                            selectAnswer(this, index, optIndex);
+                        });
+                        
+                        optionsDiv.appendChild(optionDiv);
                     });
                     
-                    optionsDiv.appendChild(optionDiv);
+                    questionDiv.appendChild(optionsDiv);
+                    
+                    const feedback = document.createElement('div');
+                    feedback.className = 'feedback';
+                    questionDiv.appendChild(feedback);
+                    
+                    quizContainer.appendChild(questionDiv);
+                });
+            }
+
+            // Function to handle answer selection
+            function selectAnswer(selectedOption, questionIndex, optionIndex) {
+                const questionDiv = selectedOption.closest('.question');
+                const feedbackDiv = questionDiv.querySelector('.feedback');
+                const allOptions = questionDiv.querySelectorAll('.option');
+                
+                // Clear any previous selections
+                allOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Mark this option as selected
+                selectedOption.classList.add('selected');
+                
+                // Show feedback
+                const correctIndex = questions[questionIndex].correct;
+                const isCorrect = optionIndex === correctIndex;
+                
+                feedbackDiv.textContent = isCorrect 
+                    ? `Correct! ${questions[questionIndex].explanation}` 
+                    : `Incorrect. The correct answer is "${String.fromCharCode(97 + correctIndex)}) ${questions[questionIndex].options[correctIndex]}". ${questions[questionIndex].explanation}`;
+                
+                feedbackDiv.className = isCorrect ? 'feedback correct show-result' : 'feedback incorrect show-result';
+                
+                // Update score
+                updateScore();
+            }
+
+            // Function to calculate and update score
+            function updateScore() {
+                const questionDivs = document.querySelectorAll('.question');
+                let correctCount = 0;
+                let answeredCount = 0;
+                
+                questionDivs.forEach(div => {
+                    const selected = div.querySelector('.option.selected');
+                    if (selected) {
+                        answeredCount++;
+                        const questionIndex = parseInt(div.dataset.index);
+                        const selectedIndex = parseInt(selected.dataset.index);
+                        if (selectedIndex === questions[questionIndex].correct) {
+                            correctCount++;
+                        }
+                    }
                 });
                 
-                questionDiv.appendChild(optionsDiv);
-                
-                const feedback = document.createElement('div');
-                feedback.className = 'feedback';
-                questionDiv.appendChild(feedback);
-                
-                quizContainer.appendChild(questionDiv);
-            });
-        }
-
-        // Function to handle answer selection
-        function selectAnswer(selectedOption, questionIndex, optionIndex) {
-            const questionDiv = selectedOption.closest('.question');
-            const feedbackDiv = questionDiv.querySelector('.feedback');
-            const allOptions = questionDiv.querySelectorAll('.option');
-            
-            // Clear any previous selections
-            allOptions.forEach(opt => opt.classList.remove('selected'));
-            
-            // Mark this option as selected
-            selectedOption.classList.add('selected');
-            
-            // Show feedback
-            const correctIndex = questions[questionIndex].correct;
-            const isCorrect = optionIndex === correctIndex;
-            
-            feedbackDiv.textContent = isCorrect 
-                ? `Correct! ${questions[questionIndex].explanation}` 
-                : `Incorrect. The correct answer is "${String.fromCharCode(97 + correctIndex)}) ${questions[questionIndex].options[correctIndex]}". ${questions[questionIndex].explanation}`;
-            
-            feedbackDiv.className = isCorrect ? 'feedback correct show-result' : 'feedback incorrect show-result';
-            
-            // Update score
-            updateScore();
-        }
-
-        // Function to calculate and update score
-        function updateScore() {
-            const questionDivs = document.querySelectorAll('.question');
-            let correctCount = 0;
-            let answeredCount = 0;
-            
-            questionDivs.forEach(div => {
-                const selected = div.querySelector('.option.selected');
-                if (selected) {
-                    answeredCount++;
-                    const questionIndex = parseInt(div.dataset.index);
-                    const selectedIndex = parseInt(selected.dataset.index);
-                    if (selectedIndex === questions[questionIndex].correct) {
-                        correctCount++;
-                    }
+                // Only show score if all questions answered
+                if (answeredCount === questions.length) {
+                    const scoreDiv = document.getElementById('score');
+                    scoreDiv.textContent = `Your Score: ${correctCount} out of ${questions.length} (${Math.round(correctCount/questions.length*100)}%)`;
+                    scoreDiv.style.display = 'block';
+                    document.getElementById('restart').style.display = 'block';
                 }
-            });
-            
-            // Only show score if all questions answered
-            if (answeredCount === questions.length) {
-                const scoreDiv = document.getElementById('score');
-                scoreDiv.textContent = `Your Score: ${correctCount} out of ${questions.length} (${Math.round(correctCount/questions.length*100)}%)`;
-                scoreDiv.style.display = 'block';
-                document.getElementById('restart').style.display = 'block';
             }
-        }
 
-        // Function to restart the quiz
-        function restartQuiz() {
+            // Function to restart the quiz
+            function restartQuiz() {
             const questionDivs = document.querySelectorAll('.question');
             
             questionDivs.forEach(div => {
