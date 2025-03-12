@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Expressions Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h2, h3 {
+            color: #2c3e50;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1 {
+            background-color: #1B263B;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            padding: 20px;
+            padding-left: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example {
+            font-family: 'Source Code Pro', monospace;
+        }
+        
+        .conditional-type {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .quiz-container {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .option:hover {
+            background-color: #e9f5fe;
+        }
+        
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .selected {
+            border: 2px solid #3498db;
+            font-weight: bold;
+        }
+        
+        .show-result {
+            display: block;
+        }
+        
+        .score-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f5fe;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .restart-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .restart-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Additional styles for navigation and progress */
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #3498db;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .control-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .control-button:hover {
+            background-color: #2980b9;
+        }
+        
+        .control-button:disabled {
+            background-color: #f2f2f2;
+            color: #999;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conditional Expressions Exercises</h1>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div id="exercise-container" class="quiz-container">
+            <!-- Exercise content will be dynamically loaded here -->
+        </div>
+
+        <div class="score-display" id="resultSummary">
+            <h2>Quiz Complete!</h2>
+            <p id="finalScore">You scored: <span id="scoreValue">0/0</span></p>
+            <p id="feedbackMessage"></p>
+            <button class="restart-btn" id="restartButton">Start Again</button>
+        </div>
+
+        <div class="controls">
+            <button class="control-button" id="prevButton" disabled>Previous</button>
+            <button class="control-button" id="checkButton">Check Answers</button>
+            <button class="control-button" id="nextButton" disabled>Next</button>
+        </div>
+    </div>
+
+    <script>
+        // Exercise Data
+        const exercises = [
+            {
+                title: "Gap-Fill Exercise",
+                description: "Complete each sentence with the most suitable conditional expression: <strong>unless</strong>, <strong>provided that</strong>, or <strong>as long as</strong>.",
+                type: "gap-fill",
+                questions: [
+                    {
+                        id: 1,
+                        text: "You can attend the meeting __________ you arrive on time.",
+                        options: ["unless", "provided that", "as long as"],
+                        correctAnswers: ["as long as", "provided that"],
+                        explanation: "'As long as' or 'provided that' introduces the condition for attending the meeting."
+                    },
+                    {
+                        id: 2,
+                        text: "__________ we receive your payment by Friday, your order will be cancelled.",
+                        options: ["Unless", "Provided that", "As long as"],
+                        correctAnswers: ["Unless"],
+                        explanation: "'Unless' means 'if not' - the order will be cancelled if the payment is not received."
+                    },
+                    {
+                        id: 3,
+                        text: "The children can play in the garden __________ they don't damage the flowers.",
+                        options: ["unless", "provided that", "as long as"],
+                        correctAnswers: ["as long as", "provided that"],
+                        explanation: "'As long as' or 'provided that' introduces the continuing condition for playing in the garden."
+                    },
+                    {
+                        id: 4,
+                        text: "__________ you have a valid ticket, you won't be allowed to enter the concert.",
+                        options: ["Unless", "Provided that", "As long as"],
+                        correctAnswers: ["Unless"],
+                        explanation: "This means 'if you don't have a valid ticket, you won't be allowed to enter.'"
+                    },
+                    {
+                        id: 5,
+                        text: "We'll deliver your package tomorrow __________ you give us your correct address.",
+                        options: ["unless", "provided that", "as long as"],
+                        correctAnswers: ["provided that", "as long as"],
+                        explanation: "'Provided that' or 'as long as' introduces the specific condition needed for delivery."
+                    },
+                    {
+                        id: 6,
+                        text: "__________ there are any objections, the proposal will be accepted.",
+                        options: ["Unless", "Provided that", "As long as"],
+                        correctAnswers: ["Unless"],
+                        explanation: "This means 'if there are no objections, the proposal will be accepted.'"
+                    },
+                    {
+                        id: 7,
+                        text: "You can borrow my camera __________ you promise to return it tomorrow.",
+                        options: ["unless", "provided that", "as long as"],
+                        correctAnswers: ["provided that", "as long as"],
+                        explanation: "'Provided that' or 'as long as' introduces the condition for borrowing the camera."
+                    },
+                    {
+                        id: 8,
+                        text: "The offer remains valid __________ we have stock available.",
+                        options: ["unless", "provided that", "as long as"],
+                        correctAnswers: ["as long as"],
+                        explanation: "'As long as' indicates the continuing condition for the offer's validity."
+                    },
+                    {
+                        id: 9,
+                        text: "__________ you study regularly, you'll improve your English quickly.",
+                        options: ["As long as", "Unless", "Provided that"],
+                        correctAnswers: ["As long as", "Provided that"],
+                        explanation: "'As long as' or 'Provided that' introduces the condition for improving English."
+                    },
+                    {
+                        id: 10,
+                        text: "The tour will be cancelled __________ there are at least 10 participants.",
+                        options: ["unless", "provided that", "as long as"],
+                        correctAnswers: ["unless"],
+                        explanation: "This means 'if there are not at least 10 participants, the tour will be cancelled.'"
+                    }
+                ]
+            },
+            {
+                title: "Multiple Choice Quiz",
+                description: "Select the most appropriate conditional expression to complete each sentence.",
+                type: "multiple-choice",
+                questions: [
+                    {
+                        id: 1,
+                        text: "_________ you agree to our terms, we cannot offer you the service.",
+                        options: ["As long as", "Unless", "Provided", "If"],
+                        correctAnswers: ["Unless"],
+                        explanation: "'Unless' means 'if not' - we cannot offer the service if you don't agree to the terms."
+                    },
+                    {
+                        id: 2,
+                        text: "You can borrow my car _________ you drive carefully.",
+                        options: ["unless", "as long as", "if not", "except"],
+                        correctAnswers: ["as long as"],
+                        explanation: "'As long as' introduces the continuing condition of driving carefully for borrowing the car."
+                    },
+                    {
+                        id: 3,
+                        text: "_________ the project is completed by Friday, we'll receive the bonus.",
+                        options: ["Unless", "Only if", "Provided that", "Except if"],
+                        correctAnswers: ["Provided that"],
+                        explanation: "'Provided that' introduces a specific condition that must be met to receive the bonus."
+                    },
+                    {
+                        id: 4,
+                        text: "We'll go hiking tomorrow, _________ it doesn't rain.",
+                        options: ["provided that", "unless", "as long as", "both a and c are correct"],
+                        correctAnswers: ["both a and c are correct"],
+                        explanation: "Both 'provided that it doesn't rain' and 'as long as it doesn't rain' work correctly in this context."
+                    },
+                    {
+                        id: 5,
+                        text: "_________ you finish your homework, you can't go out with your friends.",
+                        options: ["Unless", "Provided that", "As long as", "If"],
+                        correctAnswers: ["Unless"],
+                        explanation: "The sentence means 'If you don't finish your homework, you can't go out.'"
+                    },
+                    {
+                        id: 6,
+                        text: "The team will win the championship _________ they maintain their current form.",
+                        options: ["if not", "unless", "provided that", "as long as"],
+                        correctAnswers: ["as long as"],
+                        explanation: "'As long as' suggests a continuing condition - maintaining form throughout the championship."
+                    },
+                    {
+                        id: 7,
+                        text: "_________ by next week, the offer will expire.",
+                        options: ["Unless you respond", "You respond unless", "Unless you will respond", "Unless you don't respond"],
+                        correctAnswers: ["Unless you respond"],
+                        explanation: "This is the correct form. The others contain grammatical errors or incorrect logic."
+                    },
+                    {
+                        id: 8,
+                        text: "The contract is valid _________ both parties sign it.",
+                        options: ["as long as", "unless", "only if not", "except when"],
+                        correctAnswers: ["as long as"],
+                        explanation: "This indicates the continuing validity of the contract conditional on both signatures."
+                    },
+                    {
+                        id: 9,
+                        text: "_________ the weather improves, we'll have to cancel the event.",
+                        options: ["As long as", "Unless", "Provided that", "If"],
+                        correctAnswers: ["Unless"],
+                        explanation: "The event will be cancelled if the weather doesn't improve."
+                    },
+                    {
+                        id: 10,
+                        text: "Children can enter the park for free _________ they are accompanied by an adult.",
+                        options: ["unless", "as long as", "if not", "except"],
+                        correctAnswers: ["as long as"],
+                        explanation: "Children can enter free on the condition that they have an adult with them."
+                    }
+                ]
+            }
+        ];
+
+        // Application state
+        let currentExerciseIndex = 0;
+        let userAnswers = [];
+        let exerciseChecked = false;
+        let score = 0;
+
+        // DOM elements
+        const exerciseContainer = document.getElementById('exercise-container');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const checkButton = document.getElementById('checkButton');
+        const resultSummary = document.getElementById('resultSummary');
+        const scoreValue = document.getElementById('scoreValue');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+        const restartButton = document.getElementById('restartButton');
+        const progressFill = document.getElementById('progressFill');
+
+        // Initialize the application
+        function initializeApp() {
+            // Initialize user answers array
+            exercises.forEach(exercise => {
+                const exerciseAnswers = new Array(exercise.questions.length).fill(null);
+                userAnswers.push(exerciseAnswers);
+            });
+            
+            // Load the first exercise
+            renderExercise(currentExerciseIndex);
+            
+            // Set up event listeners
+            prevButton.addEventListener('click', goToPreviousExercise);
+            nextButton.addEventListener('click', goToNextExercise);
+            checkButton.addEventListener('click', checkAnswers);
+            restartButton.addEventListener('click', restartQuiz);
+            
+            // Update the progress bar
+            updateProgress();
+        }
+
+        // Render the current exercise
+        function renderExercise(index) {
+            const exercise = exercises[index];
+            exerciseChecked = false;
+            
+            let exerciseHtml = `
+                <h2>${exercise.title}</h2>
+                <p>${exercise.description}</p>
+            `;
+            
+            exercise.questions.forEach((question, qIndex) => {
+                exerciseHtml += `
+                    <div class="question" id="question-${qIndex}">
+                        <p class="question-text">${qIndex + 1}. ${question.text}</p>
+                        <div class="options">
+                `;
+                
+                question.options.forEach(option => {
+                    const isSelected = userAnswers[index][qIndex] === option;
+                    exerciseHtml += `
+                        <div class="option ${isSelected ? 'selected' : ''}" 
+                             data-question="${qIndex}" 
+                             data-option="${option}">
+                            ${option}
+                        </div>
+                    `;
+                });
+                
+                exerciseHtml += `
+                        </div>
+                        <div class="feedback" id="feedback-${qIndex}"></div>
+                    </div>
+                `;
+            });
+            
+            exerciseContainer.innerHTML = exerciseHtml;
+            
+            // Add event listeners to option divs
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', selectOption);
+            });
+            
+            // Update button states
+            updateButtonStates();
+            
+            // Update the progress bar
+            updateProgress();
+        }
+
+        // Handle option selection
+        function selectOption(event) {
+            const option = event.currentTarget;
+            const questionIndex = parseInt(option.getAttribute('data-question'));
+            const optionValue = option.getAttribute('data-option');
+            
+            // Remove selected class from all options in this question
+            document.querySelectorAll(`.option[data-question="${questionIndex}"]`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            option.classList.add('selected');
+            
+            // Update user answers
+            userAnswers[currentExerciseIndex][questionIndex] = optionValue;
+            
+            // Hide feedback if present
+            const feedback = document.getElementById(`feedback-${questionIndex}`);
+            feedback.style.display = 'none';
+            
+            // Update button states
+            updateButtonStates();
+        }
+
+        // Check the current exercise's answers
+        function checkAnswers() {
+            exerciseChecked = true;
+            const exercise = exercises[currentExerciseIndex];
+            let correctCount = 0;
+            
+            exercise.questions.forEach((question, qIndex) => {
+                const userAnswer = userAnswers[currentExerciseIndex][qIndex];
+                const feedback = document.getElementById(`feedback-${qIndex}`);
+                
+                if (userAnswer === null) {
+                    feedback.textContent = "Please select an answer.";
+                    feedback.className = "feedback incorrect";
+                    feedback.style.display = 'block';
+                } else {
+                    const isCorrect = question.correctAnswers.includes(userAnswer);
+                    
+                    if (isCorrect) {
+                        correctCount++;
+                        feedback.textContent = "Correct! " + question.explanation;
+                        feedback.className = "feedback correct";
+                    } else {
+                        feedback.textContent = "Incorrect. " + question.explanation;
+                        feedback.className = "feedback incorrect";
+                    }
+                    
+                    feedback.style.display = 'block';
+                }
+            });
+            
+            // Update score
+            score = correctCount;
+            
+            // Enable the Next button if there's a next exercise
+            if (currentExerciseIndex < exercises.length - 1) {
+                nextButton.disabled = false;
+            }
+            
+            // Update button states
+            updateButtonStates();
+        }
+
+        // Go to the previous exercise
+        function goToPreviousExercise() {
+            if (currentExerciseIndex > 0) {
+                currentExerciseIndex--;
+                renderExercise(currentExerciseIndex);
+            }
+        }
+
+        // Go to the next exercise
+        function goToNextExercise() {
+            if (currentExerciseIndex < exercises.length - 1) {
+                currentExerciseIndex++;
+                renderExercise(currentExerciseIndex);
+            } else {
+                // Show final results
+                showFinalResults();
+            }
+        }
+
+        // Show final results
+        function showFinalResults() {
+            // Calculate total score
+            let totalCorrect = 0;
+            let totalQuestions = 0;
+            
+            exercises.forEach((exercise, exIndex) => {
+                exercise.questions.forEach((question, qIndex) => {
+                    totalQuestions++;
+                    if (userAnswers[exIndex][qIndex] !== null && question.correctAnswers.includes(userAnswers[exIndex][qIndex])) {
+                        totalCorrect++;
+                    }
+                });
+            });
+            
+            // Update score display
+            scoreValue.textContent = `${totalCorrect}/${totalQuestions}`;
+            
+            // Set feedback message
+            const percentage = Math.round((totalCorrect / totalQuestions) * 100);
+            
+            if (percentage >= 90) {
+                feedbackMessage.textContent = "Excellent! You have a great understanding of conditional expressions.";
+            } else if (percentage >= 70) {
+                feedbackMessage.textContent = "Good job! You understand most conditional expressions well.";
+            } else if (percentage >= 50) {
+                feedbackMessage.textContent = "You're on the right track, but you might want to review conditional expressions again.";
+            } else {
+                feedbackMessage.textContent = "You should spend more time studying conditional expressions. Try again!";
+            }
+            
+            // Hide exercise and show results
+            exerciseContainer.style.display = 'none';
+            resultSummary.style.display = 'block';
+            
+            // Hide controls
+            document.querySelector('.controls').style.display = 'none';
+        }
+
+        // Restart the quiz
+        function restartQuiz() {
+            // Reset state
+            currentExerciseIndex = 0;
+            userAnswers = [];
+            score = 0;
+            exerciseChecked = false;
+            
+            // Initialize user answers array again
+            exercises.forEach(exercise => {
+                const exerciseAnswers = new Array(exercise.questions.length).fill(null);
+                userAnswers.push(exerciseAnswers);
+            });
+            
+            // Show exercise and hide results
+            exerciseContainer.style.display = 'block';
+            resultSummary.style.display = 'none';
+            
+            // Show controls
+            document.querySelector('.controls').style.display = 'flex';
+            
+            // Render the first exercise
+            renderExercise(currentExerciseIndex);
+        }
+
+        // Update button states based on current state
+        function updateButtonStates() {
+            prevButton.disabled = currentExerciseIndex === 0;
+            
+            const allQuestionsAnswered = userAnswers[currentExerciseIndex].every(answer => answer !== null);
+            checkButton.disabled = exerciseChecked;
+            
+            if (currentExerciseIndex === exercises.length - 1) {
+                nextButton.textContent = "Finish";
+                nextButton.disabled = !exerciseChecked;
+            } else {
+                nextButton.textContent = "Next";
+                nextButton.disabled = !exerciseChecked;
+            }
+        }
+
+        // Update the progress bar
+        function updateProgress() {
+            const progress = ((currentExerciseIndex + 1) / exercises.length) * 100;
+            progressFill.style.width = `${progress}%`;
+        }
+
+        // Initialize the app when the page loads
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
