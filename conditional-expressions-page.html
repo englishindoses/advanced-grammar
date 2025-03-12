@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Expressions: Unless, Provided That, As Long As</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h2, h3 {
+            color: #2c3e50;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1 {
+            background-color: #1B263B;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            padding: 20px;
+            padding-left: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example {
+            font-family: 'Source Code Pro', monospace;
+        }
+        
+        .conditional-type {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .quiz-container {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .option:hover {
+            background-color: #e9f5fe;
+        }
+        
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .selected {
+            border: 2px solid #3498db;
+            font-weight: bold;
+        }
+        
+        .show-result {
+            display: block;
+        }
+        
+        .score-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f5fe;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .restart-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .restart-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .tips {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 5px solid #f07d3e;
+        }
+        
+        .conversation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .conversation-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .conversation-title {
+            margin-top: 0;
+            color: #3498db;
+        }
+        
+        .grammar-example {
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .error {
+            text-decoration: line-through;
+            margin-left: 1.5rem;
+            color: #721c24;
+        }
+        
+        .correct-example {
+            margin-left: 1.5rem;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conditional Expressions:<br> Unless, Provided That, As Long As</h1>
+    
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Conditional expressions show that one action depends on another. In English, we use words like <strong>unless, provided that, and as long as</strong> to talk about conditions. These words help us explain rules, requirements, and restrictions in daily life, work, and travel.</p>
+    </section>
+    
+    <section id="explanation">
+        <h2>Explanation</h2>
+        
+        <div class="conditional-type">
+            <h3>Unless = <em>If not</em></h3>
+            <p><strong>Meaning:</strong> We use <strong>unless</strong> to introduce a condition that prevents something from happening. It is similar to <em>if not</em>.</p>
+            <p><strong>Structure:</strong> <strong>Unless + present/simple past</strong>, <strong>main clause</strong></p>
+            <p><strong>Examples:</strong></p>
+            <div class="example">
+                <p>✅ <em>Unless you study, you will fail the exam.</em> (= If you don't study, you will fail.)</p>
+                <p>✅ <em>I won't go unless she invites me.</em> (= If she doesn't invite me, I won't go.)</p>
+                <p>✅ <em>You can't enter unless you have a ticket.</em> (= If you don't have a ticket, you can't enter.)</p>
+            </div>
+        </div>
+        
+        <div class="conditional-type">
+            <h3>Provided That = <em>Only if</em></h3>
+            <p><strong>Meaning:</strong> We use <strong>provided that</strong> to say that something will happen <strong>only if</strong> a condition is met. It is often used in formal or business situations.</p>
+            <p><strong>Structure:</strong> <strong>Main clause + provided that + condition</strong></p>
+            <p><strong>Examples:</strong></p>
+            <div class="example">
+                <p>✅ <em>You can leave early provided that you finish your work.</em> (= You can leave only if you finish your work.)</p>
+                <p>✅ <em>We will lend you the money provided that you pay it back next month.</em> (= Only if you pay it back next month, we will lend you the money.)</p>
+                <p>✅ <em>You can stay here provided that you don't make too much noise.</em> (= Only if you don't make noise, you can stay here.)</p>
+            </div>
+        </div>
+        
+        <div class="conditional-type">
+            <h3>As Long As = <em>If / On the condition that</em></h3>
+            <p><strong>Meaning:</strong> <strong>As long as</strong> is used to say that something will happen <strong>if</strong> a condition is met. It is similar to <em>provided that</em> but more informal.</p>
+            <p><strong>Structure:</strong> <strong>Main clause + as long as + condition</strong></p>
+            <p><strong>Examples:</strong></p>
+            <div class="example">
+                <p>✅ <em>You can borrow my car as long as you drive carefully.</em> (= You can borrow my car if you drive carefully.)</p>
+                <p>✅ <em>I'll be happy as long as I have coffee in the morning.</em> (= If I have coffee in the morning, I'll be happy.)</p>
+                <p>✅ <em>You can stay out late as long as you call me.</em> (= If you call me, you can stay out late.)</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="summary">
+        <h2>Summary Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Expression</th>
+                    <th>Meaning</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Unless</strong></td>
+                    <td>If not</td>
+                    <td><em>Unless it rains, we will go to the beach.</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Provided that</strong></td>
+                    <td>Only if</td>
+                    <td><em>I'll sign the contract provided that you accept the terms.</em></td>
+                </tr>
+                <tr>
+                    <td><strong>As long as</strong></td>
+                    <td>If / On the condition that</td>
+                    <td><em>I will help you as long as you listen to me.</em></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="common-errors">
+        <h2>Common Errors & How to Avoid Them</h2>
+        <p class="error">❌ <em>Unless you will call me, I won't come.</em> → (Incorrect: Don't use <strong>will</strong> after unless.)</p>
+        <p class="correct-example">✅ <em>Unless you call me, I won't come.</em></p>
+        
+        <p class="error">❌ <em>Provided that he will arrive on time, we can start.</em> → (Incorrect: No <strong>will</strong> after provided that.)</p>
+        <p class="correct-example">✅ <em>Provided that he arrives on time, we can start.</em></p>
+        
+        <p class="error">❌ <em>You can go as long as if you finish your work.</em> → (Incorrect: Don't use <strong>if</strong> with as long as.)</p>
+        <p class="correct-example">✅ <em>You can go as long as you finish your work.</em></p>
+    </section>
+    
+    <section id="tips" class="tips">
+        <h3>Useful Tips</h3>
+        <p>✔ <strong>Think in simple conditions</strong> – Before speaking or writing, ask yourself: <em>Am I talking about a rule (provided that), a flexible condition (as long as), or a negative condition (unless)?</em></p>
+        <p>✔ <strong>Practice with real situations</strong> – Imagine workplace or travel scenarios where these expressions are useful. Example: <em>I will book the hotel provided that the price is good.</em></p>
+        <p>✔ <strong>Look for them in real English</strong> – Pay attention when reading news, emails, or contracts. You'll see these phrases often in conditions and agreements.</p>
+    </section>
+    
+    <section id="quiz" class="quiz-container">
+        <h2>Test Your Knowledge</h2>
+        <div class="question" id="q1">
+            <p>1. Complete the sentence: "You can borrow my laptop ________ you return it tomorrow."</p>
+            <div class="options">
+                <div class="option" onclick="selectOption('q1', 0)">
+                    <span>A. unless</span>
+                </div>
+                <div class="option" onclick="selectOption('q1', 1)">
+                    <span>B. as long as</span>
+                </div>
+                <div class="option" onclick="selectOption('q1', 2)">
+                    <span>C. provided that if</span>
+                </div>
+            </div>
+            <div class="feedback" id="feedback-q1-0">
+                Incorrect. "Unless" means "if not," so this would mean "You can borrow my laptop if you don't return it tomorrow," which doesn't make sense.
+            </div>
+            <div class="feedback" id="feedback-q1-1">
+                Correct! "As long as" is perfect here to set a condition for borrowing the laptop.
+            </div>
+            <div class="feedback" id="feedback-q1-2">
+                Incorrect. We don't use "if" with "provided that" - it would be just "provided that."
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <p>2. Which sentence is INCORRECT?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption('q2', 0)">
+                    <span>A. Unless it rains, we'll have a picnic tomorrow.</span>
+                </div>
+                <div class="option" onclick="selectOption('q2', 1)">
+                    <span>B. You can stay here provided that you'll be quiet.</span>
+                </div>
+                <div class="option" onclick="selectOption('q2', 2)">
+                    <span>C. I'll help you as long as you listen to my instructions.</span>
+                </div>
+            </div>
+            <div class="feedback" id="feedback-q2-0">
+                This is correct usage of "unless."
+            </div>
+            <div class="feedback" id="feedback-q2-1">
+                Correct answer! This is incorrect because we don't use "will" after "provided that." It should be "provided that you are quiet."
+            </div>
+            <div class="feedback" id="feedback-q2-2">
+                This is correct usage of "as long as."
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <p>3. "__________ he apologizes, I won't speak to him again." Which is the best option?</p>
+            <div class="options">
+                <div class="option" onclick="selectOption('q3', 0)">
+                    <span>A. Unless</span>
+                </div>
+                <div class="option" onclick="selectOption('q3', 1)">
+                    <span>B. As long as</span>
+                </div>
+                <div class="option" onclick="selectOption('q3', 2)">
+                    <span>C. Provided that</span>
+                </div>
+            </div>
+            <div class="feedback" id="feedback-q3-0">
+                Correct! "Unless" is perfect here, meaning "If he doesn't apologize, I won't speak to him again."
+            </div>
+            <div class="feedback" id="feedback-q3-1">
+                Incorrect. "As long as" would mean you won't speak to him while he continues to apologize, which doesn't make sense in this context.
+            </div>
+            <div class="feedback" id="feedback-q3-2">
+                Incorrect. "Provided that" would suggest that not speaking to him is conditional on him apologizing, which is the opposite of what we want to express.
+            </div>
+        </div>
+        
+        <div class="score-display" id="score-display">
+            Your score: <span id="score">0</span>/3
+        </div>
+        
+        <button class="restart-btn" onclick="restartQuiz()" style="display:none;" id="restart-btn">Try Again</button>
+    </section>
+    
+    <section id="conversation-starters">
+        <h2>Conversation Starters</h2>
+        <p>Here are some questions to practice using these conditional expressions in natural conversation:</p>
+        
+        <ol class="conversation-list">
+            <li class="conversation-item">
+                <h3 class="conversation-title">Travel Plans</h3>
+                <p class="conversation-description">"What would be your dream vacation destination, and what conditions would need to be met for you to go there?" (Use <span class="grammar-example">provided that</span>, <span class="grammar-example">as long as</span>, <span class="grammar-example">unless</span>)</p>
+            </li>
+            
+            <li class="conversation-item">
+                <h3 class="conversation-title">Work/Study Rules</h3>
+                <p class="conversation-description">"What are some conditions your boss/teacher sets for you? For example, can you work from home <span class="grammar-example">as long as</span>...?"</p>
+            </li>
+            
+            <li class="conversation-item">
+                <h3 class="conversation-title">Setting Boundaries</h3>
+                <p class="conversation-description">"When lending things to friends or family, what conditions do you usually set? Would you lend your car <span class="grammar-example">provided that</span>...?"</p>
+            </li>
+            
+            <li class="conversation-item">
+                <h3 class="conversation-title">Negotiating</h3>
+                <p class="conversation-description">"Let's practice negotiating a rental agreement. What conditions would you set as a landlord or expect as a tenant?"</p>
+            </li>
+            
+            <li class="conversation-item">
+                <h3 class="conversation-title">Future Plans</h3>
+                <p class="conversation-description">"What are your plans for next year? Will those plans change <span class="grammar-example">unless</span> certain things happen?"</p>
+            </li>
+        </ol>
+    </section>
+    
+    <p style="margin-top: 3rem; text-align: center; font-style: italic;">With practice, these conditionals will become natural in your conversations! 🚀</p>
+
+    <script>
+        let score = 0;
+        const totalQuestions = 3;
+        const correctAnswers = {
+            'q1': 1,
+            'q2': 1,
+            'q3': 0
+        };
+        const answered = {
+            'q1': false,
+            'q2': false,
+            'q3': false
+        };
+        
+        function selectOption(questionId, optionIndex) {
+            if (answered[questionId]) return;
+            
+            const question = document.getElementById(questionId);
+            const options = question.getElementsByClassName('option');
+            
+            // Clear previous selections
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove('selected');
+            }
+            
+            // Select the current option
+            options[optionIndex].classList.add('selected');
+            
+            // Show feedback
+            const feedbackId = `feedback-${questionId}-${optionIndex}`;
+            const feedback = document.getElementById(feedbackId);
+            
+            if (feedback) {
+                feedback.style.display = 'block';
+                
+                if (optionIndex === correctAnswers[questionId]) {
+                    feedback.classList.add('correct');
+                    score++;
+                } else {
+                    feedback.classList.add('incorrect');
+                }
+            }
+            
+            answered[questionId] = true;
+            
+            // Check if all questions are answered
+            checkCompletion();
+        }
+        
+        function checkCompletion() {
+            let allAnswered = true;
+            for (const q in answered) {
+                if (!answered[q]) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+            
+            if (allAnswered) {
+                // Show the score
+                const scoreDisplay = document.getElementById('score-display');
+                scoreDisplay.style.display = 'block';
+                document.getElementById('score').textContent = score;
+                
+                // Show the restart button
+                document.getElementById('restart-btn').style.display = 'block';
+            }
+        }
+        
+        function restartQuiz() {
+            // Reset score
+            score = 0;
+            
+            // Reset answered status
+            for (const q in answered) {
+                answered[q] = false;
+            }
+            
+            // Hide all feedback
+            const feedbacks = document.getElementsByClassName('feedback');
+            for (let i = 0; i < feedbacks.length; i++) {
+                feedbacks[i].style.display = 'none';
+                feedbacks[i].classList.remove('correct', 'incorrect');
+            }
+            
+            // Remove selected class
+            const options = document.getElementsByClassName('option');
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove('selected');
+            }
+            
+            // Hide score and restart button
+            document.getElementById('score-display').style.display = 'none';
+            document.getElementById('restart-btn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
