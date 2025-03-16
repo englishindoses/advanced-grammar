@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Modal Perfect Forms - Learn how to express certainty, possibility, and regret about past events">
+  <title>Modal Perfect Forms: Past Situations - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      /* Dark theme variables for quiz sections */
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .nav-button.activities {
+      background-color: var(--secondary-accent);
+    }
+
+    .nav-button.activities:hover {
+      background-color: #e06d2e;
+    }
+
+    /* MCQ Styles */
+    .mcq-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    .mcq-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .mcq-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mcq-option:hover {
+      background-color: var(--mcq-hover-bg);
+    }
+
+    .mcq-option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+    }
+
+    .mcq-option.correct {
+      border-color: var(--success-bg);
+      background-color: var(--success-bg);
+      color: var(--success-color);
+    }
+
+    .mcq-option.incorrect {
+      border-color: var(--error-bg);
+      background-color: var(--error-bg);
+      color: var(--error-color);
+    }
+
+    .mcq-feedback {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Gap Fill Styles */
+    .gap-fill-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    .gap-input {
+      border: 2px solid var(--gap-input-border);
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0 5px;
+      width: 120px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .gap-input.correct {
+      border-color: var(--success-bg);
+      background-color: var(--success-bg);
+      color: var(--success-color);
+    }
+
+    .gap-input.incorrect {
+      border-color: var(--error-bg);
+      background-color: var(--error-bg);
+      color: var(--error-color);
+    }
+
+    .gap-sentence {
+      margin-bottom: 15px;
+      line-height: 2;
+    }
+
+    .activity-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .check-button, .retry-button, .show-answers-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .check-button {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .check-button:hover {
+      background-color: #2980b9;
+    }
+
+    .retry-button {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .retry-button:hover {
+      background-color: #5a6268;
+    }
+
+    .show-answers-button {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .show-answers-button:hover {
+      background-color: #e9ecef;
+    }
+
+    [data-theme="dark"] .show-answers-button:hover {
+      background-color: #2a2a2a;
+    }
+
+    .result-display {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      display: none;
+    }
+
+    .result-display.success {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+    }
+
+    .result-display.partial {
+      background-color: var(--partial-bg);
+      color: var(--partial-color);
+      border: 1px solid var(--partial-border);
+    }
+
+    .result-display.fail {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    /* Error patterns */
+    .error-pattern {
+      margin-bottom: 15px;
+      border-left: 3px solid var(--error-color);
+      padding-left: 15px;
+    }
+
+    .correct-pattern {
+      margin-bottom: 15px;
+      border-left: 3px solid var(--success-color);
+      padding-left: 15px;
+    }
+
+    .wrong {
+      color: var(--error-color);
+      text-decoration: line-through;
+    }
+
+    .right {
+      color: var(--success-color);
+      font-weight: 600;
+    }
+
+    /* Dialog examples */
+    .dialog {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    .dialog-speaker {
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+      /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+    
+    /* Make example class work consistently */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+    
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Modal Perfect Forms: Past Situations</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Modal Perfect Forms: Past Situations</h1>
+
+      <section class="intro-section">
+        <h2>Introduction</h2>
+        <p><strong>Modal Perfect Forms</strong> combine modal verbs with perfect infinitives to talk about past situations from a present perspective. These forms allow speakers to express certainty, possibility, necessity, or regret about past events.</p>
+        
+        <p>Learning modal perfect forms will help you:</p>
+        <ul>
+          <li>Express different degrees of certainty about past events</li>
+          <li>Talk about past obligations, possibilities, and missed opportunities</li>
+          <li>Use modal perfect forms to make logical conclusions about past situations</li>
+        </ul>
+      </section>
+  
+      <section class="info-container">
+        <h2>Explanation</h2>
+        
+        <h3>What are Modal Perfect Forms?</h3>
+        <p>Modal perfect forms combine a modal verb (must, may, might, could, should, would, etc.) with the perfect infinitive (have + past participle).</p>
+
+        <h3>Structure/Formation</h3>
+        <p><strong>Basic Formula:</strong> Modal verb + have + past participle</p>
+
+        <div class="example">
+        <table>
+          <tr>
+            <th>Form</th>
+            <th>Example</th>
+            <th>Meaning</th>
+          </tr>
+          <tr>
+            <td>must have + past participle</td>
+            <td>must have done</td>
+            <td>Strong certainty about the past</td>
+          </tr>
+          <tr>
+            <td>may/might have + past participle</td>
+            <td>may/might have done</td>
+            <td>Possibility in the past</td>
+          </tr>
+          <tr>
+            <td>could have + past participle</td>
+            <td>could have done</td>
+            <td>Past possibility or ability that wasn't realized</td>
+          </tr>
+          <tr>
+            <td>should have + past participle</td>
+            <td>should have done</td>
+            <td>Past obligation or expectation not fulfilled</td>
+          </tr>
+          <tr>
+            <td>would have + past participle</td>
+            <td>would have done</td>
+            <td>Hypothetical past result (often with conditionals)</td>
+          </tr>
+          <tr>
+            <td>needn't have + past participle</td>
+            <td>needn't have done</td>
+            <td>Unnecessary action that was done</td>
+          </tr>
+        </table>
+        </div>
+
+        <h3>Key Rules</h3>
+
+        <ol>
+          <li><strong>Modal perfect forms always refer to past time</strong>, even though the modal verb itself doesn't change form.</li>
+          <li><strong>The perfect infinitive (have + past participle)</strong> provides the past time reference.</li>
+          <li><strong>The choice of modal affects the meaning</strong>, showing different degrees of certainty, obligation, or possibility.</li>
+          <li><strong>These forms often express a present attitude or judgment</strong> about a past event.</li>
+        </ol>
+
+        <h3>Usage Contexts</h3>
+
+        <ul>
+          <li><strong>Logical conclusions about the past</strong>: 
+            <div class="example">The lights are off and everyone's computer is shut down - they must have gone home already.</div>
+          </li>
+
+          <li><strong>Unrealized possibilities</strong>: 
+            <div class="example">We could have saved money if we'd booked the tickets earlier.</div>
+          </li>
+
+          <li><strong>Criticism or regret</strong>: 
+            <div class="example">You should have called me before making that decision.</div>
+          </li>
+
+          <li><strong>Hypothetical past situations</strong>: 
+            <div class="example">If I had studied medicine, I would have become a doctor.</div>
+          </li>
+
+          <li><strong>Unnecessary past actions</strong>: 
+            <div class="example">You needn't have worked all weekend - the deadline was extended.</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="info-container">
+        <h2>Examples in Context</h2>
+        
+        <h3>Workplace Examples</h3>
+        <ul>
+          <li>
+            <div class="example">The missing files must have been deleted accidentally during the system update.</div>
+            (logical conclusion with certainty)
+          </li>
+          <li>
+            <div class="example">We could have finished the project sooner if we had hired more staff.</div>
+            (unrealized possibility)
+          </li>
+          <li>
+            <div class="example">You should have informed the client about the delay.</div>
+            (unfulfilled obligation)
+          </li>
+        </ul>
+
+        <h3>Daily Life Examples</h3>
+        <ul>
+          <li>
+            <div class="example">I can't find my keys anywhere. I must have left them at the restaurant.</div>
+            (certainty about past action)
+          </li>
+          <li>
+            <div class="example">You might have misunderstood what she was trying to say.</div>
+            (possibility about past understanding)
+          </li>
+          <li>
+            <div class="example">We shouldn't have taken the highway—look at all this traffic!</div>
+            (regret about past decision)
+          </li>
+        </ul>
+
+        <h3>Academic/Formal Examples</h3>
+        <ul>
+          <li>
+            <div class="example">The results suggest that the participants may have been influenced by external factors.</div>
+            (academic possibility)
+          </li>
+          <li>
+            <div class="example">The ancient structure could have served as both a temple and an astronomical observatory.</div>
+            (speculation about past function)
+          </li>
+          <li>
+            <div class="example">The author must have intended this passage to be interpreted metaphorically, given the context.</div>
+            (logical conclusion)
+          </li>
+        </ul>
+
+        <h3>Dialogue Examples</h3>
+
+        <div class="dialog">
+          <p><strong>At work:</strong></p>
+          <p><span class="dialog-speaker">Employee A:</span> "Did you hear about the Henderson contract? They went with our competitor."</p>
+          <p><span class="dialog-speaker">Employee B:</span> "That's surprising. We <span class="example">must have done</span> something wrong in our presentation."</p>
+          <p><span class="dialog-speaker">Employee A:</span> "Or they <span class="example">might have received</span> a better offer. We <span class="example">should have negotiated</span> the price more aggressively."</p>
+        </div>
+
+        <div class="dialog">
+          <p><strong>Between friends:</strong></p>
+          <p><span class="dialog-speaker">Friend A:</span> "I waited for you at the café for an hour yesterday!"</p>
+          <p><span class="dialog-speaker">Friend B:</span> "Oh no! I'm so sorry. You <span class="example">must have been</span> so annoyed."</p>
+          <p><span class="dialog-speaker">Friend A:</span> "I was. You <span class="example">could have called</span> to let me know you weren't coming."</p>
+          <p><span class="dialog-speaker">Friend B:</span> "I know. My phone died, but I <span class="example">should have found</span> another way to contact you."</p>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Common Errors</h2>
+          
+        <div class="error-pattern">
+          <p class="wrong">❌ "<span class="example">I must went to the wrong address.</span>"</p>
+          <p class="right">✅ "<span class="example">I must have gone to the wrong address.</span>" (Use have + past participle)</p>
+        </div>
+
+        <div class="error-pattern">
+          <p class="wrong">❌ "<span class="example">She's not here. She has to leave already.</span>"</p>
+          <p class="right">✅ "<span class="example">She's not here. She must have left already.</span>" (Correct for past logical conclusion)</p>
+        </div>
+
+        <div class="error-pattern">
+          <p class="wrong">❌ "<span class="example">You could not have been there.</span>" (can be correct but often misused)</p>
+          <p class="wrong">❌ "<span class="example">You could have not been there.</span>" (incorrect word order)</p>
+          <p class="right">✅ "<span class="example">You couldn't have been there.</span>" (correct and more natural)</p>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Summary</h2>
+          
+        <h3>Key Points</h3>
+        <ul>
+          <li>Modal perfect forms combine a modal verb with 'have' + past participle.</li>
+          <li>They refer to past situations but express present attitudes or perspectives.</li>
+          <li>Different modals express different degrees of certainty, possibility, obligation, or hypothetical situations.</li>
+          <li>Modal perfect forms are essential for expressing regret, criticism, speculation, and logical conclusions about the past.</li>
+          <li>The structure remains the same for all modal perfect forms: modal + have + past participle.</li>
+        </ul>
+
+        <h3>Comparison Table: Modal Perfect Forms and Their Meanings</h3>
+        <table>
+          <tr>
+            <th>Form</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>must have done</td>
+            <td>Strong logical conclusion</td>
+            <td><span class="example">He must have left early.</span> (I'm certain)</td>
+          </tr>
+          <tr>
+            <td>may/might have done</td>
+            <td>Possibility</td>
+            <td><span class="example">She might have forgotten our meeting.</span> (It's possible)</td>
+          </tr>
+          <tr>
+            <td>could have done</td>
+            <td>Unrealized possibility/ability</td>
+            <td><span class="example">I could have won the race.</span> (But I didn't)</td>
+          </tr>
+          <tr>
+            <td>should have done</td>
+            <td>Unfulfilled obligation/advice</td>
+            <td><span class="example">You should have called me.</span> (But you didn't)</td>
+          </tr>
+          <tr>
+            <td>would have done</td>
+            <td>Hypothetical result</td>
+            <td><span class="example">We would have arrived sooner if we'd taken a taxi.</span></td>
+          </tr>
+          <tr>
+            <td>needn't have done</td>
+            <td>Unnecessary action (that was done)</td>
+            <td><span class="example">You needn't have bought so much food.</span> (But you did)</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="tips">
+        <h2>Useful Tips</h2>
+        <ol>
+          <li><strong>Think of modal perfect forms as expressing your current view about a past event.</strong> - They show your present perspective on something that happened (or didn't happen) in the past.</li>
+          
+          <li><strong>Remember that the actual time reference comes from "have + past participle,"</strong> not from the modal itself. The modal verb shows your attitude (certainty, possibility, etc.).</li>
+          
+          <li><strong>When expressing regret or criticism, "should have" is more common</strong> than "ought to have" in everyday speech.</li>
+        </ol>
+
+        <div class="example">
+          <p>📝 <strong>GRAMMAR TIP:</strong> When expressing certainty about the past, remember that "must have + past participle" expresses a strong logical conclusion, while "can't have + past participle" expresses logical impossibility. For example: "She must have taken my keys." (I'm certain she did) vs. "She can't have taken my keys." (I'm certain she didn't).</p>
+        </div>
+      </section>
+
+      <section class="mcq-container" id="mcq-activity-1">
+        <h2>Quick Practice</h2>
+        <h3>Activity 1: Multiple Choice</h3>
+        <p>Choose the modal perfect form that best completes each sentence:</p>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">1. The lights are off in the office. Everyone ____________ home already.</p>
+          <div class="mcq-option" data-correct="true" data-explanation="'Must have gone' expresses a logical conclusion with certainty based on the evidence (lights off).">
+            <input type="radio" name="q1" id="q1a">
+            <label for="q1a">a) must have gone</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Would have gone' is incorrect here as it would be used for a hypothetical situation, not a logical conclusion.">
+            <input type="radio" name="q1" id="q1b">
+            <label for="q1b">b) would have gone</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Should have gone' expresses obligation or advice, which doesn't fit this context.">
+            <input type="radio" name="q1" id="q1c">
+            <label for="q1c">c) should have gone</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">2. I'm sorry for the confusion. I ____________ your email earlier.</p>
+          <div class="mcq-option" data-correct="false" data-explanation="'Could have received' doesn't make sense here as the context suggests an unfulfilled obligation.">
+            <input type="radio" name="q2" id="q2a">
+            <label for="q2a">a) could have received</label>
+          </div>
+          <div class="mcq-option" data-correct="true" data-explanation="'Should have read' is correct - it expresses an unfulfilled obligation or expectation in the past.">
+            <input type="radio" name="q2" id="q2b">
+            <label for="q2b">b) should have read</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Would have sent' is incorrect as this isn't a hypothetical situation.">
+            <input type="radio" name="q2" id="q2c">
+            <label for="q2c">c) would have sent</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">3. If we had known about the traffic, we ____________ a different route.</p>
+          <div class="mcq-option" data-correct="false" data-explanation="'Must have taken' expresses certainty about past events, which doesn't fit this hypothetical context.">
+            <input type="radio" name="q3" id="q3a">
+            <label for="q3a">a) must have taken</label>
+          </div>
+          <div class="mcq-option" data-correct="true" data-explanation="'Would have taken' is correct - it expresses a hypothetical result in the past (third conditional).">
+            <input type="radio" name="q3" id="q3b">
+            <label for="q3b">b) would have taken</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'May have taken' expresses possibility but doesn't fit the conditional structure here.">
+            <input type="radio" name="q3" id="q3c">
+            <label for="q3c">c) may have taken</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">4. You look exhausted. You ____________ to bed earlier last night.</p>
+          <div class="mcq-option" data-correct="false" data-explanation="'Must have gone' would suggest they did go to bed early, which contradicts the context that they're exhausted.">
+            <input type="radio" name="q4" id="q4a">
+            <label for="q4a">a) must have gone</label>
+          </div>
+          <div class="mcq-option" data-correct="true" data-explanation="'Should have gone' is correct - it suggests advice/obligation about something that didn't happen.">
+            <input type="radio" name="q4" id="q4b">
+            <label for="q4b">b) should have gone</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'May have gone' doesn't fit the context which suggests they didn't go to bed early.">
+            <input type="radio" name="q4" id="q4c">
+            <label for="q4c">c) may have gone</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="result-display"></div>
+        
+        <div class="activity-controls">
+          <button class="check-button" id="check-mcq-1">Check Answers</button>
+          <button class="retry-button" id="retry-mcq-1" style="display: none;">Try Again</button>
+        </div>
+      </section>
+      
+      <section class="gap-fill-container" id="gap-fill-activity">
+        <h3>Activity 2: Fill-in-the-blank</h3>
+        <p>Complete these sentences with the correct modal perfect form using the verb in parentheses:</p>
+        
+        <div class="gap-sentence">
+          1. She ____________ (forget) her keys, which is why she couldn't get into her apartment.
+          <input type="text" class="gap-input" data-correct="must have forgotten">
+        </div>
+        
+        <div class="gap-sentence">
+          2. The team ____________ (win) the championship if their star player hadn't been injured.
+          <input type="text" class="gap-input" data-correct="would have won|could have won">
+        </div>
+        
+        <div class="gap-sentence">
+          3. You ____________ (not/wait) for me. I told you I would be late.
+          <input type="text" class="gap-input" data-correct="shouldn't have waited|needn't have waited">
+        </div>
+        
+        <div class="gap-sentence">
+          4. They ____________ (arrive) by now. Their flight landed two hours ago.
+          <input type="text" class="gap-input" data-correct="must have arrived|should have arrived">
+        </div>
+        
+        <div class="gap-sentence">
+          5. He ____________ (study) harder for the exam. He didn't pass.
+          <input type="text" class="gap-input" data-correct="should have studied">
+        </div>
+        
+        <div class="result-display"></div>
+        
+        <div class="activity-controls">
+          <button class="check-button" id="check-gap-fill">Check Answers</button>
+          <button class="retry-button" id="retry-gap-fill" style="display: none;">Try Again</button>
+          <button class="show-answers-button" id="show-gap-fill-answers" style="display: none;">Show Answers</button>
+        </div>
+      </section>
+      
+      <section class="gap-fill-container" id="error-correction-activity">
+        <h3>Activity 3: Error Correction</h3>
+        <p>Identify and correct the error in each sentence:</p>
+        
+        <div class="gap-sentence">
+          1. She must went to the doctor yesterday. She's feeling much better today.<br>
+          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="she must have gone to the doctor yesterday">
+        </div>
+        
+        <div class="gap-sentence">
+          2. I could understood the lecture better if the professor had spoken more slowly.<br>
+          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="i could have understood the lecture better if the professor had spoken more slowly">
+        </div>
+        
+        <div class="gap-sentence">
+          3. They should to have called us before they arrived.<br>
+          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="they should have called us before they arrived">
+        </div>
+        
+        <div class="result-display"></div>
+        
+        <div class="activity-controls">
+          <button class="check-button" id="check-error-correction">Check Answers</button>
+          <button class="retry-button" id="retry-error-correction" style="display: none;">Try Again</button>
+          <button class="show-answers-button" id="show-error-answers" style="display: none;">Show Answers</button>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Extension and Practice</h2>
+        
+        <p><a href="modal-perfect-advanced.html">Link to Advanced Modal Perfect Usage</a></p>
+
+        <h3>Related Topics</h3>
+        <ul>
+          <li><a href="third-conditional.html">Third Conditional Sentences</a></li>
+          <li><a href="past-modals.html">Past Modals for Ability and Permission</a></li>
+          <li><a href="reported-speech-modals.html">Reported Speech with Modals</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  
+  <nav class="bottom-navigation">
+    <a href="modal-verbs.html" class="nav-button previous">← Previous: Modal Verbs</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+      <a href="modal-perfect-activities.html" class="nav-button activities">Extra Activities</a>
+    </div>
+    <a href="third-conditional.html" class="nav-button next">Next: Third Conditional →</a>
+  </nav>
+
+  <script>
+  // Theme toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    
+    // Handle theme toggle click
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    
+    // MCQ Activities functionality
+    const checkMcqBtn = document.getElementById('check-mcq-1');
+    const retryMcqBtn = document.getElementById('retry-mcq-1');
+    const resultDisplay = document.querySelector('#mcq-activity-1 .result-display');
+    
+    if (checkMcqBtn) {
+      checkMcqBtn.addEventListener('click', function() {
+        let correct = 0;
+        const total = document.querySelectorAll('.mcq-question-group').length;
+        
+        // Check each question
+        document.querySelectorAll('.mcq-question-group').forEach(group => {
+          const selectedOption = group.querySelector('input:checked');
+          
+          if (selectedOption) {
+            const option = selectedOption.parentElement;
+            const isCorrect = option.getAttribute('data-correct') === 'true';
+            const feedback = option.getAttribute('data-explanation');
+            
+            // Reset previous classes
+            group.querySelectorAll('.mcq-option').forEach(opt => {
+              opt.classList.remove('correct', 'incorrect');
+            });
+            
+            // Add appropriate class based on answer
+            if (isCorrect) {
+              option.classList.add('correct');
+              correct++;
+            } else {
+              option.classList.add('incorrect');
+              // Also highlight correct answer
+              group.querySelector('.mcq-option[data-correct="true"]').classList.add('correct');
+            }
+            
+            // Show feedback
+            const feedbackDiv = group.querySelector('.mcq-feedback');
+            feedbackDiv.textContent = feedback;
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.className = 'mcq-feedback ' + (isCorrect ? 'success' : 'fail');
+          }
+        });
+        
+        // Show overall result
+        resultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
+        resultDisplay.style.display = 'block';
+        resultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
+        
+        // Show retry button
+        checkMcqBtn.style.display = 'none';
+        retryMcqBtn.style.display = 'block';
+      });
+    }
+    
+    // Retry button functionality
+    if (retryMcqBtn) {
+      retryMcqBtn.addEventListener('click', function() {
+        // Reset all options and feedback
+        document.querySelectorAll('.mcq-option').forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+        });
+        
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+          radio.checked = false;
+        });
+        
+        document.querySelectorAll('.mcq-feedback').forEach(feedback => {
+          feedback.style.display = 'none';
+        });
+        
+        // Hide result and retry button, show check button
+        resultDisplay.style.display = 'none';
+        retryMcqBtn.style.display = 'none';
+        checkMcqBtn.style.display = 'block';
+      });
+    }
+    
+    // Gap Fill Activities functionality
+    const checkGapBtn = document.getElementById('check-gap-fill');
+    const retryGapBtn = document.getElementById('retry-gap-fill');
+    const showAnswersBtn = document.getElementById('show-gap-fill-answers');
+    const gapResultDisplay = document.querySelector('#gap-fill-activity .result-display');
+    
+    if (checkGapBtn) {
+      checkGapBtn.addEventListener('click', function() {
+        let correct = 0;
+        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
+        const total = inputs.length;
+        
+        inputs.forEach(input => {
+          // Reset previous classes
+          input.classList.remove('correct', 'incorrect');
+          
+          // Get the correct answers (may be multiple options separated by |)
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          const userAnswer = input.value.trim().toLowerCase();
+          
+          // Check if the user's answer matches any of the correct options
+          const isCorrect = correctAnswers.some(answer => 
+            userAnswer === answer.trim().toLowerCase()
+          );
+          
+          if (isCorrect) {
+            input.classList.add('correct');
+            correct++;
+          } else {
+            input.classList.add('incorrect');
+          }
+        });
+        
+        // Show overall result
+        gapResultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
+        gapResultDisplay.style.display = 'block';
+        gapResultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
+        
+        // Show retry and show answers buttons
+        checkGapBtn.style.display = 'none';
+        retryGapBtn.style.display = 'inline-block';
+        showAnswersBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Retry button functionality
+    if (retryGapBtn) {
+      retryGapBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
+        
+        inputs.forEach(input => {
+          input.classList.remove('correct', 'incorrect');
+          input.value = '';
+        });
+        
+        // Hide result and buttons, show check button
+        gapResultDisplay.style.display = 'none';
+        retryGapBtn.style.display = 'none';
+        showAnswersBtn.style.display = 'none';
+        checkGapBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Show answers button functionality
+    if (showAnswersBtn) {
+      showAnswersBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
+        
+        inputs.forEach(input => {
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          input.value = correctAnswers[0]; // Show first correct answer
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+        });
+      });
+    }
+    
+    // Error Correction Activities functionality
+    const checkErrorBtn = document.getElementById('check-error-correction');
+    const retryErrorBtn = document.getElementById('retry-error-correction');
+    const showErrorAnswersBtn = document.getElementById('show-error-answers');
+    const errorResultDisplay = document.querySelector('#error-correction-activity .result-display');
+    
+    if (checkErrorBtn) {
+      checkErrorBtn.addEventListener('click', function() {
+        let correct = 0;
+        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
+        const total = inputs.length;
+        
+        inputs.forEach(input => {
+          // Reset previous classes
+          input.classList.remove('correct', 'incorrect');
+          
+          // Get the correct answers (may be multiple options separated by |)
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          const userAnswer = input.value.trim().toLowerCase();
+          
+          // Check if the user's answer matches any of the correct options
+          const isCorrect = correctAnswers.some(answer => 
+            userAnswer === answer.trim().toLowerCase()
+          );
+          
+          if (isCorrect) {
+            input.classList.add('correct');
+            correct++;
+          } else {
+            input.classList.add('incorrect');
+          }
+        });
+        
+        // Show overall result
+        errorResultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
+        errorResultDisplay.style.display = 'block';
+        errorResultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
+        
+        // Show retry and show answers buttons
+        checkErrorBtn.style.display = 'none';
+        retryErrorBtn.style.display = 'inline-block';
+        showErrorAnswersBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Retry button functionality
+    if (retryErrorBtn) {
+      retryErrorBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
+        
+        inputs.forEach(input => {
+          input.classList.remove('correct', 'incorrect');
+          input.value = '';
+        });
+        
+        // Hide result and buttons, show check button
+        errorResultDisplay.style.display = 'none';
+        retryErrorBtn.style.display = 'none';
+        showErrorAnswersBtn.style.display = 'none';
+        checkErrorBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Show answers button functionality
+    if (showErrorAnswersBtn) {
+      showErrorAnswersBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
+        
+        inputs.forEach(input => {
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          input.value = correctAnswers[0]; // Show first correct answer
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+        });
+      });
+    }
+    
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle) {
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+      });
+    }
+  });
+  </script>
+</body>
+</html>

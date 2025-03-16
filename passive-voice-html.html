@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Passive Voice - Learn how to form and use passive voice in English">
+  <title>Passive Voice: Fundamentals - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      /* New dark theme variables for quiz sections */
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+      
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.previous::before {
+      content: "←";
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .nav-button.next::after {
+      content: "→";
+    }
+
+    .nav-button.activities {
+      background-color: var(--secondary-accent);
+    }
+
+    .nav-button.activities:hover {
+      background-color: #e06d2e;
+    }
+
+    /* MCQ Styles */
+    .mcq-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    .mcq-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .mcq-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mcq-option:hover {
+      background-color: var(--mcq-hover-bg);
+    }
+
+    .mcq-option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+    }
+
+    .mcq-option.correct {
+      border-color: var(--success-bg);
+      background-color: var(--success-bg);
+      color: var(--success-color);
+    }
+
+    .mcq-option.incorrect {
+      border-color: var(--error-bg);
+      background-color: var(--error-bg);
+      color: var(--error-color);
+    }
+
+    .mcq-feedback {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Gap Fill Styles */
+    .gap-fill-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    .gap-input {
+      border: 2px solid var(--gap-input-border);
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0 5px;
+      width: 120px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .gap-input.correct {
+      border-color: var(--success-bg);
+      background-color: var(--success-bg);
+      color: var(--success-color);
+    }
+
+    .gap-input.incorrect {
+      border-color: var(--error-bg);
+      background-color: var(--error-bg);
+      color: var(--error-color);
+    }
+
+    .gap-sentence {
+      margin-bottom: 15px;
+      line-height: 2;
+    }
+
+    .activity-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .check-button, .retry-button, .show-answers-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .check-button {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .check-button:hover {
+      background-color: #2980b9;
+    }
+
+    .retry-button {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .retry-button:hover {
+      background-color: #5a6268;
+    }
+
+    .show-answers-button {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .show-answers-button:hover {
+      background-color: #e9ecef;
+    }
+
+    [data-theme="dark"] .show-answers-button:hover {
+      background-color: #2a2a2a;
+    }
+
+    .result-display {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      display: none;
+    }
+
+    .result-display.success {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+    }
+
+    .result-display.partial {
+      background-color: var(--partial-bg);
+      color: var(--partial-color);
+      border: 1px solid var(--partial-border);
+    }
+
+    .result-display.fail {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    /* Error patterns */
+    .error-pattern {
+      margin-bottom: 15px;
+      border-left: 3px solid var(--error-color);
+      padding-left: 15px;
+    }
+
+    .correct-pattern {
+      margin-bottom: 15px;
+      border-left: 3px solid var(--success-color);
+      padding-left: 15px;
+    }
+
+    .wrong {
+      color: var(--error-color);
+      text-decoration: line-through;
+    }
+
+    .right {
+      color: var(--success-color);
+      font-weight: 600;
+    }
+
+    /* Dialog examples */
+    .dialog {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    .dialog-speaker {
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+      /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+    
+    /* Make example class work consistently */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+    
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+    </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Passive Voice: Fundamentals</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Passive Voice: Fundamentals</h1>
+
+      <section class="intro-section">
+        <h2>Introduction</h2>
+        <p><strong>Passive Voice</strong> changes how we present information in English. Instead of focusing on who does an action, it focuses on what receives the action. Passive voice is commonly used in business emails, academic papers, and professional communication.</p>
+        
+        <p>Learning passive voice will help you:</p>
+        <ul>
+          <li>Write more formal and objective business communications</li>
+          <li>Focus on actions and results instead of who performed them</li>
+          <li>Create more varied and sophisticated sentences</li>
+        </ul>
+      </section>
+    </main>
+  
+      <section class="info-container">
+        <h2>Explanation</h2>
+        
+        <h3>Basic Definition</h3>
+        <p>Passive voice focuses on the receiver of an action rather than the doer. We use it when who did the action is unknown, unimportant, or when we want to emphasize what happened rather than who did it.</p>
+
+        <h3>Structure/Formation</h3>
+        <p><strong>Basic Formula:</strong> Subject + BE (in correct tense) + Past Participle (+ by + doer - optional)</p>
+
+        <p><strong>Active to Passive Transformation:</strong></p>
+
+        <div class="example">
+        ACTIVE:      Subject + Verb + Object
+               ↓        ↓       ↓
+        PASSIVE:     Object + BE + Past Participle (+ by + Subject)
+        </div>
+
+        <p>Example:</p>
+        <ul>
+          <li>Active: The chef (subject) prepared (verb) the meal (object).</li>
+          <li>Passive: The meal (now subject) <span class="example">was prepared</span> (BE + past participle) by the chef (by + doer).</li>
+        </ul>
+
+        <h3>Key Rules</h3>
+
+        <ol>
+          <li><strong>Only transitive verbs</strong> can be used in passive voice.
+           <p>Transitive verbs are verbs that take an object.
+           Examples: build, make, write, send, clean</p>
+           <p>✓ "The house <span class="example">was built</span> last year." (build is transitive)<br>
+           ✗ "The dog was slept in the garden." (sleep is intransitive)</p>
+          </li>
+
+          <li><strong>The object of the active sentence</strong> becomes the subject of the passive sentence.</li>
+
+          <li><strong>The main verb</strong> must always be in past participle form.</li>
+        </ol>
+
+        <h3>Usage Contexts</h3>
+
+        <ul>
+          <li><strong>When the doer is unknown</strong>: 
+            <div class="example">The window was broken during the night.</div>
+          </li>
+
+          <li><strong>When the doer is unimportant</strong>: 
+            <div class="example">The streets are cleaned every morning.</div>
+          </li>
+
+          <li><strong>To emphasize the receiver</strong>: 
+            <div class="example">Our proposal was accepted by the committee.</div>
+          </li>
+
+          <li><strong>In formal/academic/scientific writing</strong>: 
+            <div class="example">The experiment was conducted under controlled conditions.</div>
+          </li>
+
+          <li><strong>To sound more objective</strong>: 
+            <div class="example">It has been decided that the project will continue.</div>
+          </li>
+
+          <li><strong>To avoid mentioning responsibility</strong>: 
+            <div class="example">Mistakes were made in the calculation.</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="info-container">
+        <h2>Examples in Context</h2>
+        
+        <h3>Workplace Examples</h3>
+        <ul>
+          <li>"The report <span class="example">must be submitted</span> by Friday." (Rather than "You must submit the report")</li>
+          <li>"The new policy <span class="example">has been implemented</span> by management." (Focus on the policy)</li>
+          <li>"All emails <span class="example">should be checked</span> before being sent to clients." (General rule, no specific doer)</li>
+        </ul>
+
+        <h3>Daily Life Examples</h3>
+        <ul>
+          <li>"My car <span class="example">is being repaired</span> at the garage." (Focus on the car, not the mechanic)</li>
+          <li>"The package <span class="example">will be delivered</span> tomorrow." (The delivery person isn't important)</li>
+          <li>"English <span class="example">is spoken</span> in many countries." (General fact)</li>
+        </ul>
+
+        <h3>Academic/Formal Examples</h3>
+        <ul>
+          <li>"The data <span class="example">were collected</span> through surveys and interviews." (Scientific writing)</li>
+          <li>"It <span class="example">can be concluded</span> that the hypothesis is valid." (Academic writing)</li>
+          <li>"The cultural implications <span class="example">have been examined</span> in recent studies." (Research paper)</li>
+        </ul>
+
+        <h3>Dialogue Examples</h3>
+
+        <div class="dialog">
+          <p><strong>At work:</strong></p>
+          <p><span class="dialog-speaker">Manager:</span> "How's the Johnson project coming along?"</p>
+          <p><span class="dialog-speaker">Employee:</span> "The initial analysis <span class="example">has been completed</span>, and the results <span class="example">are being reviewed</span> by the team. The final report <span class="example">will be delivered</span> by next week."</p>
+        </div>
+
+        <div class="dialog">
+          <p><strong>At a hotel:</strong></p>
+          <p><span class="dialog-speaker">Guest:</span> "Is my room ready?"</p>
+          <p><span class="dialog-speaker">Receptionist:</span> "Yes, your room <span class="example">has been prepared</span>. Your luggage <span class="example">will be brought up</span> shortly."</p>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Common Errors</h2>
+          
+        <div class="error-pattern">
+          <p class="wrong">❌ "The book was wrote by Shakespeare."</p>
+          <p class="right">✅ "The book <span class="example">was written</span> by Shakespeare." (Use past participle)</p>
+        </div>
+
+        <div class="error-pattern">
+          <p class="wrong">❌ "It was decided from the committee."</p>
+          <p class="right">✅ "It was decided <span class="example">by</span> the committee." (Use "by" for the agent, not "from")</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="wrong">❌ "The new system is installing now."</p>
+          <p class="right">✅ "The new system <span class="example">is being installed</span> now." (Use being + past participle for continuous passive)</p>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Summary</h2>
+          
+        <h3>Key Points</h3>
+        <ul>
+          <li>Passive voice shifts focus from the doer to the receiver of an action.</li>
+          <li>Form: Subject + BE verb (in correct tense) + past participle (+ by + agent).</li>
+          <li>Use passive when the doer is unknown, unimportant, or to sound more formal/objective.</li>
+        </ul>
+
+        <h3>Active vs. Passive Forms</h3>
+
+        <table>
+          <tr>
+            <th>Tense</th>
+            <th>Active Structure</th>
+            <th>Passive Structure</th>
+          </tr>
+          <tr>
+            <td>Present Simple</td>
+            <td>They clean the office.</td>
+            <td>The office <span class="example">is cleaned</span> (by them).</td>
+          </tr>
+          <tr>
+            <td>Present Continuous</td>
+            <td>They are cleaning the office.</td>
+            <td>The office <span class="example">is being cleaned</span> (by them).</td>
+          </tr>
+          <tr>
+            <td>Past Simple</td>
+            <td>They cleaned the office.</td>
+            <td>The office <span class="example">was cleaned</span> (by them).</td>
+          </tr>
+          <tr>
+            <td>Past Continuous</td>
+            <td>They were cleaning the office.</td>
+            <td>The office <span class="example">was being cleaned</span> (by them).</td>
+          </tr>
+          <tr>
+            <td>Present Perfect</td>
+            <td>They have cleaned the office.</td>
+            <td>The office <span class="example">has been cleaned</span> (by them).</td>
+          </tr>
+          <tr>
+            <td>Past Perfect</td>
+            <td>They had cleaned the office.</td>
+            <td>The office <span class="example">had been cleaned</span> (by them).</td>
+          </tr>
+          <tr>
+            <td>Future Simple</td>
+            <td>They will clean the office.</td>
+            <td>The office <span class="example">will be cleaned</span> (by them).</td>
+          </tr>
+        </table>
+      </section>
+
+      <section class="tips">
+        <h2>Useful Tips</h2>
+        <ol>
+          <li><strong>Use passive voice less often in conversation</strong> - Too much passive can make speech sound overly formal. It's more common in writing than in casual speaking.</li>
+          
+          <li><strong>Pay attention to the preposition "by"</strong> - Only use "by" when you need to specify who did the action. In many cases, passive voice is used precisely to avoid mentioning who did something.</li>
+          
+          <li><strong>Notice passive voice in news and business communications</strong> - Look for examples in newspaper headlines, official announcements, and company emails.</li>
+        </ol>
+
+        <div class="example">
+          <p>📝 <strong>GRAMMAR TIP:</strong> When deciding between active and passive voice, ask yourself: "What is more important—who did the action, or what happened?" Use passive when the action itself or its recipient deserves the focus.</p>
+        </div>
+      </section>
+
+      <section class="mcq-container" id="mcq-activity-1">
+        <h2>Quick Practice</h2>
+        <h3>Activity 1: Multiple Choice</h3>
+        <p>Choose the correct passive form:</p>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">1. The documents _____ by the secretary yesterday.</p>
+          <div class="mcq-option" data-correct="true" data-explanation="'Were typed' is correct - we need 'be' (past tense) + past participle for past simple passive.">
+            <input type="radio" name="q1" id="q1a">
+            <label for="q1a">a) were typed</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Were typing' is incorrect - we need the past participle 'typed' not the present participle 'typing'.">
+            <input type="radio" name="q1" id="q1b">
+            <label for="q1b">b) were typing</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Was typed' is incorrect - 'documents' is plural, so we need 'were' not 'was'.">
+            <input type="radio" name="q1" id="q1c">
+            <label for="q1c">c) was typed</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Was typing' is incorrect - we need past participle 'typed' and 'were' for plural subject.">
+            <input type="radio" name="q1" id="q1d">
+            <label for="q1d">d) was typing</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">2. The new bridge _____ next year.</p>
+          <div class="mcq-option" data-correct="false" data-explanation="'Will built' is incorrect - missing 'be' before past participle.">
+            <input type="radio" name="q2" id="q2a">
+            <label for="q2a">a) will built</label>
+          </div>
+          <div class="mcq-option" data-correct="true" data-explanation="'Will be built' is correct - for future passive we need 'will be' + past participle.">
+            <input type="radio" name="q2" id="q2b">
+            <label for="q2b">b) will be built</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Will be build' is incorrect - 'build' is not the past participle, 'built' is.">
+            <input type="radio" name="q2" id="q2c">
+            <label for="q2c">c) will be build</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Will building' is incorrect - we need 'will be' + past participle.">
+            <input type="radio" name="q2" id="q2d">
+            <label for="q2d">d) will building</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">3. The report _____ yet.</p>
+          <div class="mcq-option" data-correct="true" data-explanation="'Hasn't been finished' is correct - for present perfect passive we need 'has/have + not + been + past participle'.">
+            <input type="radio" name="q3" id="q3a">
+            <label for="q3a">a) hasn't been finished</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Hasn't finished' is incorrect - this is active voice, not passive. We need 'been' for passive.">
+            <input type="radio" name="q3" id="q3b">
+            <label for="q3b">b) hasn't finished</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Haven't been finished' is incorrect - 'report' is singular, so we need 'hasn't', not 'haven't'.">
+            <input type="radio" name="q3" id="q3c">
+            <label for="q3c">c) haven't been finished</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Hasn't being finished' is incorrect - we need 'been' for past participle, not 'being'.">
+            <input type="radio" name="q3" id="q3d">
+            <label for="q3d">d) hasn't being finished</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">4. Coffee _____ in Brazil.</p>
+          <div class="mcq-option" data-correct="false" data-explanation="'Is grow' is incorrect - we need the past participle 'grown'.">
+            <input type="radio" name="q4" id="q4a">
+            <label for="q4a">a) is grow</label>
+          </div>
+          <div class="mcq-option" data-correct="true" data-explanation="'Is grown' is correct - for present simple passive we need 'is/are + past participle'.">
+            <input type="radio" name="q4" id="q4b">
+            <label for="q4b">b) is grown</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Is growing' is incorrect - this is present continuous active, not passive.">
+            <input type="radio" name="q4" id="q4c">
+            <label for="q4c">c) is growing</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Is growed' is incorrect - 'growed' is not the past participle of 'grow'; it's 'grown'.">
+            <input type="radio" name="q4" id="q4d">
+            <label for="q4d">d) is growed</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="mcq-question-group">
+          <p class="mcq-question">5. These computers _____ in Japan.</p>
+          <div class="mcq-option" data-correct="true" data-explanation="'Are made' is correct - plural subject requires 'are' + past participle.">
+            <input type="radio" name="q5" id="q5a">
+            <label for="q5a">a) are made</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Are making' is incorrect - this is present continuous active, not passive.">
+            <input type="radio" name="q5" id="q5b">
+            <label for="q5b">b) are making</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Is made' is incorrect - plural subject 'computers' requires 'are', not 'is'.">
+            <input type="radio" name="q5" id="q5c">
+            <label for="q5c">c) is made</label>
+          </div>
+          <div class="mcq-option" data-correct="false" data-explanation="'Is making' is incorrect - needs 'are' for plural subject and is active, not passive.">
+            <input type="radio" name="q5" id="q5d">
+            <label for="q5d">d) is making</label>
+          </div>
+          <div class="mcq-feedback"></div>
+        </div>
+        
+        <div class="result-display"></div>
+        
+        <div class="activity-controls">
+          <button class="check-button" id="check-mcq-1">Check Answers</button>
+          <button class="retry-button" id="retry-mcq-1" style="display: none;">Try Again</button>
+        </div>
+      </section>
+      
+      <section class="gap-fill-container" id="gap-fill-activity">
+        <h3>Activity 2: Fill-in-the-blank</h3>
+        <p>Complete these sentences using the passive form of the verbs in brackets:</p>
+        
+        <div class="gap-sentence">
+          1. The email ______________ (send) to all employees yesterday.
+          <input type="text" class="gap-input" data-correct="was sent">
+        </div>
+        
+        <div class="gap-sentence">
+          2. The office ______________ (clean) every evening.
+          <input type="text" class="gap-input" data-correct="is cleaned">
+        </div>
+        
+        <div class="gap-sentence">
+          3. The data ______________ (analyze) by our team right now.
+          <input type="text" class="gap-input" data-correct="is being analyzed|are being analyzed">
+        </div>
+        
+        <div class="gap-sentence">
+          4. The building ______________ (construct) last year.
+          <input type="text" class="gap-input" data-correct="was constructed">
+        </div>
+        
+        <div class="gap-sentence">
+          5. All the tickets ______________ (sell) before we arrived.
+          <input type="text" class="gap-input" data-correct="had been sold|were sold">
+        </div>
+        
+        <div class="result-display"></div>
+        
+        <div class="activity-controls">
+          <button class="check-button" id="check-gap-fill">Check Answers</button>
+          <button class="retry-button" id="retry-gap-fill" style="display: none;">Try Again</button>
+          <button class="show-answers-button" id="show-gap-fill-answers" style="display: none;">Show Answers</button>
+        </div>
+      </section>
+      
+      <section class="gap-fill-container" id="error-correction-activity">
+        <h3>Activity 3: Error Correction</h3>
+        <p>Find and correct the error in each sentence:</p>
+        
+        <div class="gap-sentence">
+          1. The letter wrote by the manager last week.<br>
+          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="the letter was written by the manager last week">
+        </div>
+        
+        <div class="gap-sentence">
+          2. My bike has stole from outside the office.<br>
+          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="my bike has been stolen from outside the office">
+        </div>
+        
+        <div class="gap-sentence">
+          3. The new system is installing now.<br>
+          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="the new system is being installed now">
+        </div>
+        
+        <div class="result-display"></div>
+        
+        <div class="activity-controls">
+          <button class="check-button" id="check-error-correction">Check Answers</button>
+          <button class="retry-button" id="retry-error-correction" style="display: none;">Try Again</button>
+          <button class="show-answers-button" id="show-error-answers" style="display: none;">Show Answers</button>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Extension and Practice</h2>
+        
+        <p><a href="passive-voice-advanced.html">Link to Passive Voice: Advanced Uses lesson</a></p>
+
+        <h3>Related Topics</h3>
+        <ul>
+          <li><a href="modal-passive.html">Modal Verbs with Passive Voice</a></li>
+          <li><a href="causatives.html">Causative Structures (have/get something done)</a></li>
+        </ul>
+      </section>
+
+     
+    </main>
+    
+  </div>
+  <nav class="bottom-navigation">
+    <a href="tenses-advanced.html" class="nav-button previous">← Previous: Advanced Tenses</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+      <a href="passive-voice-activities.html" class="nav-button activities">Extra Activities</a>
+    </div>
+    <a href="passive-voice-advanced.html" class="nav-button next">Next: Advanced Passive Voice →</a>
+  </nav>
+
+  <script>
+  // Theme toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    
+    // Handle theme toggle click
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    
+    // MCQ Activities functionality
+    const checkMcqBtn = document.getElementById('check-mcq-1');
+    const retryMcqBtn = document.getElementById('retry-mcq-1');
+    const resultDisplay = document.querySelector('#mcq-activity-1 .result-display');
+    
+    if (checkMcqBtn) {
+      checkMcqBtn.addEventListener('click', function() {
+        let correct = 0;
+        const total = document.querySelectorAll('.mcq-question-group').length;
+        
+        // Check each question
+        document.querySelectorAll('.mcq-question-group').forEach(group => {
+          const selectedOption = group.querySelector('input:checked');
+          
+          if (selectedOption) {
+            const option = selectedOption.parentElement;
+            const isCorrect = option.getAttribute('data-correct') === 'true';
+            const feedback = option.getAttribute('data-explanation');
+            
+            // Reset previous classes
+            group.querySelectorAll('.mcq-option').forEach(opt => {
+              opt.classList.remove('correct', 'incorrect');
+            });
+            
+            // Add appropriate class based on answer
+            if (isCorrect) {
+              option.classList.add('correct');
+              correct++;
+            } else {
+              option.classList.add('incorrect');
+              // Also highlight correct answer
+              group.querySelector('.mcq-option[data-correct="true"]').classList.add('correct');
+            }
+            
+            // Show feedback
+            const feedbackDiv = group.querySelector('.mcq-feedback');
+            feedbackDiv.textContent = feedback;
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.className = 'mcq-feedback ' + (isCorrect ? 'success' : 'fail');
+          }
+        });
+        
+        // Show overall result
+        resultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
+        resultDisplay.style.display = 'block';
+        resultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
+        
+        // Show retry button
+        checkMcqBtn.style.display = 'none';
+        retryMcqBtn.style.display = 'block';
+      });
+    }
+    
+    // Retry button functionality
+    if (retryMcqBtn) {
+      retryMcqBtn.addEventListener('click', function() {
+        // Reset all options and feedback
+        document.querySelectorAll('.mcq-option').forEach(option => {
+          option.classList.remove('correct', 'incorrect');
+        });
+        
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+          radio.checked = false;
+        });
+        
+        document.querySelectorAll('.mcq-feedback').forEach(feedback => {
+          feedback.style.display = 'none';
+        });
+        
+        // Hide result and retry button, show check button
+        resultDisplay.style.display = 'none';
+        retryMcqBtn.style.display = 'none';
+        checkMcqBtn.style.display = 'block';
+      });
+    }
+    
+    // Gap Fill Activities functionality
+    const checkGapBtn = document.getElementById('check-gap-fill');
+    const retryGapBtn = document.getElementById('retry-gap-fill');
+    const showAnswersBtn = document.getElementById('show-gap-fill-answers');
+    const gapResultDisplay = document.querySelector('#gap-fill-activity .result-display');
+    
+    if (checkGapBtn) {
+      checkGapBtn.addEventListener('click', function() {
+        let correct = 0;
+        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
+        const total = inputs.length;
+        
+        inputs.forEach(input => {
+          // Reset previous classes
+          input.classList.remove('correct', 'incorrect');
+          
+          // Get the correct answers (may be multiple options separated by |)
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          const userAnswer = input.value.trim().toLowerCase();
+          
+          // Check if the user's answer matches any of the correct options
+          const isCorrect = correctAnswers.some(answer => 
+            userAnswer === answer.trim().toLowerCase()
+          );
+          
+          if (isCorrect) {
+            input.classList.add('correct');
+            correct++;
+          } else {
+            input.classList.add('incorrect');
+          }
+        });
+        
+        // Show overall result
+        gapResultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
+        gapResultDisplay.style.display = 'block';
+        gapResultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
+        
+        // Show retry and show answers buttons
+        checkGapBtn.style.display = 'none';
+        retryGapBtn.style.display = 'inline-block';
+        showAnswersBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Retry button functionality
+    if (retryGapBtn) {
+      retryGapBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
+        
+        inputs.forEach(input => {
+          input.classList.remove('correct', 'incorrect');
+          input.value = '';
+        });
+        
+        // Hide result and buttons, show check button
+        gapResultDisplay.style.display = 'none';
+        retryGapBtn.style.display = 'none';
+        showAnswersBtn.style.display = 'none';
+        checkGapBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Show answers button functionality
+    if (showAnswersBtn) {
+      showAnswersBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
+        
+        inputs.forEach(input => {
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          input.value = correctAnswers[0]; // Show first correct answer
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+        });
+      });
+    }
+    
+    // Error Correction Activities functionality
+    const checkErrorBtn = document.getElementById('check-error-correction');
+    const retryErrorBtn = document.getElementById('retry-error-correction');
+    const showErrorAnswersBtn = document.getElementById('show-error-answers');
+    const errorResultDisplay = document.querySelector('#error-correction-activity .result-display');
+    
+    if (checkErrorBtn) {
+      checkErrorBtn.addEventListener('click', function() {
+        let correct = 0;
+        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
+        const total = inputs.length;
+        
+        inputs.forEach(input => {
+          // Reset previous classes
+          input.classList.remove('correct', 'incorrect');
+          
+          // Get the correct answers (may be multiple options separated by |)
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          const userAnswer = input.value.trim().toLowerCase();
+          
+          // Check if the user's answer matches any of the correct options
+          const isCorrect = correctAnswers.some(answer => 
+            userAnswer === answer.trim().toLowerCase()
+          );
+          
+          if (isCorrect) {
+            input.classList.add('correct');
+            correct++;
+          } else {
+            input.classList.add('incorrect');
+          }
+        });
+        
+        // Show overall result
+        errorResultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
+        errorResultDisplay.style.display = 'block';
+        errorResultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
+        
+        // Show retry and show answers buttons
+        checkErrorBtn.style.display = 'none';
+        retryErrorBtn.style.display = 'inline-block';
+        showErrorAnswersBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Retry button functionality
+    if (retryErrorBtn) {
+      retryErrorBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
+        
+        inputs.forEach(input => {
+          input.classList.remove('correct', 'incorrect');
+          input.value = '';
+        });
+        
+        // Hide result and buttons, show check button
+        errorResultDisplay.style.display = 'none';
+        retryErrorBtn.style.display = 'none';
+        showErrorAnswersBtn.style.display = 'none';
+        checkErrorBtn.style.display = 'inline-block';
+      });
+    }
+    
+    // Show answers button functionality
+    if (showErrorAnswersBtn) {
+      showErrorAnswersBtn.addEventListener('click', function() {
+        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
+        
+        inputs.forEach(input => {
+          const correctAnswers = input.getAttribute('data-correct').split('|');
+          input.value = correctAnswers[0]; // Show first correct answer
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+        });
+      });
+    }
+    
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle) {
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+      });
+    }
+  });
+  </script>
+</body>
+</html>
+      
