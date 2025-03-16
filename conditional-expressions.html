@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Conditional Expressions - Learn how to use unless, provided that, as long as and other conditional expressions in English">
+  <title>Conditional Expressions: Unless, Provided That, As Long As - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      /* Dark theme variables for quiz sections */
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .nav-button.activities {
+      background-color: var(--secondary-accent);
+    }
+
+    .nav-button.activities:hover {
+      background-color: #e06d2e;
+    }
+
+    /* MCQ Styles */
+    .mcq-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    .mcq-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .mcq-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mcq-option:hover {
+      background-color: var(--mcq-hover-bg);
+    }
+
+    .mcq-option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+    }
+
+    .mcq-option.correct {
+      border-color: var(--success-bg);
+      background-color: var(--success-bg);
+      color: var(--success-color);
+    }
+
+    .mcq-option.incorrect {
+      border-color: var(--error-bg);
+      background-color: var(--error-bg);
+      color: var(--error-color);
+    }
+
+    .mcq-feedback {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Quiz Styles */
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .option:hover {
+      background-color: var(--mcq-hover-bg);
+    }
+    
+    .feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+    }
+    
+    .feedback.incorrect {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+    }
+    
+    .selected {
+      border: 2px solid var(--mcq-selected-border);
+      font-weight: bold;
+    }
+    
+    .score-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      display: none;
+    }
+    
+    .restart-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 15px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
+    .restart-btn:hover {
+      background-color: #2980b9;
+    }
+
+    /* Conversation Styles */
+    .conversation-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .conversation-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      border-left: 3px solid var(--accent-color);
+    }
+    
+    .conversation-title {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+    
+    .grammar-example {
+      font-weight: bold;
+      color: var(--accent-color);
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    /* Error patterns */
+    .error-pattern {
+      margin-bottom: 15px;
+      border-left: 3px solid var(--error-color);
+      padding-left: 15px;
+    }
+
+    .wrong {
+      color: var(--error-color);
+      text-decoration: line-through;
+    }
+
+    .right {
+      color: var(--success-color);
+      font-weight: 600;
+    }
+
+    /* Gap Fill Styles */
+    .gap-fill-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+      /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+    
+    /* Make example class work consistently */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+    
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+    
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Conditional Expressions: Unless, Provided That, As Long As</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Conditional Expressions:<br> Unless, Provided That, As Long As</h1>
+
+      <section class="intro-section">
+        <h2>Introduction</h2>
+        <p><strong>Conditional expressions</strong> show that one action depends on another. In English, we use words like <strong>unless, provided that, and as long as</strong> to talk about conditions. These words help us explain rules, requirements, and restrictions in daily life, work, and travel.</p>
+      </section>
+  
+      
+        
+        
+        <div class="conditional-type">
+          <h2>Explanation</h2>
+          <h3>Unless = <em>If not</em></h3>
+          <p><strong>Meaning:</strong> We use <strong>unless</strong> to introduce a condition that prevents something from happening. It is similar to <em>if not</em>.</p>
+          <p><strong>Structure:</strong> <strong>Unless + present/simple past</strong>, <strong>main clause</strong></p>
+          <p><strong>Examples:</strong></p>
+          <div class="example">
+            <p>✅ <em>Unless you study, you will fail the exam.</em> (= If you don't study, you will fail.)</p>
+            <p>✅ <em>I won't go unless she invites me.</em> (= If she doesn't invite me, I won't go.)</p>
+            <p>✅ <em>You can't enter unless you have a ticket.</em> (= If you don't have a ticket, you can't enter.)</p>
+          </div>
+        </div>
+        
+        <div class="conditional-type">
+          <h3>Provided That = <em>Only if</em></h3>
+          <p><strong>Meaning:</strong> We use <strong>provided that</strong> to say that something will happen <strong>only if</strong> a condition is met. It is often used in formal or business situations.</p>
+          <p><strong>Structure:</strong> <strong>Main clause + provided that + condition</strong></p>
+          <p><strong>Examples:</strong></p>
+          <div class="example">
+            <p>✅ <em>You can leave early provided that you finish your work.</em> (= You can leave only if you finish your work.)</p>
+            <p>✅ <em>We will lend you the money provided that you pay it back next month.</em> (= Only if you pay it back next month, we will lend you the money.)</p>
+            <p>✅ <em>You can stay here provided that you don't make too much noise.</em> (= Only if you don't make noise, you can stay here.)</p>
+          </div>
+        </div>
+        
+        <div class="conditional-type">
+          <h3>As Long As = <em>If / On the condition that</em></h3>
+          <p><strong>Meaning:</strong> <strong>As long as</strong> is used to say that something will happen <strong>if</strong> a condition is met. It is similar to <em>provided that</em> but more informal.</p>
+          <p><strong>Structure:</strong> <strong>Main clause + as long as + condition</strong></p>
+          <p><strong>Examples:</strong></p>
+          <div class="example">
+            <p>✅ <em>You can borrow my car as long as you drive carefully.</em> (= You can borrow my car if you drive carefully.)</p>
+            <p>✅ <em>I'll be happy as long as I have coffee in the morning.</em> (= If I have coffee in the morning, I'll be happy.)</p>
+            <p>✅ <em>You can stay out late as long as you call me.</em> (= If you call me, you can stay out late.)</p>
+          </div>
+        </div>
+      
+      <section class="info-container">
+        <h2>Summary Table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Expression</th>
+              <th>Meaning</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Unless</strong></td>
+              <td>If not</td>
+              <td><span class="example">Unless it rains, we will go to the beach.</span></td>
+            </tr>
+            <tr>
+              <td><strong>Provided that</strong></td>
+              <td>Only if</td>
+              <td><span class="example">I'll sign the contract provided that you accept the terms.</span></td>
+            </tr>
+            <tr>
+              <td><strong>As long as</strong></td>
+              <td>If / On the condition that</td>
+              <td><span class="example">I will help you as long as you listen to me.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="info-container">
+        <h2>Common Errors & How to Avoid Them</h2>
+        
+        <div class="error-pattern">
+          <p class="wrong">❌ <span class="example">Unless you will call me, I won't come.</span></p>
+          <p class="right">✅ <span class="example">Unless you call me, I won't come.</span> (Don't use <strong>will</strong> after unless.)</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="wrong">❌ <span class="example">Provided that he will arrive on time, we can start.</span></p>
+          <p class="right">✅ <span class="example">Provided that he arrives on time, we can start.</span> (No <strong>will</strong> after provided that.)</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="wrong">❌ <span class="example">You can go as long as if you finish your work.</span></p>
+          <p class="right">✅ <span class="example">You can go as long as you finish your work.</span> (Don't use <strong>if</strong> with as long as.)</p>
+        </div>
+      </section>
+      
+      <section class="tips">
+        <h2>Useful Tips</h2>
+        <ol>
+          <li><strong>Think in simple conditions</strong> – Before speaking or writing, ask yourself: <em>Am I talking about a rule (provided that), a flexible condition (as long as), or a negative condition (unless)?</em></li>
+          
+          <li><strong>Practice with real situations</strong> – Imagine workplace or travel scenarios where these expressions are useful. Example: <span class="example">I will book the hotel provided that the price is good.</span></li>
+          
+          <li><strong>Look for them in real English</strong> – Pay attention when reading news, emails, or contracts. You'll see these phrases often in conditions and agreements.</li>
+        </ol>
+      </section>
+
+      <section class="mcq-container">
+        <h2>Test Your Knowledge</h2>
+        <div class="question" id="q1">
+          <p class="mcq-question">1. Complete the sentence: "You can borrow my laptop ________ you return it tomorrow."</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q1', 0)">
+              <span>A. unless</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 1)">
+              <span>B. as long as</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 2)">
+              <span>C. provided that if</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q1-0">
+            Incorrect. "Unless" means "if not," so this would mean "You can borrow my laptop if you don't return it tomorrow," which doesn't make sense.
+          </div>
+          <div class="feedback" id="feedback-q1-1">
+            Correct! "As long as" is perfect here to set a condition for borrowing the laptop.
+          </div>
+          <div class="feedback" id="feedback-q1-2">
+            Incorrect. We don't use "if" with "provided that" - it would be just "provided that."
+          </div>
+        </div>
+        
+        <div class="question" id="q2">
+          <p class="mcq-question">2. Which sentence is INCORRECT?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q2', 0)">
+              <span>A. Unless it rains, we'll have a picnic tomorrow.</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 1)">
+              <span>B. You can stay here provided that you'll be quiet.</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 2)">
+              <span>C. I'll help you as long as you listen to my instructions.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q2-0">
+            This is correct usage of "unless."
+          </div>
+          <div class="feedback" id="feedback-q2-1">
+            Correct answer! This is incorrect because we don't use "will" after "provided that." It should be "provided that you are quiet."
+          </div>
+          <div class="feedback" id="feedback-q2-2">
+            This is correct usage of "as long as."
+          </div>
+        </div>
+        
+        <div class="question" id="q3">
+          <p class="mcq-question">3. "__________ he apologizes, I won't speak to him again." Which is the best option?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q3', 0)">
+              <span>A. Unless</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 1)">
+              <span>B. As long as</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 2)">
+              <span>C. Provided that</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q3-0">
+            Correct! "Unless" is perfect here, meaning "If he doesn't apologize, I won't speak to him again."
+          </div>
+          <div class="feedback" id="feedback-q3-1">
+            Incorrect. "As long as" would mean you won't speak to him while he continues to apologize, which doesn't make sense in this context.
+          </div>
+          <div class="feedback" id="feedback-q3-2">
+            Incorrect. "Provided that" would suggest that not speaking to him is conditional on him apologizing, which is the opposite of what we want to express.
+          </div>
+        </div>
+        
+        <div class="score-display" id="score-display">
+          Your score: <span id="score">0</span>/3
+        </div>
+        
+        <button class="restart-btn" onclick="restartQuiz()" style="display:none;" id="restart-btn">Try Again</button>
+      </section>
+      
+      
+        <h2>Conversation Starters</h2>
+        <p>Here are some questions to practice using these conditional expressions in natural conversation:</p>
+        
+        <ol class="conversation-list">
+          <li class="conversation-item">
+            <h3 class="conversation-title">Travel Plans</h3>
+            <p class="conversation-description">"What would be your dream vacation destination, and what conditions would need to be met for you to go there?" (Use <span class="grammar-example">provided that</span>, <span class="grammar-example">as long as</span>, <span class="grammar-example">unless</span>)</p>
+          </li>
+          
+          <li class="conversation-item">
+            <h3 class="conversation-title">Work/Study Rules</h3>
+            <p class="conversation-description">"What are some conditions your boss/teacher sets for you? For example, can you work from home <span class="grammar-example">as long as</span>...?"</p>
+          </li>
+          
+          <li class="conversation-item">
+            <h3 class="conversation-title">Setting Boundaries</h3>
+            <p class="conversation-description">"When lending things to friends or family, what conditions do you usually set? Would you lend your car <span class="grammar-example">provided that</span>...?"</p>
+          </li>
+          
+          <li class="conversation-item">
+            <h3 class="conversation-title">Negotiating</h3>
+            <p class="conversation-description">"Let's practice negotiating a rental agreement. What conditions would you set as a landlord or expect as a tenant?"</p>
+          </li>
+          
+          <li class="conversation-item">
+            <h3 class="conversation-title">Future Plans</h3>
+            <p class="conversation-description">"What are your plans for next year? Will those plans change <span class="grammar-example">unless</span> certain things happen?"</p>
+          </li>
+        </ol>
+    </main>
+  </div>
+  
+  <nav class="bottom-navigation">
+    <a href="conditionals-with-quiz.html" class="nav-button previous">← Previous: Conditionals</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+      <a href="conditional-expressions-activities.html" class="nav-button activities">Extra Activities</a>
+    </div>
+    <a href="wish-regrets.html" class="nav-button next">Next: Wish & Regrets →</a>
+  </nav>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+      
+      // Handle theme toggle click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+    
+    // Quiz functionality
+    let score = 0;
+    const totalQuestions = 3;
+    const correctAnswers = {
+      'q1': 1,
+      'q2': 1,
+      'q3': 0
+    };
+    const answered = {
+      'q1': false,
+      'q2': false,
+      'q3': false
+    };
+    
+    function selectOption(questionId, optionIndex) {
+      if (answered[questionId]) return;
+      
+      const question = document.getElementById(questionId);
+      const options = question.getElementsByClassName('option');
+      
+      // Clear previous selections
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Select the current option
+      options[optionIndex].classList.add('selected');
+      
+      // Show feedback
+      const feedbackId = `feedback-${questionId}-${optionIndex}`;
+      const feedback = document.getElementById(feedbackId);
+      
+      if (feedback) {
+        feedback.style.display = 'block';
+        
+        if (optionIndex === correctAnswers[questionId]) {
+          feedback.classList.add('correct');
+          score++;
+        } else {
+          feedback.classList.add('incorrect');
+        }
+      }
+      
+      answered[questionId] = true;
+      
+      // Check if all questions are answered
+      checkCompletion();
+    }
+    
+    function checkCompletion() {
+      let allAnswered = true;
+      for (const q in answered) {
+        if (!answered[q]) {
+          allAnswered = false;
+          break;
+        }
+      }
+      
+      if (allAnswered) {
+        // Show the score
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.style.display = 'block';
+        document.getElementById('score').textContent = score;
+        
+        // Show the restart button
+        document.getElementById('restart-btn').style.display = 'block';
+      }
+    }
+    
+    function restartQuiz() {
+      // Reset score
+      score = 0;
+      
+      // Reset answered status
+      for (const q in answered) {
+        answered[q] = false;
+      }
+      
+      // Hide all feedback
+      const feedbacks = document.getElementsByClassName('feedback');
+      for (let i = 0; i < feedbacks.length; i++) {
+        feedbacks[i].style.display = 'none';
+        feedbacks[i].classList.remove('correct', 'incorrect');
+      }
+      
+      // Remove selected class
+      const options = document.getElementsByClassName('option');
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Hide score and restart button
+      document.getElementById('score-display').style.display = 'none';
+      document.getElementById('restart-btn').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
