@@ -1,335 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced ESL Grammar Course</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
-        
-        h2 {
-            color: #2c3e50;
-            font-family: 'Montserrat', sans-serif;
-            border-bottom: 2px solid #3498db;
-            display: inline;
-        }
-        
-        h3 {
-            color: #2c3e50;
-            font-family: 'Montserrat', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar Course - Comprehensive lessons for improving your English grammar skills">
+  <title>Advanced ESL Grammar Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
 
-        h1 {
-            background-color: #1B263B;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            padding: 20px;
-            padding-left: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-        }
-        
-        .example {
-            font-family: 'Source Code Pro', monospace;
-        }
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+    }
 
-        .conditional-type {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border-left: 5px solid #3498db;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-        }
-        
-        .intro-section {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            border-left: 5px solid #3498db;
-        }
-        
-        .module {
-            margin-bottom: 25px;
-        }
-        
-        .module h3 {
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .module ul {
-            margin-left: 20px;
-        }
-        
-        .module li {
-            margin-bottom: 8px;
-        }
-        
-        footer {
-            font-style: italic;
-            color: #666;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-        }
-        
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #ddd;
-            margin: 25px 0;
-        }
-        
-        .course-index {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 30px;
-        }
-    </style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    .example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Section styling */
+    .info-container, .module, .intro-section, .course-index {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Module styling */
+    .module {
+      margin-bottom: 25px;
+      box-shadow: 0 2px 4px var(--shadow-color);
+    }
+
+    .module h3 {
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .module ul {
+      margin-left: 20px;
+      padding-left: 0;
+    }
+
+    .module li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+    }
+
+    footer {
+      font-style: italic;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Override any specific width settings */
+    section, div.container, .info-container, .module, .intro-section, 
+    .tips, .course-index {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+
+    /* Module-specific styling for the index page */
+    .course-index {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Navigation button for getting started */
+    .get-started-btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin-top: 15px;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .get-started-btn:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
-    <h1>Advanced ESL Grammar Course</h1>
-    
-    <p>Welcome to the Advanced English Grammar Course for adult ESL learners. This course is designed to help you deepen your understanding of advanced grammar and refine your ability to express yourself clearly and confidently in English. Each module builds on your existing knowledge, guiding you through more complex structures and helping you become a more fluent, sophisticated user of the language.</p>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <section class="intro-section">
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <main id="main-content">
+      <h1>Advanced ESL Grammar Course</h1>
+      
+      <p>Welcome to the Advanced English Grammar Course for adult ESL learners. This course is designed to help you deepen your understanding of advanced grammar and refine your ability to express yourself clearly and confidently in English. Each module builds on your existing knowledge, guiding you through more complex structures and helping you become a more fluent, sophisticated user of the language.</p>
+
+      <section class="intro-section">
         <h2>How to Use This Course</h2>
         <ul>
-            <li>Each topic contains detailed explanations, examples, and practical exercises.</li>
-            <li>Complete the modules in order or focus on specific areas you wish to improve.</li>
-            <li>Practice exercises are available at the end of each section.</li>
-            <li>Regular assessments will help track your progress.</li>
-            <li>Extra resources and lessons are available.</li>
+          <li>Each topic contains detailed explanations, examples, and practical exercises.</li>
+          <li>Complete the modules in order or focus on specific areas you wish to improve.</li>
+          <li>Practice exercises are available at the end of each section.</li>
+          <li>Regular assessments will help track your progress.</li>
+          <li>Extra resources and lessons are available.</li>
         </ul>
-    </section>
+      </section>
 
-    <section class="intro-section">
+      <section class="intro-section">
         <h2>Course Structure</h2>
         <p>Each topic includes:</p>
         <ol>
-            <li><strong>Introduction</strong> - Overview of the grammatical concept.</li>
-            <li><strong>Explanation</strong> - Structure, use and exceptions.</li>
-            <li><strong>Examples</strong> - Authentic usage in various contexts.</li>
-            <li><strong>Common Errors</strong> - Typical mistakes and how to avoid them.</li>
-            <li><strong>Practice Exercises</strong> - Test your knowledge!</li>
-            <li><strong>Useful tips and advice</strong> - Extra tips about how to learn and use the grammar.</li>
+          <li><strong>Introduction</strong> - Overview of the grammatical concept.</li>
+          <li><strong>Explanation</strong> - Structure, use and exceptions.</li>
+          <li><strong>Examples</strong> - Authentic usage in various contexts.</li>
+          <li><strong>Common Errors</strong> - Typical mistakes and how to avoid them.</li>
+          <li><strong>Practice Exercises</strong> - Test your knowledge!</li>
+          <li><strong>Useful tips and advice</strong> - Extra tips about how to learn and use the grammar.</li>
         </ol>
-    </section>
+      </section>
 
-    <hr>
+      <hr>
 
-    <section class="course-index">
-        <h2>Course Index</h2>
+      <h2>Course Index</h2>
 
         <div class="module">
-            <h3>1. Advanced Tenses and Aspect</h3>
-            <ul>
-                <li>Present Perfect Progressive vs. Present Perfect Simple</li>
-                <li>Past Perfect Progressive vs. Past Perfect</li>
-                <li>Future Perfect vs. Future Perfect Continuous</li>
-                <li>Mixed Time Frames with Perfect Tenses</li>
-                <li>Advanced Uses of Present Perfect</li>
-                <li>Perfect Infinitives and Perfect Gerunds</li>
-                <li>Narrative Tenses (Past Perfect, Past Simple, Past Continuous)</li>
-            </ul>
+          <h3>1. Advanced Tenses and Aspect</h3>
+          <ul>
+            <li>Present Perfect Progressive vs. Present Perfect Simple</li>
+            <li>Past Perfect Progressive vs. Past Perfect</li>
+            <li>Future Perfect vs. Future Perfect Continuous</li>
+            <li>Mixed Time Frames with Perfect Tenses</li>
+            <li>Advanced Uses of Present Perfect</li>
+            <li>Perfect Infinitives and Perfect Gerunds</li>
+            <li>Narrative Tenses (Past Perfect, Past Simple, Past Continuous)</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>2. Conditionals and Hypotheticals</h3>
-            <ul>
-                <li><a href="conditionals-quiz">Zero, First, Second, Third, and Mixed Conditionals</a></li>
-                <li>Inverted Conditionals (e.g., "Had I known...")</li>
-                <li><a href="conditional-expressions-page">Conditional Expressions (Unless, Provided that, As long as)</a></li>
-                <li>Wish, If only, and Would rather for regret and desire</li>
-            </ul>
+          <h3>2. Conditionals and Hypotheticals</h3>
+          <ul>
+            <li><a href="conditionals-with-quiz.html">Zero, First, Second, Third, and Mixed Conditionals</a></li>
+            <li><a href="inverted-conditionals-with-quiz.html">Inverted Conditionals (e.g., "Had I known...")</a></li>
+            <li><a href="conditional-expressions-full-explanation.html">Conditional Expressions (Unless, Provided that, As long as)</a></li>
+            <li>Wish, If only, and Would rather for regret and desire</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>3. Modality</h3>
-            <ul>
-                <li>Modal Perfect Forms (must have been, could have done)</li>
-                <li>Modal Progressive Forms (must be doing, should be working)</li>
-                <li>Subtle Differences Between Similar Modals (might vs. may vs. could)</li>
-                <li>Advanced Modal Meanings (reproach, criticism, probability)</li>
-                <li>Mixed Modal Constructions</li>
-            </ul>
+          <h3>3. Modality</h3>
+          <ul>
+            <li><a href="modal-perfect-for-past.html">Modal Perfect Forms (must have been, could have done)</a></li>
+            <li>Modal Progressive Forms (must be doing, should be working)</li>
+            <li>Subtle Differences Between Similar Modals (might vs. may vs. could)</li>
+            <li>Advanced Modal Meanings (reproach, criticism, probability)</li>
+            <li>Mixed Modal Constructions</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>4. Passive Voice</h3>
-            <ul>
-                <li>Basic Passive Structures (Present and Past)</li>
-                <li>Advanced Passive Constructions with Get and Have</li>
-                <li>Passive Infinitives and Gerunds</li>
-                <li>Passive Reporting Verbs (is thought to be, is said to have)</li>
-                <li>Complex Passive Causatives (have/get something done)</li>
-                <li>Double Passive Constructions</li>
-            </ul>
+          <h3>4. Passive Voice</h3>
+          <ul>
+            <li><a href="passive-voice-html.html">Passive Voice: Fundamentals</a></li>
+            <li>Advanced Passive Constructions with Get and Have</li>
+            <li>Passive Infinitives and Gerunds</li>
+            <li>Passive Reporting Verbs (is thought to be, is said to have)</li>
+            <li>Complex Passive Causatives (have/get something done)</li>
+            <li>Double Passive Constructions</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>5. Complex Sentence Structures</h3>
-            <ul>
-                <li>Relative Clauses (Defining, Non-Defining, with Prepositions, Reduced)</li>
-                <li>Nominal Clauses</li>
-                <li>Subjunctive Mood (Present, Past, Future)</li>
-                <li>Inversion for Emphasis (after negative adverbials, in conditionals)</li>
-                <li>Cleft Sentences (It is/was... that/who)</li>
-                <li>Participle Clauses (Present and Past)</li>
-            </ul>
+          <h3>5. Complex Sentence Structures</h3>
+          <ul>
+            <li>Relative Clauses (Defining, Non-Defining, with Prepositions, Reduced)</li>
+            <li>Nominal Clauses</li>
+            <li>Subjunctive Mood (Present, Past, Future)</li>
+            <li>Inversion for Emphasis (after negative adverbials, in conditionals)</li>
+            <li>Cleft Sentences (It is/was... that/who)</li>
+            <li>Participle Clauses (Present and Past)</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>6. Verb Patterns & Complementation</h3>
-            <ul>
-                <li>Verbs Followed by Gerund vs. Infinitive (with meaning changes)</li>
-                <li>Complex Infinitive Structures</li>
-                <li>Causative Verbs (make, let, have, get, help)</li>
-                <li>Advanced Reporting Verbs and Their Patterns</li>
-            </ul>
+          <h3>6. Verb Patterns & Complementation</h3>
+          <ul>
+            <li>Verbs Followed by Gerund vs. Infinitive (with meaning changes)</li>
+            <li>Complex Infinitive Structures</li>
+            <li>Causative Verbs (make, let, have, get, help)</li>
+            <li>Advanced Reporting Verbs and Their Patterns</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>7. Adverbials & Prepositional Phrases</h3>
-            <ul>
-                <li>Adverb Position and Multiple Adverbs</li>
-                <li>Complex Prepositional Phrases</li>
-                <li>Dependent Prepositions with Verbs, Nouns, and Adjectives</li>
-                <li>Focusing Adverbs and Adverbials</li>
-                <li>Comment Adverbs and Attitude Markers</li>
-            </ul>
+          <h3>7. Adverbials & Prepositional Phrases</h3>
+          <ul>
+            <li>Adverb Position and Multiple Adverbs</li>
+            <li>Complex Prepositional Phrases</li>
+            <li>Dependent Prepositions with Verbs, Nouns, and Adjectives</li>
+            <li>Focusing Adverbs and Adverbials</li>
+            <li>Comment Adverbs and Attitude Markers</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>8. Noun Phrases & Articles</h3>
-            <ul>
-                <li>Complex Noun Phrases with Multiple Modifiers</li>
-                <li>Article Usage in Academic and Formal Writing</li>
-                <li>Generic vs. Specific Reference with Articles</li>
-                <li>Nominalization in Academic Writing</li>
-                <li>Quantifiers with Uncountable and Abstract Nouns</li>
-            </ul>
+          <h3>8. Noun Phrases & Articles</h3>
+          <ul>
+            <li>Complex Noun Phrases with Multiple Modifiers</li>
+            <li>Article Usage in Academic and Formal Writing</li>
+            <li>Generic vs. Specific Reference with Articles</li>
+            <li>Nominalization in Academic Writing</li>
+            <li>Quantifiers with Uncountable and Abstract Nouns</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>9. Advanced Modifiers</h3>
-            <ul>
-                <li>Gradability and Ungradability of Adjectives</li>
-                <li>Compound and Complex Adjectives</li>
-                <li>Adjective Order and Multiple Adjectives</li>
-                <li>Intensifiers and Downtoners</li>
-                <li>Advanced Comparative and Superlative Structures</li>
-            </ul>
+          <h3>9. Advanced Modifiers</h3>
+          <ul>
+            <li>Gradability and Ungradability of Adjectives</li>
+            <li>Compound and Complex Adjectives</li>
+            <li>Adjective Order and Multiple Adjectives</li>
+            <li>Intensifiers and Downtoners</li>
+            <li>Advanced Comparative and Superlative Structures</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>10. Discourse & Cohesion</h3>
-            <ul>
-                <li>Advanced Discourse Markers and Linking Words</li>
-                <li>Ellipsis and Substitution</li>
-                <li>Reference Devices and Text Cohesion</li>
-                <li>Thematic Progression and Information Structure</li>
-                <li>Cohesive Devices in Academic Writing</li>
-            </ul>
+          <h3>10. Discourse & Cohesion</h3>
+          <ul>
+            <li>Advanced Discourse Markers and Linking Words</li>
+            <li>Ellipsis and Substitution</li>
+            <li>Reference Devices and Text Cohesion</li>
+            <li>Thematic Progression and Information Structure</li>
+            <li>Cohesive Devices in Academic Writing</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>11. Special Structures & Expressions</h3>
-            <ul>
-                <li>Emphatic Structures (do, does, did)</li>
-                <li>Tag Questions (including irregular forms)</li>
-                <li>Echo Questions and Question Tags</li>
-                <li>Fronting and Focusing Devices</li>
-                <li>Hedging Devices and Tentative Language</li>
-            </ul>
+          <h3>11. Special Structures & Expressions</h3>
+          <ul>
+            <li>Emphatic Structures (do, does, did)</li>
+            <li>Tag Questions (including irregular forms)</li>
+            <li>Echo Questions and Question Tags</li>
+            <li>Fronting and Focusing Devices</li>
+            <li>Hedging Devices and Tentative Language</li>
+          </ul>
         </div>
 
         <div class="module">
-            <h3>12. Register & Style</h3>
-            <ul>
-                <li>Formal vs. Informal Grammar Structures</li>
-                <li>Academic Writing Conventions</li>
-                <li>Literary and Rhetorical Devices</li>
-                <li>Idiomatic and Figurative Language</li>
-                <li>Style Shifting and Genre Appropriate Grammar</li>
-            </ul>
+          <h3>12. Register & Style</h3>
+          <ul>
+            <li>Formal vs. Informal Grammar Structures</li>
+            <li>Academic Writing Conventions</li>
+            <li>Literary and Rhetorical Devices</li>
+            <li>Idiomatic and Figurative Language</li>
+            <li>Style Shifting and Genre Appropriate Grammar</li>
+          </ul>
         </div>
-    </section>
 
-    <hr>
+      <hr>
 
-    <section class="intro-section">
+      <section class="intro-section">
         <h2>Getting Started</h2>
         <p>Begin with module one to follow the full structure of the course, or simply skip ahead to the specific grammar rule you are looking for. Make sure you complete the practice activities. For further practice and explanations book a private conversation lesson tailored specifically to your needs.</p>
-    </section>
+        <a href="advanced-tenses.html" class="get-started-btn">Begin with Advanced Tenses →</a>
+      </section>
 
-    <section class="intro-section">
+      <section class="intro-section">
         <h2>Learning Objectives</h2>
         <p>By the end of this course, you will be able to:</p>
         <ul>
-            <li>Recognize and correctly use advanced grammatical structures.</li>
-            <li>Express complex ideas with precision and nuance.</li>
-            <li>Understand the subtle differences between similar grammatical constructions.</li>
-            <li>Use advanced grammar correctly in real life situations.</li>
+          <li>Recognize and correctly use advanced grammatical structures.</li>
+          <li>Express complex ideas with precision and nuance.</li>
+          <li>Understand the subtle differences between similar grammatical constructions.</li>
+          <li>Use advanced grammar correctly in real life situations.</li>
         </ul>
-    </section>
+      </section>
 
-    <section class="intro-section">
+      <section class="intro-section">
         <h2>Assessment</h2>
         <p>Your progress will be assessed through:</p>
         <ul>
-            <li>Ongoing practice exercises</li>
-            <li>End-of-module quizzes</li>
-            <br>
-            <li><strong>Extra Assessments Include:</strong>
-                <ul>
-                    <li>Speaking assessments focused on specific grammar rules.</li>
-                    <li>Written assessments to check full understanding of the grammar.</li>
-                </ul>
-            </li>
+          <li>Ongoing practice exercises</li>
+          <li>End-of-module quizzes</li>
+          <li><strong>Extra Assessments Include:</strong></li>
+          <ul>
+            <li>Speaking assessments focused on specific grammar rules.</li>
+            <li>Written assessments to check full understanding of the grammar.</li>
+          </ul>
         </ul>
-    </section>
+      </section>
+    </main>
+  </div>
+  
+  <footer>
+    <p>© 2025 Advanced ESL Grammar Course | All rights reserved</p>
+  </footer>
 
-    <hr>
-    <footer>
-        <p>*Get started with Advanced Tenses and Aspect*</p>
-    </footer>
+  <script>
+  // Theme toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    
+    // Handle theme toggle click
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle) {
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+      });
+    }
+  });
+  </script>
 </body>
 </html>
