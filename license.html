@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Licensing information for Advanced ESL Grammar Course">
+  <title>Licensing Information - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      /* Dark theme variables for quiz sections */
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .license-badge {
+      margin: 15px 0;
+      display: block;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link removed -->
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Licensing Information</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Licensing Information</h1>
+
+      <section class="intro-section">
+        <h2>Content License</h2>
+        <p>All educational content on this website is © 2025 [Your Name].</p>
+        
+        <div class="license-badge">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+            </a>
+        </div>
+        
+        <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+      </section>
+  
+      <section class="conditional-type">
+        <h2>What This License Means</h2>
+        <p><strong>You may:</strong></p>
+        <ul>
+          <li>Share — use this material in your classroom or for educational purposes</li>
+          <li>Adapt — print or save copies for educational use</li>
+        </ul>
+        
+        <p><strong>Under these conditions:</strong></p>
+        <ul>
+          <li><strong>Attribution</strong> — You must give appropriate credit to [Your Name] as the creator, provide a link to this website, and indicate if changes were made.</li>
+          <li><strong>NonCommercial</strong> — You may not use this material for commercial purposes without permission.</li>
+        </ul>
+        
+        <p><strong>You may not:</strong></p>
+        <ul>
+          <li>Claim this content as your own creation</li>
+          <li>Sell access to these materials</li>
+          <li>Redistribute these materials on another website without permission</li>
+        </ul>
+      </section>
+
+      <section class="info-container">
+        <h2>Website Code License</h2>
+        <p>The HTML, CSS, and JavaScript code powering this website is © 2025 [Your Name].</p>
+        <p>All rights reserved.</p>
+      </section>
+
+      <section class="intro-section">
+        <h2>Requesting Permission</h2>
+        <p>If you would like to use these materials in a way not covered by the license above, please contact me for permission. I'm happy to discuss additional usage options for educational purposes.</p>
+      </section>
+
+      <section class="conditional-type">
+        <h2>Third-Party Resources</h2>
+        <p>This website uses the following third-party resources:</p>
+        <ul>
+          <li><strong>Google Fonts</strong> (Montserrat, Open Sans, Source Code Pro) - Used under the <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" target="_blank">SIL Open Font License</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  
+  <nav class="bottom-navigation">
+    <a href="index.html" class="nav-button previous">← Return to Home</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+    </div>
+  </nav>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Handle theme toggle click - without localStorage
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        // Removed localStorage.setItem to avoid security errors
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
