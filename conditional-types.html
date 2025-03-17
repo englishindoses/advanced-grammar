@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Conditional Sentences - Learn how to use zero, first, second, third, and mixed conditionals in English">
+  <title>Conditional Sentences: Types and Usage - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      /* Dark theme variables for quiz sections */
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .nav-button.activities {
+      background-color: var(--secondary-accent);
+    }
+
+    .nav-button.activities:hover {
+      background-color: #e06d2e;
+    }
+
+    /* MCQ Container Styles */
+    .mcq-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    /* Individual question blocks */
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Question text */
+    .mcq-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Container for all options */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    /* Individual option buttons */
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    /* Hover effect for options */
+    .option:hover {
+      background-color: var(--mcq-hover-bg);
+      transform: translateY(-1px);
+    }
+
+    /* Selected state for options */
+    .option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+      font-weight: bold;
+    }
+
+    /* Feedback area */
+    .feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Correct answer styling */
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+    }
+
+    /* Incorrect answer styling */
+    .feedback.incorrect {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+    }
+
+    /* Score display */
+    .score-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      display: none;
+    }
+
+    /* Restart button */
+    .restart-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 15px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .restart-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul, .example ol {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Conditional Sentences: Types and Usage</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Conditional Sentences: Types and Usage</h1>
+
+      <section class="intro-section">
+        <h2>Introduction</h2>
+        <p>Conditional sentences express situations and their possible results. Let's explore the five main types: Zero, First, Second, Third, and Mixed Conditionals.</p>
+      </section>
+  
+      <section class="conditional-type">
+        <h2>Zero Conditional</h2>
+        <p><strong>Use</strong>: For general truths, scientific facts, and situations that are always true.</p>
+        <p><strong>Structure</strong>:</p>
+        <ul>
+          <li>If + present simple, present simple</li>
+          <li>When/Whenever + present simple, present simple</li>
+        </ul>
+        <p><strong>Examples</strong>:</p>
+        <div class="example">
+          <ol>
+            <li>If you heat water to 100°C, it boils.</li>
+            <li>When students practice regularly, they improve faster.</li>
+            <li>If people don't drink water, they become dehydrated.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <h2>First Conditional</h2>
+        <p><strong>Use</strong>: For possible future situations and their likely results.</p>
+        <p><strong>Structure</strong>: If + present simple, will/may/might/can + verb</p>
+        <p><strong>Examples</strong>:</p>
+        <div class="example">
+          <ol>
+            <li>If it rains tomorrow, we'll cancel the picnic.</li>
+            <li>If you study hard, you will pass the exam.</li>
+            <li>If she arrives late, she might miss the opening speech.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <h2>Second Conditional</h2>
+        <p><strong>Use</strong>: For hypothetical or unlikely present/future situations.</p>
+        <p><strong>Structure</strong>: If + past simple, would/could/might + verb</p>
+        <p><strong>Examples</strong>:</p>
+        <div class="example">
+          <ol>
+            <li>If I won the lottery, I would travel around the world.</li>
+            <li>If she spoke Chinese, she could get that job in Shanghai.</li>
+            <li>If we had more time, we might visit the museum.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <h2>Third Conditional</h2>
+        <p><strong>Use</strong>: For hypothetical situations in the past (things that didn't happen) and their imaginary results.</p>
+        <p><strong>Structure</strong>: If + past perfect, would/could/might + have + past participle</p>
+        <p><strong>Examples</strong>:</p>
+        <div class="example">
+          <ol>
+            <li>If I had studied harder, I would have passed the exam.</li>
+            <li>If they had left earlier, they wouldn't have missed the train.</li>
+            <li>If she had known about the problem, she could have helped you.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <h2>Mixed Conditionals</h2>
+        <p><strong>Use</strong>: For mixing time references - typically past condition with present result, or present condition with past result.</p>
+        <p><strong>Structure</strong>:</p>
+        <ul>
+          <li>Past → Present: If + past perfect, would/could/might + verb</li>
+          <li>Present → Past: If + past simple, would/could/might + have + past participle</li>
+        </ul>
+        <p><strong>Examples</strong>:</p>
+        <div class="example">
+          <ol>
+            <li>If I had chosen a different career, I would be happier now. (Past condition → Present result)</li>
+            <li>If I were more organized, I wouldn't have missed the deadline yesterday. (Present condition → Past result)</li>
+            <li>If they hadn't moved to Australia, we would still see them regularly. (Past condition → Present result)</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Visual Comparison of Conditionals</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>If Clause</th>
+              <th>Main Clause</th>
+              <th>Time Reference</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zero</td>
+              <td>Present Simple</td>
+              <td>Present Simple</td>
+              <td>General time/always true</td>
+              <td><span class="example">If you mix red and blue, you get purple.</span></td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Present Simple</td>
+              <td>Will/Can/May + verb</td>
+              <td>Future</td>
+              <td><span class="example">If I finish work early, I'll call you.</span></td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td>Past Simple</td>
+              <td>Would/Could/Might + verb</td>
+              <td>Present/Future hypothetical</td>
+              <td><span class="example">If I had more time, I would learn Italian.</span></td>
+            </tr>
+            <tr>
+              <td>Third</td>
+              <td>Past Perfect</td>
+              <td>Would/Could/Might + have + past participle</td>
+              <td>Past hypothetical</td>
+              <td><span class="example">If I had saved money, I could have bought that house.</span></td>
+            </tr>
+            <tr>
+              <td>Mixed (Past→Present)</td>
+              <td>Past Perfect</td>
+              <td>Would/Could/Might + verb</td>
+              <td>Past condition, Present result</td>
+              <td><span class="example">If I had studied medicine, I would be a doctor now.</span></td>
+            </tr>
+            <tr>
+              <td>Mixed (Present→Past)</td>
+              <td>Past Simple</td>
+              <td>Would/Could/Might + have + past participle</td>
+              <td>Present condition, Past result</td>
+              <td><span class="example">If I were more careful, I wouldn't have made that mistake.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="mcq-container">
+        <h2>Test Your Knowledge</h2>
+        <p>Test your understanding of conditional sentences by selecting the correct option for each question.</p>
+        
+        <div class="question" id="q1">
+          <p class="mcq-question">1. If water _____ to 0°C, it freezes.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q1', 0)">
+              <span>A. freezes</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 1)">
+              <span>B. will freeze</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 2)">
+              <span>C. froze</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 3)">
+              <span>D. is frozen</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q1-0">
+            Zero conditional for scientific facts requires present simple in both clauses.
+          </div>
+          <div class="feedback" id="feedback-q1-1">
+            Incorrect. We use present simple, not future with "will" in the zero conditional for scientific facts.
+          </div>
+          <div class="feedback" id="feedback-q1-2">
+            Incorrect. We use present simple, not past simple in the zero conditional for scientific facts.
+          </div>
+          <div class="feedback" id="feedback-q1-3">
+            Incorrect. We use active present simple, not passive voice in this zero conditional for scientific facts.
+          </div>
+        </div>
+        
+        <div class="question" id="q2">
+          <p class="mcq-question">2. If I _____ the lottery tomorrow, I would quit my job.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q2', 0)">
+              <span>A. win</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 1)">
+              <span>B. will win</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 2)">
+              <span>C. won</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 3)">
+              <span>D. had won</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q2-0">
+            Incorrect. We use past simple, not present simple, in the second conditional for unlikely future events.
+          </div>
+          <div class="feedback" id="feedback-q2-1">
+            Incorrect. We don't use "will" in the if-clause of second conditionals.
+          </div>
+          <div class="feedback" id="feedback-q2-2">
+            Correct! Second conditional for unlikely future situations uses past simple in the if-clause.
+          </div>
+          <div class="feedback" id="feedback-q2-3">
+            Incorrect. We use past simple, not past perfect, in the second conditional for unlikely future events.
+          </div>
+        </div>
+        
+        <div class="question" id="q3">
+          <p class="mcq-question">3. If she _____ to the party last night, she would have met my brother.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q3', 0)">
+              <span>A. came</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 1)">
+              <span>B. comes</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 2)">
+              <span>C. would come</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 3)">
+              <span>D. had come</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q3-0">
+            Incorrect. We use past perfect, not past simple, in the third conditional for past hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q3-1">
+            Incorrect. We use past perfect, not present simple, in the third conditional for past hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q3-2">
+            Incorrect. We don't use modals in the if-clause of third conditionals.
+          </div>
+          <div class="feedback" id="feedback-q3-3">
+            Correct! Third conditional for past hypothetical situations uses past perfect in the if-clause.
+          </div>
+        </div>
+        
+        <div class="question" id="q4">
+          <p class="mcq-question">4. _____ she study harder, she will pass the exam.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q4', 0)">
+              <span>A. Should</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 1)">
+              <span>B. Would</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 2)">
+              <span>C. Will</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 3)">
+              <span>D. Might</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q4-0">
+            Correct! This is a first conditional using 'should' to express a condition.
+          </div>
+          <div class="feedback" id="feedback-q4-1">
+            Incorrect. 'Would' is used in second and third conditionals, not first conditionals.
+          </div>
+          <div class="feedback" id="feedback-q4-2">
+            Incorrect. 'Will' shouldn't be used in conditional clauses.
+          </div>
+          <div class="feedback" id="feedback-q4-3">
+            Incorrect. 'Might' expresses possibility but isn't used to start conditional clauses.
+          </div>
+        </div>
+        
+        <div class="question" id="q5">
+          <p class="mcq-question">5. If I were the CEO, I _____ the company differently.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q5', 0)">
+              <span>A. will manage</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 1)">
+              <span>B. would manage</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 2)">
+              <span>C. would have managed</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 3)">
+              <span>D. managed</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q5-0">
+            Incorrect. 'Will' is used in first conditionals, not second conditionals.
+          </div>
+          <div class="feedback" id="feedback-q5-1">
+            Correct! Second conditional with 'would' in the main clause for present hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q5-2">
+            Incorrect. 'Would have managed' would be used in third or mixed conditionals, not second conditionals.
+          </div>
+          <div class="feedback" id="feedback-q5-3">
+            Incorrect. 'Managed' is simple past, but we need a modal verb in the second conditional result clause.
+          </div>
+        </div>
+        
+        <div class="question" id="q6">
+          <p class="mcq-question">6. If you hadn't helped me, I _____ able to finish on time.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q6', 0)">
+              <span>A. wouldn't be</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 1)">
+              <span>B. won't be</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 2)">
+              <span>C. wouldn't have been</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 3)">
+              <span>D. hadn't been</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q6-0">
+            Incorrect. 'Wouldn't be' would be used for a present result, but this sentence refers to a past situation.
+          </div>
+          <div class="feedback" id="feedback-q6-1">
+            Incorrect. 'Won't be' is used for future predictions, not past hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q6-2">
+            Correct! Third conditional with 'would have + past participle' in the main clause for past hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q6-3">
+            Incorrect. 'Hadn't been' would create a double negative with the if-clause, which isn't the correct structure.
+          </div>
+        </div>
+        
+        <div class="question" id="q7">
+          <p class="mcq-question">7. Ice melts if you _____ it.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q7', 0)">
+              <span>A. will heat</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 1)">
+              <span>B. heat</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 2)">
+              <span>C. would heat</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 3)">
+              <span>D. heated</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q7-0">
+            Incorrect. We don't use 'will' in if-clauses for zero conditionals about scientific facts.
+          </div>
+          <div class="feedback" id="feedback-q7-1">
+            Correct! Zero conditional uses present simple in both clauses for general truths.
+          </div>
+          <div class="feedback" id="feedback-q7-2">
+            Incorrect. 'Would heat' is used in hypothetical situations, not general truths.
+          </div>
+          <div class="feedback" id="feedback-q7-3">
+            Incorrect. Past simple is used for second conditionals, not zero conditionals.
+          </div>
+        </div>
+        
+        <div class="question" id="q8">
+          <p class="mcq-question">8. If I _____ rich, I would be traveling right now instead of working.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q8', 0)">
+              <span>A. am</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 1)">
+              <span>B. will be</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 2)">
+              <span>C. were</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 3)">
+              <span>D. had been</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q8-0">
+            Incorrect. Present simple 'am' would be used in first conditionals, not second conditionals.
+          </div>
+          <div class="feedback" id="feedback-q8-1">
+            Incorrect. 'Will be' isn't used in if-clauses of conditionals.
+          </div>
+          <div class="feedback" id="feedback-q8-2">
+            Correct! Second conditional uses past simple in the if-clause for present hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q8-3">
+            Incorrect. 'Had been' (past perfect) would be used in third conditionals for past hypothetical situations.
+          </div>
+        </div>
+        
+        <div class="question" id="q9">
+          <p class="mcq-question">9. If Mark _____ the directions, he wouldn't be lost now.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q9', 0)">
+              <span>A. followed</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 1)">
+              <span>B. had followed</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 2)">
+              <span>C. follows</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 3)">
+              <span>D. would follow</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q9-0">
+            Incorrect. Simple past 'followed' doesn't express the past condition correctly in this mixed conditional.
+          </div>
+          <div class="feedback" id="feedback-q9-1">
+            Correct! Mixed conditional: past condition (had followed) with present result (wouldn't be lost now).
+          </div>
+          <div class="feedback" id="feedback-q9-2">
+            Incorrect. Present simple 'follows' would be used in a first conditional, not a mixed conditional.
+          </div>
+          <div class="feedback" id="feedback-q9-3">
+            Incorrect. 'Would follow' isn't used in if-clauses.
+          </div>
+        </div>
+        
+        <div class="question" id="q10">
+          <p class="mcq-question">10. I would have attended the conference if I _____ about it earlier.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q10', 0)">
+              <span>A. know</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 1)">
+              <span>B. knew</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 2)">
+              <span>C. had known</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 3)">
+              <span>D. would know</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q10-0">
+            Incorrect. Present simple 'know' doesn't work in third conditionals.
+          </div>
+          <div class="feedback" id="feedback-q10-1">
+            Incorrect. Simple past 'knew' would be used in second conditionals, not third conditionals.
+          </div>
+          <div class="feedback" id="feedback-q10-2">
+            Correct! Third conditional uses past perfect in the if-clause for past hypothetical situations.
+          </div>
+          <div class="feedback" id="feedback-q10-3">
+            Incorrect. Modal verbs like 'would' aren't used in if-clauses.
+          </div>
+        </div>
+        
+        <div class="score-display" id="score-display">
+          Your score: <span id="score">0</span>/10
+        </div>
+        
+        <button class="restart-btn" id="restart-btn" style="display:none;">Try Again</button>
+      </section>
+
+      <section class="tips">
+        <h2>Useful Tips</h2>
+        <ol>
+          <li><strong>Pay attention to the time frame</strong> - This is the key to choosing the right conditional form. Is it always true (zero), likely future (first), unlikely/impossible present (second), or past regret (third)?</li>
+          
+          <li><strong>Watch your verb tenses</strong> - Remember that we use present simple in first conditionals and past simple in second conditionals, even though we're talking about the future.</li>
+          
+          <li><strong>Never use 'will' in if-clauses</strong> - This is a common mistake. 'Will' only appears in the result clause of first conditionals.</li>
+        </ol>
+
+        <div class="example">
+          <p>📝 <strong>GRAMMAR TIP:</strong> To remember the order of conditionals, think about how likely the condition is: zero (100% - scientific fact), first (probable future), second (improbable present/future), third (impossible past).</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <nav class="bottom-navigation">
+    <a href="tenses-advanced.html" class="nav-button previous">← Previous: Advanced Tenses</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+      <a href="conditionals-activities.html" class="nav-button activities">Extra Activities</a>
+    </div>
+    <a href="conditional-expressions.html" class="nav-button next">Next: Conditional Expressions →</a>
+  </nav>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Handle theme toggle click - without localStorage
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        // Removed localStorage.setItem to avoid security errors
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+    
+    // Quiz functionality
+    let score = 0;
+    const totalQuestions = 10;
+    const correctAnswers = {
+      'q1': 0,  // freezes
+      'q2': 2,  // won
+      'q3': 3,  // had come
+      'q4': 0,  // Should
+      'q5': 1,  // would manage
+      'q6': 2,  // wouldn't have been
+      'q7': 1,  // heat
+      'q8': 2,  // were
+      'q9': 1,  // had followed
+      'q10': 2  // had known
+    };
+    const answered = {
+      'q1': false,
+      'q2': false,
+      'q3': false,
+      'q4': false,
+      'q5': false,
+      'q6': false,
+      'q7': false,
+      'q8': false,
+      'q9': false,
+      'q10': false
+    };
+    
+    function selectOption(questionId, optionIndex) {
+      if (answered[questionId]) return;
+      
+      const question = document.getElementById(questionId);
+      const options = question.getElementsByClassName('option');
+      
+      // Clear previous selections
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Select the current option
+      options[optionIndex].classList.add('selected');
+      
+      // Show feedback
+      const feedbackId = `feedback-${questionId}-${optionIndex}`;
+      const feedback = document.getElementById(feedbackId);
+      
+      if (feedback) {
+        feedback.style.display = 'block';
+        
+        if (optionIndex === correctAnswers[questionId]) {
+          feedback.classList.add('correct');
+          score++;
+        } else {
+          feedback.classList.add('incorrect');
+        }
+      }
+      
+      answered[questionId] = true;
+      
+      // Check if all questions are answered
+      checkCompletion();
+    }
+    
+    function checkCompletion() {
+      let allAnswered = true;
+      for (const q in answered) {
+        if (!answered[q]) {
+          allAnswered = false;
+          break;
+        }
+      }
+      
+      if (allAnswered) {
+        // Show the score
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.style.display = 'block';
+        document.getElementById('score').textContent = score;
+        
+        // Show the restart button
+        document.getElementById('restart-btn').style.display = 'block';
+      }
+    }
+    
+    // Restart quiz
+    document.getElementById('restart-btn').addEventListener('click', function() {
+      // Reset score
+      score = 0;
+      
+      // Reset answered status
+      for (const q in answered) {
+        answered[q] = false;
+      }
+      
+      // Hide all feedback
+      const feedbacks = document.getElementsByClassName('feedback');
+      for (let i = 0; i < feedbacks.length; i++) {
+        feedbacks[i].style.display = 'none';
+        feedbacks[i].classList.remove('correct', 'incorrect');
+      }
+      
+      // Remove selected class
+      const options = document.getElementsByClassName('option');
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Hide score and restart button
+      document.getElementById('score-display').style.display = 'none';
+      document.getElementById('restart-btn').style.display = 'none';
+      
+      // Scroll back to top of quiz
+      document.querySelector('.mcq-container').scrollIntoView({behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>
