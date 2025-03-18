@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Advanced ESL Grammar: Learn how to use wish, if only, and would rather to express regrets, desires, and preferences in English">
+  <meta name="description" content="Advanced ESL Grammar: Learn how to use wish, if only, and would rather to express regrets and desires in English">
   <title>Wish, If Only, and Would Rather: Expressing Regrets and Desires - Advanced ESL Grammar</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
   <style>
@@ -123,7 +123,7 @@
     }
 
     /* Fix for sections having proper spacing */
-    .info-container, .grammar-point, .intro-section, .tips, .mcq-container, .gap-fill-container, .common-errors {
+    .info-container, .conditional-type, .intro-section, .mcq-container, .gap-fill-container {
       background-color: var(--card-bg);
       padding: 15px;
       border-radius: 5px;
@@ -136,36 +136,12 @@
       margin-right: auto;
     }
 
-    .common-errors {
-      border-left: 5px solid #dc3545;
-    }
-
-    .incorrect {
-      color: var(--error-color);
-      text-decoration: line-through;
-    }
-
-    .correct {
-      color: var(--success-color);
-      font-weight: bold;
-    }
-
-    .error-pattern {
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .error-pattern:last-child {
-      border-bottom: none;
-    }
-
     .tips {
-      background-color: var(--card-bg);
+      background-color: transparent;
       padding: 15px;
       border-radius: 5px;
       margin: 20px 0;
-      border-left: 5px solid var(--secondary-accent);
+      border-left: none;
     }
     
     /* Change tips section h2 underline to orange */
@@ -500,7 +476,7 @@
     .theme-toggle-container {
       position: absolute;
       top: 15px;
-      right: 15px;
+      right: 80px;
       z-index: 100;
     }
 
@@ -548,53 +524,120 @@
       transform: rotate(-90deg);
     }
 
-    /* Production practice */
+    /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+
+    /* Note for native speaker informal usage */
+    .note {
+      background-color: rgba(240, 240, 240, 0.6);
+      padding: 15px 15px 15px 40px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      position: relative;
+    }
+
+    .note:before {
+      content: "💬";
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      font-size: 1.2em;
+    }
+
+    [data-theme="dark"] .note {
+      background-color: rgba(60, 60, 60, 0.6);
+    }
+
+    /* Updated Common Errors section */
+    .error-title {
+      margin-bottom: 5px;
+    }
+
+    .incorrect {
+      color: var(--error-color);
+      text-decoration: line-through;
+      margin: 5px 0;
+    }
+
+    .correct {
+      color: var(--success-color);
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .explanation {
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    /* Updated Grammar Tips */
+    .grammar-tip {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--secondary-accent);
+    }
+
+    /* Making sure the example sentences with brackets stand out */
+    .example ol li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Grammar point section styling */
+    .grammar-point {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+    }
+
+    /* Common errors section styling */
+    .common-errors {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+    }
+
+    /* Error pattern styling */
+    .error-pattern {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Sentence building practice styling */
     .production-practice {
       background-color: var(--card-bg);
-      padding: 20px;
+      padding: 15px;
       border-radius: 5px;
-      margin: 30px 0;
-      border-left: 5px solid var(--secondary-accent);
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
     }
 
     .sentence-builder {
       margin-bottom: 25px;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
       border-bottom: 1px solid var(--border-color);
-    }
-
-    .sentence-builder:last-child {
-      border-bottom: none;
-    }
-
-    .practice-input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-family: 'Open Sans', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    .check-btn {
-      background-color: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: 'Open Sans', sans-serif;
-    }
-
-    .check-btn:hover {
-      background-color: #2980b9;
-    }
-
-    .practice-feedback {
-      margin-top: 10px;
-      min-height: 20px;
     }
 
     .hints {
@@ -602,16 +645,51 @@
       padding: 10px;
       border-radius: 4px;
       margin: 10px 0;
-      font-size: 0.9em;
     }
 
-    /* Grammar tip */
-    .grammar-tip {
-      background-color: var(--example-bg);
+    .practice-input {
+      width: 100%;
       padding: 10px;
+      border: 1px solid var(--border-color);
       border-radius: 4px;
-      margin-top: 15px;
-      border-left: 3px solid var(--secondary-accent);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 10px 0;
+      resize: vertical;
+    }
+
+    .check-btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .check-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .practice-feedback {
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    footer {
+      font-style: italic;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Responsive styles */
@@ -699,8 +777,6 @@
       <span class="breadcrumb-separator">›</span>
       <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
       <span class="breadcrumb-separator">›</span>
-      <span class="breadcrumb-item"><a href="conditionals.html">Conditionals and Hypotheticals</a></span>
-      <span class="breadcrumb-separator">›</span>
       <span class="breadcrumb-item">Wish, If Only, and Would Rather</span>
     </div>
 
@@ -709,172 +785,135 @@
 
       <section class="intro-section">
         <h2>Introduction</h2>
-        <p>This lesson explores three powerful structures in English that allow you to express regrets about the present and past, wishes for different situations, and preferences between options. These expressions are essential for conveying nuanced feelings and hypothetical thinking in both professional and personal conversations.</p>
+        <p>These structures allow English speakers to talk about situations they want to change or hypothetical scenarios they desire. Understanding how to use "wish," "if only," and "would rather" helps you express regrets about the past, things you want to change in the present, and hopes for the future in a natural way.</p>
         
-        <p>You will frequently use these structures when discussing career choices, personal decisions, and when giving advice or feedback to others.</p>
+        <p>In professional settings, social situations, and academic contexts, these structures are frequently used to discuss preferences, share feelings about decisions, and negotiate politely with others.</p>
         
         <h3>After this lesson, you will be able to:</h3>
         <ul>
-          <li>Express regrets about present and past situations using "wish" and "if only"</li>
-          <li>Talk about desires for things to be different using appropriate verb tenses</li>
-          <li>Express preferences between options using "would rather"</li>
-          <li>Use these structures correctly in conversations and writing</li>
+          <li>Express regrets about past situations using "wish" and "if only."</li>
+          <li>Talk about things you want to change in the present using appropriate verb forms.</li>
+          <li>Use "would rather" to express preferences in different time frames.</li>
         </ul>
       </section>
 
       <section class="grammar-point">
-        <h2>Using "Wish" for Present and Past Situations</h2>
+        <h2>Explanation</h2>
         
-        <p><strong>Use</strong>: "Wish" expresses regret or desire for situations that are not real. It's used when we want something to be different from what it actually is (present) or was (past).</p>
+        <p><strong>Using "wish" and "if only" for present situations</strong>: We use these structures to talk about things we want to be different now.</p>
+        
+        <p><strong>Structure</strong>: wish/if only + past simple (or "could" + base verb)</p>
+        
+        <div class="example">
+          <ol>
+            <li>I wish I spoke better English. (I don't speak English well now.)</li>
+            <li>She wishes she had more time to exercise. (She doesn't have enough time now.)</li>
+            <li>If only the weather were warmer today. (The weather is cold now.)</li>
+            <li>I wish I could swim. (I can't swim now.)</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> In informal situations, native speakers sometimes say: "I wish I was taller" instead of the grammatically correct "I wish I were taller."</p>
+        </div>
+      </section>
+
+      <section class="grammar-point">
+        <p><strong>Using "wish" and "if only" for past regrets</strong>: We use these structures to express regret about past situations that cannot be changed.</p>
+        
+        <p><strong>Structure</strong>: wish/if only + past perfect (had + past participle)</p>
+        
+        <div class="example">
+          <ol>
+            <li>I wish I had studied harder for the exam. (I didn't study hard enough.)</li>
+            <li>If only I had arrived earlier, I would have met your parents. (I arrived late and missed them.)</li>
+            <li>She wishes she had taken that job offer last year. (She didn't take the job.)</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> You might hear native speakers say: "I wish I never went there" in casual conversation, when the grammatically correct form would be "I wish I had never gone there."</p>
+        </div>
+      </section>
+
+      <section class="grammar-point">
+        <p><strong>Using "would rather" for preferences</strong>: We use this structure to express preferences between two or more options.</p>
         
         <p><strong>Structure</strong>:</p>
         <ul>
-          <li>Present situations: wish + subject + past simple/continuous</li>
-          <li>Past situations: wish + subject + past perfect</li>
-          <li>Future situations: wish + subject + would/could + verb</li>
+          <li>would rather + base verb (for present/future)<br>
+          Example: I would rather work from home. (This is my preference now.)</li>
+          <li>would rather + have + past participle (for past)<br>
+          Example: She would rather have gone to the beach. (This was her preference then.)</li>
         </ul>
         
         <div class="example">
           <ol>
-            <li>I wish I spoke better French. It would help me communicate with our international clients.</li>
-            <li>She wishes she had more free time to spend with her family.</li>
-            <li>The students wish they could access the online library from home.</li>
+            <li>I would rather work from home than commute to the office. (This is my preference.)</li>
+            <li>She would rather have gone to the conference herself. (This was her preference in the past.)</li>
+            <li>Would you rather meet on Tuesday or Wednesday? (Which day do you prefer?)</li>
           </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> In casual speech, native speakers often contract "would rather" to "I'd rather" or even just "rather" in quick speech.<br>
+          Example: "I'd rather stay home" or "Rather stay home than go out tonight."</p>
         </div>
       </section>
 
-      <section class="grammar-point">
-        <h2>Using "If Only" for Stronger Regrets and Desires</h2>
-        
-        <p><strong>Use</strong>: "If only" works the same way as "wish" but expresses stronger emotions, often indicating a sense of regret, longing, or desire for something that isn't possible or likely.</p>
-        
-        <p><strong>Structure</strong>:</p>
-        <ul>
-          <li>Present situations: if only + subject + past simple/continuous</li>
-          <li>Past situations: if only + subject + past perfect</li>
-          <li>Future situations: if only + subject + would/could + verb</li>
-        </ul>
-        
-        <div class="example">
-          <ol>
-            <li>If only I had prepared better for the presentation yesterday.</li>
-            <li>If only we lived closer to the beach! We could go swimming more often.</li>
-            <li>If only the professor would explain the concept one more time.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="grammar-point">
-        <h2>Using "Would Rather" for Preferences</h2>
-        
-        <p><strong>Use</strong>: "Would rather" expresses preferences between options. It can be used to talk about your own preferences or what you want someone else to do.</p>
-        
-        <p><strong>Structure</strong>:</p>
-        <ul>
-          <li>Personal preference (same subject): would rather + verb (base form)</li>
-          <li>Preference for others (different subject): would rather + subject + past simple</li>
-        </ul>
-        
-        <div class="example">
-          <ol>
-            <li>I would rather work from home than commute to the office every day.</li>
-            <li>She would rather her children studied more during the week.</li>
-            <li>The teacher would rather students submitted their assignments on time.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="grammar-point">
-        <h2>Using "Would Rather Have" for Past Preferences</h2>
-        
-        <p><strong>Use</strong>: "Would rather have" expresses preferences about past situations, often indicating regret about choices that were made.</p>
-        
-        <p><strong>Structure</strong>: would rather have + past participle</p>
-        
-        <div class="example">
-          <ol>
-            <li>I would rather have discussed the issue in private instead of during the meeting.</li>
-            <li>They would rather have stayed at home than gone to the party last night.</li>
-            <li>He would rather have taken the literature course than the history one last semester.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="info-container">
-        <h2>Visual Comparison of Expressions for Regrets and Desires</h2>
+      <section>
+        <h2>Visual Comparison of Wish, If Only, and Would Rather</h2>
         <table>
           <thead>
             <tr>
-              <th>Expression</th>
-              <th>Time Reference</th>
               <th>Structure</th>
+              <th>Time Reference</th>
+              <th>Verb Form</th>
               <th>Example</th>
-              <th>Meaning</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Wish</td>
+              <td>Wish/If only</td>
               <td>Present</td>
-              <td>wish + past simple</td>
-              <td><span class="example">I wish I knew the answer.</span></td>
-              <td>Regret about current reality</td>
+              <td>Past simple</td>
+              <td><span class="example">I wish I <strong>had</strong> more free time.</span></td>
             </tr>
             <tr>
-              <td>Wish</td>
+              <td>Wish/If only</td>
               <td>Past</td>
-              <td>wish + past perfect</td>
-              <td><span class="example">I wish I had studied harder.</span></td>
-              <td>Regret about past actions</td>
+              <td>Past perfect</td>
+              <td><span class="example">I wish I <strong>had taken</strong> that opportunity.</span></td>
             </tr>
             <tr>
-              <td>Wish</td>
+              <td>Wish/If only</td>
               <td>Future</td>
-              <td>wish + would/could</td>
-              <td><span class="example">I wish it would stop raining.</span></td>
-              <td>Desire for future change</td>
-            </tr>
-            <tr>
-              <td>If only</td>
-              <td>Present</td>
-              <td>if only + past simple</td>
-              <td><span class="example">If only I understood the problem.</span></td>
-              <td>Strong regret about current reality</td>
-            </tr>
-            <tr>
-              <td>If only</td>
-              <td>Past</td>
-              <td>if only + past perfect</td>
-              <td><span class="example">If only I had listened to you.</span></td>
-              <td>Strong regret about past actions</td>
-            </tr>
-            <tr>
-              <td>If only</td>
-              <td>Future</td>
-              <td>if only + would/could</td>
-              <td><span class="example">If only they would give us more time.</span></td>
-              <td>Strong desire for future change</td>
+              <td>Would/Could</td>
+              <td><span class="example">I wish it <strong>would stop</strong> raining soon.</span></td>
             </tr>
             <tr>
               <td>Would rather</td>
-              <td>Present/Future<br>(same subject)</td>
-              <td>would rather + base form</td>
-              <td><span class="example">I would rather stay home tonight.</span></td>
-              <td>Preference between options</td>
+              <td>Present/Future</td>
+              <td>Base form</td>
+              <td><span class="example">I would rather <strong>stay</strong> home tonight.</span></td>
             </tr>
             <tr>
               <td>Would rather</td>
-              <td>Present/Future<br>(different subject)</td>
-              <td>would rather + subject + past simple</td>
-              <td><span class="example">I would rather you came early tomorrow.</span></td>
-              <td>Preference about someone else's actions</td>
+              <td>Past</td>
+              <td>Have + past participle</td>
+              <td><span class="example">I would rather <strong>have gone</strong> by train.</span></td>
             </tr>
             <tr>
-              <td>Would rather have</td>
+              <td>Would rather (others)</td>
+              <td>Present/Future</td>
+              <td>Past simple</td>
+              <td><span class="example">I'd rather you <strong>didn't smoke</strong> here.</span></td>
+            </tr>
+            <tr>
+              <td>Would rather (others)</td>
               <td>Past</td>
-              <td>would rather have + past participle</td>
-              <td><span class="example">I would rather have gone by train.</span></td>
-              <td>Preference about a past situation</td>
+              <td>Past perfect</td>
+              <td><span class="example">I'd rather you <strong>had told</strong> me earlier.</span></td>
             </tr>
           </tbody>
         </table>
@@ -884,209 +923,199 @@
         <h2>Common Errors</h2>
         
         <div class="error-pattern">
-          <p class="incorrect"><s>I wish I have more time.</s></p>
-          <p class="correct">I wish I had more time. ✓</p>
-          <p class="explanation">After "wish" referring to the present, use past simple (had), not present tense (have).</p>
+          <p class="error-title"><strong>1: Using present simple after "wish" for present situations</strong></p>
+          <p class="incorrect">I wish I <s>have</s> more time to study.</p>
+          <p class="correct">I wish I had more time to study. ✓</p>
+          <p class="explanation"><em>The past simple is used after "wish" to talk about present wishes, not the present simple.</em></p>
         </div>
         
         <div class="error-pattern">
-          <p class="incorrect"><s>If only she would studied harder last term.</s></p>
-          <p class="correct">If only she had studied harder last term. ✓</p>
-          <p class="explanation">For past regrets, use past perfect (had studied) after "if only", not "would + past participle".</p>
+          <p class="error-title"><strong>2: Using past simple instead of past perfect for past regrets</strong></p>
+          <p class="incorrect">She wishes she <s>went</s> to university.</p>
+          <p class="correct">She wishes she had gone to university. ✓</p>
+          <p class="explanation"><em>When expressing regret about the past, we need the past perfect tense after "wish".</em></p>
         </div>
         
         <div class="error-pattern">
-          <p class="incorrect"><s>I would rather to go by bus.</s></p>
-          <p class="correct">I would rather go by bus. ✓</p>
-          <p class="explanation">After "would rather", use the base form of the verb without "to".</p>
-        </div>
-        
-        <div class="error-pattern">
-          <p class="incorrect"><s>She would rather that we go home now.</s></p>
-          <p class="correct">She would rather we went home now. ✓</p>
-          <p class="explanation">When "would rather" refers to someone else's action, use past simple (went) without "that".</p>
-        </div>
-        
-        <div class="error-pattern">
-          <p class="incorrect"><s>I wish I can speak Chinese.</s></p>
-          <p class="correct">I wish I could speak Chinese. ✓</p>
-          <p class="explanation">Use "could" not "can" after "wish" to express ability.</p>
+          <p class="error-title"><strong>3: Mixing up verb forms with "would rather" for others' actions</strong></p>
+          <p class="incorrect">I would rather you <s>don't</s> come late tomorrow.</p>
+          <p class="correct">I would rather you didn't come late tomorrow. ✓</p>
+          <p class="explanation"><em>When expressing preferences about other people's actions, we use past simple for present/future situations.</em></p>
         </div>
       </section>
 
       <section class="tips">
         <h2>Useful Tips</h2>
-        <ol>
-          <li><strong>Think about time reference</strong> - The tense you use after "wish" and "if only" depends on when the situation happens: past simple for present situations, past perfect for past situations.</li>
-          
-          <li><strong>Notice the emotion</strong> - "If only" generally expresses stronger feelings than "wish" and often shows more regret or longing.</li>
-          
-          <li><strong>Mind the structure after "would rather"</strong> - Remember to use the base form of the verb directly after "would rather" (no "to"), but use past simple when talking about what you want someone else to do.</li>
-          
-          <li><strong>Watch your tenses</strong> - One of the most common mistakes is using the wrong tense after these expressions. Remember that we use past tenses even when talking about present situations.</li>
-        </ol>
-
+        
         <div class="grammar-tip">
-          <p>📝 <strong>GRAMMAR TIP:</strong> To remember which tense to use after "wish," think: "One step back in time." Present situations use past tense, and past situations use past perfect.</p>
+          <p>📝 <strong>TIP 1:</strong> Remember the time shift: present situations use past tense forms, and past situations use past perfect forms after "wish" and "if only."</p>
+        </div>
+        
+        <div class="grammar-tip">
+          <p>📝 <strong>TIP 2:</strong> "If only" is more emphatic and emotional than "wish," but follows the same grammar rules.</p>
+        </div>
+        
+        <div class="grammar-tip">
+          <p>📝 <strong>TIP 3:</strong> For "would rather," use the simple form for your own preferences, but past tense forms when telling others what you want them to do.</p>
         </div>
       </section>
 
       <section class="mcq-container">
         <h2>Test Your Knowledge</h2>
-        <p>Test your understanding of "wish", "if only", and "would rather" by selecting the correct option for each question.</p>
+        <p>Test your understanding of wish, if only, and would rather by selecting the correct option for each question.</p>
         
         <div class="question" id="q1">
-          <p class="mcq-question">1. I wish I _____ how to swim.</p>
+          <p class="mcq-question">1. I wish I _____ able to speak Japanese.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q1', 0)">
-              <span>A. know</span>
+              <span>A. am</span>
             </div>
             <div class="option" onclick="selectOption('q1', 1)">
-              <span>B. knew</span>
+              <span>B. was/were</span>
             </div>
             <div class="option" onclick="selectOption('q1', 2)">
-              <span>C. knows</span>
+              <span>C. would be</span>
             </div>
             <div class="option" onclick="selectOption('q1', 3)">
-              <span>D. am knowing</span>
+              <span>D. have been</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q1-0">
-            Incorrect. We use past simple (knew) after "wish" for present situations, not present simple (know).
+            Incorrect. We don't use present simple after "wish" for present situations.
           </div>
           <div class="feedback" id="feedback-q1-1">
-            Correct! We use past simple (knew) after "wish" for present situations.
+            Correct! For present wishes, we use past simple after "I wish."
           </div>
           <div class="feedback" id="feedback-q1-2">
-            Incorrect. "Knows" is third person singular present, not appropriate after "wish" and doesn't agree with "I".
+            Incorrect. "Would be" is used for future wishes, not present abilities.
           </div>
           <div class="feedback" id="feedback-q1-3">
-            Incorrect. The present continuous is not used after "wish" for present situations.
+            Incorrect. "Have been" (present perfect) isn't used after "wish" for present situations.
           </div>
         </div>
         
         <div class="question" id="q2">
-          <p class="mcq-question">2. If only she _____ the job offer last year.</p>
+          <p class="mcq-question">2. If only she _____ to my advice last week.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q2', 0)">
-              <span>A. accepted</span>
+              <span>A. listened</span>
             </div>
             <div class="option" onclick="selectOption('q2', 1)">
-              <span>B. accepts</span>
+              <span>B. listens</span>
             </div>
             <div class="option" onclick="selectOption('q2', 2)">
-              <span>C. would accept</span>
+              <span>C. had listened</span>
             </div>
             <div class="option" onclick="selectOption('q2', 3)">
-              <span>D. had accepted</span>
+              <span>D. would listen</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q2-0">
-            Incorrect. Simple past (accepted) is used for present wishes, but this is about a past situation.
+            Incorrect. For past regrets with "if only," we need past perfect, not simple past.
           </div>
           <div class="feedback" id="feedback-q2-1">
-            Incorrect. Present simple (accepts) is never used after "if only" for regrets.
+            Incorrect. Present simple isn't used after "if only" for past situations.
           </div>
           <div class="feedback" id="feedback-q2-2">
-            Incorrect. "Would accept" would be used for future wishes, not past regrets.
+            Correct! Past perfect is used after "if only" to express regret about past actions.
           </div>
           <div class="feedback" id="feedback-q2-3">
-            Correct! For past regrets with "if only", we use past perfect (had accepted).
+            Incorrect. "Would listen" would refer to a habitual action, not a past regret.
           </div>
         </div>
         
         <div class="question" id="q3">
-          <p class="mcq-question">3. They would rather _____ at home tonight.</p>
+          <p class="mcq-question">3. I would rather _____ at home than go to the party.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q3', 0)">
               <span>A. staying</span>
             </div>
             <div class="option" onclick="selectOption('q3', 1)">
-              <span>B. to stay</span>
+              <span>B. stayed</span>
             </div>
             <div class="option" onclick="selectOption('q3', 2)">
-              <span>C. stay</span>
+              <span>C. to stay</span>
             </div>
             <div class="option" onclick="selectOption('q3', 3)">
-              <span>D. stayed</span>
+              <span>D. stay</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q3-0">
-            Incorrect. After "would rather", we use the base form of the verb, not the -ing form.
+            Incorrect. After "would rather" we use the base form, not the -ing form.
           </div>
           <div class="feedback" id="feedback-q3-1">
-            Incorrect. We don't use "to" with the infinitive after "would rather".
+            Incorrect. Past tense is not used after "would rather" for your own present/future preferences.
           </div>
           <div class="feedback" id="feedback-q3-2">
-            Correct! After "would rather" (for the same subject), we use the base form of the verb.
+            Incorrect. We don't use the infinitive with "to" after "would rather."
           </div>
           <div class="feedback" id="feedback-q3-3">
-            Incorrect. Past simple (stayed) would be used when "would rather" refers to what someone else should do.
+            Correct! For present/future preferences, we use the base form of the verb after "would rather."
           </div>
         </div>
         
         <div class="question" id="q4">
-          <p class="mcq-question">4. I wish my boss _____ me more opportunities to lead projects.</p>
+          <p class="mcq-question">4. She wishes she _____ the job offer when she had the chance.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q4', 0)">
-              <span>A. gives</span>
+              <span>A. accepted</span>
             </div>
             <div class="option" onclick="selectOption('q4', 1)">
-              <span>B. gave</span>
+              <span>B. accepts</span>
             </div>
             <div class="option" onclick="selectOption('q4', 2)">
-              <span>C. giving</span>
+              <span>C. had accepted</span>
             </div>
             <div class="option" onclick="selectOption('q4', 3)">
-              <span>D. has given</span>
+              <span>D. would accept</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q4-0">
-            Incorrect. Present simple (gives) is not used after "wish" for present situations.
+            Incorrect. Simple past isn't used for past regrets after "wish."
           </div>
           <div class="feedback" id="feedback-q4-1">
-            Correct! After "wish" referring to a present situation, we use past simple (gave).
+            Incorrect. Present simple is never used after "wish."
           </div>
           <div class="feedback" id="feedback-q4-2">
-            Incorrect. The -ing form (giving) cannot be used directly after "wish".
+            Correct! Past perfect is used after "wish" to express regret about past actions.
           </div>
           <div class="feedback" id="feedback-q4-3">
-            Incorrect. Present perfect (has given) is not used after "wish".
+            Incorrect. "Would accept" would imply a future or conditional action, not a past regret.
           </div>
         </div>
         
         <div class="question" id="q5">
-          <p class="mcq-question">5. She would rather her children _____ more vegetables.</p>
+          <p class="mcq-question">5. I'd rather you _____ tell anyone about this problem yet.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q5', 0)">
-              <span>A. eat</span>
+              <span>A. don't</span>
             </div>
             <div class="option" onclick="selectOption('q5', 1)">
-              <span>B. ate</span>
+              <span>B. didn't</span>
             </div>
             <div class="option" onclick="selectOption('q5', 2)">
-              <span>C. eating</span>
+              <span>C. won't</span>
             </div>
             <div class="option" onclick="selectOption('q5', 3)">
-              <span>D. to eat</span>
+              <span>D. haven't</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q5-0">
-            Incorrect. When "would rather" refers to a different subject (her children), we use past simple, not base form.
+            Incorrect. For preferences about others' actions, we use past simple, not present simple.
           </div>
           <div class="feedback" id="feedback-q5-1">
-            Correct! When "would rather" refers to what someone else should do, we use past simple (ate).
+            Correct! When expressing preferences about other people's actions in the present/future, we use past simple.
           </div>
           <div class="feedback" id="feedback-q5-2">
-            Incorrect. The -ing form is not used after "would rather" with a different subject.
+            Incorrect. We don't use "won't" after "would rather" for others' actions.
           </div>
           <div class="feedback" id="feedback-q5-3">
-            Incorrect. "To + infinitive" is not used after "would rather" with any subject.
+            Incorrect. Present perfect is not used after "would rather" for others' actions.
           </div>
         </div>
         
         <div class="question" id="q6">
-          <p class="mcq-question">6. If only I _____ about the meeting. I missed important information.</p>
+          <p class="mcq-question">6. If only I _____ how to solve this problem now.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q6', 0)">
               <span>A. know</span>
@@ -1102,136 +1131,136 @@
             </div>
           </div>
           <div class="feedback" id="feedback-q6-0">
-            Incorrect. Present simple (know) is never used after "if only".
+            Incorrect. Present simple isn't used after "if only" for present wishes.
           </div>
           <div class="feedback" id="feedback-q6-1">
-            Incorrect. Past simple (knew) would be used for present situations, but this is about a past regret.
+            Correct! Past simple is used after "if only" for present wishes.
           </div>
           <div class="feedback" id="feedback-q6-2">
-            Correct! For past regrets with "if only", we use past perfect (had known).
+            Incorrect. Past perfect is used for past regrets, but this sentence refers to a present situation.
           </div>
           <div class="feedback" id="feedback-q6-3">
-            Incorrect. "Would know" is not a correct form after "if only" for past regrets.
+            Incorrect. Modal verbs like "would" aren't typically used directly after "if only."
           </div>
         </div>
         
         <div class="question" id="q7">
-          <p class="mcq-question">7. I would rather _____ by train than by plane last weekend.</p>
+          <p class="mcq-question">7. They wish they _____ traveling next week, but they have to work.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q7', 0)">
-              <span>A. travelled</span>
+              <span>A. are</span>
             </div>
             <div class="option" onclick="selectOption('q7', 1)">
-              <span>B. to travel</span>
+              <span>B. were</span>
             </div>
             <div class="option" onclick="selectOption('q7', 2)">
-              <span>C. have travelled</span>
+              <span>C. had been</span>
             </div>
             <div class="option" onclick="selectOption('q7', 3)">
-              <span>D. travel</span>
+              <span>D. would be</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q7-0">
-            Incorrect. Simple past is not used with "would rather" for past preferences.
+            Incorrect. Present simple isn't used after "wish."
           </div>
           <div class="feedback" id="feedback-q7-1">
-            Incorrect. "To + infinitive" is not used after "would rather".
+            Correct! When talking about a future situation that won't happen, we use past simple after "wish."
           </div>
           <div class="feedback" id="feedback-q7-2">
-            Correct! For past preferences with "would rather", we use "have + past participle" (have travelled).
+            Incorrect. Past perfect refers to past situations, but this is about the future.
           </div>
           <div class="feedback" id="feedback-q7-3">
-            Incorrect. Base form (travel) would be used for present/future preferences, but this is about the past.
+            Incorrect. "Would be" is used for wishes about other people's behavior or changing situations, not typically for your own future plans.
           </div>
         </div>
         
         <div class="question" id="q8">
-          <p class="mcq-question">8. He wishes he _____ at the party last night, but he was ill.</p>
+          <p class="mcq-question">8. He would rather _____ by train yesterday, but all tickets were sold out.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q8', 0)">
-              <span>A. is</span>
+              <span>A. travel</span>
             </div>
             <div class="option" onclick="selectOption('q8', 1)">
-              <span>B. was</span>
+              <span>B. traveled</span>
             </div>
             <div class="option" onclick="selectOption('q8', 2)">
-              <span>C. could be</span>
+              <span>C. have traveled</span>
             </div>
             <div class="option" onclick="selectOption('q8', 3)">
-              <span>D. could have been</span>
+              <span>D. to travel</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q8-0">
-            Incorrect. Present simple (is) is never used after "wish".
+            Incorrect. Base form is for present/future preferences, not past ones.
           </div>
           <div class="feedback" id="feedback-q8-1">
-            Incorrect. Simple past (was) would be used for present situations, but this is about a past regret.
+            Incorrect. Simple past isn't used after "would rather" for past preferences.
           </div>
           <div class="feedback" id="feedback-q8-2">
-            Incorrect. "Could be" would refer to a present possibility, not a past regret.
+            Correct! For past preferences with "would rather," we use "have" + past participle.
           </div>
           <div class="feedback" id="feedback-q8-3">
-            Correct! For past impossibilities with "wish", we can use "could have + past participle" (could have been).
+            Incorrect. Infinitive with "to" isn't used after "would rather."
           </div>
         </div>
         
         <div class="question" id="q9">
-          <p class="mcq-question">9. They _____ gone to the beach if the weather had been better.</p>
+          <p class="mcq-question">9. I wish it _____ raining soon, I want to go for a walk.</p>
           <div class="options">
             <div class="option" onclick="selectOption('q9', 0)">
-              <span>A. wish they had</span>
+              <span>A. stops</span>
             </div>
             <div class="option" onclick="selectOption('q9', 1)">
-              <span>B. if only</span>
+              <span>B. stopped</span>
             </div>
             <div class="option" onclick="selectOption('q9', 2)">
-              <span>C. would rather have</span>
+              <span>C. would stop</span>
             </div>
             <div class="option" onclick="selectOption('q9', 3)">
-              <span>D. wished they</span>
+              <span>D. had stopped</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q9-0">
-            Correct! "Wish they had" expresses a past regret about not going to the beach.
+            Incorrect. Present simple isn't used after "wish."
           </div>
           <div class="feedback" id="feedback-q9-1">
-            Incorrect. "If only" needs to be followed by a subject and verb, not directly by "gone".
+            Incorrect. Past simple would refer to a present situation, but this is about a future change.
           </div>
           <div class="feedback" id="feedback-q9-2">
-            Incorrect. "Would rather have" expresses a preference about the past, but doesn't fit this sentence structure.
+            Correct! When wishing for a change in the future, we use "would" + verb.
           </div>
           <div class="feedback" id="feedback-q9-3">
-            Incorrect. "Wished they" would need to be followed by "could", not directly by "gone".
+            Incorrect. Past perfect would refer to a past regret, not a future hope.
           </div>
         </div>
         
         <div class="question" id="q10">
-          <p class="mcq-question">10. She wishes her colleague _____ interrupting her during presentations.</p>
+          <p class="mcq-question">10. If only we _____ about the change in schedule before we made all these arrangements!</p>
           <div class="options">
             <div class="option" onclick="selectOption('q10', 0)">
-              <span>A. would stop</span>
+              <span>A. knew</span>
             </div>
             <div class="option" onclick="selectOption('q10', 1)">
-              <span>B. stopped</span>
+              <span>B. know</span>
             </div>
             <div class="option" onclick="selectOption('q10', 2)">
-              <span>C. stops</span>
+              <span>C. had known</span>
             </div>
             <div class="option" onclick="selectOption('q10', 3)">
-              <span>D. had stopped</span>
+              <span>D. would know</span>
             </div>
           </div>
           <div class="feedback" id="feedback-q10-0">
-            Correct! "Would stop" is used after "wish" when we want someone to change their behavior in the future.
+            Incorrect. Past simple isn't used for past regrets with "if only."
           </div>
           <div class="feedback" id="feedback-q10-1">
-            Incorrect. Past simple (stopped) would express a hypothetical present situation, not a desire for behavior change.
+            Incorrect. Present simple is never used after "if only."
           </div>
           <div class="feedback" id="feedback-q10-2">
-            Incorrect. Present simple (stops) is never used after "wish".
+            Correct! For past regrets with "if only," we use the past perfect.
           </div>
           <div class="feedback" id="feedback-q10-3">
-            Incorrect. Past perfect (had stopped) would refer to a past regret, not a desire for future change.
+            Incorrect. "Would know" is not grammatically correct after "if only" in this context.
           </div>
         </div>
         
@@ -1241,17 +1270,17 @@
         
         <button class="restart-btn" id="restart-btn" style="display:none;">Try Again</button>
       </section>
-
+      
       <section class="production-practice">
         <h2>Sentence Building Practice</h2>
         <p>Create your own sentences using the grammar patterns you've learned.</p>
         
         <div class="sentence-builder">
           <h3>Practice 1</h3>
-          <p>Create a sentence using "wish" about something you would like to be different in your job or studies.</p>
+          <p>Create a sentence using "wish" to express something you want to be different about your present situation.</p>
           <div class="hints">
-            <p><strong>Useful words:</strong> time, skills, location, colleagues, knowledge, experience</p>
-            <p><strong>Example:</strong> <span class="example">I wish I had more time to learn new skills at work.</span></p>
+            <p><strong>Useful words:</strong> speak, understand, have, live, work</p>
+            <p><strong>Example:</strong> <span class="example">I wish I had more time to practice speaking English.</span></p>
           </div>
           <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
           <button class="check-btn">Check</button>
@@ -1260,34 +1289,10 @@
         
         <div class="sentence-builder">
           <h3>Practice 2</h3>
-          <p>Write a sentence using "if only" to express a regret about something you did or didn't do in the past.</p>
+          <p>Create a sentence using "would rather" to express your preference between two activities.</p>
           <div class="hints">
-            <p><strong>Useful words:</strong> studied, learned, traveled, saved, told, asked, applied</p>
-            <p><strong>Example:</strong> <span class="example">If only I had learned Spanish when I was younger.</span></p>
-          </div>
-          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
-          <button class="check-btn">Check</button>
-          <div class="practice-feedback"></div>
-        </div>
-        
-        <div class="sentence-builder">
-          <h3>Practice 3</h3>
-          <p>Create a sentence using "would rather" to express a preference between two activities.</p>
-          <div class="hints">
-            <p><strong>Useful words:</strong> work, study, travel, stay, meet, cook, eat</p>
-            <p><strong>Example:</strong> <span class="example">I would rather work from home than commute to the office every day.</span></p>
-          </div>
-          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
-          <button class="check-btn">Check</button>
-          <div class="practice-feedback"></div>
-        </div>
-        
-        <div class="sentence-builder">
-          <h3>Practice 4</h3>
-          <p>Write a sentence using "would rather have" to express a preference about a past situation.</p>
-          <div class="hints">
-            <p><strong>Useful words:</strong> gone, stayed, taken, spoken, asked, waited, chosen</p>
-            <p><strong>Example:</strong> <span class="example">I would rather have taken the earlier train yesterday.</span></p>
+            <p><strong>Useful words:</strong> study, work, travel, eat, watch</p>
+            <p><strong>Example:</strong> <span class="example">I would rather study in the morning than in the evening.</span></p>
           </div>
           <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
           <button class="check-btn">Check</button>
@@ -1298,30 +1303,31 @@
   </div>
   
   <nav class="bottom-navigation">
-    <a href="conditional-expressions.html" class="nav-button previous">← Previous: Conditional Expressions</a>
+    <a href="inverted-conditionals.html" class="nav-button previous">← Previous: Inverted Conditionals</a>
     <div class="center-buttons">
       <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
-      <a href="wish-activities.html" class="nav-button activities">Extra Activities</a>
+      <a href="wish-if-only-activities.html" class="nav-button activities">Extra Activities</a>
     </div>
-    <a href="modal-perfect.html" class="nav-button next">Next: Modal Perfect Forms →</a>
+    <a href="modal-perfect-forms.html" class="nav-button next">Next: Modal Perfect Forms →</a>
   </nav>
 
+  <!-- Footer with copyright notice -->
   <footer>
     <p>© 2025 English in Doses | All rights reserved | <a href="license.html">Licensing Information</a></p>
   </footer>
 
+  <!-- JavaScript for interactive elements -->
   <script>
     // Theme toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
       const themeToggle = document.getElementById('theme-toggle');
       
-      // Handle theme toggle click - without localStorage
+      // Handle theme toggle click
       themeToggle.addEventListener('click', function() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
         document.documentElement.setAttribute('data-theme', newTheme);
-        // Removed localStorage.setItem to avoid security errors
       });
       
       // Mobile navigation toggle
@@ -1339,16 +1345,16 @@
     let score = 0;
     const totalQuestions = 10;
     const correctAnswers = {
-      'q1': 1,  // knew
-      'q2': 3,  // had accepted
-      'q3': 2,  // stay
-      'q4': 1,  // gave
-      'q5': 1,  // ate
-      'q6': 2,  // had known
-      'q7': 2,  // have travelled
-      'q8': 3,  // could have been
-      'q9': 0,  // wish they had
-      'q10': 0  // would stop
+      'q1': 1, // was/were
+      'q2': 2, // had listened
+      'q3': 3, // stay
+      'q4': 2, // had accepted
+      'q5': 1, // didn't
+      'q6': 1, // knew
+      'q7': 1, // were
+      'q8': 2, // have traveled
+      'q9': 2, // would stop
+      'q10': 2  // had known
     };
     const answered = {
       'q1': false,
