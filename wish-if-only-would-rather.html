@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Learn how to use wish, if only, and would rather to express regrets, desires, and preferences in English">
+  <title>Wish, If Only, and Would Rather: Expressing Regrets and Desires - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      /* Dark theme variables for quiz sections */
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .grammar-point, .intro-section, .tips, .mcq-container, .gap-fill-container, .common-errors {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .common-errors {
+      border-left: 5px solid #dc3545;
+    }
+
+    .incorrect {
+      color: var(--error-color);
+      text-decoration: line-through;
+    }
+
+    .correct {
+      color: var(--success-color);
+      font-weight: bold;
+    }
+
+    .error-pattern {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .error-pattern:last-child {
+      border-bottom: none;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .nav-button.activities {
+      background-color: var(--secondary-accent);
+    }
+
+    .nav-button.activities:hover {
+      background-color: #e06d2e;
+    }
+
+    /* MCQ Container Styles */
+    .mcq-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    /* Individual question blocks */
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Question text */
+    .mcq-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Container for all options */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    /* Individual option buttons */
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    /* Hover effect for options */
+    .option:hover {
+      background-color: var(--mcq-hover-bg);
+      transform: translateY(-1px);
+    }
+
+    /* Selected state for options */
+    .option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+      font-weight: bold;
+    }
+
+    /* Feedback area */
+    .feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Correct answer styling */
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+    }
+
+    /* Incorrect answer styling */
+    .feedback.incorrect {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+    }
+
+    /* Score display */
+    .score-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      display: none;
+    }
+
+    /* Restart button */
+    .restart-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 15px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .restart-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul, .example ol {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Production practice */
+    .production-practice {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+
+    .sentence-builder {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sentence-builder:last-child {
+      border-bottom: none;
+    }
+
+    .practice-input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .check-btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .check-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .practice-feedback {
+      margin-top: 10px;
+      min-height: 20px;
+    }
+
+    .hints {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-size: 0.9em;
+    }
+
+    /* Grammar tip */
+    .grammar-tip {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 15px;
+      border-left: 3px solid var(--secondary-accent);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="conditionals.html">Conditionals and Hypotheticals</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Wish, If Only, and Would Rather</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Wish, If Only, and Would Rather: Expressing Regrets and Desires</h1>
+
+      <section class="intro-section">
+        <h2>Introduction</h2>
+        <p>This lesson explores three powerful structures in English that allow you to express regrets about the present and past, wishes for different situations, and preferences between options. These expressions are essential for conveying nuanced feelings and hypothetical thinking in both professional and personal conversations.</p>
+        
+        <p>You will frequently use these structures when discussing career choices, personal decisions, and when giving advice or feedback to others.</p>
+        
+        <h3>After this lesson, you will be able to:</h3>
+        <ul>
+          <li>Express regrets about present and past situations using "wish" and "if only"</li>
+          <li>Talk about desires for things to be different using appropriate verb tenses</li>
+          <li>Express preferences between options using "would rather"</li>
+          <li>Use these structures correctly in conversations and writing</li>
+        </ul>
+      </section>
+
+      <section class="grammar-point">
+        <h2>Using "Wish" for Present and Past Situations</h2>
+        
+        <p><strong>Use</strong>: "Wish" expresses regret or desire for situations that are not real. It's used when we want something to be different from what it actually is (present) or was (past).</p>
+        
+        <p><strong>Structure</strong>:</p>
+        <ul>
+          <li>Present situations: wish + subject + past simple/continuous</li>
+          <li>Past situations: wish + subject + past perfect</li>
+          <li>Future situations: wish + subject + would/could + verb</li>
+        </ul>
+        
+        <div class="example">
+          <ol>
+            <li>I wish I spoke better French. It would help me communicate with our international clients.</li>
+            <li>She wishes she had more free time to spend with her family.</li>
+            <li>The students wish they could access the online library from home.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="grammar-point">
+        <h2>Using "If Only" for Stronger Regrets and Desires</h2>
+        
+        <p><strong>Use</strong>: "If only" works the same way as "wish" but expresses stronger emotions, often indicating a sense of regret, longing, or desire for something that isn't possible or likely.</p>
+        
+        <p><strong>Structure</strong>:</p>
+        <ul>
+          <li>Present situations: if only + subject + past simple/continuous</li>
+          <li>Past situations: if only + subject + past perfect</li>
+          <li>Future situations: if only + subject + would/could + verb</li>
+        </ul>
+        
+        <div class="example">
+          <ol>
+            <li>If only I had prepared better for the presentation yesterday.</li>
+            <li>If only we lived closer to the beach! We could go swimming more often.</li>
+            <li>If only the professor would explain the concept one more time.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="grammar-point">
+        <h2>Using "Would Rather" for Preferences</h2>
+        
+        <p><strong>Use</strong>: "Would rather" expresses preferences between options. It can be used to talk about your own preferences or what you want someone else to do.</p>
+        
+        <p><strong>Structure</strong>:</p>
+        <ul>
+          <li>Personal preference (same subject): would rather + verb (base form)</li>
+          <li>Preference for others (different subject): would rather + subject + past simple</li>
+        </ul>
+        
+        <div class="example">
+          <ol>
+            <li>I would rather work from home than commute to the office every day.</li>
+            <li>She would rather her children studied more during the week.</li>
+            <li>The teacher would rather students submitted their assignments on time.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="grammar-point">
+        <h2>Using "Would Rather Have" for Past Preferences</h2>
+        
+        <p><strong>Use</strong>: "Would rather have" expresses preferences about past situations, often indicating regret about choices that were made.</p>
+        
+        <p><strong>Structure</strong>: would rather have + past participle</p>
+        
+        <div class="example">
+          <ol>
+            <li>I would rather have discussed the issue in private instead of during the meeting.</li>
+            <li>They would rather have stayed at home than gone to the party last night.</li>
+            <li>He would rather have taken the literature course than the history one last semester.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="info-container">
+        <h2>Visual Comparison of Expressions for Regrets and Desires</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Expression</th>
+              <th>Time Reference</th>
+              <th>Structure</th>
+              <th>Example</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wish</td>
+              <td>Present</td>
+              <td>wish + past simple</td>
+              <td><span class="example">I wish I knew the answer.</span></td>
+              <td>Regret about current reality</td>
+            </tr>
+            <tr>
+              <td>Wish</td>
+              <td>Past</td>
+              <td>wish + past perfect</td>
+              <td><span class="example">I wish I had studied harder.</span></td>
+              <td>Regret about past actions</td>
+            </tr>
+            <tr>
+              <td>Wish</td>
+              <td>Future</td>
+              <td>wish + would/could</td>
+              <td><span class="example">I wish it would stop raining.</span></td>
+              <td>Desire for future change</td>
+            </tr>
+            <tr>
+              <td>If only</td>
+              <td>Present</td>
+              <td>if only + past simple</td>
+              <td><span class="example">If only I understood the problem.</span></td>
+              <td>Strong regret about current reality</td>
+            </tr>
+            <tr>
+              <td>If only</td>
+              <td>Past</td>
+              <td>if only + past perfect</td>
+              <td><span class="example">If only I had listened to you.</span></td>
+              <td>Strong regret about past actions</td>
+            </tr>
+            <tr>
+              <td>If only</td>
+              <td>Future</td>
+              <td>if only + would/could</td>
+              <td><span class="example">If only they would give us more time.</span></td>
+              <td>Strong desire for future change</td>
+            </tr>
+            <tr>
+              <td>Would rather</td>
+              <td>Present/Future<br>(same subject)</td>
+              <td>would rather + base form</td>
+              <td><span class="example">I would rather stay home tonight.</span></td>
+              <td>Preference between options</td>
+            </tr>
+            <tr>
+              <td>Would rather</td>
+              <td>Present/Future<br>(different subject)</td>
+              <td>would rather + subject + past simple</td>
+              <td><span class="example">I would rather you came early tomorrow.</span></td>
+              <td>Preference about someone else's actions</td>
+            </tr>
+            <tr>
+              <td>Would rather have</td>
+              <td>Past</td>
+              <td>would rather have + past participle</td>
+              <td><span class="example">I would rather have gone by train.</span></td>
+              <td>Preference about a past situation</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="common-errors">
+        <h2>Common Errors</h2>
+        
+        <div class="error-pattern">
+          <p class="incorrect"><s>I wish I have more time.</s></p>
+          <p class="correct">I wish I had more time. ✓</p>
+          <p class="explanation">After "wish" referring to the present, use past simple (had), not present tense (have).</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="incorrect"><s>If only she would studied harder last term.</s></p>
+          <p class="correct">If only she had studied harder last term. ✓</p>
+          <p class="explanation">For past regrets, use past perfect (had studied) after "if only", not "would + past participle".</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="incorrect"><s>I would rather to go by bus.</s></p>
+          <p class="correct">I would rather go by bus. ✓</p>
+          <p class="explanation">After "would rather", use the base form of the verb without "to".</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="incorrect"><s>She would rather that we go home now.</s></p>
+          <p class="correct">She would rather we went home now. ✓</p>
+          <p class="explanation">When "would rather" refers to someone else's action, use past simple (went) without "that".</p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="incorrect"><s>I wish I can speak Chinese.</s></p>
+          <p class="correct">I wish I could speak Chinese. ✓</p>
+          <p class="explanation">Use "could" not "can" after "wish" to express ability.</p>
+        </div>
+      </section>
+
+      <section class="tips">
+        <h2>Useful Tips</h2>
+        <ol>
+          <li><strong>Think about time reference</strong> - The tense you use after "wish" and "if only" depends on when the situation happens: past simple for present situations, past perfect for past situations.</li>
+          
+          <li><strong>Notice the emotion</strong> - "If only" generally expresses stronger feelings than "wish" and often shows more regret or longing.</li>
+          
+          <li><strong>Mind the structure after "would rather"</strong> - Remember to use the base form of the verb directly after "would rather" (no "to"), but use past simple when talking about what you want someone else to do.</li>
+          
+          <li><strong>Watch your tenses</strong> - One of the most common mistakes is using the wrong tense after these expressions. Remember that we use past tenses even when talking about present situations.</li>
+        </ol>
+
+        <div class="grammar-tip">
+          <p>📝 <strong>GRAMMAR TIP:</strong> To remember which tense to use after "wish," think: "One step back in time." Present situations use past tense, and past situations use past perfect.</p>
+        </div>
+      </section>
+
+      <section class="mcq-container">
+        <h2>Test Your Knowledge</h2>
+        <p>Test your understanding of "wish", "if only", and "would rather" by selecting the correct option for each question.</p>
+        
+        <div class="question" id="q1">
+          <p class="mcq-question">1. I wish I _____ how to swim.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q1', 0)">
+              <span>A. know</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 1)">
+              <span>B. knew</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 2)">
+              <span>C. knows</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 3)">
+              <span>D. am knowing</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q1-0">
+            Incorrect. We use past simple (knew) after "wish" for present situations, not present simple (know).
+          </div>
+          <div class="feedback" id="feedback-q1-1">
+            Correct! We use past simple (knew) after "wish" for present situations.
+          </div>
+          <div class="feedback" id="feedback-q1-2">
+            Incorrect. "Knows" is third person singular present, not appropriate after "wish" and doesn't agree with "I".
+          </div>
+          <div class="feedback" id="feedback-q1-3">
+            Incorrect. The present continuous is not used after "wish" for present situations.
+          </div>
+        </div>
+        
+        <div class="question" id="q2">
+          <p class="mcq-question">2. If only she _____ the job offer last year.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q2', 0)">
+              <span>A. accepted</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 1)">
+              <span>B. accepts</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 2)">
+              <span>C. would accept</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 3)">
+              <span>D. had accepted</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q2-0">
+            Incorrect. Simple past (accepted) is used for present wishes, but this is about a past situation.
+          </div>
+          <div class="feedback" id="feedback-q2-1">
+            Incorrect. Present simple (accepts) is never used after "if only" for regrets.
+          </div>
+          <div class="feedback" id="feedback-q2-2">
+            Incorrect. "Would accept" would be used for future wishes, not past regrets.
+          </div>
+          <div class="feedback" id="feedback-q2-3">
+            Correct! For past regrets with "if only", we use past perfect (had accepted).
+          </div>
+        </div>
+        
+        <div class="question" id="q3">
+          <p class="mcq-question">3. They would rather _____ at home tonight.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q3', 0)">
+              <span>A. staying</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 1)">
+              <span>B. to stay</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 2)">
+              <span>C. stay</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 3)">
+              <span>D. stayed</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q3-0">
+            Incorrect. After "would rather", we use the base form of the verb, not the -ing form.
+          </div>
+          <div class="feedback" id="feedback-q3-1">
+            Incorrect. We don't use "to" with the infinitive after "would rather".
+          </div>
+          <div class="feedback" id="feedback-q3-2">
+            Correct! After "would rather" (for the same subject), we use the base form of the verb.
+          </div>
+          <div class="feedback" id="feedback-q3-3">
+            Incorrect. Past simple (stayed) would be used when "would rather" refers to what someone else should do.
+          </div>
+        </div>
+        
+        <div class="question" id="q4">
+          <p class="mcq-question">4. I wish my boss _____ me more opportunities to lead projects.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q4', 0)">
+              <span>A. gives</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 1)">
+              <span>B. gave</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 2)">
+              <span>C. giving</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 3)">
+              <span>D. has given</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q4-0">
+            Incorrect. Present simple (gives) is not used after "wish" for present situations.
+          </div>
+          <div class="feedback" id="feedback-q4-1">
+            Correct! After "wish" referring to a present situation, we use past simple (gave).
+          </div>
+          <div class="feedback" id="feedback-q4-2">
+            Incorrect. The -ing form (giving) cannot be used directly after "wish".
+          </div>
+          <div class="feedback" id="feedback-q4-3">
+            Incorrect. Present perfect (has given) is not used after "wish".
+          </div>
+        </div>
+        
+        <div class="question" id="q5">
+          <p class="mcq-question">5. She would rather her children _____ more vegetables.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q5', 0)">
+              <span>A. eat</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 1)">
+              <span>B. ate</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 2)">
+              <span>C. eating</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 3)">
+              <span>D. to eat</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q5-0">
+            Incorrect. When "would rather" refers to a different subject (her children), we use past simple, not base form.
+          </div>
+          <div class="feedback" id="feedback-q5-1">
+            Correct! When "would rather" refers to what someone else should do, we use past simple (ate).
+          </div>
+          <div class="feedback" id="feedback-q5-2">
+            Incorrect. The -ing form is not used after "would rather" with a different subject.
+          </div>
+          <div class="feedback" id="feedback-q5-3">
+            Incorrect. "To + infinitive" is not used after "would rather" with any subject.
+          </div>
+        </div>
+        
+        <div class="question" id="q6">
+          <p class="mcq-question">6. If only I _____ about the meeting. I missed important information.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q6', 0)">
+              <span>A. know</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 1)">
+              <span>B. knew</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 2)">
+              <span>C. had known</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 3)">
+              <span>D. would know</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q6-0">
+            Incorrect. Present simple (know) is never used after "if only".
+          </div>
+          <div class="feedback" id="feedback-q6-1">
+            Incorrect. Past simple (knew) would be used for present situations, but this is about a past regret.
+          </div>
+          <div class="feedback" id="feedback-q6-2">
+            Correct! For past regrets with "if only", we use past perfect (had known).
+          </div>
+          <div class="feedback" id="feedback-q6-3">
+            Incorrect. "Would know" is not a correct form after "if only" for past regrets.
+          </div>
+        </div>
+        
+        <div class="question" id="q7">
+          <p class="mcq-question">7. I would rather _____ by train than by plane last weekend.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q7', 0)">
+              <span>A. travelled</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 1)">
+              <span>B. to travel</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 2)">
+              <span>C. have travelled</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 3)">
+              <span>D. travel</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q7-0">
+            Incorrect. Simple past is not used with "would rather" for past preferences.
+          </div>
+          <div class="feedback" id="feedback-q7-1">
+            Incorrect. "To + infinitive" is not used after "would rather".
+          </div>
+          <div class="feedback" id="feedback-q7-2">
+            Correct! For past preferences with "would rather", we use "have + past participle" (have travelled).
+          </div>
+          <div class="feedback" id="feedback-q7-3">
+            Incorrect. Base form (travel) would be used for present/future preferences, but this is about the past.
+          </div>
+        </div>
+        
+        <div class="question" id="q8">
+          <p class="mcq-question">8. He wishes he _____ at the party last night, but he was ill.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q8', 0)">
+              <span>A. is</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 1)">
+              <span>B. was</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 2)">
+              <span>C. could be</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 3)">
+              <span>D. could have been</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q8-0">
+            Incorrect. Present simple (is) is never used after "wish".
+          </div>
+          <div class="feedback" id="feedback-q8-1">
+            Incorrect. Simple past (was) would be used for present situations, but this is about a past regret.
+          </div>
+          <div class="feedback" id="feedback-q8-2">
+            Incorrect. "Could be" would refer to a present possibility, not a past regret.
+          </div>
+          <div class="feedback" id="feedback-q8-3">
+            Correct! For past impossibilities with "wish", we can use "could have + past participle" (could have been).
+          </div>
+        </div>
+        
+        <div class="question" id="q9">
+          <p class="mcq-question">9. They _____ gone to the beach if the weather had been better.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q9', 0)">
+              <span>A. wish they had</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 1)">
+              <span>B. if only</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 2)">
+              <span>C. would rather have</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 3)">
+              <span>D. wished they</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q9-0">
+            Correct! "Wish they had" expresses a past regret about not going to the beach.
+          </div>
+          <div class="feedback" id="feedback-q9-1">
+            Incorrect. "If only" needs to be followed by a subject and verb, not directly by "gone".
+          </div>
+          <div class="feedback" id="feedback-q9-2">
+            Incorrect. "Would rather have" expresses a preference about the past, but doesn't fit this sentence structure.
+          </div>
+          <div class="feedback" id="feedback-q9-3">
+            Incorrect. "Wished they" would need to be followed by "could", not directly by "gone".
+          </div>
+        </div>
+        
+        <div class="question" id="q10">
+          <p class="mcq-question">10. She wishes her colleague _____ interrupting her during presentations.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q10', 0)">
+              <span>A. would stop</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 1)">
+              <span>B. stopped</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 2)">
+              <span>C. stops</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 3)">
+              <span>D. had stopped</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q10-0">
+            Correct! "Would stop" is used after "wish" when we want someone to change their behavior in the future.
+          </div>
+          <div class="feedback" id="feedback-q10-1">
+            Incorrect. Past simple (stopped) would express a hypothetical present situation, not a desire for behavior change.
+          </div>
+          <div class="feedback" id="feedback-q10-2">
+            Incorrect. Present simple (stops) is never used after "wish".
+          </div>
+          <div class="feedback" id="feedback-q10-3">
+            Incorrect. Past perfect (had stopped) would refer to a past regret, not a desire for future change.
+          </div>
+        </div>
+        
+        <div class="score-display" id="score-display">
+          Your score: <span id="score">0</span>/10
+        </div>
+        
+        <button class="restart-btn" id="restart-btn" style="display:none;">Try Again</button>
+      </section>
+
+      <section class="production-practice">
+        <h2>Sentence Building Practice</h2>
+        <p>Create your own sentences using the grammar patterns you've learned.</p>
+        
+        <div class="sentence-builder">
+          <h3>Practice 1</h3>
+          <p>Create a sentence using "wish" about something you would like to be different in your job or studies.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> time, skills, location, colleagues, knowledge, experience</p>
+            <p><strong>Example:</strong> <span class="example">I wish I had more time to learn new skills at work.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+        
+        <div class="sentence-builder">
+          <h3>Practice 2</h3>
+          <p>Write a sentence using "if only" to express a regret about something you did or didn't do in the past.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> studied, learned, traveled, saved, told, asked, applied</p>
+            <p><strong>Example:</strong> <span class="example">If only I had learned Spanish when I was younger.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+        
+        <div class="sentence-builder">
+          <h3>Practice 3</h3>
+          <p>Create a sentence using "would rather" to express a preference between two activities.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> work, study, travel, stay, meet, cook, eat</p>
+            <p><strong>Example:</strong> <span class="example">I would rather work from home than commute to the office every day.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+        
+        <div class="sentence-builder">
+          <h3>Practice 4</h3>
+          <p>Write a sentence using "would rather have" to express a preference about a past situation.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> gone, stayed, taken, spoken, asked, waited, chosen</p>
+            <p><strong>Example:</strong> <span class="example">I would rather have taken the earlier train yesterday.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <nav class="bottom-navigation">
+    <a href="conditional-expressions.html" class="nav-button previous">← Previous: Conditional Expressions</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+      <a href="wish-activities.html" class="nav-button activities">Extra Activities</a>
+    </div>
+    <a href="modal-perfect.html" class="nav-button next">Next: Modal Perfect Forms →</a>
+  </nav>
+
+  <footer>
+    <p>© 2025 English in Doses | All rights reserved | <a href="license.html">Licensing Information</a></p>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Handle theme toggle click - without localStorage
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        // Removed localStorage.setItem to avoid security errors
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+    
+    // Quiz functionality
+    let score = 0;
+    const totalQuestions = 10;
+    const correctAnswers = {
+      'q1': 1,  // knew
+      'q2': 3,  // had accepted
+      'q3': 2,  // stay
+      'q4': 1,  // gave
+      'q5': 1,  // ate
+      'q6': 2,  // had known
+      'q7': 2,  // have travelled
+      'q8': 3,  // could have been
+      'q9': 0,  // wish they had
+      'q10': 0  // would stop
+    };
+    const answered = {
+      'q1': false,
+      'q2': false,
+      'q3': false,
+      'q4': false,
+      'q5': false,
+      'q6': false,
+      'q7': false,
+      'q8': false,
+      'q9': false,
+      'q10': false
+    };
+    
+    function selectOption(questionId, optionIndex) {
+      if (answered[questionId]) return;
+      
+      const question = document.getElementById(questionId);
+      const options = question.getElementsByClassName('option');
+      
+      // Clear previous selections
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Select the current option
+      options[optionIndex].classList.add('selected');
+      
+      // Show feedback
+      const feedbackId = `feedback-${questionId}-${optionIndex}`;
+      const feedback = document.getElementById(feedbackId);
+      
+      if (feedback) {
+        feedback.style.display = 'block';
+        
+        if (optionIndex === correctAnswers[questionId]) {
+          feedback.classList.add('correct');
+          score++;
+        } else {
+          feedback.classList.add('incorrect');
+        }
+      }
+      
+      answered[questionId] = true;
+      
+      // Check if all questions are answered
+      checkCompletion();
+    }
+    
+    function checkCompletion() {
+      let allAnswered = true;
+      for (const q in answered) {
+        if (!answered[q]) {
+          allAnswered = false;
+          break;
+        }
+      }
+      
+      if (allAnswered) {
+        // Show the score
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.style.display = 'block';
+        document.getElementById('score').textContent = score;
+        
+        // Show the restart button
+        document.getElementById('restart-btn').style.display = 'block';
+      }
+    }
+    
+    // Restart quiz
+    document.getElementById('restart-btn').addEventListener('click', function() {
+      // Reset score
+      score = 0;
+      
+      // Reset answered status
+      for (const q in answered) {
+        answered[q] = false;
+      }
+      
+      // Hide all feedback
+      const feedbacks = document.getElementsByClassName('feedback');
+      for (let i = 0; i < feedbacks.length; i++) {
+        feedbacks[i].style.display = 'none';
+        feedbacks[i].classList.remove('correct', 'incorrect');
+      }
+      
+      // Remove selected class
+      const options = document.getElementsByClassName('option');
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Hide score and restart button
+      document.getElementById('score-display').style.display = 'none';
+      document.getElementById('restart-btn').style.display = 'none';
+      
+      // Scroll back to top of quiz
+      document.querySelector('.mcq-container').scrollIntoView({behavior: 'smooth'});
+    });
+    
+    // Sentence building practice
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkButtons = document.querySelectorAll('.check-btn');
+      
+      checkButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const sentenceBuilder = this.closest('.sentence-builder');
+          const input = sentenceBuilder.querySelector('.practice-input');
+          const feedback = sentenceBuilder.querySelector('.practice-feedback');
+          
+          // Simple check to see if input is not empty
+          if (input.value.trim() === '') {
+            feedback.textContent = 'Please write a sentence.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          }
+          
+          // In a real implementation, you would have more sophisticated checking
+          // For this template, we'll just provide encouraging feedback
+          feedback.textContent = 'Great job! Keep practicing to improve your grammar skills.';
+          feedback.style.color = 'var(--success-color)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
