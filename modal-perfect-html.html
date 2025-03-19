@@ -539,7 +539,6 @@
 
     .incorrect {
       color: var(--error-color);
-      text-decoration: line-through;
       margin: 5px 0;
     }
 
@@ -1405,10 +1404,18 @@
     };
     
     function selectOption(questionId, optionIndex) {
+      // If already answered correctly, don't allow changes
       if (answered[questionId]) return;
       
       const question = document.getElementById(questionId);
       const options = question.getElementsByClassName('option');
+      
+      // Hide all previous feedback for this question
+      const allFeedbacks = question.getElementsByClassName('feedback');
+      for (let i = 0; i < allFeedbacks.length; i++) {
+        allFeedbacks[i].style.display = 'none';
+        allFeedbacks[i].classList.remove('correct', 'incorrect');
+      }
       
       // Clear previous selections
       for (let i = 0; i < options.length; i++) {
@@ -1418,7 +1425,7 @@
       // Select the current option
       options[optionIndex].classList.add('selected');
       
-      // Show feedback
+      // Show feedback for current selection
       const feedbackId = `feedback-${questionId}-${optionIndex}`;
       const feedback = document.getElementById(feedbackId);
       
@@ -1427,16 +1434,16 @@
         
         if (optionIndex === correctAnswers[questionId]) {
           feedback.classList.add('correct');
+          // Only mark as answered and add to score if correct
+          answered[questionId] = true;
           score++;
+          // Check if all questions are answered correctly
+          checkCompletion();
         } else {
           feedback.classList.add('incorrect');
+          // Don't mark as answered so student can try again
         }
       }
-      
-      answered[questionId] = true;
-      
-      // Check if all questions are answered
-      checkCompletion();
     }
     
     function checkCompletion() {
