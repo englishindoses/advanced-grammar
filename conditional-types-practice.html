@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Interactive Conditionals Practice - Multiple activities to master all types of conditional sentences">
+  <title>Interactive Conditionals Practice - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+      --btn-bg: #3498db;
+      --btn-hover: #2980b9;
+      --btn-text: #ffffff;
+      --nav-btn-active: #f07d3e;
+      --drop-zone-bg: #eaf7ff;
+      --drag-item-bg: #e0f0fd;
+      --drag-item-border: #3498db;
+      --drag-item-text: #2c3e50;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+      --btn-bg: #4fa3e0;
+      --btn-hover: #3d8bc7;
+      --btn-text: #ffffff;
+      --nav-btn-active: #f38d56;
+      --drop-zone-bg: #1a2632;
+      --drag-item-bg: #253545;
+      --drag-item-border: #4fa3e0;
+      --drag-item-text: #e0e0e0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .intro-section {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .activity-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+      display: none;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .activity-container.active {
+      display: block;
+    }
+
+    .activity-nav {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .activity-nav-btn {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: background-color 0.3s, transform 0.2s;
+      flex: 1;
+      min-width: 100px;
+      max-width: calc(25% - 8px);
+      text-align: center;
+    }
+
+    .activity-nav-btn:hover {
+      background-color: var(--btn-hover);
+      transform: translateY(-2px);
+    }
+
+    .activity-nav-btn.active {
+      background-color: var(--nav-btn-active);
+      font-weight: bold;
+    }
+
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .question-text {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Multiple choice styles */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .option:hover {
+      background-color: var(--mcq-hover-bg);
+      transform: translateY(-1px);
+    }
+
+    .option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+      font-weight: bold;
+    }
+
+    /* Gap fill styles */
+    .gap-fill-sentence {
+      font-family: 'Source Code Pro', monospace;
+      margin-bottom: 5px;
+      line-height: 2;
+    }
+
+    .gap-input {
+      width: 140px;
+      padding: 5px 8px;
+      margin: 0 5px;
+      border: 2px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Source Code Pro', monospace;
+      transition: border-color 0.3s;
+    }
+
+    .gap-input:focus {
+      border-color: var(--gap-input-border);
+      outline: none;
+    }
+
+    .gap-input.correct {
+      border-color: var(--success-color);
+      background-color: var(--success-bg);
+      color: var(--success-color);
+    }
+
+    .gap-input.incorrect {
+      border-color: var(--error-color);
+      background-color: var(--error-bg);
+      color: var(--error-color);
+    }
+
+    /* Drag and drop styles */
+    .drag-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .drop-zone {
+      min-height: 50px;
+      border: 2px dashed var(--border-color);
+      border-radius: 4px;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      background-color: var(--drop-zone-bg);
+      transition: background-color 0.3s;
+    }
+
+    .drop-zone.highlight {
+      background-color: var(--mcq-hover-bg);
+      border-color: var(--accent-color);
+    }
+
+    .drag-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .drag-item {
+      padding: 8px 12px;
+      background-color: var(--drag-item-bg);
+      border: 1px solid var(--drag-item-border);
+      border-radius: 4px;
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.1s;
+      color: var(--drag-item-text);
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    .drag-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .drag-item.dragging {
+      opacity: 0.5;
+      border-style: dashed;
+    }
+
+    /* Matching styles */
+    .matching-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .matching-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .matching-question, .matching-answer {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      background-color: var(--card-bg);
+    }
+
+    .matching-question:hover, .matching-answer:hover {
+      background-color: var(--mcq-hover-bg);
+    }
+
+    .matching-question.selected, .matching-answer.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+    }
+
+    .matching-question.matched, .matching-answer.matched {
+      border-color: var(--success-color);
+      background-color: var(--success-bg);
+    }
+
+    .matching-line-container {
+      position: relative;
+      height: 0;
+    }
+
+    .matching-line {
+      position: absolute;
+      background-color: var(--accent-color);
+      height: 2px;
+      z-index: 1;
+      transform-origin: 0 0;
+    }
+
+    /* Sentence transformation styles */
+    .transformation-input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      border: 2px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    .transformation-input:focus {
+      border-color: var(--gap-input-border);
+      outline: none;
+    }
+
+    /* Feedback area */
+    .feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+      display: block;
+    }
+
+    .feedback.incorrect {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+      display: block;
+    }
+
+    /* Score display */
+    .score-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      display: none;
+    }
+
+    /* Control buttons */
+    .control-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .submit-btn, .restart-btn, .check-btn {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .submit-btn:hover, .restart-btn:hover, .check-btn:hover {
+      background-color: var(--btn-hover);
+      transform: translateY(-2px);
+    }
+
+    .restart-btn {
+      background-color: var(--secondary-accent);
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    /* Error correction styles */
+    .error-correction-text {
+      font-family: 'Source Code Pro', monospace;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .error-correction-input {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid var(--border-color);
+      border-radius: 4px;
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    /* Situation match styles */
+    .situation-description {
+      background-color: var(--card-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .activity-nav-btn {
+        max-width: calc(50% - 5px);
+      }
+      
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .matching-item {
+        flex-direction: column;
+      }
+      
+      .matching-question, .matching-answer {
+        width: 100%;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="grammar.html" class="nav-link">Grammar</a>
+      <a href="extra-practice.html" class="nav-link active">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="conditionals.html">Conditionals</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Interactive Practice</span>
+    </div>
+
+    <h1>Interactive Conditionals Practice</h1>
+
+    <section class="intro-section">
+      <h2>Mastering All Types of Conditionals</h2>
+      <p>Welcome to the interactive conditionals practice! This set of activities will help you master all types of conditional sentences: zero, first, second, third, and mixed conditionals.</p>
+      
+      <p>You'll progress from basic recognition to more complex production tasks. Each activity focuses on different aspects of conditionals and provides immediate feedback.</p>
+      
+      <p>Use the navigation below to move between different activities. You can retry any activity as many times as you want.</p>
+    </section>
+
+    <div class="activity-nav">
+      <button class="activity-nav-btn active" data-activity="mcq">Multiple Choice</button>
+      <button class="activity-nav-btn" data-activity="gap-fill">Gap Fill</button>
+      <button class="activity-nav-btn" data-activity="matching">Matching Clauses</button>
+      <button class="activity-nav-btn" data-activity="error-correction">Error Correction</button>
+      <button class="activity-nav-btn" data-activity="drag-drop">Drag & Drop</button>
+      <button class="activity-nav-btn" data-activity="transformation">Sentence Transformation</button>
+      <button class="activity-nav-btn" data-activity="situations">Situation Match</button>
+      <button class="activity-nav-btn" data-activity="mixed-conditionals">Mixed Conditionals</button>
+    </div>
+
+    <!-- Multiple Choice Questions Activity -->
+    <section id="mcq" class="activity-container active">
+      <h2>Conditional Forms Recognition</h2>
+      <p>Choose the correct option to complete each conditional sentence.</p>
+
+      <div class="question" id="mcq-q1">
+        <p class="question-text">1. If you heat water to 100°C, it _____.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="Correct! In a zero conditional (for scientific facts), we use present simple in both clauses: 'If/When + present simple, present simple'.">
+            <span>A. boils</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="This is a scientific fact (zero conditional), so we need the present simple tense. We use 'will' for first conditionals (possible future events), not for facts that are always true.">
+            <span>B. will boil</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="We use 'would' in second conditionals for hypothetical situations, not for scientific facts which require the present simple tense.">
+            <span>C. would boil</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="We need a present tense here, not past tense. Scientific facts use the present simple tense in both clauses.">
+            <span>D. boiled</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q2">
+        <p class="question-text">2. If it rains tomorrow, we _____.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="We need a future form in the main clause of a first conditional. The present simple is used in the if-clause, but not in the main clause.">
+            <span>A. stay at home</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="Correct! This is a first conditional (possible future situation). The structure is: 'If + present simple, will + base verb'.">
+            <span>B. will stay at home</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="'Would' is used in second conditionals for hypothetical situations, not in first conditionals which are about probable future situations.">
+            <span>C. would stay at home</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="Past tense doesn't work here. This sentence refers to a possible future event, so we need a future form.">
+            <span>D. stayed at home</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q3">
+        <p class="question-text">3. If I had more time, I _____.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="'Will' is used in first conditionals with present simple in the if-clause. Here we have past simple ('had') in the if-clause, so we need a different modal verb.">
+            <span>A. will learn a new language</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="We need a modal verb in the main clause of second conditionals. The present simple isn't the right tense here.">
+            <span>B. learn a new language</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="Correct! This is a second conditional (hypothetical present/future). The structure is: 'If + past simple, would + base verb'.">
+            <span>C. would learn a new language</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="This is not grammatically possible in a conditional. 'Had learned' is past perfect, which doesn't match with the past simple in the if-clause.">
+            <span>D. had learned a new language</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q4">
+        <p class="question-text">4. If she had studied harder, she _____.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="'Will' is for future actions in first conditionals. This sentence has past perfect in the if-clause ('had studied'), so we need a different structure.">
+            <span>A. will pass the exam</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="Present simple doesn't work with past perfect in the if-clause. This conditional is talking about a past event, not a general truth.">
+            <span>B. passes the exam</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="'Would pass' refers to present/future hypotheticals. Since the if-clause has 'had studied' (past perfect), we need a different form.">
+            <span>C. would pass the exam</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="Correct! This is a third conditional (hypothetical past). The structure is: 'If + past perfect, would have + past participle'.">
+            <span>D. would have passed the exam</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q5">
+        <p class="question-text">5. If you _____ so much coffee, you wouldn't have trouble sleeping.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="'Don't drink' is present simple, which doesn't match with 'would' in the main clause. The tenses need to be consistent.">
+            <span>A. don't drink</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="Correct! This is a second conditional (hypothetical present). The structure is: 'If + past simple, would + base verb'.">
+            <span>B. didn't drink</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="'Won't' is used in first conditionals for probable future events. It doesn't match with 'would' in the main clause.">
+            <span>C. won't drink</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="We don't use 'would' in the if-clause of conditionals (except in polite requests). 'Would' belongs in the main clause.">
+            <span>D. wouldn't drink</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q6">
+        <p class="question-text">6. I would have attended the conference if I _____ about it earlier.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="'Know' is present simple, which doesn't match with 'would have attended' in the main clause. We're talking about a past event.">
+            <span>A. know</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="'Knew' (past simple) is used in second conditionals. Here, 'would have attended' tells us we're dealing with a third conditional.">
+            <span>B. knew</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="Correct! This is a third conditional (hypothetical past). The structure is: 'If + past perfect, would have + past participle'.">
+            <span>C. had known</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="We don't use 'would' in the if-clause of conditionals (except in polite requests). 'Would' belongs in the main clause.">
+            <span>D. would know</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q7">
+        <p class="question-text">7. _____ I in charge, I would change the company's policy.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="'When' is used for events that will definitely happen, not for hypothetical situations as in this second conditional.">
+            <span>A. When</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="Correct! This is an inverted second conditional. Instead of 'If I were in charge', we can say 'Were I in charge' with subject-verb inversion.">
+            <span>B. Were</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="'If' would be correct in the normal form 'If I were in charge', but when the verb comes before the subject, we use 'Were I' not 'If I'.">
+            <span>C. If</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="'Unless' means 'if not' and doesn't fit this context. Also, we wouldn't use 'Unless I in charge' even in a normal conditional.">
+            <span>D. Unless</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q8">
+        <p class="question-text">8. If I had studied medicine, I _____ a doctor now.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="'Would have been' is used in third conditionals for past results. This sentence is about a present result, so we need a different form.">
+            <span>A. would have been</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="'Will be' is used in first conditionals. Here, the if-clause has past perfect ('had studied'), which doesn't match with 'will'.">
+            <span>B. will be</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="Correct! This is a mixed conditional: past condition ('had studied') with present result ('would be'). It combines third and second conditional forms.">
+            <span>C. would be</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="'Had been' is past perfect. We can't use past perfect in both clauses of a conditional sentence. The main clause needs a modal verb.">
+            <span>D. had been</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q9">
+        <p class="question-text">9. If I _____ more careful, I wouldn't have made that mistake.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="While 'was' is sometimes used in informal speech, 'were' is the traditional form for hypothetical situations.">
+            <span>A. was</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="Correct! This is a mixed conditional: present condition ('were more careful') with past result ('wouldn't have made'). It combines second and third conditional forms.">
+            <span>B. were</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="We don't use 'would' in the if-clause of conditionals (except in polite requests). 'Would' belongs in the main clause.">
+            <span>C. would be</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="'Had been' would make this a third conditional, but the structure doesn't match with the intended meaning of a present characteristic affecting a past result.">
+            <span>D. had been</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mcq-q10">
+        <p class="question-text">10. If you _____ spicy food, you should try this curry.</p>
+        <div class="options">
+          <div class="option" data-index="0" data-explanation="Correct! This is a zero conditional for general truths or preferences. The structure is: 'If + present simple, present simple/imperative/should + base verb'.">
+            <span>A. like</span>
+          </div>
+          <div class="option" data-index="1" data-explanation="'Will like' is future tense, which doesn't make sense in this context. We're talking about the person's general preference, not what they will like in the future.">
+            <span>B. will like</span>
+          </div>
+          <div class="option" data-index="2" data-explanation="'Would like' would suggest a hypothetical situation, but the context implies a real situation about the person's actual food preferences.">
+            <span>C. would like</span>
+          </div>
+          <div class="option" data-index="3" data-explanation="'Liked' (past simple) doesn't match the present tense context. We're talking about current preferences, not past ones.">
+            <span>D. liked</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="mcq-score">
+        Your score: <span>0</span>/10
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="mcq-submit">Check Answers</button>
+        <button class="restart-btn" id="mcq-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Gap Fill Activity -->
+    <section id="gap-fill" class="activity-container">
+      <h2>Conditional Gap Fill</h2>
+      <p>Complete each sentence with the correct verb form. Use the base verb in brackets and change it as needed.</p>
+
+      <div class="question" id="gap-q1">
+        <p class="gap-fill-sentence">1. If it <input type="text" class="gap-input" data-answer="rains"> (rain) tomorrow, we will cancel the picnic.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q2">
+        <p class="gap-fill-sentence">2. Water <input type="text" class="gap-input" data-answer="freezes"> (freeze) if the temperature falls below 0°C.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q3">
+        <p class="gap-fill-sentence">3. If I <input type="text" class="gap-input" data-answer="were"> (be) you, I would accept the job offer.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q4">
+        <p class="gap-fill-sentence">4. They <input type="text" class="gap-input" data-answer="would have arrived,would've arrived"> (arrive) earlier if they hadn't missed the train.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q5">
+        <p class="gap-fill-sentence">5. If he <input type="text" class="gap-input" data-answer="had known"> (know) about the meeting, he would have attended it.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q6">
+        <p class="gap-fill-sentence">6. Unless you <input type="text" class="gap-input" data-answer="leave"> (leave) now, you will miss the bus.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q7">
+        <p class="gap-fill-sentence">7. If they <input type="text" class="gap-input" data-answer="offered"> (offer) me the job, I would take it immediately.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q8">
+        <p class="gap-fill-sentence">8. <input type="text" class="gap-input" data-answer="Had"> (have) he arrived on time, we wouldn't have started without him.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q9">
+        <p class="gap-fill-sentence">9. If I <input type="text" class="gap-input" data-answer="hadn't eaten"> (not eat) so much, I wouldn't feel sick now.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="gap-q10">
+        <p class="gap-fill-sentence">10. I <input type="text" class="gap-input" data-answer="would take,would've taken,would have taken"> (take) the exam last month if I had been ready for it.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="gap-score">
+        Your score: <span>0</span>/10
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="gap-submit">Check Answers</button>
+        <button class="restart-btn" id="gap-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Matching Activity -->
+    <section id="matching" class="activity-container">
+      <h2>Matching Conditional Clauses</h2>
+      <p>Click on an if-clause, then click on the matching main clause to connect them. A line will appear when a match is made.</p>
+
+      <div class="matching-container" id="matching-container" style="display: flex; flex-direction: row; justify-content: space-between; gap: 20px;">
+        <!-- Column for questions -->
+        <div style="flex: 1;">
+          <div class="matching-item">
+            <div class="matching-question" data-index="0">If I win the lottery,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="1">If you mix red and blue,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="2">If it had rained yesterday,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="3">If I were the CEO,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="4">If I had known you were coming,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="5">If we leave now,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="6">If you had followed the directions,</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-question" data-index="7">If she speaks English well,</div>
+          </div>
+        </div>
+
+        <!-- Column for answers (shuffled) -->
+        <div style="flex: 1;">
+          <div class="matching-item">
+            <div class="matching-answer" data-index="6">you wouldn't have got lost.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="1">you get purple.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="5">we'll arrive before dinner.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="2">we would have cancelled the picnic.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="0">I'll buy a new house.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="4">I would have prepared dinner.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="7">she'll get the job.</div>
+          </div>
+          <div class="matching-item">
+            <div class="matching-answer" data-index="3">I would change the company policy.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="matching-line-container" id="line-container"></div>
+
+      <div class="score-display" id="matching-score">
+        Correct matches: <span>0</span>/8
+      </div>
+
+      <div class="control-buttons">
+        <button class="restart-btn" id="matching-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Error Correction Activity -->
+    <section id="error-correction" class="activity-container">
+      <h2>Conditional Error Correction</h2>
+      <p>Each sentence contains an error in the conditional form. Rewrite the sentence correctly in the box below.</p>
+
+      <div class="question" id="error-q1">
+        <p class="error-correction-text">1. If I will have time tomorrow, I will visit you.</p>
+        <input type="text" class="error-correction-input" data-answer="If I have time tomorrow, I will visit you.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q2">
+        <p class="error-correction-text">2. If you would come to the party, you will meet my friends.</p>
+        <input type="text" class="error-correction-input" data-answer="If you come to the party, you will meet my friends.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q3">
+        <p class="error-correction-text">3. If I was you, I would take that job.</p>
+        <input type="text" class="error-correction-input" data-answer="If I were you, I would take that job.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q4">
+        <p class="error-correction-text">4. If she would have told me, I would have helped her.</p>
+        <input type="text" class="error-correction-input" data-answer="If she had told me, I would have helped her.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q5">
+        <p class="error-correction-text">5. We will go to the beach tomorrow unless it will rain.</p>
+        <input type="text" class="error-correction-input" data-answer="We will go to the beach tomorrow unless it rains.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q6">
+        <p class="error-correction-text">6. If I have studied harder, I would have passed the exam.</p>
+        <input type="text" class="error-correction-input" data-answer="If I had studied harder, I would have passed the exam.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q7">
+        <p class="error-correction-text">7. If they invite me, I would go to the party.</p>
+        <input type="text" class="error-correction-input" data-answer="If they invited me, I would go to the party.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="error-q8">
+        <p class="error-correction-text">8. If he had arrived earlier, he will get a seat.</p>
+        <input type="text" class="error-correction-input" data-answer="If he had arrived earlier, he would have got a seat.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="error-score">
+        Your score: <span>0</span>/8
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="error-submit">Check Answers</button>
+        <button class="restart-btn" id="error-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Drag and Drop Activity -->
+    <section id="drag-drop" class="activity-container">
+      <h2>Conditionals Drag and Drop</h2>
+      <p>Drag the words into the correct order to form conditional sentences.</p>
+
+      <div class="question" id="drag-q1">
+        <p class="question-text">1. Form a zero conditional about a scientific fact:</p>
+        <div class="drop-zone" data-index="1"></div>
+        <div class="drag-items">
+          <div class="drag-item" draggable="true">freezes</div>
+          <div class="drag-item" draggable="true">water</div>
+          <div class="drag-item" draggable="true">below</div>
+          <div class="drag-item" draggable="true">drops</div>
+          <div class="drag-item" draggable="true">zero</div>
+          <div class="drag-item" draggable="true">if</div>
+          <div class="drag-item" draggable="true">the</div>
+          <div class="drag-item" draggable="true">temperature</div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="drag-q2">
+        <p class="question-text">2. Form a first conditional about a future possibility:</p>
+        <div class="drop-zone" data-index="2"></div>
+        <div class="drag-items">
+          <div class="drag-item" draggable="true">will</div>
+          <div class="drag-item" draggable="true">the</div>
+          <div class="drag-item" draggable="true">call</div>
+          <div class="drag-item" draggable="true">if</div>
+          <div class="drag-item" draggable="true">you</div>
+          <div class="drag-item" draggable="true">I</div>
+          <div class="drag-item" draggable="true">finish</div>
+          <div class="drag-item" draggable="true">report</div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="drag-q3">
+        <p class="question-text">3. Form a second conditional about a hypothetical situation:</p>
+        <div class="drop-zone" data-index="3"></div>
+        <div class="drag-items">
+          <div class="drag-item" draggable="true">job</div>
+          <div class="drag-item" draggable="true">the</div>
+          <div class="drag-item" draggable="true">take</div>
+          <div class="drag-item" draggable="true">offered</div>
+          <div class="drag-item" draggable="true">if</div>
+          <div class="drag-item" draggable="true">would</div>
+          <div class="drag-item" draggable="true">they</div>
+          <div class="drag-item" draggable="true">I</div>
+          <div class="drag-item" draggable="true">me</div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="drag-q4">
+        <p class="question-text">4. Form a third conditional about a past regret:</p>
+        <div class="drop-zone" data-index="4"></div>
+        <div class="drag-items">
+          <div class="drag-item" draggable="true">had</div>
+          <div class="drag-item" draggable="true">earlier</div>
+          <div class="drag-item" draggable="true">the</div>
+          <div class="drag-item" draggable="true">train</div>
+          <div class="drag-item" draggable="true">if</div>
+          <div class="drag-item" draggable="true">we</div>
+          <div class="drag-item" draggable="true">would</div>
+          <div class="drag-item" draggable="true">have</div>
+          <div class="drag-item" draggable="true">caught</div>
+          <div class="drag-item" draggable="true">left</div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="drag-q5">
+        <p class="question-text">5. Form an inverted conditional sentence:</p>
+        <div class="drop-zone" data-index="5"></div>
+        <div class="drag-items">
+          <div class="drag-item" draggable="true">helped</div>
+          <div class="drag-item" draggable="true">had</div>
+          <div class="drag-item" draggable="true">I</div>
+          <div class="drag-item" draggable="true">known</div>
+          <div class="drag-item" draggable="true">would</div>
+          <div class="drag-item" draggable="true">have</div>
+          <div class="drag-item" draggable="true">you</div>
+          <div class="drag-item" draggable="true">I</div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="drag-score">
+        Your score: <span>0</span>/5
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="drag-submit">Check Answers</button>
+        <button class="restart-btn" id="drag-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Sentence Transformation Activity -->
+    <section id="transformation" class="activity-container">
+      <h2>Sentence Transformation</h2>
+      <p>Rewrite each sentence using the conditional type indicated in brackets.</p>
+
+      <div class="question" id="transform-q1">
+        <p class="question-text">1. She studies hard. She gets good grades. (zero conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If she studies hard, she gets good grades.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q2">
+        <p class="question-text">2. I will help you. You need to ask me first. (first conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If you ask me first, I will help you.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q3">
+        <p class="question-text">3. I don't have enough money. I can't buy a new car. (second conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If I had enough money, I would buy a new car.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q4">
+        <p class="question-text">4. I didn't see the notification. I didn't attend the meeting. (third conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If I had seen the notification, I would have attended the meeting.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q5">
+        <p class="question-text">5. I didn't take the job offer. I'm not working in London now. (mixed conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If I had taken the job offer, I would be working in London now.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q6">
+        <p class="question-text">6. You should take an umbrella. It might rain. (first conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If it rains, you should take an umbrella.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q7">
+        <p class="question-text">7. I don't speak Japanese. I can't read this book. (second conditional with "were able to")</p>
+        <input type="text" class="transformation-input" data-answer="If I spoke Japanese, I would be able to read this book.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="transform-q8">
+        <p class="question-text">8. He didn't follow my advice. He's in trouble now. (mixed conditional)</p>
+        <input type="text" class="transformation-input" data-answer="If he had followed my advice, he wouldn't be in trouble now.">
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="transform-score">
+        Your score: <span>0</span>/8
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="transform-submit">Check Answers</button>
+        <button class="restart-btn" id="transform-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Situation Match Activity -->
+    <section id="situations" class="activity-container">
+      <h2>Matching Conditionals to Situations</h2>
+      <p>Choose the most appropriate conditional sentence for each situation.</p>
+
+      <div class="question" id="situation-q1">
+        <div class="situation-description">
+          <p>1. You want to express a scientific fact about what happens when you heat water.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If you heat water to 100°C, it boils.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If you heated water to 100°C, it would boil.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If you had heated water to 100°C, it would have boiled.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If you heat water to 100°C, it will boil.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q2">
+        <div class="situation-description">
+          <p>2. Your friend is planning a trip to Paris next month, and you want to offer to help if they need it.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If you need any help with planning, I help you.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If you need any help with planning, I will help you.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If you needed any help with planning, I would help you.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If you had needed any help with planning, I would have helped you.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q3">
+        <div class="situation-description">
+          <p>3. You're daydreaming about winning the lottery, which is very unlikely.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If I win the lottery, I buy a new house.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If I win the lottery, I will buy a new house.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If I won the lottery, I would buy a new house.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If I had won the lottery, I would have bought a new house.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q4">
+        <div class="situation-description">
+          <p>4. You're expressing regret about missing an opportunity in the past.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If I know about the concert, I will go.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If I know about the concert, I go.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If I knew about the concert, I would go.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If I had known about the concert, I would have gone.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q5">
+        <div class="situation-description">
+          <p>5. You want to express that a past event is affecting your current situation.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If I had studied medicine, I would be a doctor now.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If I studied medicine, I would be a doctor now.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If I had studied medicine, I would have been a doctor now.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If I study medicine, I will be a doctor now.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q6">
+        <div class="situation-description">
+          <p>6. Your friend is not well-prepared for an upcoming exam, and you want to give them advice.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If I were you, I would start studying right away.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If I had been you, I would have started studying right away.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If I am you, I will start studying right away.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If I was you, I had started studying right away.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q7">
+        <div class="situation-description">
+          <p>7. You're giving general advice to a student about their studies.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If you study regularly, you get better grades.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If you had studied regularly, you would have got better grades.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If you studied regularly, you would get better grades.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If you will study regularly, you will get better grades.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="situation-q8">
+        <div class="situation-description">
+          <p>8. You're expressing a current regret about a personality trait you have.</p>
+        </div>
+        <div class="options">
+          <div class="option" data-index="0">
+            <span>A. If I am more confident, I will apply for that job.</span>
+          </div>
+          <div class="option" data-index="1">
+            <span>B. If I had been more confident, I would have applied for that job.</span>
+          </div>
+          <div class="option" data-index="2">
+            <span>C. If I were more confident, I would apply for that job.</span>
+          </div>
+          <div class="option" data-index="3">
+            <span>D. If I was more confident, I had applied for that job.</span>
+          </div>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="situation-score">
+        Your score: <span>0</span>/8
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="situation-submit">Check Answers</button>
+        <button class="restart-btn" id="situation-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+
+    <!-- Mixed Conditionals Activity -->
+    <section id="mixed-conditionals" class="activity-container">
+      <h2>Mixed Conditionals Challenge</h2>
+      <p>Complete these mixed conditional sentences by typing the correct form of the verb in brackets.</p>
+
+      <div class="question" id="mixed-q1">
+        <p class="gap-fill-sentence">1. If I <input type="text" class="gap-input" data-answer="hadn't missed"> (not miss) the train yesterday, I <input type="text" class="gap-input" data-answer="would be,would've been,would have been"> (be) at the conference now.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q2">
+        <p class="gap-fill-sentence">2. If she <input type="text" class="gap-input" data-answer="were"> (be) more qualified, she <input type="text" class="gap-input" data-answer="would have got,would've got,would have gotten"> (get) the job last week.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q3">
+        <p class="gap-fill-sentence">3. If he <input type="text" class="gap-input" data-answer="hadn't been"> (not be) so careless, he <input type="text" class="gap-input" data-answer="wouldn't have to,wouldn't have to"> (not have to) redo the assignment now.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q4">
+        <p class="gap-fill-sentence">4. If I <input type="text" class="gap-input" data-answer="spoke"> (speak) Chinese, I <input type="text" class="gap-input" data-answer="would have applied,would've applied"> (apply) for that job in Shanghai last month.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q5">
+        <p class="gap-fill-sentence">5. If they <input type="text" class="gap-input" data-answer="had invited"> (invite) him to the party, he <input type="text" class="gap-input" data-answer="would be,would've been,would have been"> (be) here now.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q6">
+        <p class="gap-fill-sentence">6. If I <input type="text" class="gap-input" data-answer="had known"> (know) you were vegetarian, I <input type="text" class="gap-input" data-answer="wouldn't cook,wouldn't be cooking,wouldn't have cooked"> (not cook) meat for dinner tonight.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q7">
+        <p class="gap-fill-sentence">7. If she <input type="text" class="gap-input" data-answer="weren't"> (not be) afraid of flying, we <input type="text" class="gap-input" data-answer="would have gone,would've gone"> (go) to Japan last summer.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question" id="mixed-q8">
+        <p class="gap-fill-sentence">8. If I <input type="text" class="gap-input" data-answer="were"> (be) in your position, I <input type="text" class="gap-input" data-answer="would have told,would've told"> (tell) them the truth yesterday.</p>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="score-display" id="mixed-score">
+        Your score: <span>0</span>/16
+      </div>
+
+      <div class="control-buttons">
+        <button class="submit-btn" id="mixed-submit">Check Answers</button>
+        <button class="restart-btn" id="mixed-restart" style="display:none;">Try Again</button>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Handle theme toggle click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+
+    // Activity navigation
+    document.querySelectorAll('.activity-nav-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Hide all activities
+        document.querySelectorAll('.activity-container').forEach(container => {
+          container.classList.remove('active');
+        });
+        
+        // Remove active class from all nav buttons
+        document.querySelectorAll('.activity-nav-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        
+        // Show selected activity
+        const activityId = this.getAttribute('data-activity');
+        document.getElementById(activityId).classList.add('active');
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+      });
+    });
+
+    // Multiple Choice Questions Activity
+    const mcqCorrectAnswers = {
+      'mcq-q1': 0, // boils
+      'mcq-q2': 1, // will stay at home
+      'mcq-q3': 2, // would learn a new language
+      'mcq-q4': 3, // would have passed the exam
+      'mcq-q5': 1, // didn't drink
+      'mcq-q6': 2, // had known
+      'mcq-q7': 1, // Were
+      'mcq-q8': 2, // would be
+      'mcq-q9': 1, // were
+      'mcq-q10': 0 // like
+    };
+
+    // Set up MCQ options click handlers
+    document.querySelectorAll('#mcq .option').forEach(option => {
+      option.addEventListener('click', function() {
+        const questionId = this.closest('.question').id;
+        const options = document.querySelectorAll(`#${questionId} .option`);
+        
+        // Clear previous selections
+        options.forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        
+        // Select this option
+        this.classList.add('selected');
+      });
+    });
+
+    // MCQ submit button
+    document.getElementById('mcq-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      Object.keys(mcqCorrectAnswers).forEach(questionId => {
+        const selectedOption = document.querySelector(`#${questionId} .option.selected`);
+        const feedback = document.querySelector(`#${questionId} .feedback`);
+        
+        if (selectedOption) {
+          const selectedIndex = parseInt(selectedOption.getAttribute('data-index'));
+          const explanation = selectedOption.getAttribute('data-explanation');
+          
+          if (selectedIndex === mcqCorrectAnswers[questionId]) {
+            feedback.textContent = explanation;
+            feedback.className = 'feedback correct';
+            score++;
+          } else {
+            feedback.textContent = explanation;
+            feedback.className = 'feedback incorrect';
+          }
+        } else {
+          feedback.textContent = 'Please select an answer.';
+          feedback.className = 'feedback incorrect';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('mcq-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('mcq-submit').style.display = 'none';
+      document.getElementById('mcq-restart').style.display = 'block';
+    });
+
+    // MCQ restart button
+    document.getElementById('mcq-restart').addEventListener('click', function() {
+      // Clear selections
+      document.querySelectorAll('#mcq .option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#mcq .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('mcq-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('mcq-submit').style.display = 'block';
+      document.getElementById('mcq-restart').style.display = 'none';
+    });
+
+    // Gap Fill Activity
+    document.getElementById('gap-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      document.querySelectorAll('#gap-fill .gap-input').forEach(input => {
+        const correctAnswers = input.getAttribute('data-answer').split(',');
+        const userAnswer = input.value.trim().toLowerCase();
+        const feedback = input.closest('.question').querySelector('.feedback');
+        
+        // Check if answer is correct (case insensitive)
+        if (correctAnswers.some(answer => userAnswer === answer.toLowerCase())) {
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+          feedback.textContent = `Correct! This is the proper verb form for this conditional type.`;
+          feedback.className = 'feedback correct';
+          score++;
+        } else {
+          input.classList.add('incorrect');
+          input.classList.remove('correct');
+          // Provide hints rather than giving away the answer
+          let hint;
+          const questionText = input.closest('.gap-fill-sentence').textContent;
+          
+          if (questionText.includes('tomorrow') || questionText.includes('will')) {
+            hint = "This appears to be a first conditional. Check which tense should be used in the if-clause.";
+          } else if (questionText.includes('would') && !questionText.includes('have')) {
+            hint = "This appears to be a second conditional. Check which tense should be used with 'would'.";
+          } else if (questionText.includes('would have')) {
+            hint = "This appears to be a third conditional. Remember we use past perfect in the if-clause.";
+          } else if (questionText.toLowerCase().includes('if') && (questionText.includes('freezes') || questionText.includes('boils'))) {
+            hint = "This appears to be a zero conditional for facts/general truths. Use present simple in both clauses.";
+          } else {
+            hint = "Check which conditional type this is and which tense should be used.";
+          }
+          
+          feedback.textContent = hint;
+          feedback.className = 'feedback incorrect';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('gap-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('gap-submit').style.display = 'none';
+      document.getElementById('gap-restart').style.display = 'block';
+    });
+
+    // Gap Fill restart button
+    document.getElementById('gap-restart').addEventListener('click', function() {
+      // Clear input values
+      document.querySelectorAll('#gap-fill .gap-input').forEach(input => {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect');
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#gap-fill .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('gap-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('gap-submit').style.display = 'block';
+      document.getElementById('gap-restart').style.display = 'none';
+    });
+
+    // Matching Activity
+    let selectedQuestion = null;
+    let matchedPairs = new Set();
+    const matchColors = [
+      'rgba(144, 238, 144, 0.6)',  // light green
+      'rgba(173, 216, 230, 0.6)',  // light blue
+      'rgba(221, 160, 221, 0.6)',  // plum
+      'rgba(255, 182, 193, 0.6)',  // light pink
+      'rgba(255, 218, 185, 0.6)',  // peach
+      'rgba(152, 251, 152, 0.6)',  // pale green
+      'rgba(135, 206, 250, 0.6)',  // light sky blue
+      'rgba(238, 130, 238, 0.6)'   // violet
+    ];
+
+    // Set up matching item click handlers
+    document.querySelectorAll('.matching-question, .matching-answer').forEach(item => {
+      item.addEventListener('click', function() {
+        // If this item is already matched, do nothing
+        if (this.classList.contains('matched')) {
+          return;
+        }
+        
+        const isQuestion = this.classList.contains('matching-question');
+        const index = parseInt(this.getAttribute('data-index'));
+        
+        if (isQuestion) {
+          // Clear previous question selection
+          document.querySelectorAll('.matching-question').forEach(q => {
+            if (!q.classList.contains('matched')) {
+              q.classList.remove('selected');
+            }
+          });
+          
+          // Select this question
+          this.classList.add('selected');
+          selectedQuestion = this;
+        } else {
+          // This is an answer
+          // If no question is selected, do nothing
+          if (!selectedQuestion) {
+            return;
+          }
+          
+          const questionIndex = parseInt(selectedQuestion.getAttribute('data-index'));
+          
+          // Check if match is correct
+          if (questionIndex === index) {
+            // Correct match - apply matching color
+            const colorIndex = matchedPairs.size;
+            const matchColor = matchColors[colorIndex % matchColors.length];
+            
+            selectedQuestion.classList.add('matched');
+            this.classList.add('matched');
+            
+            selectedQuestion.style.backgroundColor = matchColor;
+            this.style.backgroundColor = matchColor;
+            
+            // Add to matched pairs
+            matchedPairs.add(questionIndex);
+            
+            // Check if all pairs are matched
+            if (matchedPairs.size === 8) {
+              document.getElementById('matching-score').querySelector('span').textContent = 8;
+              document.getElementById('matching-score').style.display = 'block';
+              document.getElementById('matching-restart').style.display = 'block';
+            }
+            
+            // Clear selection
+            selectedQuestion.classList.remove('selected');
+            selectedQuestion = null;
+          } else {
+            // Incorrect match - flash
+            this.classList.add('selected');
+            setTimeout(() => {
+              this.classList.remove('selected');
+              selectedQuestion.classList.remove('selected');
+              selectedQuestion = null;
+            }, 500);
+          }
+        }
+      });
+    });
+
+    // Matching restart button
+    document.getElementById('matching-restart').addEventListener('click', function() {
+      // Clear matches
+      document.querySelectorAll('.matching-question, .matching-answer').forEach(item => {
+        item.classList.remove('selected', 'matched');
+        item.style.backgroundColor = ''; // Remove background color
+      });
+      
+      // Reset matched pairs
+      matchedPairs = new Set();
+      selectedQuestion = null;
+      
+      // Hide score and restart button
+      document.getElementById('matching-score').style.display = 'none';
+      document.getElementById('matching-restart').style.display = 'none';
+    });
+
+    // Error Correction Activity
+    document.getElementById('error-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      document.querySelectorAll('#error-correction .error-correction-input').forEach(input => {
+        const questionId = input.closest('.question').id;
+        let alternativeAnswers = [];
+        
+        // Define multiple possible correct answers for each question
+        switch(questionId) {
+          case 'error-q1':
+            alternativeAnswers = [
+              'If I have time tomorrow, I will visit you.',
+              'I will visit you if I have time tomorrow.'
+            ];
+            break;
+          case 'error-q2':
+            alternativeAnswers = [
+              'If you come to the party, you will meet my friends.',
+              'You will meet my friends if you come to the party.'
+            ];
+            break;
+          case 'error-q3':
+            alternativeAnswers = [
+              'If I were you, I would take that job.',
+              'I would take that job if I were you.'
+            ];
+            break;
+          case 'error-q4':
+            alternativeAnswers = [
+              'If she had told me, I would have helped her.',
+              'I would have helped her if she had told me.'
+            ];
+            break;
+          case 'error-q5':
+            alternativeAnswers = [
+              'We will go to the beach tomorrow unless it rains.',
+              'Unless it rains, we will go to the beach tomorrow.'
+            ];
+            break;
+          case 'error-q6':
+            alternativeAnswers = [
+              'If I had studied harder, I would have passed the exam.',
+              'I would have passed the exam if I had studied harder.'
+            ];
+            break;
+          case 'error-q7':
+            alternativeAnswers = [
+              'If they invited me, I would go to the party.',
+              'I would go to the party if they invited me.'
+            ];
+            break;
+          case 'error-q8':
+            alternativeAnswers = [
+              'If he had arrived earlier, he would have got a seat.',
+              'He would have got a seat if he had arrived earlier.',
+              'If he had arrived earlier, he would have gotten a seat.',
+              'He would have gotten a seat if he had arrived earlier.',
+            ];
+            break;
+        }
+        
+        const userAnswer = input.value.trim();
+        const feedback = input.closest('.question').querySelector('.feedback');
+        
+        // Check if answer matches any of the acceptable forms
+        const isCorrect = alternativeAnswers.some(answer => {
+          // Normalize answers for comparison (case insensitive, ignore extra spaces)
+          const normalizedCorrect = answer.toLowerCase().replace(/\s+/g, ' ').trim();
+          const normalizedUser = userAnswer.toLowerCase().replace(/\s+/g, ' ').trim();
+          return normalizedCorrect === normalizedUser;
+        });
+        
+        if (isCorrect) {
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+          feedback.textContent = 'Correct! Good job fixing the error.';
+          feedback.className = 'feedback correct';
+          score++;
+        } else {
+          input.classList.add('incorrect');
+          input.classList.remove('correct');
+          
+          // Provide hints without giving away the full answer
+          const originalSentence = input.closest('.question').querySelector('.error-correction-text').textContent;
+          let hint;
+          
+          if (questionId === 'error-q1') {
+            hint = "The error is in the if-clause. You can't use 'will' in the if-clause of a first conditional.";
+          } else if (questionId === 'error-q2') {
+            hint = "There's a mismatch between 'would' and 'will'. Check what tense should be used in each clause of a first conditional.";
+          } else if (questionId === 'error-q3') {
+            hint = "For hypothetical situations, we use 'were' instead of 'was' after 'if I', even though 'was' is sometimes used in informal speech.";
+          } else if (questionId === 'error-q4') {
+            hint = "You can't use 'would' in the if-clause of a third conditional. What tense should be used instead?";
+          } else if (questionId === 'error-q5') {
+            hint = "After 'unless', you should use present simple, not 'will' for future events.";
+          } else if (questionId === 'error-q6') {
+            hint = "The verb in the if-clause should be past perfect, not present perfect, since this is a third conditional.";
+          } else if (questionId === 'error-q7') {
+            hint = "This should be a second conditional. The tenses in the if-clause and main clause don't match.";
+          } else if (questionId === 'error-q8') {
+            hint = "The tenses don't match in this sentence. If the if-clause is past perfect, what should the result clause use?";
+          }
+          
+          feedback.textContent = hint;
+          feedback.className = 'feedback incorrect';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('error-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('error-submit').style.display = 'none';
+      document.getElementById('error-restart').style.display = 'block';
+    });
+
+    // Error Correction restart button
+    document.getElementById('error-restart').addEventListener('click', function() {
+      // Clear input values
+      document.querySelectorAll('#error-correction .error-correction-input').forEach(input => {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect');
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#error-correction .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('error-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('error-submit').style.display = 'block';
+      document.getElementById('error-restart').style.display = 'none';
+    });
+
+    // Drag and Drop Activity
+    // Set up drag items
+    document.querySelectorAll('.drag-item').forEach(item => {
+      item.addEventListener('dragstart', function(e) {
+        this.classList.add('dragging');
+        e.dataTransfer.setData('text/plain', this.textContent);
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      
+      item.addEventListener('dragend', function() {
+        this.classList.remove('dragging');
+      });
+      
+      // Add double-click to remove and return to options
+      item.addEventListener('dblclick', function() {
+        // Get the parent element
+        const parent = this.parentElement;
+        
+        // If this item is in a drop zone, return it to the options
+        if (parent.classList.contains('drop-zone')) {
+          // Find the original container for this items
+          const questionId = parent.closest('.question').id;
+          const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+          
+          // Clone the item and add to options
+          const newItem = this.cloneNode(true);
+          
+          // Add event listeners to the new item
+          newItem.addEventListener('dragstart', function(e) {
+            this.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', this.textContent);
+            e.dataTransfer.effectAllowed = 'move';
+          });
+          
+          newItem.addEventListener('dragend', function() {
+            this.classList.remove('dragging');
+          });
+          
+          newItem.addEventListener('dblclick', function() {
+            if (this.parentElement.classList.contains('drop-zone')) {
+              const questionId = this.parentElement.closest('.question').id;
+              const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+              const newItem = this.cloneNode(true);
+              
+              // Add the same event listeners to this new item
+              newItem.addEventListener('dragstart', function(e) {
+                this.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', this.textContent);
+                e.dataTransfer.effectAllowed = 'move';
+              });
+              
+              newItem.addEventListener('dragend', function() {
+                this.classList.remove('dragging');
+              });
+              
+              newItem.addEventListener('dblclick', function() {
+                if (this.parentElement.classList.contains('drop-zone')) {
+                  const questionId = this.parentElement.closest('.question').id;
+                  const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+                  optionsContainer.appendChild(this);
+                }
+              });
+              
+              optionsContainer.appendChild(newItem);
+              this.remove();
+            }
+          });
+          
+          optionsContainer.appendChild(newItem);
+          
+          // Remove this item from the drop zone
+          this.remove();
+        }
+      });
+    });
+
+    // Set up drop zones
+    document.querySelectorAll('.drop-zone').forEach(zone => {
+      zone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        this.classList.add('highlight');
+      });
+      
+      zone.addEventListener('dragleave', function() {
+        this.classList.remove('highlight');
+      });
+      
+      zone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('highlight');
+        
+        const draggedItem = document.querySelector('.dragging');
+        const itemText = e.dataTransfer.getData('text/plain');
+        
+        // Create a clone of the item in the drop zone
+        const newItem = document.createElement('div');
+        newItem.className = 'drag-item';
+        newItem.textContent = itemText;
+        newItem.draggable = true;
+        
+        // Add event listeners to the new item
+        newItem.addEventListener('dragstart', function(e) {
+          this.classList.add('dragging');
+          e.dataTransfer.setData('text/plain', this.textContent);
+          e.dataTransfer.effectAllowed = 'move';
+        });
+        
+        newItem.addEventListener('dragend', function() {
+          this.classList.remove('dragging');
+        });
+        
+        // Add double-click to remove and return to options
+        newItem.addEventListener('dblclick', function() {
+          if (this.parentElement.classList.contains('drop-zone')) {
+            const questionId = this.parentElement.closest('.question').id;
+            const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+            const newItem = this.cloneNode(true);
+            
+            // Add the same event listeners to this new item
+            newItem.addEventListener('dragstart', function(e) {
+              this.classList.add('dragging');
+              e.dataTransfer.setData('text/plain', this.textContent);
+              e.dataTransfer.effectAllowed = 'move';
+            });
+            
+            newItem.addEventListener('dragend', function() {
+              this.classList.remove('dragging');
+            });
+            
+            newItem.addEventListener('dblclick', function() {
+              if (this.parentElement.classList.contains('drop-zone')) {
+                const questionId = this.parentElement.closest('.question').id;
+                const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+                optionsContainer.appendChild(this);
+              }
+            });
+            
+            optionsContainer.appendChild(newItem);
+            this.remove();
+          }
+        });
+        
+        this.appendChild(newItem);
+        
+        // Remove the original item if it exists (it might be null if we're dragging from another drop zone)
+        if (draggedItem) {
+          draggedItem.remove();
+        }
+      });
+    });
+
+    // Drag and Drop answers
+    const dragCorrectAnswers = {
+      1: ['if the temperature drops below zero water freezes', 'water freezes if the temperature drops below zero'],
+      2: ['if you finish the report i will call you', 'i will call you if you finish the report'],
+      3: ['if they offered me the job i would take it', 'i would take it if they offered me the job'],
+      4: ['if we had left earlier we would have caught the train', 'we would have caught the train if we had left earlier'],
+      5: ['had i known i would have helped you', 'i would have helped you had i known']
+    };
+
+    // Drag and Drop submit button
+    document.getElementById('drag-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      document.querySelectorAll('.drop-zone').forEach(zone => {
+        const zoneIndex = parseInt(zone.getAttribute('data-index'));
+        const correctAnswers = dragCorrectAnswers[zoneIndex];
+        const userAnswer = Array.from(zone.querySelectorAll('.drag-item'))
+          .map(item => item.textContent.toLowerCase())
+          .join(' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+        const feedback = zone.closest('.question').querySelector('.feedback');
+        
+        // Check if answer is correct (case insensitive, ignoring extra spaces)
+        // Now supporting both clause orders
+        if (correctAnswers.some(answer => userAnswer === answer)) {
+          zone.style.borderColor = 'var(--success-color)';
+          zone.style.backgroundColor = 'var(--success-bg)';
+          feedback.textContent = 'Correct! Well done.';
+          feedback.className = 'feedback correct';
+          score++;
+        } else {
+          zone.style.borderColor = 'var(--error-color)';
+          zone.style.backgroundColor = 'var(--error-bg)';
+          
+          // Provide hints rather than giving away the answer
+          let hint;
+          
+          if (zoneIndex === 1) {
+            hint = "This needs to be a zero conditional for scientific facts. Try starting with 'if' and check your word order.";
+          } else if (zoneIndex === 2) {
+            hint = "This should be a first conditional for a likely future action. Remember to use 'will' in the main clause.";
+          } else if (zoneIndex === 3) {
+            hint = "This needs to be a second conditional for hypothetical situations. You need the past simple in the if-clause and 'would' in the main clause.";
+          } else if (zoneIndex === 4) {
+            hint = "This is a third conditional about a past regret. Use 'if' + past perfect and 'would have' + past participle.";
+          } else if (zoneIndex === 5) {
+            hint = "This is an inverted conditional. Start with 'had' not 'if' and make sure you have the right word order.";
+          }
+          
+          feedback.textContent = hint;
+          feedback.className = 'feedback incorrect';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('drag-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('drag-submit').style.display = 'none';
+      document.getElementById('drag-restart').style.display = 'block';
+    });
+
+    // Drag and Drop restart button
+    document.getElementById('drag-restart').addEventListener('click', function() {
+      // Clear drop zones
+      document.querySelectorAll('.drop-zone').forEach(zone => {
+        zone.innerHTML = '';
+        zone.style.borderColor = 'var(--border-color)';
+        zone.style.backgroundColor = 'var(--drop-zone-bg)';
+      });
+      
+      // Restore drag items
+      document.querySelectorAll('.drag-items').forEach(container => {
+        const questionIndex = parseInt(container.closest('.question').querySelector('.drop-zone').getAttribute('data-index'));
+        
+        // Get original words for this question
+        let words;
+        if (Array.isArray(dragCorrectAnswers[questionIndex])) {
+          // Use the first correct answer if there are multiple options
+          words = dragCorrectAnswers[questionIndex][0].split(' ');
+        } else {
+          console.error('No valid answers found for index:', questionIndex);
+          return;
+        }
+        
+        // Shuffle words
+        for (let i = words.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [words[i], words[j]] = [words[j], words[i]];
+        }
+        
+        // Create drag items
+        container.innerHTML = '';
+        words.forEach(word => {
+          const item = document.createElement('div');
+          item.className = 'drag-item';
+          item.textContent = word;
+          item.draggable = true;
+          
+          // Add event listeners
+          item.addEventListener('dragstart', function(e) {
+            this.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', this.textContent);
+            e.dataTransfer.effectAllowed = 'move';
+          });
+          
+          item.addEventListener('dragend', function() {
+            this.classList.remove('dragging');
+          });
+          
+          // Add double-click to return to options
+          item.addEventListener('dblclick', function() {
+            if (this.parentElement.classList.contains('drop-zone')) {
+              const questionId = this.parentElement.closest('.question').id;
+              const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+              const newItem = this.cloneNode(true);
+              
+              // Add the same event listeners to this new item
+              newItem.addEventListener('dragstart', function(e) {
+                this.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', this.textContent);
+                e.dataTransfer.effectAllowed = 'move';
+              });
+              
+              newItem.addEventListener('dragend', function() {
+                this.classList.remove('dragging');
+              });
+              
+              newItem.addEventListener('dblclick', function() {
+                if (this.parentElement.classList.contains('drop-zone')) {
+                  const questionId = this.parentElement.closest('.question').id;
+                  const optionsContainer = document.querySelector(`#${questionId} .drag-items`);
+                  optionsContainer.appendChild(this);
+                }
+              });
+              
+              optionsContainer.appendChild(newItem);
+              this.remove();
+            }
+          });
+          
+          container.appendChild(item);
+        });
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#drag-drop .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('drag-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('drag-submit').style.display = 'block';
+      document.getElementById('drag-restart').style.display = 'none';
+    });
+
+    // Transformation Activity
+    document.getElementById('transform-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      document.querySelectorAll('#transformation .transformation-input').forEach(input => {
+        // Define multiple possible correct answers for each question
+        const questionId = input.closest('.question').id;
+        let alternativeAnswers = [];
+        
+        switch(questionId) {
+          case 'transform-q1':
+            alternativeAnswers = [
+              'If she studies hard, she gets good grades.',
+              'She gets good grades if she studies hard.'
+            ];
+            break;
+          case 'transform-q2':
+            alternativeAnswers = [
+              'If you ask me first, I will help you.',
+              'I will help you if you ask me first.'
+            ];
+            break;
+          case 'transform-q3':
+            alternativeAnswers = [
+              'If I had enough money, I would buy a new car.',
+              'I would buy a new car if I had enough money.'
+            ];
+            break;
+          case 'transform-q4':
+            alternativeAnswers = [
+              'If I had seen the notification, I would have attended the meeting.',
+              'I would have attended the meeting if I had seen the notification.'
+            ];
+            break;
+          case 'transform-q5':
+            alternativeAnswers = [
+              'If I had taken the job offer, I would be working in London now.',
+              'I would be working in London now if I had taken the job offer.'
+            ];
+            break;
+          case 'transform-q6':
+            alternativeAnswers = [
+              'If it rains, you should take an umbrella.',
+              'You should take an umbrella if it rains.'
+            ];
+            break;
+          case 'transform-q7':
+            alternativeAnswers = [
+              'If I spoke Japanese, I would be able to read this book.',
+              'I would be able to read this book if I spoke Japanese.'
+            ];
+            break;
+          case 'transform-q8':
+            alternativeAnswers = [
+              'If he had followed my advice, he wouldn\'t be in trouble now.',
+              'He wouldn\'t be in trouble now if he had followed my advice.'
+            ];
+            break;
+        }
+        
+        const userAnswer = input.value.trim();
+        const feedback = input.closest('.question').querySelector('.feedback');
+        
+        // Check if answer matches any of the acceptable forms
+        const isCorrect = alternativeAnswers.some(answer => {
+          // Normalize answers for comparison (case insensitive, ignore extra spaces)
+          const normalizedCorrect = answer.toLowerCase().replace(/\s+/g, ' ').trim();
+          const normalizedUser = userAnswer.toLowerCase().replace(/\s+/g, ' ').trim();
+          return normalizedCorrect === normalizedUser;
+        });
+        
+        if (isCorrect) {
+          input.classList.add('correct');
+          input.classList.remove('incorrect');
+          feedback.textContent = 'Correct! Well done.';
+          feedback.className = 'feedback correct';
+          score++;
+        } else {
+          input.classList.add('incorrect');
+          input.classList.remove('correct');
+          
+          // Provide helpful feedback without giving away the answer
+          let hint;
+          
+          if (questionId === 'transform-q1') {
+            hint = "This should be a zero conditional with present simple in both clauses. Remember 'studies' → 'gets'.";
+          } else if (questionId === 'transform-q2') {
+            hint = "This should be a first conditional. Use present simple in the if-clause and 'will' in the result clause.";
+          } else if (questionId === 'transform-q3') {
+            hint = "This should be a second conditional. Transform 'don't have' to past simple and use 'would' in the result.";
+          } else if (questionId === 'transform-q4') {
+            hint = "This should be a third conditional. Use past perfect in the if-clause and 'would have' in the result.";
+          } else if (questionId === 'transform-q5') {
+            hint = "This should be a mixed conditional with past perfect in the if-clause and 'would' + present infinitive in the result.";
+          } else if (questionId === 'transform-q6') {
+            hint = "This should be a first conditional. Consider using 'should' as the modal verb in the result clause.";
+          } else if (questionId === 'transform-q7') {
+            hint = "This should be a second conditional with 'were able to' in the result clause.";
+          } else if (questionId === 'transform-q8') {
+            hint = "This should be a mixed conditional with past perfect in the if-clause and 'wouldn't' + present infinitive in the result.";
+          }
+          
+          feedback.textContent = hint;
+          feedback.className = 'feedback incorrect';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('transform-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('transform-submit').style.display = 'none';
+      document.getElementById('transform-restart').style.display = 'block';
+    });
+
+    // Transformation restart button
+    document.getElementById('transform-restart').addEventListener('click', function() {
+      // Clear input values
+      document.querySelectorAll('#transformation .transformation-input').forEach(input => {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect');
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#transformation .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('transform-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('transform-submit').style.display = 'block';
+      document.getElementById('transform-restart').style.display = 'none';
+    });
+
+    // Situation Match Activity
+    const situationCorrectAnswers = {
+      'situation-q1': 0, // If you heat water to 100°C, it boils.
+      'situation-q2': 1, // If you need any help with planning, I will help you.
+      'situation-q3': 2, // If I won the lottery, I would buy a new house.
+      'situation-q4': 3, // If I had known about the concert, I would have gone.
+      'situation-q5': 0, // If I had studied medicine, I would be a doctor now.
+      'situation-q6': 0, // If I were you, I would start studying right away.
+      'situation-q7': 0, // If you study regularly, you get better grades.
+      'situation-q8': 2  // If I were more confident, I would apply for that job.
+    };
+
+    const situationExplanations = {
+      'situation-q1': {
+        0: "Correct! You need a zero conditional for scientific facts. The present simple is used in both clauses: 'If/When + present simple, present simple'.",
+        1: "This is a second conditional form, which is used for hypothetical situations, not for scientific facts that are always true.",
+        2: "This is a third conditional form, which is used for past hypothetical situations, not for scientific facts.",
+        3: "In a first conditional, we use 'will' in the result clause, but this is a scientific fact that's always true, not a future possibility."
+      },
+      'situation-q2': {
+        0: "This lacks a future form in the result clause. For offering help with a future event, we need a first conditional.",
+        1: "Correct! A first conditional is perfect here because you're talking about a real future possibility. The structure is: 'If + present simple, will + base verb'.",
+        2: "A second conditional sounds too hypothetical for an offer of help about a real future trip.",
+        3: "A third conditional refers to past events, not future plans."
+      },
+      'situation-q3': {
+        0: "With 'zero conditional', you're suggesting winning the lottery is a general truth that always happens. That doesn't make sense here.",
+        1: "A first conditional would suggest winning the lottery is a real, likely possibility. It's better to use a more hypothetical form.",
+        2: "Correct! A second conditional is perfect for unlikely hypothetical situations. Winning the lottery is possible but unlikely.",
+        3: "A third conditional refers to events that didn't happen in the past, not future possibilities."
+      },
+      'situation-q4': {
+        0: "This form refers to present or future events. You need a form that expresses regret about a past event.",
+        1: "This form is used for general truths. You need a form that expresses regret about a past event.",
+        2: "A second conditional refers to present/future hypothetical events. You need a form that refers to the past.",
+        3: "Correct! A third conditional is perfect for expressing regret about past events that didn't happen."
+      },
+      'situation-q5': {
+        0: "Correct! This is a mixed conditional: the past action (not studying medicine) affects your present situation (not being a doctor).",
+        1: "Future simple 'will be' doesn't work with a past action affecting the present.",
+        2: "This refers to an unreal past action with an unreal past consequence. You need a form that shows how a past action affects the present.",
+        3: "This form doesn't make grammatical sense in English conditionals."
+      },
+      'situation-q6': {
+        0: "Correct! 'If I were you' is a classic second conditional for giving advice. It's hypothetical because you can't actually be the other person.",
+        1: "A third conditional refers to past events, but you're giving advice about what to do now/in the future.",
+        2: "This present simple form isn't appropriate for hypothetical advice.",
+        3: "This form is grammatically incorrect. 'Was' shouldn't be used with 'had started' in a conditional."
+      },
+      'situation-q7': {
+        0: "Correct! A zero conditional works well for general advice about cause and effect that's always true.",
+        1: "A third conditional refers to past hypothetical situations, not general advice.",
+        2: "A second conditional would suggest studying regularly is an unlikely hypothetical situation, when it's actually a real possibility.",
+        3: "Using 'will' in both clauses is not correct for conditionals. We don't use 'will' in the if-clause."
+      },
+      'situation-q8': {
+        0: "Present simple 'am' doesn't match with a second conditional structure about hypothetical situations.",
+        1: "A third conditional refers to past events, but you're expressing a current personality trait affecting potential future actions.",
+        2: "Correct! A second conditional is perfect for expressing how a current hypothetical situation (being more confident) would affect your behavior.",
+        3: "This form is grammatically incorrect in English conditionals."
+      }
+    };
+
+    // Set up Situation options click handlers
+    document.querySelectorAll('#situations .option').forEach(option => {
+      option.addEventListener('click', function() {
+        const questionId = this.closest('.question').id;
+        const options = document.querySelectorAll(`#${questionId} .option`);
+        
+        // Clear previous selections
+        options.forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        
+        // Select this option
+        this.classList.add('selected');
+      });
+    });
+
+    // Situation submit button
+    document.getElementById('situation-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      Object.keys(situationCorrectAnswers).forEach(questionId => {
+        const selectedOption = document.querySelector(`#${questionId} .option.selected`);
+        const feedback = document.querySelector(`#${questionId} .feedback`);
+        
+        if (selectedOption) {
+          const selectedIndex = parseInt(selectedOption.getAttribute('data-index'));
+          
+          if (selectedIndex === situationCorrectAnswers[questionId]) {
+            feedback.textContent = situationExplanations[questionId][selectedIndex];
+            feedback.className = 'feedback correct';
+            score++;
+          } else {
+            feedback.textContent = situationExplanations[questionId][selectedIndex];
+            feedback.className = 'feedback incorrect';
+          }
+        } else {
+          feedback.textContent = 'Please select an answer.';
+          feedback.className = 'feedback incorrect';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('situation-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('situation-submit').style.display = 'none';
+      document.getElementById('situation-restart').style.display = 'block';
+    });
+
+    // Situation restart button
+    document.getElementById('situation-restart').addEventListener('click', function() {
+      // Clear selections
+      document.querySelectorAll('#situations .option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#situations .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('situation-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('situation-submit').style.display = 'block';
+      document.getElementById('situation-restart').style.display = 'none';
+    });
+
+    // Mixed Conditionals Activity
+    document.getElementById('mixed-submit').addEventListener('click', function() {
+      let score = 0;
+      
+      // Process gaps in pairs to provide better feedback
+      const questions = document.querySelectorAll('#mixed-conditionals .question');
+      
+      questions.forEach(question => {
+        const inputs = question.querySelectorAll('.gap-input');
+        const feedback = question.querySelector('.feedback');
+        let questionCorrect = true;
+        
+        inputs.forEach(input => {
+          const correctAnswers = input.getAttribute('data-answer').split(',');
+          const userAnswer = input.value.trim().toLowerCase();
+          
+          // Check if answer is correct (case insensitive)
+          if (correctAnswers.some(answer => userAnswer === answer.toLowerCase())) {
+            input.classList.add('correct');
+            input.classList.remove('incorrect');
+            score++;
+          } else {
+            input.classList.add('incorrect');
+            input.classList.remove('correct');
+            questionCorrect = false;
+          }
+        });
+        
+        // Provide feedback based on the specific question
+        if (!questionCorrect) {
+          const questionId = question.id;
+          let hint;
+          
+          if (questionId === 'mixed-q1') {
+            hint = "This is a mixed conditional: a past action affecting a present situation. The first gap needs past perfect, and the second gap needs 'would' + infinitive.";
+          } else if (questionId === 'mixed-q2') {
+            hint = "This is a mixed conditional: a present situation affecting a past result. The first gap needs past simple (subjunctive), and the second gap needs 'would have' + past participle.";
+          } else if (questionId === 'mixed-q3') {
+            hint = "This is a mixed conditional: a past condition affecting a present situation. The first gap needs past perfect, and the second gap needs a present form with 'wouldn't have to'.";
+          } else if (questionId === 'mixed-q4') {
+            hint = "This is a mixed conditional: a present situation affecting a past result. The first gap needs past simple, and the second gap needs 'would have' + past participle.";
+          } else if (questionId === 'mixed-q5') {
+            hint = "This is a mixed conditional: a past condition affecting a present result. The first gap needs past perfect, and the second gap needs 'would' + base verb.";
+          } else if (questionId === 'mixed-q6') {
+            hint = "This is a mixed conditional: a past condition affecting a present result. The first gap needs past perfect, and the second gap needs a present form with 'wouldn't'.";
+          } else if (questionId === 'mixed-q7') {
+            hint = "This is a mixed conditional: a present condition affecting a past result. The first gap needs 'weren't' (subjunctive), and the second gap needs 'would have' + past participle.";
+          } else if (questionId === 'mixed-q8') {
+            hint = "This is a mixed conditional: a present hypothetical affecting a past result. The first gap needs 'were' (subjunctive), and the second gap needs 'would have' + past participle.";
+          }
+          
+          feedback.textContent = hint;
+          feedback.className = 'feedback incorrect';
+        } else {
+          feedback.textContent = "Correct! Perfect use of mixed conditionals.";
+          feedback.className = 'feedback correct';
+        }
+      });
+      
+      // Show score
+      const scoreDisplay = document.getElementById('mixed-score');
+      scoreDisplay.querySelector('span').textContent = score;
+      scoreDisplay.style.display = 'block';
+      
+      // Show restart button
+      document.getElementById('mixed-submit').style.display = 'none';
+      document.getElementById('mixed-restart').style.display = 'block';
+    });
+
+    // Mixed Conditionals restart button
+    document.getElementById('mixed-restart').addEventListener('click', function() {
+      // Clear input values
+      document.querySelectorAll('#mixed-conditionals .gap-input').forEach(input => {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect');
+      });
+      
+      // Clear feedback
+      document.querySelectorAll('#mixed-conditionals .feedback').forEach(feedback => {
+        feedback.textContent = '';
+        feedback.className = 'feedback';
+      });
+      
+      // Hide score
+      document.getElementById('mixed-score').style.display = 'none';
+      
+      // Show submit button, hide restart button
+      document.getElementById('mixed-submit').style.display = 'block';
+      document.getElementById('mixed-restart').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
