@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Advanced ESL Grammar: Modal Perfect Forms - Learn how to express certainty, possibility, and regret about past events">
+  <meta name="description" content="Advanced ESL Grammar: Modal Perfect Forms - Learn how to use modal verbs with perfect infinitives to talk about past situations and speculations">
   <title>Modal Perfect Forms: Past Situations - Advanced ESL Grammar</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
   <style>
@@ -33,19 +33,6 @@
       --partial-color: #856404;
       --partial-border: #ffeeba;
     }
-    
-    footer {
-      font-style: italic;
-      color: var(--text-color);
-      opacity: 0.8;
-      margin-top: 30px;
-      padding-top: 15px;
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
 
     [data-theme="dark"] {
       /* Dark theme */
@@ -64,7 +51,6 @@
       --error-color: #e7a9ad;
       --example-bg: #2a2a2a;
       --shadow-color: rgba(0, 0, 0, 0.3);
-      /* Dark theme variables for quiz sections */
       --mcq-container-bg: #1a2632;
       --mcq-hover-bg: #253545;
       --mcq-selected-border: #4fa3e0;
@@ -135,8 +121,8 @@
       padding: 0 20px;
     }
 
-    /* Fix for sections having proper spacing */
-    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+    /* Standard section containers */
+    .intro-section, .modal-type, .mcq-container {
       background-color: var(--card-bg);
       padding: 15px;
       border-radius: 5px;
@@ -147,19 +133,6 @@
       max-width: 760px; /* Slightly smaller than container to account for padding */
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .tips {
-      background-color: var(--card-bg);
-      padding: 15px;
-      border-radius: 5px;
-      margin: 20px 0;
-      border-left: 5px solid var(--secondary-accent);
-    }
-    
-    /* Change tips section h2 underline to orange */
-    .tips h2 {
-      border-bottom: 2px solid var(--secondary-accent);
     }
 
     table {
@@ -331,7 +304,7 @@
       background-color: #e06d2e;
     }
 
-    /* MCQ Styles */
+    /* MCQ Container Styles */
     .mcq-container {
       background-color: var(--mcq-container-bg);
       padding: 20px;
@@ -339,159 +312,150 @@
       margin: 30px 0;
     }
 
+    /* Individual question blocks */
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Question text */
     .mcq-question {
       margin-bottom: 20px;
       font-weight: 600;
     }
 
-    .mcq-option {
+    /* Container for all options */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    /* Individual option buttons */
+    .option {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 10px 15px;
+      gap: 8px;
+      padding: 8px 12px;
       border: 1px solid var(--border-color);
       border-radius: 4px;
-      margin-bottom: 8px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
-    .mcq-option:hover {
+    /* Hover effect for options */
+    .option:hover {
       background-color: var(--mcq-hover-bg);
+      transform: translateY(-1px);
     }
 
-    .mcq-option.selected {
+    /* Selected state for options */
+    .option.selected {
       border: 2px solid var(--mcq-selected-border);
       background-color: var(--mcq-selected-bg);
+      font-weight: bold;
     }
 
-    .mcq-option.correct {
-      border-color: var(--success-bg);
-      background-color: var(--success-bg);
-      color: var(--success-color);
-    }
-
-    .mcq-option.incorrect {
-      border-color: var(--error-bg);
-      background-color: var(--error-bg);
-      color: var(--error-color);
-    }
-
-    .mcq-feedback {
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 4px;
-      display: none;
-    }
-
-    /* Gap Fill Styles */
-    .gap-fill-container {
-      background-color: var(--mcq-container-bg);
-      padding: 20px;
-      border-radius: 5px;
-      margin: 30px 0;
-    }
-
-    .gap-input {
-      border: 2px solid var(--gap-input-border);
-      border-radius: 4px;
-      padding: 5px 10px;
-      font-family: 'Open Sans', sans-serif;
-      margin: 0 5px;
-      width: 120px;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    .gap-input.correct {
-      border-color: var(--success-bg);
-      background-color: var(--success-bg);
-      color: var(--success-color);
-    }
-
-    .gap-input.incorrect {
-      border-color: var(--error-bg);
-      background-color: var(--error-bg);
-      color: var(--error-color);
-    }
-
-    .gap-sentence {
-      margin-bottom: 15px;
-      line-height: 2;
-    }
-
-    .activity-controls {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .check-button, .retry-button, .show-answers-button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    .check-button {
-      background-color: var(--accent-color);
-      color: white;
-    }
-
-    .check-button:hover {
-      background-color: #2980b9;
-    }
-
-    .retry-button {
-      background-color: #6c757d;
-      color: white;
-    }
-
-    .retry-button:hover {
-      background-color: #5a6268;
-    }
-
-    .show-answers-button {
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      border: 1px solid var(--border-color);
-    }
-
-    .show-answers-button:hover {
-      background-color: #e9ecef;
-    }
-
-    [data-theme="dark"] .show-answers-button:hover {
-      background-color: #2a2a2a;
-    }
-
-    .result-display {
+    /* Feedback area */
+    .feedback {
       margin-top: 15px;
       padding: 10px;
       border-radius: 4px;
-      text-align: center;
       display: none;
     }
 
-    .result-display.success {
+    /* Correct answer styling */
+    .feedback.correct {
       background-color: var(--success-bg);
       color: var(--success-color);
       border: 1px solid var(--success-bg);
     }
 
-    .result-display.partial {
-      background-color: var(--partial-bg);
-      color: var(--partial-color);
-      border: 1px solid var(--partial-border);
-    }
-
-    .result-display.fail {
+    /* Incorrect answer styling */
+    .feedback.incorrect {
       background-color: var(--error-bg);
       color: var(--error-color);
       border: 1px solid var(--error-bg);
+    }
+
+    /* Score display */
+    .score-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      display: none;
+    }
+
+    /* Restart button */
+    .restart-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 15px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .restart-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul, .example ol {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
     }
 
     /* Theme toggle button */
@@ -546,6 +510,146 @@
       transform: rotate(-90deg);
     }
 
+    /* Note for native speaker informal usage - with speech bubble icon */
+    .note {
+      background-color: rgba(240, 240, 240, 0.6);
+      padding: 15px 15px 15px 40px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      position: relative;
+    }
+
+    .note:before {
+      content: "💬";
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      font-size: 1.2em;
+    }
+
+    [data-theme="dark"] .note {
+      background-color: rgba(60, 60, 60, 0.6);
+    }
+
+    /* Updated Common Errors section */
+    .error-title {
+      margin-bottom: 5px;
+    }
+
+    .incorrect {
+      color: var(--error-color);
+      text-decoration: line-through;
+      margin: 5px 0;
+    }
+
+    .correct {
+      color: var(--success-color);
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .explanation {
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    /* Grammar Tips styling */
+    .grammar-tip {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--secondary-accent);
+    }
+
+    /* Make sure grammar tips heading is orange */
+    .tips-heading {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    /* Production practice styling - match conditional-type */
+    .sentence-builder {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hints {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .practice-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 10px 0;
+      resize: vertical;
+    }
+
+    .check-btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .check-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .practice-feedback {
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* Making sure the example sentences with brackets stand out */
+    .example ol li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .modal-type, .intro-section, 
+    .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+
+    footer {
+      font-style: italic;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Responsive styles */
     @media (max-width: 768px) {
       .nav-toggle {
@@ -597,113 +701,6 @@
       }
     }
 
-    /* Error patterns */
-    .error-pattern {
-      margin-bottom: 15px;
-      border-left: 3px solid var(--error-color);
-      padding-left: 15px;
-    }
-
-    .correct-pattern {
-      margin-bottom: 15px;
-      border-left: 3px solid var(--success-color);
-      padding-left: 15px;
-    }
-
-    .wrong {
-      color: var(--error-color);
-      text-decoration: line-through;
-    }
-
-    .right {
-      color: var(--success-color);
-      font-weight: 600;
-    }
-
-    /* Dialog examples */
-    .dialog {
-      background-color: var(--card-bg);
-      padding: 15px;
-      border-radius: 5px;
-      margin: 15px 0;
-    }
-
-    .dialog-speaker {
-      font-weight: 600;
-      color: var(--accent-color);
-    }
-
-    /* Skip link */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--accent-color);
-      color: white;
-      padding: 8px;
-      z-index: 100;
-      transition: top 0.3s;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-      /* Override any specific width settings and make sure ALL containers match */
-    section, div.container, .info-container, .conditional-type, .intro-section, 
-    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
-    .correct-pattern, .activity-controls, .result-display {
-      max-width: 760px !important;
-      box-sizing: border-box !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    
-    /* The container around everything needs to be just a bit wider */
-    div.container {
-      max-width: 800px !important;
-    }
-    
-    /* Make example class work consistently */
-    .example, span.example, em {
-      font-family: 'Source Code Pro', monospace;
-      background-color: var(--example-bg);
-      padding: 5px;
-      border-radius: 3px;
-      margin: 0;
-      display: inline-block;
-    }
-    
-    /* For block-level examples (full sentences and lists) */
-    div.example {
-      font-family: 'Source Code Pro', monospace;
-      background-color: var(--example-bg);
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    /* When example contains a list, add extra left padding for bullets */
-    .example ul {
-      padding-left: 20px;
-    }
-
-    /* Print button */
-    .print-button {
-      background-color: var(--accent-color);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-family: 'Open Sans', sans-serif;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .print-button:hover {
-      background-color: #2980b9;
-    }
-
     @media print {
       .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
         display: none !important;
@@ -744,691 +741,779 @@
     <main id="main-content">
       <h1>Modal Perfect Forms: Past Situations</h1>
 
+      <!-- INTRODUCTION SECTION -->
       <section class="intro-section">
         <h2>Introduction</h2>
-        <p><strong>Modal Perfect Forms</strong> combine modal verbs with perfect infinitives to talk about past situations from a present perspective. These forms allow speakers to express certainty, possibility, necessity, or regret about past events.</p>
+        <p>Modal perfect forms combine modal verbs (must, could, should, etc.) with perfect infinitives (have + past participle) to talk about past situations. These forms allow you to express certainty, possibility, obligation, or criticism about things that happened—or didn't happen—in the past.</p>
         
-        <p>Learning modal perfect forms will help you:</p>
+        <p>These structures are essential for professional and academic English, allowing you to discuss past events with nuance when you need to express judgment, speculation, or reflection.</p>
+        
+        <h3>After this lesson, you will be able to:</h3>
         <ul>
-          <li>Express different degrees of certainty about past events</li>
-          <li>Talk about past obligations, possibilities, and missed opportunities</li>
-          <li>Use modal perfect forms to make logical conclusions about past situations</li>
+          <li>Express different degrees of certainty about past events.</li>
+          <li>Talk about past obligations and criticise past actions.</li>
+          <li>Discuss past possibilities and missed opportunities.</li>
+          <li>Use modal perfect forms correctly in both speaking and writing.</li>
         </ul>
       </section>
-  
-      <section class="info-container">
-        <h2>Explanation</h2>
+
+      <!-- GRAMMAR POINT SECTION 1 -->
+      <section class="modal-type">
+        <h2>Modal Perfect Forms for Past Deduction</h2>
         
-        <h3>What are Modal Perfect Forms?</h3>
-        <p>Modal perfect forms combine a modal verb (must, may, might, could, should, would, etc.) with the perfect infinitive (have + past participle).</p>
-
-        <h3>Structure/Formation</h3>
-        <p><strong>Basic Formula:</strong> Modal verb + have + past participle</p>
-
+        <p><strong>Must have + past participle</strong>: Used to express strong certainty about past events based on evidence or logic.</p>
+        
+        <p><strong>Structure</strong>: Subject + must have + past participle + rest of sentence</p>
+        
         <div class="example">
-        <table>
+          <ol>
+            <li>She <strong>must have finished</strong> the report already. I can see it on her desk. (I'm quite certain she completed it)</li>
+            <li>They <strong>must have arrived</strong> home safely. They just sent me a message. (I'm confident they arrived home)</li>
+            <li>The package <strong>must have been delivered</strong> yesterday. It's not at the post office anymore. (I'm logically deducing it was delivered)</li>
+          </ol>
+        </div>
+        
+        <p><strong>Can't/couldn't have + past participle</strong>: Used to express strong certainty that something did NOT happen in the past.</p>
+        
+        <p><strong>Structure</strong>: Subject + can't/couldn't have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>He <strong>can't have forgotten</strong> the meeting. I reminded him this morning. (I'm sure he didn't forget)</li>
+            <li>They <strong>couldn't have missed</strong> the email. I sent it to everyone. (I'm certain they received it)</li>
+            <li>The document <strong>can't have been deleted</strong> accidentally. It requires confirmation. (I'm confident it wasn't deleted by mistake)</li>
+          </ol>
+        </div>
+        
+        <p><strong>May/might/could have + past participle</strong>: Used to express possibility about past events when you aren't certain.</p>
+        
+        <p><strong>Structure</strong>: Subject + may/might/could have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>She <strong>might have taken</strong> the wrong train. That's why she's late. (It's possible she took the wrong train)</li>
+            <li>The manager <strong>may have forgotten</strong> to sign the contract. (Perhaps the manager forgot)</li>
+            <li>The email <strong>could have gone</strong> to your spam folder. (It's possible the email is in spam)</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> In casual speech, native speakers often use "must've," "couldn't've," and "might've" as contractions. Also, "could have" is sometimes used interchangeably with "might have," though "could have" can sometimes suggest a slightly lower probability.</p>
+        </div>
+      </section>
+
+      <!-- GRAMMAR POINT SECTION 2 -->
+      <section class="modal-type">
+        <h2>Modal Perfect Forms for Criticism and Regret</h2>
+        
+        <p><strong>Should have + past participle</strong>: Used to express criticism, regret, or missed obligations about past actions.</p>
+        
+        <p><strong>Structure</strong>: Subject + should have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>You <strong>should have called</strong> me before making the decision. (Criticism: you didn't call, and that was wrong)</li>
+            <li>I <strong>should have studied</strong> harder for the exam. (Regret: I didn't study enough)</li>
+            <li>They <strong>should have completed</strong> the project by Friday. (Unfulfilled obligation: they didn't complete it)</li>
+          </ol>
+        </div>
+        
+        <p><strong>Shouldn't have + past participle</strong>: Used to criticise past actions that occurred but were wrong or inadvisable.</p>
+        
+        <p><strong>Structure</strong>: Subject + shouldn't have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>You <strong>shouldn't have sent</strong> the email without checking it first. (Criticism: you sent it, but that was wrong)</li>
+            <li>She <strong>shouldn't have told</strong> everyone about the surprise party. (Criticism: she told everyone, which was a mistake)</li>
+            <li>They <strong>shouldn't have invested</strong> all their money in one company. (Criticism: they made a poor investment decision)</li>
+          </ol>
+        </div>
+        
+        <p><strong>Could have + past participle</strong>: Used to express missed opportunities or unrealised potential in the past.</p>
+        
+        <p><strong>Structure</strong>: Subject + could have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>We <strong>could have finished</strong> the project earlier if everyone had helped. (Unrealised potential: we didn't finish early)</li>
+            <li>She <strong>could have won</strong> the competition with more practice. (Missed opportunity: she didn't win)</li>
+            <li>They <strong>could have saved</strong> money by booking in advance. (Missed opportunity: they didn't save money)</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> "Should've" and "shouldn't've" are common contractions in speech. "Could've" is often used when expressing disappointment or regret about missed opportunities. The phrase "could've, would've, should've" is a common expression meaning "it's too late to think about what might have happened."</p>
+        </div>
+      </section>
+
+      <!-- GRAMMAR POINT SECTION 3 -->
+      <section class="modal-type">
+        <h2>Modal Perfect Forms for Hypothetical Past</h2>
+        
+        <p><strong>Would have + past participle</strong>: Used to express hypothetical or unreal past situations, often in conditional sentences.</p>
+        
+        <p><strong>Structure</strong>: Subject + would have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>I <strong>would have attended</strong> the conference if I had known about it. (But I didn't know, so I didn't attend)</li>
+            <li>She <strong>would have helped</strong> you if you had asked. (But you didn't ask, so she didn't help)</li>
+            <li>The company <strong>would have hired</strong> you if your interview had gone better. (But it didn't go well, so they didn't hire you)</li>
+          </ol>
+        </div>
+        
+        <p><strong>Wouldn't have + past participle</strong>: Used to express hypothetical negatives about the past.</p>
+        
+        <p><strong>Structure</strong>: Subject + wouldn't have + past participle + rest of sentence</p>
+        
+        <div class="example">
+          <ol>
+            <li>He <strong>wouldn't have made</strong> that mistake if he had been more careful. (But he wasn't careful, so he made the mistake)</li>
+            <li>We <strong>wouldn't have missed</strong> the train if we had left earlier. (But we didn't leave early, so we missed it)</li>
+            <li>The project <strong>wouldn't have failed</strong> if they had planned it better. (But they didn't plan well, so it failed)</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> "Would've" and "wouldn't've" are common contractions in speech. Modal perfect forms are often used in "if only" sentences to express regret, like "If only I had known, I would have helped you."</p>
+        </div>
+      </section>
+
+      <!-- VISUAL COMPARISON TABLE - No container, direct in the flow -->
+      <h2>Summary of Modal Perfect Forms</h2>
+      <table>
+        <thead>
           <tr>
-            <th>Form</th>
-            <th>Example</th>
+            <th>Modal Perfect Form</th>
             <th>Meaning</th>
+            <th>Example</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>must have + past participle</td>
-            <td>must have done</td>
-            <td>Strong certainty about the past</td>
+            <td>Strong certainty about past events</td>
+            <td><span class="example">She <strong>must have left</strong> already.</span></td>
+          </tr>
+          <tr>
+            <td>can't/couldn't have + past participle</td>
+            <td>Strong certainty that something did NOT happen</td>
+            <td><span class="example">He <strong>can't have finished</strong> yet.</span></td>
           </tr>
           <tr>
             <td>may/might have + past participle</td>
-            <td>may/might have done</td>
-            <td>Possibility in the past</td>
+            <td>Possibility about past events</td>
+            <td><span class="example">They <strong>might have forgotten</strong>.</span></td>
           </tr>
           <tr>
             <td>could have + past participle</td>
-            <td>could have done</td>
-            <td>Past possibility or ability that wasn't realized</td>
+            <td>1. Possibility about past events<br>2. Missed opportunity</td>
+            <td><span class="example">It <strong>could have rained</strong> last night.<br>You <strong>could have told</strong> me earlier.</span></td>
           </tr>
           <tr>
             <td>should have + past participle</td>
-            <td>should have done</td>
-            <td>Past obligation or expectation not fulfilled</td>
+            <td>Criticism or regret about past actions</td>
+            <td><span class="example">You <strong>should have called</strong>.</span></td>
+          </tr>
+          <tr>
+            <td>shouldn't have + past participle</td>
+            <td>Criticism about wrong actions taken</td>
+            <td><span class="example">You <strong>shouldn't have lied</strong>.</span></td>
           </tr>
           <tr>
             <td>would have + past participle</td>
-            <td>would have done</td>
-            <td>Hypothetical past result (often with conditionals)</td>
+            <td>Hypothetical past situation (often in conditionals)</td>
+            <td><span class="example">I <strong>would have helped</strong> if I'd known.</span></td>
           </tr>
-          <tr>
-            <td>needn't have + past participle</td>
-            <td>needn't have done</td>
-            <td>Unnecessary action that was done</td>
-          </tr>
-        </table>
-        </div>
+        </tbody>
+      </table>
 
-        <h3>Key Rules</h3>
-
-        <ol>
-          <li><strong>Modal perfect forms always refer to past time</strong>, even though the modal verb itself doesn't change form.</li>
-          <li><strong>The perfect infinitive (have + past participle)</strong> provides the past time reference.</li>
-          <li><strong>The choice of modal affects the meaning</strong>, showing different degrees of certainty, obligation, or possibility.</li>
-          <li><strong>These forms often express a present attitude or judgment</strong> about a past event.</li>
-        </ol>
-
-        <h3>Usage Contexts</h3>
-
-        <ul>
-          <li><strong>Logical conclusions about the past</strong>: 
-            <div class="example">The lights are off and everyone's computer is shut down - they must have gone home already.</div>
-          </li>
-
-          <li><strong>Unrealized possibilities</strong>: 
-            <div class="example">We could have saved money if we'd booked the tickets earlier.</div>
-          </li>
-
-          <li><strong>Criticism or regret</strong>: 
-            <div class="example">You should have called me before making that decision.</div>
-          </li>
-
-          <li><strong>Hypothetical past situations</strong>: 
-            <div class="example">If I had studied medicine, I would have become a doctor.</div>
-          </li>
-
-          <li><strong>Unnecessary past actions</strong>: 
-            <div class="example">You needn't have worked all weekend - the deadline was extended.</div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="info-container">
-        <h2>Examples in Context</h2>
-        
-        <h3>Workplace Examples</h3>
-        <ul>
-          <li>
-            <div class="example">The missing files must have been deleted accidentally during the system update.</div>
-            (logical conclusion with certainty)
-          </li>
-          <li>
-            <div class="example">We could have finished the project sooner if we had hired more staff.</div>
-            (unrealized possibility)
-          </li>
-          <li>
-            <div class="example">You should have informed the client about the delay.</div>
-            (unfulfilled obligation)
-          </li>
-        </ul>
-
-        <h3>Daily Life Examples</h3>
-        <ul>
-          <li>
-            <div class="example">I can't find my keys anywhere. I must have left them at the restaurant.</div>
-            (certainty about past action)
-          </li>
-          <li>
-            <div class="example">You might have misunderstood what she was trying to say.</div>
-            (possibility about past understanding)
-          </li>
-          <li>
-            <div class="example">We shouldn't have taken the highway—look at all this traffic!</div>
-            (regret about past decision)
-          </li>
-        </ul>
-
-        <h3>Academic/Formal Examples</h3>
-        <ul>
-          <li>
-            <div class="example">The results suggest that the participants may have been influenced by external factors.</div>
-            (academic possibility)
-          </li>
-          <li>
-            <div class="example">The ancient structure could have served as both a temple and an astronomical observatory.</div>
-            (speculation about past function)
-          </li>
-          <li>
-            <div class="example">The author must have intended this passage to be interpreted metaphorically, given the context.</div>
-            (logical conclusion)
-          </li>
-        </ul>
-
-        <h3>Dialogue Examples</h3>
-
-        <div class="dialog">
-          <p><strong>At work:</strong></p>
-          <p><span class="dialog-speaker">Employee A:</span> "Did you hear about the Henderson contract? They went with our competitor."</p>
-          <p><span class="dialog-speaker">Employee B:</span> "That's surprising. We <span class="example">must have done</span> something wrong in our presentation."</p>
-          <p><span class="dialog-speaker">Employee A:</span> "Or they <span class="example">might have received</span> a better offer. We <span class="example">should have negotiated</span> the price more aggressively."</p>
-        </div>
-
-        <div class="dialog">
-          <p><strong>Between friends:</strong></p>
-          <p><span class="dialog-speaker">Friend A:</span> "I waited for you at the café for an hour yesterday!"</p>
-          <p><span class="dialog-speaker">Friend B:</span> "Oh no! I'm so sorry. You <span class="example">must have been</span> so annoyed."</p>
-          <p><span class="dialog-speaker">Friend A:</span> "I was. You <span class="example">could have called</span> to let me know you weren't coming."</p>
-          <p><span class="dialog-speaker">Friend B:</span> "I know. My phone died, but I <span class="example">should have found</span> another way to contact you."</p>
-        </div>
-      </section>
-
-      <section class="info-container">
+      <!-- COMMON ERRORS SECTION -->
+      <section class="modal-type">
         <h2>Common Errors</h2>
-          
+        
         <div class="error-pattern">
-          <p class="wrong">❌ "<span class="example">I must went to the wrong address.</span>"</p>
-          <p class="right">✅ "<span class="example">I must have gone to the wrong address.</span>" (Use have + past participle)</p>
+          <p class="error-title"><strong>1: Using simple past instead of modal perfect</strong></p>
+          <p class="incorrect">She must arrived early because her coat is here.</p>
+          <p class="correct">She <strong>must have arrived</strong> early because her coat is here. ✓</p>
+          <p class="explanation"><em>Always use 'have + past participle' after modal verbs when talking about the past. The modal verb itself doesn't change to past tense.</em></p>
         </div>
-
+        
         <div class="error-pattern">
-          <p class="wrong">❌ "<span class="example">She's not here. She has to leave already.</span>"</p>
-          <p class="right">✅ "<span class="example">She's not here. She must have left already.</span>" (Correct for past logical conclusion)</p>
+          <p class="error-title"><strong>2: Using 'of' instead of 'have' in spoken contractions</strong></p>
+          <p class="incorrect">He should of called earlier.</p>
+          <p class="correct">He <strong>should have</strong> called earlier. ✓</p>
+          <p class="explanation"><em>The contraction 'should've' sounds like 'should of', but the correct form is always 'should have'.</em></p>
         </div>
-
+        
         <div class="error-pattern">
-          <p class="wrong">❌ "<span class="example">You could not have been there.</span>" (can be correct but often misused)</p>
-          <p class="wrong">❌ "<span class="example">You could have not been there.</span>" (incorrect word order)</p>
-          <p class="right">✅ "<span class="example">You couldn't have been there.</span>" (correct and more natural)</p>
+          <p class="error-title"><strong>3: Confusing levels of certainty</strong></p>
+          <p class="incorrect">The parcel must have arrived, but I'm not sure.</p>
+          <p class="correct">The parcel <strong>might have arrived</strong>, but I'm not sure. ✓</p>
+          <p class="explanation"><em>'Must have' expresses strong certainty, so it doesn't make sense with 'not sure'. Use 'might have' or 'could have' for uncertainty.</em></p>
         </div>
       </section>
 
-      <section class="info-container">
-        <h2>Summary</h2>
-          
-        <h3>Key Points</h3>
-        <ul>
-          <li>Modal perfect forms combine a modal verb with 'have' + past participle.</li>
-          <li>They refer to past situations but express present attitudes or perspectives.</li>
-          <li>Different modals express different degrees of certainty, possibility, obligation, or hypothetical situations.</li>
-          <li>Modal perfect forms are essential for expressing regret, criticism, speculation, and logical conclusions about the past.</li>
-          <li>The structure remains the same for all modal perfect forms: modal + have + past participle.</li>
-        </ul>
+      <!-- TIPS SECTION - No container, direct in the flow with orange underlined heading -->
+      <h2 style="border-bottom: 2px solid var(--secondary-accent);">Useful Tips</h2>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 1:</strong> Think of the degree of certainty as a scale: must have (very certain) → could/might/may have (possible) → can't have (very certain it didn't happen).</p>
+      </div>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 2:</strong> Remember that modal perfect forms always talk about the past, even though they use present tense modals (must, can't, etc.) + have + past participle.</p>
+      </div>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 3:</strong> If you're expressing regret or criticism, 'should have' is usually your best choice. If you're talking about missed opportunities, use 'could have'.</p>
+      </div>
 
-        <h3>Comparison Table: Modal Perfect Forms and Their Meanings</h3>
-        <table>
-          <tr>
-            <th>Form</th>
-            <th>Meaning</th>
-            <th>Example</th>
-          </tr>
-          <tr>
-            <td>must have done</td>
-            <td>Strong logical conclusion</td>
-            <td><span class="example">He must have left early.</span> (I'm certain)</td>
-          </tr>
-          <tr>
-            <td>may/might have done</td>
-            <td>Possibility</td>
-            <td><span class="example">She might have forgotten our meeting.</span> (It's possible)</td>
-          </tr>
-          <tr>
-            <td>could have done</td>
-            <td>Unrealized possibility/ability</td>
-            <td><span class="example">I could have won the race.</span> (But I didn't)</td>
-          </tr>
-          <tr>
-            <td>should have done</td>
-            <td>Unfulfilled obligation/advice</td>
-            <td><span class="example">You should have called me.</span> (But you didn't)</td>
-          </tr>
-          <tr>
-            <td>would have done</td>
-            <td>Hypothetical result</td>
-            <td><span class="example">We would have arrived sooner if we'd taken a taxi.</span></td>
-          </tr>
-          <tr>
-            <td>needn't have done</td>
-            <td>Unnecessary action (that was done)</td>
-            <td><span class="example">You needn't have bought so much food.</span> (But you did)</td>
-          </tr>
-        </table>
-      </section>
-
-      <section class="tips">
-        <h2>Useful Tips</h2>
-        <ol>
-          <li><strong>Think of modal perfect forms as expressing your current view about a past event.</strong> - They show your present perspective on something that happened (or didn't happen) in the past.</li>
-          
-          <li><strong>Remember that the actual time reference comes from "have + past participle,"</strong> not from the modal itself. The modal verb shows your attitude (certainty, possibility, etc.).</li>
-          
-          <li><strong>When expressing regret or criticism, "should have" is more common</strong> than "ought to have" in everyday speech.</li>
-        </ol>
-
-        <div class="example">
-          <p>📝 <strong>GRAMMAR TIP:</strong> When expressing certainty about the past, remember that "must have + past participle" expresses a strong logical conclusion, while "can't have + past participle" expresses logical impossibility. For example: "She must have taken my keys." (I'm certain she did) vs. "She can't have taken my keys." (I'm certain she didn't).</p>
-        </div>
-      </section>
-
-      <section class="mcq-container" id="mcq-activity-1">
-        <h2>Quick Practice</h2>
-        <h3>Activity 1: Multiple Choice</h3>
-        <p>Choose the modal perfect form that best completes each sentence:</p>
+      <!-- QUIZ SECTION -->
+      <section class="mcq-container">
+        <h2>Test Your Knowledge</h2>
+        <p>Test your understanding of modal perfect forms by selecting the correct option for each question.</p>
         
-        <div class="mcq-question-group">
-          <p class="mcq-question">1. The lights are off in the office. Everyone ____________ home already.</p>
-          <div class="mcq-option" data-correct="true" data-explanation="'Must have gone' expresses a logical conclusion with certainty based on the evidence (lights off).">
-            <input type="radio" name="q1" id="q1a">
-            <label for="q1a">a) must have gone</label>
+        <!-- Question 1 (Easiest) -->
+        <div class="question" id="q1">
+          <p class="mcq-question">1. I can't find my keys. I _____ them at the office.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q1', 0)">
+              <span>A. must left</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 1)">
+              <span>B. must have left</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 2)">
+              <span>C. must had left</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 3)">
+              <span>D. must to have left</span>
+            </div>
           </div>
-          <div class="mcq-option" data-correct="false" data-explanation="'Would have gone' is incorrect here as it would be used for a hypothetical situation, not a logical conclusion.">
-            <input type="radio" name="q1" id="q1b">
-            <label for="q1b">b) would have gone</label>
+          <div class="feedback" id="feedback-q1-0">
+            Incorrect. We need 'have + past participle' after modal verbs to form the perfect.
           </div>
-          <div class="mcq-option" data-correct="false" data-explanation="'Should have gone' expresses obligation or advice, which doesn't fit this context.">
-            <input type="radio" name="q1" id="q1c">
-            <label for="q1c">c) should have gone</label>
+          <div class="feedback" id="feedback-q1-1">
+            Correct! 'Must have left' is the correct modal perfect form expressing certainty about a past action.
           </div>
-          <div class="mcq-feedback"></div>
+          <div class="feedback" id="feedback-q1-2">
+            Incorrect. We use 'have' not 'had' when forming modal perfect structures.
+          </div>
+          <div class="feedback" id="feedback-q1-3">
+            Incorrect. Modal verbs don't need 'to' before 'have'.
+          </div>
         </div>
         
-        <div class="mcq-question-group">
-          <p class="mcq-question">2. I'm sorry for the confusion. I ____________ your email earlier.</p>
-          <div class="mcq-option" data-correct="false" data-explanation="'Could have received' doesn't make sense here as the context suggests an unfulfilled obligation.">
-            <input type="radio" name="q2" id="q2a">
-            <label for="q2a">a) could have received</label>
+        <!-- Question 2 -->
+        <div class="question" id="q2">
+          <p class="mcq-question">2. You _____ to the dentist when your tooth started hurting.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q2', 0)">
+              <span>A. should go</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 1)">
+              <span>B. should went</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 2)">
+              <span>C. should have gone</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 3)">
+              <span>D. should to go</span>
+            </div>
           </div>
-          <div class="mcq-option" data-correct="true" data-explanation="'Should have read' is correct - it expresses an unfulfilled obligation or expectation in the past.">
-            <input type="radio" name="q2" id="q2b">
-            <label for="q2b">b) should have read</label>
+          <div class="feedback" id="feedback-q2-0">
+            Incorrect. 'Should go' refers to the present or future, not the past.
           </div>
-          <div class="mcq-option" data-correct="false" data-explanation="'Would have sent' is incorrect as this isn't a hypothetical situation.">
-            <input type="radio" name="q2" id="q2c">
-            <label for="q2c">c) would have sent</label>
+          <div class="feedback" id="feedback-q2-1">
+            Incorrect. We can't use the past tense directly after a modal verb.
           </div>
-          <div class="mcq-feedback"></div>
+          <div class="feedback" id="feedback-q2-2">
+            Correct! 'Should have gone' expresses a criticism about a past action that didn't happen.
+          </div>
+          <div class="feedback" id="feedback-q2-3">
+            Incorrect. Modal verbs don't use 'to' before the main verb.
+          </div>
         </div>
         
-        <div class="mcq-question-group">
-          <p class="mcq-question">3. If we had known about the traffic, we ____________ a different route.</p>
-          <div class="mcq-option" data-correct="false" data-explanation="'Must have taken' expresses certainty about past events, which doesn't fit this hypothetical context.">
-            <input type="radio" name="q3" id="q3a">
-            <label for="q3a">a) must have taken</label>
+        <!-- Question 3 -->
+        <div class="question" id="q3">
+          <p class="mcq-question">3. She _____ my message yet. I only sent it five minutes ago.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q3', 0)">
+              <span>A. can't have received</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 1)">
+              <span>B. wouldn't have received</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 2)">
+              <span>C. shouldn't have received</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 3)">
+              <span>D. mustn't have received</span>
+            </div>
           </div>
-          <div class="mcq-option" data-correct="true" data-explanation="'Would have taken' is correct - it expresses a hypothetical result in the past (third conditional).">
-            <input type="radio" name="q3" id="q3b">
-            <label for="q3b">b) would have taken</label>
+          <div class="feedback" id="feedback-q3-0">
+            Correct! 'Can't have received' expresses certainty that something did not happen in the past.
           </div>
-          <div class="mcq-option" data-correct="false" data-explanation="'May have taken' expresses possibility but doesn't fit the conditional structure here.">
-            <input type="radio" name="q3" id="q3c">
-            <label for="q3c">c) may have taken</label>
+          <div class="feedback" id="feedback-q3-1">
+            Incorrect. 'Wouldn't have received' is used for hypothetical situations, not logical deductions.
           </div>
-          <div class="mcq-feedback"></div>
+          <div class="feedback" id="feedback-q3-2">
+            Incorrect. 'Shouldn't have received' suggests she received it but shouldn't have, which isn't the case here.
+          </div>
+          <div class="feedback" id="feedback-q3-3">
+            Incorrect. 'Mustn't have received' is not standard English for this context; we use 'can't have' for negative deductions.
+          </div>
         </div>
         
-        <div class="mcq-question-group">
-          <p class="mcq-question">4. You look exhausted. You ____________ to bed earlier last night.</p>
-          <div class="mcq-option" data-correct="false" data-explanation="'Must have gone' would suggest they did go to bed early, which contradicts the context that they're exhausted.">
-            <input type="radio" name="q4" id="q4a">
-            <label for="q4a">a) must have gone</label>
+        <!-- Question 4 -->
+        <div class="question" id="q4">
+          <p class="mcq-question">4. We're lost. We _____ the wrong turning at the last junction.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q4', 0)">
+              <span>A. could take</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 1)">
+              <span>B. might took</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 2)">
+              <span>C. can have taken</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 3)">
+              <span>D. might have taken</span>
+            </div>
           </div>
-          <div class="mcq-option" data-correct="true" data-explanation="'Should have gone' is correct - it suggests advice/obligation about something that didn't happen.">
-            <input type="radio" name="q4" id="q4b">
-            <label for="q4b">b) should have gone</label>
+          <div class="feedback" id="feedback-q4-0">
+            Incorrect. 'Could take' refers to present or future possibility, not past.
           </div>
-          <div class="mcq-option" data-correct="false" data-explanation="'May have gone' doesn't fit the context which suggests they didn't go to bed early.">
-            <input type="radio" name="q4" id="q4c">
-            <label for="q4c">c) may have gone</label>
+          <div class="feedback" id="feedback-q4-1">
+            Incorrect. We can't use past tense directly after a modal verb.
           </div>
-          <div class="mcq-feedback"></div>
+          <div class="feedback" id="feedback-q4-2">
+            Incorrect. 'Can have taken' is not used in standard English for past possibility.
+          </div>
+          <div class="feedback" id="feedback-q4-3">
+            Correct! 'Might have taken' expresses a possible explanation for a past event.
+          </div>
         </div>
         
-        <div class="result-display"></div>
-        
-        <div class="activity-controls">
-          <button class="check-button" id="check-mcq-1">Check Answers</button>
-          <button class="retry-button" id="retry-mcq-1" style="display: none;">Try Again</button>
+        <!-- Question 5 -->
+        <div class="question" id="q5">
+          <p class="mcq-question">5. I _____ to that party if I hadn't been so tired last night.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q5', 0)">
+              <span>A. will go</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 1)">
+              <span>B. would have gone</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 2)">
+              <span>C. should go</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 3)">
+              <span>D. could go</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q5-0">
+            Incorrect. 'Will go' is used for future, not hypothetical past.
+          </div>
+          <div class="feedback" id="feedback-q5-1">
+            Correct! 'Would have gone' is used in third conditionals to talk about hypothetical past situations.
+          </div>
+          <div class="feedback" id="feedback-q5-2">
+            Incorrect. 'Should go' refers to present advice, not hypothetical past.
+          </div>
+          <div class="feedback" id="feedback-q5-3">
+            Incorrect. 'Could go' refers to present possibility, not hypothetical past.
+          </div>
         </div>
+        
+        <!-- Question 6 -->
+        <div class="question" id="q6">
+          <p class="mcq-question">6. You _____ the door when you left the office. It's a security risk.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q6', 0)">
+              <span>A. should lock</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 1)">
+              <span>B. should have lock</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 2)">
+              <span>C. shouldn't have locked</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 3)">
+              <span>D. shouldn't have left unlocked</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q6-0">
+            Incorrect. 'Should lock' refers to present/future advice, not past criticism.
+          </div>
+          <div class="feedback" id="feedback-q6-1">
+            Incorrect. We need the past participle 'locked' not the base form 'lock'.
+          </div>
+          <div class="feedback" id="feedback-q6-2">
+            Incorrect. This suggests they locked the door but shouldn't have, which is the opposite of what's intended.
+          </div>
+          <div class="feedback" id="feedback-q6-3">
+            Correct! This expresses criticism about leaving the door unlocked in the past.
+          </div>
+        </div>
+        
+        <!-- Question 7 -->
+        <div class="question" id="q7">
+          <p class="mcq-question">7. That package _____ days ago. I sent it by express delivery.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q7', 0)">
+              <span>A. must have arrived</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 1)">
+              <span>B. must arrived</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 2)">
+              <span>C. may arrive</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 3)">
+              <span>D. could arriving</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q7-0">
+            Correct! 'Must have arrived' expresses strong certainty about a past event based on the evidence.
+          </div>
+          <div class="feedback" id="feedback-q7-1">
+            Incorrect. We need 'have + past participle' after 'must' when referring to the past.
+          </div>
+          <div class="feedback" id="feedback-q7-2">
+            Incorrect. 'May arrive' refers to future possibility, not past.
+          </div>
+          <div class="feedback" id="feedback-q7-3">
+            Incorrect. This form is grammatically incorrect; we need 'have + past participle'.
+          </div>
+        </div>
+        
+        <!-- Question 8 -->
+        <div class="question" id="q8">
+          <p class="mcq-question">8. You _____ more carefully. That's how the accident happened.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q8', 0)">
+              <span>A. should drive</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 1)">
+              <span>B. should have driven</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 2)">
+              <span>C. must drive</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 3)">
+              <span>D. could driven</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q8-0">
+            Incorrect. 'Should drive' refers to present/future advice, not past criticism.
+          </div>
+          <div class="feedback" id="feedback-q8-1">
+            Correct! 'Should have driven' expresses criticism about a past action.
+          </div>
+          <div class="feedback" id="feedback-q8-2">
+            Incorrect. 'Must drive' expresses present obligation, not past criticism.
+          </div>
+          <div class="feedback" id="feedback-q8-3">
+            Incorrect. This is grammatically incorrect; we need 'have' between 'could' and 'driven'.
+          </div>
+        </div>
+        
+        <!-- Question 9 -->
+        <div class="question" id="q9">
+          <p class="mcq-question">9. She _____ my email yet, or she would have replied.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q9', 0)">
+              <span>A. must not have seen</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 1)">
+              <span>B. mustn't see</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 2)">
+              <span>C. needn't have seen</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 3)">
+              <span>D. can't have seen</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q9-0">
+            Incorrect. 'Must not have' is less common in English; we typically use 'can't have' for negative deductions.
+          </div>
+          <div class="feedback" id="feedback-q9-1">
+            Incorrect. 'Mustn't see' expresses prohibition, not a deduction about the past.
+          </div>
+          <div class="feedback" id="feedback-q9-2">
+            Incorrect. 'Needn't have seen' would suggest the action happened but was unnecessary.
+          </div>
+          <div class="feedback" id="feedback-q9-3">
+            Correct! 'Can't have seen' expresses certainty that something did not happen in the past.
+          </div>
+        </div>
+        
+        <!-- Question 10 (Most challenging) -->
+        <div class="question" id="q10">
+          <p class="mcq-question">10. It's strange that she hasn't called. She _____ our message, but perhaps she's just busy.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q10', 0)">
+              <span>A. must have received</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 1)">
+              <span>B. can't have received</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 2)">
+              <span>C. might have received</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 3)">
+              <span>D. would receive</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q10-0">
+            Incorrect. 'Must have received' expresses certainty, which contradicts "but perhaps she's just busy."
+          </div>
+          <div class="feedback" id="feedback-q10-1">
+            Incorrect. 'Can't have received' expresses certainty that she didn't receive it, which contradicts the idea that she might be busy.
+          </div>
+          <div class="feedback" id="feedback-q10-2">
+            Correct! 'Might have received' expresses possibility, which fits with the uncertainty in the sentence.
+          </div>
+          <div class="feedback" id="feedback-q10-3">
+            Incorrect. 'Would receive' is not used for past possibility.
+          </div>
+        </div>
+        
+        <div class="score-display" id="score-display">
+          Your score: <span id="score">0</span>/10
+        </div>
+        
+        <button class="restart-btn" id="restart-btn" style="display:none;">Try Again</button>
       </section>
       
-      <section class="gap-fill-container" id="gap-fill-activity">
-        <h3>Activity 2: Fill-in-the-blank</h3>
-        <p>Complete these sentences with the correct modal perfect form using the verb in parentheses:</p>
+      <!-- PRACTICE SECTION -->
+      <section class="modal-type">
+        <h2>Sentence Building Practice</h2>
+        <p>Create your own sentences using the modal perfect forms you've learned.</p>
         
-        <div class="gap-sentence">
-          1. She ____________ (forget) her keys, which is why she couldn't get into her apartment.
-          <input type="text" class="gap-input" data-correct="must have forgotten">
+        <div class="sentence-builder">
+          <h3>Practice 1: Past Deduction</h3>
+          <p>Write a sentence using 'must have', 'can't have', or 'might have' to make a deduction about something that happened in the past.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> forgotten, missed, arrived, left, lost, broken, misunderstood</p>
+            <p><strong>Example:</strong> <span class="example">She must have forgotten about our appointment because she didn't show up.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
         </div>
         
-        <div class="gap-sentence">
-          2. The team ____________ (win) the championship if their star player hadn't been injured.
-          <input type="text" class="gap-input" data-correct="would have won|could have won">
+        <div class="sentence-builder">
+          <h3>Practice 2: Criticism and Regret</h3>
+          <p>Write a sentence using 'should have' or 'shouldn't have' to express criticism or regret about a past action.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> told, asked, studied, waited, prepared, checked, listened</p>
+            <p><strong>Example:</strong> <span class="example">I should have checked the train times before leaving home.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
         </div>
-        
-        <div class="gap-sentence">
-          3. You ____________ (not/wait) for me. I told you I would be late.
-          <input type="text" class="gap-input" data-correct="shouldn't have waited|needn't have waited">
-        </div>
-        
-        <div class="gap-sentence">
-          4. They ____________ (arrive) by now. Their flight landed two hours ago.
-          <input type="text" class="gap-input" data-correct="must have arrived|should have arrived">
-        </div>
-        
-        <div class="gap-sentence">
-          5. He ____________ (study) harder for the exam. He didn't pass.
-          <input type="text" class="gap-input" data-correct="should have studied">
-        </div>
-        
-        <div class="result-display"></div>
-        
-        <div class="activity-controls">
-          <button class="check-button" id="check-gap-fill">Check Answers</button>
-          <button class="retry-button" id="retry-gap-fill" style="display: none;">Try Again</button>
-          <button class="show-answers-button" id="show-gap-fill-answers" style="display: none;">Show Answers</button>
-        </div>
-      </section>
-      
-      <section class="gap-fill-container" id="error-correction-activity">
-        <h3>Activity 3: Error Correction</h3>
-        <p>Identify and correct the error in each sentence:</p>
-        
-        <div class="gap-sentence">
-          1. She must went to the doctor yesterday. She's feeling much better today.<br>
-          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="she must have gone to the doctor yesterday">
-        </div>
-        
-        <div class="gap-sentence">
-          2. I could understood the lecture better if the professor had spoken more slowly.<br>
-          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="i could have understood the lecture better if the professor had spoken more slowly">
-        </div>
-        
-        <div class="gap-sentence">
-          3. They should to have called us before they arrived.<br>
-          Correction: <input type="text" class="gap-input" style="width: 300px;" data-correct="they should have called us before they arrived">
-        </div>
-        
-        <div class="result-display"></div>
-        
-        <div class="activity-controls">
-          <button class="check-button" id="check-error-correction">Check Answers</button>
-          <button class="retry-button" id="retry-error-correction" style="display: none;">Try Again</button>
-          <button class="show-answers-button" id="show-error-answers" style="display: none;">Show Answers</button>
-        </div>
-      </section>
 
-      <section class="info-container">
-        <h2>Extension and Practice</h2>
-        
-        <p><a href="modal-perfect-advanced.html">Link to Advanced Modal Perfect Usage</a></p>
-
-        <h3>Related Topics</h3>
-        <ul>
-          <li><a href="third-conditional.html">Third Conditional Sentences</a></li>
-          <li><a href="past-modals.html">Past Modals for Ability and Permission</a></li>
-          <li><a href="reported-speech-modals.html">Reported Speech with Modals</a></li>
-        </ul>
+        <div class="sentence-builder">
+          <h3>Practice 3: Missed Opportunities</h3>
+          <p>Write a sentence using 'could have' to talk about a missed opportunity in the past.</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> helped, visited, learned, saved, joined, applied, taken</p>
+            <p><strong>Example:</strong> <span class="example">We could have saved a lot of money if we had booked our flights earlier.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
       </section>
     </main>
   </div>
   
+  <!-- BOTTOM NAVIGATION -->
   <nav class="bottom-navigation">
-    <a href="modal-verbs.html" class="nav-button previous">← Previous: Modal Verbs</a>
+    <a href="modal-differences.html" class="nav-button previous">← Previous: Modal Verbs Differences</a>
     <div class="center-buttons">
       <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
       <a href="modal-perfect-activities.html" class="nav-button activities">Extra Activities</a>
     </div>
-    <a href="third-conditional.html" class="nav-button next">Next: Third Conditional →</a>
+    <a href="modal-progressive.html" class="nav-button next">Next: Modal Progressive Forms →</a>
   </nav>
 
-  <script>
-  // Theme toggle functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    }
-    
-    // Handle theme toggle click
-    themeToggle.addEventListener('click', function() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-    
-    // MCQ Activities functionality
-    const checkMcqBtn = document.getElementById('check-mcq-1');
-    const retryMcqBtn = document.getElementById('retry-mcq-1');
-    const resultDisplay = document.querySelector('#mcq-activity-1 .result-display');
-    
-    if (checkMcqBtn) {
-      checkMcqBtn.addEventListener('click', function() {
-        let correct = 0;
-        const total = document.querySelectorAll('.mcq-question-group').length;
-        
-        // Check each question
-        document.querySelectorAll('.mcq-question-group').forEach(group => {
-          const selectedOption = group.querySelector('input:checked');
-          
-          if (selectedOption) {
-            const option = selectedOption.parentElement;
-            const isCorrect = option.getAttribute('data-correct') === 'true';
-            const feedback = option.getAttribute('data-explanation');
-            
-            // Reset previous classes
-            group.querySelectorAll('.mcq-option').forEach(opt => {
-              opt.classList.remove('correct', 'incorrect');
-            });
-            
-            // Add appropriate class based on answer
-            if (isCorrect) {
-              option.classList.add('correct');
-              correct++;
-            } else {
-              option.classList.add('incorrect');
-              // Also highlight correct answer
-              group.querySelector('.mcq-option[data-correct="true"]').classList.add('correct');
-            }
-            
-            // Show feedback
-            const feedbackDiv = group.querySelector('.mcq-feedback');
-            feedbackDiv.textContent = feedback;
-            feedbackDiv.style.display = 'block';
-            feedbackDiv.className = 'mcq-feedback ' + (isCorrect ? 'success' : 'fail');
-          }
-        });
-        
-        // Show overall result
-        resultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
-        resultDisplay.style.display = 'block';
-        resultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
-        
-        // Show retry button
-        checkMcqBtn.style.display = 'none';
-        retryMcqBtn.style.display = 'block';
-      });
-    }
-    
-    // Retry button functionality
-    if (retryMcqBtn) {
-      retryMcqBtn.addEventListener('click', function() {
-        // Reset all options and feedback
-        document.querySelectorAll('.mcq-option').forEach(option => {
-          option.classList.remove('correct', 'incorrect');
-        });
-        
-        document.querySelectorAll('input[type="radio"]').forEach(radio => {
-          radio.checked = false;
-        });
-        
-        document.querySelectorAll('.mcq-feedback').forEach(feedback => {
-          feedback.style.display = 'none';
-        });
-        
-        // Hide result and retry button, show check button
-        resultDisplay.style.display = 'none';
-        retryMcqBtn.style.display = 'none';
-        checkMcqBtn.style.display = 'block';
-      });
-    }
-    
-    // Gap Fill Activities functionality
-    const checkGapBtn = document.getElementById('check-gap-fill');
-    const retryGapBtn = document.getElementById('retry-gap-fill');
-    const showAnswersBtn = document.getElementById('show-gap-fill-answers');
-    const gapResultDisplay = document.querySelector('#gap-fill-activity .result-display');
-    
-    if (checkGapBtn) {
-      checkGapBtn.addEventListener('click', function() {
-        let correct = 0;
-        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
-        const total = inputs.length;
-        
-        inputs.forEach(input => {
-          // Reset previous classes
-          input.classList.remove('correct', 'incorrect');
-          
-          // Get the correct answers (may be multiple options separated by |)
-          const correctAnswers = input.getAttribute('data-correct').split('|');
-          const userAnswer = input.value.trim().toLowerCase();
-          
-          // Check if the user's answer matches any of the correct options
-          const isCorrect = correctAnswers.some(answer => 
-            userAnswer === answer.trim().toLowerCase()
-          );
-          
-          if (isCorrect) {
-            input.classList.add('correct');
-            correct++;
-          } else {
-            input.classList.add('incorrect');
-          }
-        });
-        
-        // Show overall result
-        gapResultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
-        gapResultDisplay.style.display = 'block';
-        gapResultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
-        
-        // Show retry and show answers buttons
-        checkGapBtn.style.display = 'none';
-        retryGapBtn.style.display = 'inline-block';
-        showAnswersBtn.style.display = 'inline-block';
-      });
-    }
-    
-    // Retry button functionality
-    if (retryGapBtn) {
-      retryGapBtn.addEventListener('click', function() {
-        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
-        
-        inputs.forEach(input => {
-          input.classList.remove('correct', 'incorrect');
-          input.value = '';
-        });
-        
-        // Hide result and buttons, show check button
-        gapResultDisplay.style.display = 'none';
-        retryGapBtn.style.display = 'none';
-        showAnswersBtn.style.display = 'none';
-        checkGapBtn.style.display = 'inline-block';
-      });
-    }
-    
-    // Show answers button functionality
-    if (showAnswersBtn) {
-      showAnswersBtn.addEventListener('click', function() {
-        const inputs = document.querySelectorAll('#gap-fill-activity .gap-input');
-        
-        inputs.forEach(input => {
-          const correctAnswers = input.getAttribute('data-correct').split('|');
-          input.value = correctAnswers[0]; // Show first correct answer
-          input.classList.add('correct');
-          input.classList.remove('incorrect');
-        });
-      });
-    }
-    
-    // Error Correction Activities functionality
-    const checkErrorBtn = document.getElementById('check-error-correction');
-    const retryErrorBtn = document.getElementById('retry-error-correction');
-    const showErrorAnswersBtn = document.getElementById('show-error-answers');
-    const errorResultDisplay = document.querySelector('#error-correction-activity .result-display');
-    
-    if (checkErrorBtn) {
-      checkErrorBtn.addEventListener('click', function() {
-        let correct = 0;
-        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
-        const total = inputs.length;
-        
-        inputs.forEach(input => {
-          // Reset previous classes
-          input.classList.remove('correct', 'incorrect');
-          
-          // Get the correct answers (may be multiple options separated by |)
-          const correctAnswers = input.getAttribute('data-correct').split('|');
-          const userAnswer = input.value.trim().toLowerCase();
-          
-          // Check if the user's answer matches any of the correct options
-          const isCorrect = correctAnswers.some(answer => 
-            userAnswer === answer.trim().toLowerCase()
-          );
-          
-          if (isCorrect) {
-            input.classList.add('correct');
-            correct++;
-          } else {
-            input.classList.add('incorrect');
-          }
-        });
-        
-        // Show overall result
-        errorResultDisplay.textContent = `You got ${correct} out of ${total} correct!`;
-        errorResultDisplay.style.display = 'block';
-        errorResultDisplay.className = 'result-display ' + (correct === total ? 'success' : correct > 0 ? 'partial' : 'fail');
-        
-        // Show retry and show answers buttons
-        checkErrorBtn.style.display = 'none';
-        retryErrorBtn.style.display = 'inline-block';
-        showErrorAnswersBtn.style.display = 'inline-block';
-      });
-    }
-    
-    // Retry button functionality
-    if (retryErrorBtn) {
-      retryErrorBtn.addEventListener('click', function() {
-        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
-        
-        inputs.forEach(input => {
-          input.classList.remove('correct', 'incorrect');
-          input.value = '';
-        });
-        
-        // Hide result and buttons, show check button
-        errorResultDisplay.style.display = 'none';
-        retryErrorBtn.style.display = 'none';
-        showErrorAnswersBtn.style.display = 'none';
-        checkErrorBtn.style.display = 'inline-block';
-      });
-    }
-    
-    // Show answers button functionality
-    if (showErrorAnswersBtn) {
-      showErrorAnswersBtn.addEventListener('click', function() {
-        const inputs = document.querySelectorAll('#error-correction-activity .gap-input');
-        
-        inputs.forEach(input => {
-          const correctAnswers = input.getAttribute('data-correct').split('|');
-          input.value = correctAnswers[0]; // Show first correct answer
-          input.classList.add('correct');
-          input.classList.remove('incorrect');
-        });
-      });
-    }
-    
-    // Mobile navigation toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (navToggle) {
-      navToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('show');
-      });
-    }
-  });
-  </script>
+  <!-- Footer with copyright notice -->
   <footer>
     <p>© 2025 English in Doses | All rights reserved | <a href="license.html">Licensing Information</a></p>
-</footer>
+  </footer>
+
+  <!-- JavaScript for interactive elements -->
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Handle theme toggle click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+    
+    // Quiz functionality
+    let score = 0;
+    const totalQuestions = 10;
+    const correctAnswers = {
+      'q1': 1, // must have left
+      'q2': 2, // should have gone
+      'q3': 0, // can't have received
+      'q4': 3, // might have taken
+      'q5': 1, // would have gone
+      'q6': 3, // shouldn't have left unlocked
+      'q7': 0, // must have arrived
+      'q8': 1, // should have driven
+      'q9': 3, // can't have seen
+      'q10': 2 // might have received
+    };
+    const answered = {
+      'q1': false,
+      'q2': false,
+      'q3': false,
+      'q4': false,
+      'q5': false,
+      'q6': false,
+      'q7': false,
+      'q8': false,
+      'q9': false,
+      'q10': false
+    };
+    
+    function selectOption(questionId, optionIndex) {
+      if (answered[questionId]) return;
+      
+      const question = document.getElementById(questionId);
+      const options = question.getElementsByClassName('option');
+      
+      // Clear previous selections
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Select the current option
+      options[optionIndex].classList.add('selected');
+      
+      // Show feedback
+      const feedbackId = `feedback-${questionId}-${optionIndex}`;
+      const feedback = document.getElementById(feedbackId);
+      
+      if (feedback) {
+        feedback.style.display = 'block';
+        
+        if (optionIndex === correctAnswers[questionId]) {
+          feedback.classList.add('correct');
+          score++;
+        } else {
+          feedback.classList.add('incorrect');
+        }
+      }
+      
+      answered[questionId] = true;
+      
+      // Check if all questions are answered
+      checkCompletion();
+    }
+    
+    function checkCompletion() {
+      let allAnswered = true;
+      for (const q in answered) {
+        if (!answered[q]) {
+          allAnswered = false;
+          break;
+        }
+      }
+      
+      if (allAnswered) {
+        // Show the score
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.style.display = 'block';
+        document.getElementById('score').textContent = score;
+        
+        // Show the restart button
+        document.getElementById('restart-btn').style.display = 'block';
+      }
+    }
+    
+    // Restart quiz
+    document.getElementById('restart-btn').addEventListener('click', function() {
+      // Reset score
+      score = 0;
+      
+      // Reset answered status
+      for (const q in answered) {
+        answered[q] = false;
+      }
+      
+      // Hide all feedback
+      const feedbacks = document.getElementsByClassName('feedback');
+      for (let i = 0; i < feedbacks.length; i++) {
+        feedbacks[i].style.display = 'none';
+        feedbacks[i].classList.remove('correct', 'incorrect');
+      }
+      
+      // Remove selected class
+      const options = document.getElementsByClassName('option');
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Hide score and restart button
+      document.getElementById('score-display').style.display = 'none';
+      document.getElementById('restart-btn').style.display = 'none';
+      
+      // Scroll back to top of quiz
+      document.querySelector('.mcq-container').scrollIntoView({behavior: 'smooth'});
+    });
+    
+    // Sentence building practice
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkButtons = document.querySelectorAll('.check-btn');
+      
+      checkButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const sentenceBuilder = this.closest('.sentence-builder');
+          const input = sentenceBuilder.querySelector('.practice-input');
+          const feedback = sentenceBuilder.querySelector('.practice-feedback');
+          
+          // Simple check to see if input is not empty
+          if (input.value.trim() === '') {
+            feedback.textContent = 'Please write a sentence.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          }
+          
+          // In a real implementation, you would have more sophisticated checking
+          // For this template, we'll just provide encouraging feedback
+          feedback.textContent = 'Great job! Keep practicing to improve your grammar skills.';
+          feedback.style.color = 'var(--success-color)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
