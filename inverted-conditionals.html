@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced ESL Grammar: Inverted Conditionals - Learn how to use inverted conditionals in English with clear explanations and examples">
+  <title>Inverted Conditionals - Advanced ESL Grammar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Light theme (default) */
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #1B263B;
+      --header-text: #ffffff;
+      --card-bg: #f8f9fa;
+      --border-color: #ddd;
+      --accent-color: #3498db;
+      --secondary-accent: #f07d3e;
+      --link-color: #3498db;
+      --success-bg: #d4edda;
+      --success-color: #155724;
+      --error-bg: #f8d7da;
+      --error-color: #721c24;
+      --example-bg: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --mcq-container-bg: #f0f8ff;
+      --mcq-hover-bg: #d0e6f7;
+      --mcq-selected-border: #3498db;
+      --mcq-selected-bg: #d0e6f7;
+      --gap-input-border: #3498db;
+      --partial-bg: #fff3cd;
+      --partial-color: #856404;
+      --partial-border: #ffeeba;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme */
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --header-bg: #000000;
+      --header-text: #ffffff;
+      --card-bg: #1e1e1e;
+      --border-color: #444444;
+      --accent-color: #4fa3e0;
+      --secondary-accent: #f38d56;
+      --link-color: #4fa3e0;
+      --success-bg: #143823;
+      --success-color: #7cda9c;
+      --error-bg: #2c1215;
+      --error-color: #e7a9ad;
+      --example-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --mcq-container-bg: #1a2632;
+      --mcq-hover-bg: #253545;
+      --mcq-selected-border: #4fa3e0;
+      --mcq-selected-bg: #253545;
+      --gap-input-border: #4fa3e0;
+      --partial-bg: #332d15;
+      --partial-color: #f0dc9e;
+      --partial-border: #665c30;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      background-color: var(--header-bg);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--header-text);
+      padding: 20px;
+      padding-left: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px var(--shadow-color);
+    }
+
+    h2, h3 {
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    /* Style for examples */
+    .example, span.example, em {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 5px;
+      border-radius: 3px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fix for sections having proper spacing */
+    .info-container, .conditional-type, .intro-section, .tips, .mcq-container, .gap-fill-container {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 760px; /* Slightly smaller than container to account for padding */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tips {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 5px solid var(--secondary-accent);
+    }
+    
+    /* Change tips section h2 underline to orange */
+    .tips h2 {
+      border-bottom: 2px solid var(--secondary-accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      box-shadow: 0 2px 3px var(--shadow-color);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    tr:nth-child(even) {
+      background-color: var(--card-bg);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--border-color);
+      margin: 25px 0;
+    }
+
+    .main-navigation {
+      background-color: var(--header-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+    }
+
+    .site-logo {
+      color: var(--header-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-right: 80px;
+    }
+
+    .nav-link {
+      color: var(--header-text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      background-color: var(--accent-color);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-item {
+      color: #6c757d;
+    }
+
+    .breadcrumb-item a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .breadcrumb-item a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #6c757d;
+    }
+
+    .bottom-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
+    }
+
+    .center-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Open Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .nav-button:hover {
+      background-color: #2980b9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .nav-button.previous {
+      margin-right: auto;
+    }
+
+    .nav-button.next {
+      margin-left: auto;
+    }
+
+    .nav-button.activities {
+      background-color: var(--secondary-accent);
+    }
+
+    .nav-button.activities:hover {
+      background-color: #e06d2e;
+    }
+
+    /* MCQ Container Styles */
+    .mcq-container {
+      background-color: var(--mcq-container-bg);
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    /* Individual question blocks */
+    .question {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Question text */
+    .mcq-question {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Container for all options */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    /* Individual option buttons */
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    /* Hover effect for options */
+    .option:hover {
+      background-color: var(--mcq-hover-bg);
+      transform: translateY(-1px);
+    }
+
+    /* Selected state for options */
+    .option.selected {
+      border: 2px solid var(--mcq-selected-border);
+      background-color: var(--mcq-selected-bg);
+      font-weight: bold;
+    }
+
+    /* Feedback area */
+    .feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    /* Correct answer styling */
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: var(--success-color);
+      border: 1px solid var(--success-bg);
+    }
+
+    /* Incorrect answer styling */
+    .feedback.incorrect {
+      background-color: var(--error-bg);
+      color: var(--error-color);
+      border: 1px solid var(--error-bg);
+    }
+
+    /* Score display */
+    .score-display {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 5px;
+      display: none;
+    }
+
+    /* Restart button */
+    .restart-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 15px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .restart-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    /* For block-level examples (full sentences and lists) */
+    div.example {
+      font-family: 'Source Code Pro', monospace;
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* When example contains a list, add extra left padding for bullets */
+    .example ul, .example ol {
+      padding-left: 20px;
+    }
+
+    /* Print button */
+    .print-button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .print-button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 80px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: background-color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .light-icon, .dark-icon {
+      position: absolute;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .light-icon {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .light-icon {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    [data-theme="dark"] .dark-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    /* Note for native speaker informal usage - with speech bubble icon */
+    .note {
+      background-color: rgba(240, 240, 240, 0.6);
+      padding: 15px 15px 15px 40px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      position: relative;
+    }
+
+    .note:before {
+      content: "💬";
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      font-size: 1.2em;
+    }
+
+    [data-theme="dark"] .note {
+      background-color: rgba(60, 60, 60, 0.6);
+    }
+
+    /* Updated Common Errors section */
+    .error-title {
+      margin-bottom: 5px;
+    }
+
+    .incorrect {
+      color: var(--error-color);
+      text-decoration: line-through;
+      margin: 5px 0;
+    }
+
+    .correct {
+      color: var(--success-color);
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .explanation {
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    /* Updated Grammar Tips */
+    .grammar-tip {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-left: 3px solid var(--secondary-accent);
+    }
+
+    /* Production practice styling */
+    .production-practice {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--accent-color);
+    }
+
+    .sentence-builder {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hints {
+      background-color: var(--example-bg);
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .practice-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 10px 0;
+      resize: vertical;
+    }
+
+    .check-btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .check-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .practice-feedback {
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* Override any specific width settings and make sure ALL containers match */
+    section, div.container, .info-container, .conditional-type, .intro-section, 
+    .tips, .mcq-container, .gap-fill-container, .dialog, .error-pattern, 
+    .correct-pattern, .activity-controls, .result-display {
+      max-width: 760px !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* The container around everything needs to be just a bit wider */
+    div.container {
+      max-width: 800px !important;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .bottom-navigation {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .center-buttons {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      
+      .nav-button, .print-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      html {
+        font-size: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    @media print {
+      .main-navigation, .theme-toggle-container, .bottom-navigation, .print-button {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <span class="light-icon">☀️</span>
+      <span class="dark-icon">🌙</span>
+    </button>
+  </div>
+
+  <nav class="main-navigation">
+    <a href="index.html" class="site-logo">ESL Grammar</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="extra-practice.html" class="nav-link">Extra Practice</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumbs" aria-label="breadcrumb">
+      <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="grammar.html">Grammar</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item"><a href="conditionals-with-quiz.html">Conditionals</a></span>
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">Inverted Conditionals</span>
+    </div>
+
+    <main id="main-content">
+      <h1>Inverted Conditionals</h1>
+
+      <section class="intro-section">
+        <h2>Introduction</h2>
+        <p>Inverted conditionals are an advanced form of conditional sentences where we invert the subject and auxiliary verb instead of using "if." These structures create more formal and sophisticated conditional sentences that are common in academic writing, literature, and formal speech.</p>
+        
+        <p>While standard conditionals begin with "if" (e.g., "If I had known earlier, I would have told you"), inverted conditionals move the auxiliary verb to the beginning (e.g., "Had I known earlier, I would have told you").</p>
+        
+        <h3>After this lesson, you will be able to:</h3>
+        <ul>
+          <li>Recognize inverted conditional structures in reading and listening.</li>
+          <li>Transform standard conditionals into inverted forms.</li>
+          <li>Use inverted conditionals correctly in your own writing and speaking.</li>
+          <li>Create more sophisticated and formal conditional sentences.</li>
+        </ul>
+      </section>
+
+      <section class="conditional-type">
+        <h2>Inverted Conditional Forms</h2>
+        
+        <p><strong>First Conditional Inversion</strong>: While theoretically possible, first conditional inversions are rarely used in modern English.</p>
+        
+        <p><strong>Second Conditional Inversion</strong>: We move "were" to the beginning of the clause instead of using "if."</p>
+        
+        <p><strong>Structure</strong>: Were + subject + to-infinitive/adjective/noun, main clause</p>
+        
+        <div class="example">
+          <ol>
+            <li>If I were you, I would apply for the job. → <strong>Were I you</strong>, I would apply for the job.</li>
+            <li>If she were more careful, she wouldn't make so many mistakes. → <strong>Were she more careful</strong>, she wouldn't make so many mistakes.</li>
+            <li>If we were to leave now, we would arrive by midnight. → <strong>Were we to leave now</strong>, we would arrive by midnight.</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> Second conditional inversions sound quite formal or literary. In everyday speech, native speakers usually prefer the "if" form, especially in American English.</p>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <p><strong>Third Conditional Inversion</strong>: We move "had" to the beginning of the clause instead of using "if."</p>
+        
+        <p><strong>Structure</strong>: Had + subject + past participle, main clause</p>
+        
+        <div class="example">
+          <ol>
+            <li>If I had studied harder, I would have passed the exam. → <strong>Had I studied harder</strong>, I would have passed the exam.</li>
+            <li>If she had told me earlier, I could have helped. → <strong>Had she told me earlier</strong>, I could have helped.</li>
+            <li>If they had arrived on time, they wouldn't have missed the meeting. → <strong>Had they arrived on time</strong>, they wouldn't have missed the meeting.</li>
+          </ol>
+        </div>
+        
+        <div class="note">
+          <p><strong>Native speaker note:</strong> Third conditional inversions are more commonly used than second conditional inversions, especially in business English and academic contexts.</p>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <p><strong>Mixed Conditional Inversion</strong>: We can also invert mixed conditionals, following the same pattern as above.</p>
+        
+        <div class="example">
+          <ol>
+            <li>If I had studied medicine, I would be a doctor now. → <strong>Had I studied medicine</strong>, I would be a doctor now.</li>
+            <li>If she were more organized, she wouldn't have missed the deadline. → <strong>Were she more organized</strong>, she wouldn't have missed the deadline.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="conditional-type">
+        <p><strong>Special Case: Should</strong>: We can use "should" in inverted conditionals to express possibility.</p>
+        
+        <p><strong>Structure</strong>: Should + subject + verb, main clause</p>
+        
+        <div class="example">
+          <ol>
+            <li>If you should need any help, please call me. → <strong>Should you need any help</strong>, please call me.</li>
+            <li>If it should rain tomorrow, we'll cancel the picnic. → <strong>Should it rain tomorrow</strong>, we'll cancel the picnic.</li>
+            <li>If they should change their minds, let me know. → <strong>Should they change their minds</strong>, let me know.</li>
+          </ol>
+        </div>
+      </section>
+
+      <h2>Summary of Inverted Conditionals</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Standard Form</th>
+            <th>Inverted Form</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Second Conditional</td>
+            <td>If + subject + were...</td>
+            <td>Were + subject...</td>
+            <td><span class="example"><strong>Were I</strong> richer, I would buy a house.</span></td>
+          </tr>
+          <tr>
+            <td>Second Conditional with to-infinitive</td>
+            <td>If + subject + were to...</td>
+            <td>Were + subject + to...</td>
+            <td><span class="example"><strong>Were he to arrive</strong> early, he would help us prepare.</span></td>
+          </tr>
+          <tr>
+            <td>Third Conditional</td>
+            <td>If + subject + had + past participle...</td>
+            <td>Had + subject + past participle...</td>
+            <td><span class="example"><strong>Had they known</strong> about the problem, they would have fixed it.</span></td>
+          </tr>
+          <tr>
+            <td>With Should (possibility)</td>
+            <td>If + subject + should + verb...</td>
+            <td>Should + subject + verb...</td>
+            <td><span class="example"><strong>Should you change</strong> your mind, please let me know.</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section class="conditional-type">
+        <h2>Common Errors</h2>
+        
+        <div class="error-pattern">
+          <p class="error-title"><strong>1: Using "if" with inverted structures</strong></p>
+          <p class="incorrect">If had she studied harder, she would have passed the exam.</p>
+          <p class="correct">Had she studied harder, she would have passed the exam. ✓</p>
+          <p class="explanation"><em>When using inverted conditionals, we remove "if" completely. The inversion replaces "if".</em></p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="error-title"><strong>2: Forgetting to invert the subject and auxiliary</strong></p>
+          <p class="incorrect">Had studied she harder, she would have passed the exam.</p>
+          <p class="correct">Had she studied harder, she would have passed the exam. ✓</p>
+          <p class="explanation"><em>In inverted conditionals, the auxiliary verb comes first, followed by the subject, and then the main verb.</em></p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="error-title"><strong>3: Inverting the main clause (result clause) as well</strong></p>
+          <p class="incorrect">Had she studied harder, would she have passed the exam.</p>
+          <p class="correct">Had she studied harder, she would have passed the exam. ✓</p>
+          <p class="explanation"><em>Only invert the if-clause. The main clause (result clause) maintains its normal word order.</em></p>
+        </div>
+        
+        <div class="error-pattern">
+          <p class="error-title"><strong>4: Using the wrong auxiliary verb</strong></p>
+          <p class="incorrect">Did I know earlier, I would have told you.</p>
+          <p class="correct">Had I known earlier, I would have told you. ✓</p>
+          <p class="explanation"><em>For third conditional inversions, always use "had," not "did" or other auxiliaries.</em></p>
+        </div>
+      </section>
+
+      <h2 style="border-bottom: 2px solid var(--secondary-accent);">Useful Tips</h2>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 1:</strong> Remember that inverted conditionals are more formal than regular conditionals. Use them in formal writing or speech to sound more sophisticated.</p>
+      </div>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 2:</strong> To create an inverted conditional, identify the auxiliary verb ("were," "had," or "should"), move it to the front, and remove "if." The rest of the clause stays the same.</p>
+      </div>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 3:</strong> Negative inverted conditionals need special attention. For example: "Had they not arrived early..." (instead of "If they hadn't arrived early...").</p>
+      </div>
+      
+      <div class="grammar-tip">
+        <p>📝 <strong>TIP 4:</strong> Practice converting between standard and inverted conditionals to build familiarity with both structures.</p>
+      </div>
+
+      <section class="mcq-container">
+        <h2>Test Your Knowledge</h2>
+        <p>Test your understanding of inverted conditionals by selecting the correct option for each question.</p>
+        
+        <div class="question" id="q1">
+          <p class="mcq-question">1. Which of these is the correct inverted form of "If I were you, I would accept the offer"?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q1', 0)">
+              <span>A. If were I you, I would accept the offer.</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 1)">
+              <span>B. Were I you, I would accept the offer.</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 2)">
+              <span>C. I were you, I would accept the offer.</span>
+            </div>
+            <div class="option" onclick="selectOption('q1', 3)">
+              <span>D. Were you I, I would accept the offer.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q1-0">
+            Incorrect. In inverted conditionals, we remove "if" completely.
+          </div>
+          <div class="feedback" id="feedback-q1-1">
+            Correct! In second conditional inversions, we move "were" to the beginning and remove "if".
+          </div>
+          <div class="feedback" id="feedback-q1-2">
+            Incorrect. The auxiliary verb "were" must come before the subject "I".
+          </div>
+          <div class="feedback" id="feedback-q1-3">
+            Incorrect. The subject order has been inverted incorrectly. It should be "Were I you" not "Were you I".
+          </div>
+        </div>
+        
+        <div class="question" id="q2">
+          <p class="mcq-question">2. Choose the inverted conditional form of "If they had listened to the weather forecast, they wouldn't have gone sailing."</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q2', 0)">
+              <span>A. Had they listen to the weather forecast, they wouldn't have gone sailing.</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 1)">
+              <span>B. Had they listened to the weather forecast, wouldn't they have gone sailing.</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 2)">
+              <span>C. Had they listened to the weather forecast, they wouldn't have gone sailing.</span>
+            </div>
+            <div class="option" onclick="selectOption('q2', 3)">
+              <span>D. If had they listened to the weather forecast, they wouldn't have gone sailing.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q2-0">
+            Incorrect. After "had" in the third conditional, we need the past participle form "listened" not the base form "listen".
+          </div>
+          <div class="feedback" id="feedback-q2-1">
+            Incorrect. Don't invert the main clause (result clause). Only the if-clause should be inverted.
+          </div>
+          <div class="feedback" id="feedback-q2-2">
+            Correct! This properly inverts the third conditional by moving "had" to the beginning and removing "if".
+          </div>
+          <div class="feedback" id="feedback-q2-3">
+            Incorrect. We don't keep "if" when using inverted conditionals.
+          </div>
+        </div>
+        
+        <div class="question" id="q3">
+          <p class="mcq-question">3. Which is the correct inverted conditional using "should"?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q3', 0)">
+              <span>A. Should it rain tomorrow, we will cancel the picnic.</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 1)">
+              <span>B. Should it rains tomorrow, we will cancel the picnic.</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 2)">
+              <span>C. It should rain tomorrow, we will cancel the picnic.</span>
+            </div>
+            <div class="option" onclick="selectOption('q3', 3)">
+              <span>D. If should it rain tomorrow, we will cancel the picnic.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q3-0">
+            Correct! "Should" is followed by the subject and then the base form of the verb.
+          </div>
+          <div class="feedback" id="feedback-q3-1">
+            Incorrect. After "should" in conditional sentences, we use the base form of the verb (rain), not the third person singular (rains).
+          </div>
+          <div class="feedback" id="feedback-q3-2">
+            Incorrect. In inverted conditionals with "should," the auxiliary "should" must come first, before the subject.
+          </div>
+          <div class="feedback" id="feedback-q3-3">
+            Incorrect. We don't keep "if" when using inverted conditionals with "should."
+          </div>
+        </div>
+        
+        <div class="question" id="q4">
+          <p class="mcq-question">4. Which sentence contains a correctly formed inverted conditional?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q4', 0)">
+              <span>A. Were they to offer me the job, I will accept it immediately.</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 1)">
+              <span>B. Were they offer me the job, I would accept it immediately.</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 2)">
+              <span>C. Were they to offer me the job, I would accept it immediately.</span>
+            </div>
+            <div class="option" onclick="selectOption('q4', 3)">
+              <span>D. If were they to offer me the job, I would accept it immediately.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q4-0">
+            Incorrect. In second conditional structures, the main clause should use "would" not "will".
+          </div>
+          <div class="feedback" id="feedback-q4-1">
+            Incorrect. The structure "were + subject + to-infinitive" requires "to" before the main verb.
+          </div>
+          <div class="feedback" id="feedback-q4-2">
+            Correct! This uses the proper form for second conditional inversion with "were + subject + to-infinitive".
+          </div>
+          <div class="feedback" id="feedback-q4-3">
+            Incorrect. We don't keep "if" when using inverted conditionals.
+          </div>
+        </div>
+        
+        <div class="question" id="q5">
+          <p class="mcq-question">5. How would you correctly form the inverted conditional of "If you had not helped me, I would have failed"?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q5', 0)">
+              <span>A. Had not you helped me, I would have failed.</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 1)">
+              <span>B. Had you not helped me, I would have failed.</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 2)">
+              <span>C. Had you helped not me, I would have failed.</span>
+            </div>
+            <div class="option" onclick="selectOption('q5', 3)">
+              <span>D. Had you helped me not, I would have failed.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q5-0">
+            Incorrect. In negative inverted conditionals, "not" comes after the subject, not before it.
+          </div>
+          <div class="feedback" id="feedback-q5-1">
+            Correct! In negative inverted conditionals, the order is: auxiliary verb + subject + not + main verb.
+          </div>
+          <div class="feedback" id="feedback-q5-2">
+            Incorrect. The negative "not" should modify the verb "helped," not the object "me".
+          </div>
+          <div class="feedback" id="feedback-q5-3">
+            Incorrect. The negative "not" should come before the main verb "helped," not at the end of the clause.
+          </div>
+        </div>
+        
+        <div class="question" id="q6">
+          <p class="mcq-question">6. Which is the correct inverted form of a mixed conditional: "If I were more qualified, I would have gotten the job"?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q6', 0)">
+              <span>A. Were I more qualified, I would have gotten the job.</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 1)">
+              <span>B. Had I been more qualified, I would have gotten the job.</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 2)">
+              <span>C. Were I been more qualified, I would have gotten the job.</span>
+            </div>
+            <div class="option" onclick="selectOption('q6', 3)">
+              <span>D. If were I more qualified, I would have gotten the job.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q6-0">
+            Correct! This properly inverts the mixed conditional, using "were" at the beginning because the original uses the past simple form "were".
+          </div>
+          <div class="feedback" id="feedback-q6-1">
+            Incorrect. This changes the meaning to a third conditional. The original sentence uses "were" (present/hypothetical situation).
+          </div>
+          <div class="feedback" id="feedback-q6-2">
+            Incorrect. We don't use "been" after "were" in this structure.
+          </div>
+          <div class="feedback" id="feedback-q6-3">
+            Incorrect. We don't keep "if" when using inverted conditionals.
+          </div>
+        </div>
+        
+        <div class="question" id="q7">
+          <p class="mcq-question">7. Complete the inverted conditional: "_____ the opportunity again, I would make a different choice."</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q7', 0)">
+              <span>A. Had I have</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 1)">
+              <span>B. Were I have</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 2)">
+              <span>C. Were I to have</span>
+            </div>
+            <div class="option" onclick="selectOption('q7', 3)">
+              <span>D. Did I have</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q7-0">
+            Incorrect. "Had I have" is ungrammatical. For a hypothetical future situation, "Were I to have" would be correct.
+          </div>
+          <div class="feedback" id="feedback-q7-1">
+            Incorrect. After "were" in this construction, we need "to" before the infinitive.
+          </div>
+          <div class="feedback" id="feedback-q7-2">
+            Correct! This is the proper form for a second conditional using "were + subject + to-infinitive".
+          </div>
+          <div class="feedback" id="feedback-q7-3">
+            Incorrect. We don't use "did" for inverted conditionals; we use "had" (third conditional) or "were" (second conditional).
+          </div>
+        </div>
+        
+        <div class="question" id="q8">
+          <p class="mcq-question">8. Choose the correct inverted conditional sentence.</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q8', 0)">
+              <span>A. Had I known her address, I had visited her.</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 1)">
+              <span>B. Had I known her address, I visited her.</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 2)">
+              <span>C. Had I known her address, I would visited her.</span>
+            </div>
+            <div class="option" onclick="selectOption('q8', 3)">
+              <span>D. Had I known her address, I would have visited her.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q8-0">
+            Incorrect. The main clause in a third conditional needs "would have + past participle".
+          </div>
+          <div class="feedback" id="feedback-q8-1">
+            Incorrect. The main clause should contain "would have" for a third conditional.
+          </div>
+          <div class="feedback" id="feedback-q8-2">
+            Incorrect. After "would" in the third conditional, we need "have + past participle".
+          </div>
+          <div class="feedback" id="feedback-q8-3">
+            Correct! This uses proper third conditional structure in both clauses.
+          </div>
+        </div>
+        
+        <div class="question" id="q9">
+          <p class="mcq-question">9. Which sentence is an example of an inverted conditional with "should"?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q9', 0)">
+              <span>A. Should you be late again, you will lose your job.</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 1)">
+              <span>B. You should be on time so that you don't lose your job.</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 2)">
+              <span>C. You should have been on time or you would have lost your job.</span>
+            </div>
+            <div class="option" onclick="selectOption('q9', 3)">
+              <span>D. If you should be late again, you'll lose your job.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q9-0">
+            Correct! This uses "should" at the beginning of the sentence to form an inverted conditional expressing possibility.
+          </div>
+          <div class="feedback" id="feedback-q9-1">
+            Incorrect. This uses "should" for advice, not as part of an inverted conditional.
+          </div>
+          <div class="feedback" id="feedback-q9-2">
+            Incorrect. This uses "should" for advice about past actions, not as part of an inverted conditional.
+          </div>
+          <div class="feedback" id="feedback-q9-3">
+            Incorrect. This is a standard conditional with "should," not an inverted conditional.
+          </div>
+        </div>
+        
+        <div class="question" id="q10">
+          <p class="mcq-question">10. What is the correct inverted form of "If you were to ask me, I would say no"?</p>
+          <div class="options">
+            <div class="option" onclick="selectOption('q10', 0)">
+              <span>A. Were you ask me, I would say no.</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 1)">
+              <span>B. Were asked you me, I would say no.</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 2)">
+              <span>C. Were you to ask me, I would say no.</span>
+            </div>
+            <div class="option" onclick="selectOption('q10', 3)">
+              <span>D. Were to ask you me, I would say no.</span>
+            </div>
+          </div>
+          <div class="feedback" id="feedback-q10-0">
+            Incorrect. After "were" in this construction, we need "to" before the infinitive.
+          </div>
+          <div class="feedback" id="feedback-q10-1">
+            Incorrect. The word order is incorrect. "Were + subject + to + verb" is the correct pattern.
+          </div>
+          <div class="feedback" id="feedback-q10-2">
+            Correct! This properly uses the "were + subject + to-infinitive" structure for second conditional inversion.
+          </div>
+          <div class="feedback" id="feedback-q10-3">
+            Incorrect. The word order is incorrect. "Were + subject + to + verb" is the correct pattern.
+          </div>
+        </div>
+        
+        <div class="score-display" id="score-display">
+          Your score: <span id="score">0</span>/10
+        </div>
+        
+        <button class="restart-btn" id="restart-btn" style="display:none;">Try Again</button>
+      </section>
+
+      <section class="conditional-type">
+        <h2>Sentence Building Practice</h2>
+        <p>Create your own sentences using inverted conditionals.</p>
+        
+        <div class="sentence-builder">
+          <h3>Practice 1: Second Conditional Inversion</h3>
+          <p>Create an inverted second conditional sentence beginning with "Were".</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> possible, allow, choose, opportunity, available</p>
+            <p><strong>Example:</strong> <span class="example">Were it possible, I would travel around the world.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+        
+        <div class="sentence-builder">
+          <h3>Practice 2: Third Conditional Inversion</h3>
+          <p>Create an inverted third conditional sentence beginning with "Had".</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> know, see, realize, understand, receive</p>
+            <p><strong>Example:</strong> <span class="example">Had I known about the problem earlier, I would have fixed it immediately.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+        
+        <div class="sentence-builder">
+          <h3>Practice 3: "Should" Inversion</h3>
+          <p>Create an inverted conditional sentence beginning with "Should".</p>
+          <div class="hints">
+            <p><strong>Useful words:</strong> need, want, decide, change, happen</p>
+            <p><strong>Example:</strong> <span class="example">Should you need any assistance, please don't hesitate to ask.</span></p>
+          </div>
+          <textarea class="practice-input" rows="2" placeholder="Write your sentence here..."></textarea>
+          <button class="check-btn">Check</button>
+          <div class="practice-feedback"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <nav class="bottom-navigation">
+    <a href="conditionals-with-quiz.html" class="nav-button previous">← Previous: Conditionals</a>
+    <div class="center-buttons">
+      <button class="nav-button print-button" onclick="window.print()">Print This Page</button>
+      <a href="inverted-conditionals-activities.html" class="nav-button activities">Extra Activities</a>
+    </div>
+    <a href="conditional-expressions-full-explanation.html" class="nav-button next">Next: Conditional Expressions →</a>
+  </nav>
+
+  <footer>
+    <p>© 2025 English in Doses | All rights reserved | <a href="license.html">Licensing Information</a></p>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      
+      // Handle theme toggle click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+      });
+      
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('show');
+        });
+      }
+    });
+    
+    // Quiz functionality
+    let score = 0;
+    const totalQuestions = 10;
+    const correctAnswers = {
+      'q1': 1,
+      'q2': 2,
+      'q3': 0,
+      'q4': 2,
+      'q5': 1,
+      'q6': 0,
+      'q7': 2,
+      'q8': 3,
+      'q9': 0,
+      'q10': 2
+    };
+    const answered = {
+      'q1': false,
+      'q2': false,
+      'q3': false,
+      'q4': false,
+      'q5': false,
+      'q6': false,
+      'q7': false,
+      'q8': false,
+      'q9': false,
+      'q10': false
+    };
+    
+    function selectOption(questionId, optionIndex) {
+      if (answered[questionId]) return;
+      
+      const question = document.getElementById(questionId);
+      const options = question.getElementsByClassName('option');
+      
+      // Clear previous selections
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Select the current option
+      options[optionIndex].classList.add('selected');
+      
+      // Show feedback
+      const feedbackId = `feedback-${questionId}-${optionIndex}`;
+      const feedback = document.getElementById(feedbackId);
+      
+      if (feedback) {
+        feedback.style.display = 'block';
+        
+        if (optionIndex === correctAnswers[questionId]) {
+          feedback.classList.add('correct');
+          score++;
+        } else {
+          feedback.classList.add('incorrect');
+        }
+      }
+      
+      answered[questionId] = true;
+      
+      // Check if all questions are answered
+      checkCompletion();
+    }
+    
+    function checkCompletion() {
+      let allAnswered = true;
+      for (const q in answered) {
+        if (!answered[q]) {
+          allAnswered = false;
+          break;
+        }
+      }
+      
+      if (allAnswered) {
+        // Show the score
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.style.display = 'block';
+        document.getElementById('score').textContent = score;
+        
+        // Show the restart button
+        document.getElementById('restart-btn').style.display = 'block';
+      }
+    }
+    
+    // Restart quiz
+    document.getElementById('restart-btn').addEventListener('click', function() {
+      // Reset score
+      score = 0;
+      
+      // Reset answered status
+      for (const q in answered) {
+        answered[q] = false;
+      }
+      
+      // Hide all feedback
+      const feedbacks = document.getElementsByClassName('feedback');
+      for (let i = 0; i < feedbacks.length; i++) {
+        feedbacks[i].style.display = 'none';
+        feedbacks[i].classList.remove('correct', 'incorrect');
+      }
+      
+      // Remove selected class
+      const options = document.getElementsByClassName('option');
+      for (let i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+      }
+      
+      // Hide score and restart button
+      document.getElementById('score-display').style.display = 'none';
+      document.getElementById('restart-btn').style.display = 'none';
+      
+      // Scroll back to top of quiz
+      document.querySelector('.mcq-container').scrollIntoView({behavior: 'smooth'});
+    });
+    
+    // Practice feedback functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkButtons = document.querySelectorAll('.check-btn');
+      
+      checkButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const sentenceBuilder = this.closest('.sentence-builder');
+          const input = sentenceBuilder.querySelector('.practice-input');
+          const feedback = sentenceBuilder.querySelector('.practice-feedback');
+          
+          // Simple check to see if input is not empty
+          if (input.value.trim() === '') {
+            feedback.textContent = 'Please write a sentence.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          }
+          
+          // Check for appropriate starting words based on practice type
+          const text = input.value.trim().toLowerCase();
+          const practiceType = sentenceBuilder.querySelector('h3').textContent;
+          
+          if (practiceType.includes('Second Conditional') && !text.startsWith('were')) {
+            feedback.textContent = 'Remember to start your sentence with "Were" for second conditional inversions.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          } else if (practiceType.includes('Third Conditional') && !text.startsWith('had')) {
+            feedback.textContent = 'Remember to start your sentence with "Had" for third conditional inversions.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          } else if (practiceType.includes('Should') && !text.startsWith('should')) {
+            feedback.textContent = 'Remember to start your sentence with "Should" for this type of inversion.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          }
+          
+          // Check for comma separating the clauses
+          if (!text.includes(',')) {
+            feedback.textContent = 'Don\'t forget to use a comma to separate the two clauses.';
+            feedback.style.color = 'var(--error-color)';
+            return;
+          }
+          
+          // Check for would/could/might in the main clause
+          const mainClause = text.split(',')[1].trim();
+          if (!(mainClause.includes('would') || mainClause.includes('could') || mainClause.includes('might'))) {
+            if (practiceType.includes('Third Conditional') || practiceType.includes('Second Conditional')) {
+              feedback.textContent = 'Your main clause should include would/could/might for conditional sentences.';
+              feedback.style.color = 'var(--error-color)';
+              return;
+            }
+          }
+          
+          // If all checks pass
+          feedback.textContent = 'Well done! That\'s a correctly formed inverted conditional sentence.';
+          feedback.style.color = 'var(--success-color)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
