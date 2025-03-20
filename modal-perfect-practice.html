@@ -1580,6 +1580,8 @@
   <script>
     // Theme toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
+      // Load saved progress on page start
+      loadSavedProgress();
       const themeToggle = document.getElementById('theme-toggle');
       
       // Handle theme toggle click
@@ -1625,36 +1627,86 @@
     };
     
     function updateProgressBar() {
-      const totalScore = Object.values(activityScores).reduce((a, b) => a + b, 0);
-      const maxPossibleScore = Object.values(activityMaxScores).reduce((a, b) => a + b, 0);
-      const percentage = Math.round((totalScore / maxPossibleScore) * 100);
-      
-      // Update progress bar
-      document.getElementById('progress-bar').style.width = `${percentage}%`;
-      
-      // Update progress text
-      const completedActivities = Object.keys(activityScores).filter(key => activityScores[key] > 0).length;
-      document.getElementById('progress-info').textContent = 
-        `Progress: ${percentage}% complete (${completedActivities}/8 activities attempted)`;
-      
-      // Save progress to localStorage
-      try {
-        localStorage.setItem('modalPerfectProgress', JSON.stringify(activityScores));
-      } catch (e) {
-        console.error('Could not save progress:', e);
+  const totalScore = Object.values(activityScores).reduce((a, b) => a + b, 0);
+  const maxPossibleScore = Object.values(activityMaxScores).reduce((a, b) => a + b, 0);
+  const percentage = Math.round((totalScore / maxPossibleScore) * 100) || 0;
+  
+  // Update progress bar
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    progressBar.style.width = `${percentage}%`;
+  }
+  
+  // Update progress text
+  const progressInfo = document.getElementById('progress-info');
+  if (progressInfo) {
+    const completedActivities = Object.keys(activityScores).filter(key => activityScores[key] > 0).length;
+    progressInfo.textContent = `Progress: ${percentage}% complete (${completedActivities}/8 activities attempted)`;
+  }
+  
+  // Save progress to localStorage with better error handling
+  saveProgress();
+}
+
+// Helper function to check if storage is available
+function isLocalStorageAvailable() {
+  try {
+    const testKey = "__storage_test__";
+    localStorage.setItem(testKey, testKey);
+    localStorage.removeItem(testKey);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Function to save current progress
+function saveProgress() {
+  if (!isLocalStorageAvailable()) {
+    console.log("localStorage is not available. Progress won't be saved.");
+    return;
+  }
+
+  try {
+    localStorage.setItem('modalPerfectProgress', JSON.stringify(activityScores));
+  } catch (e) {
+    console.log('Failed to save progress:', e);
+  }
+}
+
+// Function to load saved progress
+function loadSavedProgress() {
+  if (!isLocalStorageAvailable()) {
+    console.log("localStorage is not available. Progress won't be saved.");
+    updateProgressBar(); // Update with default values
+    return;
+  }
+
+  try {
+    const savedProgress = localStorage.getItem('modalPerfectProgress');
+    if (savedProgress) {
+      const parsedProgress = JSON.parse(savedProgress);
+      // Validate the structure before using
+      if (typeof parsedProgress === 'object' && parsedProgress !== null) {
+        // Only update scores for activities that exist in our structure
+        for (const activity in activityScores) {
+          if (parsedProgress.hasOwnProperty(activity) && 
+              typeof parsedProgress[activity] === 'number') {
+            activityScores[activity] = parsedProgress[activity];
+          }
+        }
       }
     }
+  } catch (e) {
+    console.log('Could not load progress:', e);
+  }
+  
+  // Always update progress bar UI
+  updateProgressBar();
+}
     
-    // Try to load progress from localStorage
-    try {
-      const savedProgress = localStorage.getItem('modalPerfectProgress');
-      if (savedProgress) {
-        activityScores = JSON.parse(savedProgress);
-        updateProgressBar();
-      }
-    } catch (e) {
-      console.error('Could not load progress:', e);
-    }
+    /* Try to load progress from localStorage - Deleted when editing to try and fix the local storage and progress tracking functionality*/
+    
 
     // Activity navigation
     document.querySelectorAll('.activity-nav-btn').forEach(button => {
