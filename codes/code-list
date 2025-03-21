@@ -1,0 +1,547 @@
+import React, { useState, useEffect } from 'react';
+
+const ModularizationChecklist = () => {
+  // Define the checklist data structure
+  const initialChecklist = {
+    css: {
+      name: "CSS Files",
+      sections: {
+        base: {
+          name: "Base CSS (base.css)",
+          items: [
+            { id: "css-base-1", text: "Extract color scheme and theme variables (light/dark mode)", completed: true },
+            { id: "css-base-2", text: "Extract typography styles (fonts, sizes, headings)", completed: true },
+            { id: "css-base-3", text: "Extract layout containers and grid styles", completed: true },
+            { id: "css-base-4", text: "Extract navigation bar styling", completed: true },
+            { id: "css-base-5", text: "Extract footer styling", completed: true },
+            { id: "css-base-6", text: "Extract breadcrumbs styling", completed: true },
+            { id: "css-base-7", text: "Extract theme toggle button styling", completed: true },
+            { id: "css-base-8", text: "Extract responsive media queries", completed: true },
+            { id: "css-base-9", text: "Test base CSS independently", completed: false }
+          ]
+        },
+        activities: {
+          name: "Activities CSS (activities.css)",
+          items: [
+            { id: "css-act-1", text: "Extract multiple choice question (MCQ) styling", completed: true },
+            { id: "css-act-2", text: "Extract gap-fill activity styling", completed: true },
+            { id: "css-act-3", text: "Extract matching activity styling", completed: true },
+            { id: "css-act-4", text: "Extract drag-and-drop activity styling", completed: true },
+            { id: "css-act-5", text: "Extract sentence transformation styling", completed: true },
+            { id: "css-act-6", text: "Extract error correction styling", completed: true },
+            { id: "css-act-7", text: "Extract situation matching styling", completed: true },
+            { id: "css-act-8", text: "Extract progress tracking styling", completed: true },
+            { id: "css-act-9", text: "Add clear section comments to separate activity types", completed: true },
+            { id: "css-act-10", text: "Test activities CSS with example activities", completed: false }
+          ]
+        }
+      }
+    },
+    javascript: {
+      name: "JavaScript Files",
+      sections: {
+        core: {
+          name: "Core JS (core.js)",
+          items: [
+            { id: "js-core-1", text: "Extract theme toggle functionality", completed: true },
+            { id: "js-core-2", text: "Extract mobile navigation functionality", completed: true },
+            { id: "js-core-3", text: "Extract local storage utility functions", completed: true },
+            { id: "js-core-4", text: "Extract common UI helpers", completed: true },
+            { id: "js-core-5", text: "Test core functionality independently", completed: false }
+          ]
+        },
+        activities: {
+          name: "Activity JS Modules",
+          items: [
+            { id: "js-act-1", text: "Create MCQ module (mcq.js)", completed: true },
+            { id: "js-act-2", text: "Create gap-fill module (gap-fill.js)", completed: true },
+            { id: "js-act-3", text: "Create matching exercise module (matching.js)", completed: true },
+            { id: "js-act-4", text: "Create drag-and-drop module (drag-drop.js)", completed: true },
+            { id: "js-act-5", text: "Create sentence transformation module (transformation.js)", completed: true },
+            { id: "js-act-6", text: "Create error correction module (error-correction.js)", completed: true },
+            { id: "js-act-7", text: "Create situation match module (situations.js)", completed: false },
+            { id: "js-act-8", text: "Create activity navigation module (activity-nav.js)", completed: false }
+          ]
+        },
+        progress: {
+          name: "Progress Tracking",
+          items: [
+            { id: "js-prog-1", text: "Create progress tracking system (progress-tracking.js)", completed: false },
+            { id: "js-prog-2", text: "Implement activity score storage", completed: false },
+            { id: "js-prog-3", text: "Implement visual progress indicators", completed: false },
+            { id: "js-prog-4", text: "Test progress persistence across page reloads", completed: false }
+          ]
+        }
+      }
+    },
+    html: {
+      name: "HTML Templates",
+      sections: {
+        common: {
+          name: "Common Elements",
+          items: [
+            { id: "html-com-1", text: "Create standardized <head> section template with CSS links", completed: false },
+            { id: "html-com-2", text: "Create standard navigation bar template", completed: false },
+            { id: "html-com-3", text: "Create standard footer template", completed: false },
+            { id: "html-com-4", text: "Create standard breadcrumbs template", completed: false },
+            { id: "html-com-5", text: "Create theme toggle button template", completed: false }
+          ]
+        },
+        templates: {
+          name: "Page Templates",
+          items: [
+            { id: "html-temp-1", text: "Create grammar explanation page template", completed: false },
+            { id: "html-temp-2", text: "Create practice activities page template", completed: false },
+            { id: "html-temp-3", text: "Create assessment page template", completed: false },
+            { id: "html-temp-4", text: "Create index/homepage template", completed: false }
+          ]
+        }
+      }
+    },
+    integration: {
+      name: "Integration & Implementation",
+      sections: {
+        explanation: {
+          name: "Grammar Explanation Pages",
+          items: [
+            { id: "int-exp-1", text: "Update one explanation page to use external files", completed: false },
+            { id: "int-exp-2", text: "Test thoroughly", completed: false },
+            { id: "int-exp-3", text: "Migrate remaining explanation pages", completed: false },
+            { id: "int-exp-4", text: "Verify consistent styling and behavior", completed: false }
+          ]
+        },
+        practice: {
+          name: "Practice Pages",
+          items: [
+            { id: "int-prac-1", text: "Update one practice page to use modular architecture", completed: false },
+            { id: "int-prac-2", text: "Test all activities on the page", completed: false },
+            { id: "int-prac-3", text: "Verify progress tracking", completed: false },
+            { id: "int-prac-4", text: "Migrate remaining practice pages", completed: false },
+            { id: "int-prac-5", text: "Test for consistency across pages", completed: false }
+          ]
+        },
+        linking: {
+          name: "Cross-Linking",
+          items: [
+            { id: "int-link-1", text: "Update navigation between grammar and practice pages", completed: false },
+            { id: "int-link-2", text: "Update breadcrumb links", completed: false },
+            { id: "int-link-3", text: "Verify all internal links work correctly", completed: false }
+          ]
+        }
+      }
+    },
+    testing: {
+      name: "Testing & Optimization",
+      sections: {
+        browsers: {
+          name: "Cross-Browser Testing",
+          items: [
+            { id: "test-br-1", text: "Test in Chrome", completed: false },
+            { id: "test-br-2", text: "Test in Firefox", completed: false },
+            { id: "test-br-3", text: "Test in Safari", completed: false },
+            { id: "test-br-4", text: "Test in Edge", completed: false }
+          ]
+        },
+        responsive: {
+          name: "Responsive Testing",
+          items: [
+            { id: "test-res-1", text: "Test on desktop", completed: false },
+            { id: "test-res-2", text: "Test on tablet", completed: false },
+            { id: "test-res-3", text: "Test on mobile", completed: false },
+            { id: "test-res-4", text: "Verify navigation toggle on small screens", completed: false }
+          ]
+        },
+        performance: {
+          name: "Performance",
+          items: [
+            { id: "test-perf-1", text: "Minify CSS files", completed: false },
+            { id: "test-perf-2", text: "Minify JavaScript files", completed: false },
+            { id: "test-perf-3", text: "Optimize image assets", completed: false },
+            { id: "test-perf-4", text: "Test page load times", completed: false }
+          ]
+        },
+        accessibility: {
+          name: "Accessibility",
+          items: [
+            { id: "test-acc-1", text: "Verify proper heading structure", completed: false },
+            { id: "test-acc-2", text: "Check color contrast", completed: false },
+            { id: "test-acc-3", text: "Add ARIA labels where needed", completed: false },
+            { id: "test-acc-4", text: "Ensure keyboard navigation works", completed: false }
+          ]
+        }
+      }
+    },
+    final: {
+      name: "Final Steps",
+      sections: {
+        documentation: {
+          name: "Documentation & Backup",
+          items: [
+            { id: "final-1", text: "Create documentation for file structure", completed: false },
+            { id: "final-2", text: "Document required HTML structure for each activity", completed: false },
+            { id: "final-3", text: "Document local storage usage", completed: false },
+            { id: "final-4", text: "Create an AI prompt template for generating new activity content", completed: false },
+            { id: "final-5", text: "Backup original files before full transition", completed: false }
+          ]
+        }
+      }
+    }
+  };
+
+  // Try to load state from localStorage or use initial state
+  const [checklist, setChecklist] = useState(() => {
+    try {
+      const savedChecklist = localStorage.getItem('eslModularizationChecklist');
+      return savedChecklist ? JSON.parse(savedChecklist) : initialChecklist;
+    } catch (error) {
+      console.error('Failed to load checklist data:', error);
+      return initialChecklist;
+    }
+  });
+
+  // Save to localStorage whenever checklist changes
+  useEffect(() => {
+    try {
+      localStorage.setItem('eslModularizationChecklist', JSON.stringify(checklist));
+    } catch (error) {
+      console.error('Failed to save checklist data:', error);
+    }
+  }, [checklist]);
+
+  const [expandedCategories, setExpandedCategories] = useState(() => {
+    // Initialize all categories as expanded
+    const expanded = {};
+    Object.keys(initialChecklist).forEach(cat => {
+      expanded[cat] = true;
+    });
+    return expanded;
+  });
+
+  // Calculate progress for each section and overall
+  const calculateSectionProgress = (section) => {
+    let totalItems = 0;
+    let completedItems = 0;
+
+    section.items.forEach(item => {
+      totalItems++;
+      if (item.completed) completedItems++;
+    });
+
+    return { completed: completedItems, total: totalItems };
+  };
+
+  const calculateCategoryProgress = (category) => {
+    let totalItems = 0;
+    let completedItems = 0;
+
+    Object.values(category.sections).forEach(section => {
+      section.items.forEach(item => {
+        totalItems++;
+        if (item.completed) completedItems++;
+      });
+    });
+
+    return { completed: completedItems, total: totalItems };
+  };
+
+  const calculateTotalProgress = () => {
+    let totalItems = 0;
+    let completedItems = 0;
+
+    Object.values(checklist).forEach(category => {
+      Object.values(category.sections).forEach(section => {
+        section.items.forEach(item => {
+          totalItems++;
+          if (item.completed) completedItems++;
+        });
+      });
+    });
+
+    return { completed: completedItems, total: totalItems };
+  };
+
+  // Toggle item completion status
+  const toggleItemCompletion = (categoryKey, sectionKey, itemId) => {
+    setChecklist(prevChecklist => {
+      const updatedChecklist = { ...prevChecklist };
+      
+      const updatedItems = [...updatedChecklist[categoryKey].sections[sectionKey].items];
+      const itemIndex = updatedItems.findIndex(item => item.id === itemId);
+      
+      if (itemIndex !== -1) {
+        updatedItems[itemIndex] = {
+          ...updatedItems[itemIndex],
+          completed: !updatedItems[itemIndex].completed
+        };
+        
+        updatedChecklist[categoryKey].sections[sectionKey].items = updatedItems;
+      }
+      
+      return updatedChecklist;
+    });
+  };
+
+  // Toggle category expansion
+  const toggleCategoryExpansion = (categoryKey) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryKey]: !prev[categoryKey]
+    }));
+  };
+
+  // Reset the entire checklist
+  const resetChecklist = () => {
+    if (confirm('Are you sure you want to reset the entire checklist? All progress will be lost.')) {
+      setChecklist(initialChecklist);
+    }
+  };
+
+  // Format percentage
+  const formatPercentage = (completed, total) => {
+    return total === 0 ? 0 : Math.round((completed / total) * 100);
+  };
+
+  const totalProgress = calculateTotalProgress();
+  const totalPercentage = formatPercentage(totalProgress.completed, totalProgress.total);
+
+  return (
+    <div className="p-6 max-w-6xl mx-auto bg-gray-50 rounded shadow">
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-800">ESL Grammar Site Modularization Checklist</h1>
+        <button 
+          onClick={resetChecklist}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded shadow transition-colors"
+        >
+          Reset Progress
+        </button>
+      </div>
+
+      {/* Overall progress */}
+      <div className="mb-8 p-4 bg-white rounded shadow-sm">
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xl font-bold text-gray-800">Overall Progress</h2>
+          <span className="text-lg font-semibold text-blue-600">{totalPercentage}%</span>
+        </div>
+        <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
+          <div 
+            className="bg-blue-600 h-3 rounded-full" 
+            style={{ width: `${totalPercentage}%` }}
+          ></div>
+        </div>
+        <div className="text-sm text-gray-600 text-right">
+          Completed {totalProgress.completed} of {totalProgress.total} tasks
+        </div>
+      </div>
+
+      {/* Next priorities section */}
+      <div className="mb-8 border-2 border-blue-500 rounded-lg shadow-sm overflow-hidden bg-blue-50">
+        <div className="p-4 bg-blue-100">
+          <h2 className="text-xl font-bold text-blue-800">Immediate Next Steps</h2>
+          <p className="text-sm text-blue-700 mt-1">These items are your current priorities:</p>
+        </div>
+        
+        <div className="p-4">
+          <div className="font-semibold text-blue-700 mb-2">1. Complete JavaScript Activity Modules</div>
+          <div className="space-y-2 ml-4 mb-4">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="js-act-7"
+                checked={checklist.javascript.sections.activities.items.find(i => i.id === "js-act-7").completed}
+                onChange={() => toggleItemCompletion("javascript", "activities", "js-act-7")}
+                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <label 
+                htmlFor="js-act-7" 
+                className={`ml-2 text-sm font-medium text-blue-600 font-bold ${
+                  checklist.javascript.sections.activities.items.find(i => i.id === "js-act-7").completed ? 'line-through text-gray-500' : ''
+                }`}
+              >
+                Create situation match module (situations.js) <span className="text-red-500 ml-1">★</span>
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="js-act-8"
+                checked={checklist.javascript.sections.activities.items.find(i => i.id === "js-act-8").completed}
+                onChange={() => toggleItemCompletion("javascript", "activities", "js-act-8")}
+                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <label 
+                htmlFor="js-act-8" 
+                className={`ml-2 text-sm font-medium text-blue-600 font-bold ${
+                  checklist.javascript.sections.activities.items.find(i => i.id === "js-act-8").completed ? 'line-through text-gray-500' : ''
+                }`}
+              >
+                Create activity navigation module (activity-nav.js) <span className="text-red-500 ml-1">★</span>
+              </label>
+            </div>
+          </div>
+          
+          <div className="font-semibold text-blue-700 mb-2">2. Implement Progress Tracking System</div>
+          <div className="space-y-2 ml-4 mb-4">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="js-prog-1"
+                checked={checklist.javascript.sections.progress.items.find(i => i.id === "js-prog-1").completed}
+                onChange={() => toggleItemCompletion("javascript", "progress", "js-prog-1")}
+                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <label 
+                htmlFor="js-prog-1" 
+                className={`ml-2 text-sm font-medium text-blue-600 font-bold ${
+                  checklist.javascript.sections.progress.items.find(i => i.id === "js-prog-1").completed ? 'line-through text-gray-500' : ''
+                }`}
+              >
+                Create progress tracking system (progress-tracking.js) <span className="text-red-500 ml-1">★</span>
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="js-prog-2"
+                checked={checklist.javascript.sections.progress.items.find(i => i.id === "js-prog-2").completed}
+                onChange={() => toggleItemCompletion("javascript", "progress", "js-prog-2")}
+                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <label 
+                htmlFor="js-prog-2" 
+                className={`ml-2 text-sm font-medium text-blue-600 font-bold ${
+                  checklist.javascript.sections.progress.items.find(i => i.id === "js-prog-2").completed ? 'line-through text-gray-500' : ''
+                }`}
+              >
+                Implement activity score storage <span className="text-red-500 ml-1">★</span>
+              </label>
+            </div>
+          </div>
+          
+          <div className="font-semibold text-blue-700 mb-2">3. Start HTML Templating</div>
+          <div className="space-y-2 ml-4">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="html-com-1"
+                checked={checklist.html.sections.common.items.find(i => i.id === "html-com-1").completed}
+                onChange={() => toggleItemCompletion("html", "common", "html-com-1")}
+                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <label 
+                htmlFor="html-com-1" 
+                className={`ml-2 text-sm font-medium text-blue-600 font-bold ${
+                  checklist.html.sections.common.items.find(i => i.id === "html-com-1").completed ? 'line-through text-gray-500' : ''
+                }`}
+              >
+                Create standardized &lt;head&gt; section template with CSS links <span className="text-red-500 ml-1">★</span>
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="html-com-2"
+                checked={checklist.html.sections.common.items.find(i => i.id === "html-com-2").completed}
+                onChange={() => toggleItemCompletion("html", "common", "html-com-2")}
+                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+              />
+              <label 
+                htmlFor="html-com-2" 
+                className={`ml-2 text-sm font-medium text-blue-600 font-bold ${
+                  checklist.html.sections.common.items.find(i => i.id === "html-com-2").completed ? 'line-through text-gray-500' : ''
+                }`}
+              >
+                Create standard navigation bar template <span className="text-red-500 ml-1">★</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Categories */}
+      {Object.entries(checklist).map(([categoryKey, category]) => {
+        const categoryProgress = calculateCategoryProgress(category);
+        const categoryPercentage = formatPercentage(categoryProgress.completed, categoryProgress.total);
+        
+        return (
+          <div key={categoryKey} className="mb-8 border rounded-lg shadow-sm overflow-hidden bg-white">
+            <div 
+              className="flex justify-between items-center p-4 bg-gray-100 cursor-pointer"
+              onClick={() => toggleCategoryExpansion(categoryKey)}
+            >
+              <div className="flex items-center">
+                <span className={`transform transition-transform ${expandedCategories[categoryKey] ? 'rotate-90' : ''}`}>▶</span>
+                <h2 className="text-xl font-semibold ml-2">{category.name}</h2>
+              </div>
+              <div className="flex items-center">
+                <span className="mr-3 text-sm">
+                  {categoryProgress.completed}/{categoryProgress.total} tasks
+                </span>
+                <div className="w-20 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-blue-500 rounded-full"
+                    style={{ width: `${categoryPercentage}%` }}
+                  ></div>
+                </div>
+                <span className="ml-2 text-sm font-medium">{categoryPercentage}%</span>
+              </div>
+            </div>
+            
+            {expandedCategories[categoryKey] && (
+              <div className="p-4">
+                {Object.entries(category.sections).map(([sectionKey, section]) => {
+                  const sectionProgress = calculateSectionProgress(section);
+                  const sectionPercentage = formatPercentage(sectionProgress.completed, sectionProgress.total);
+                  
+                  return (
+                    <div key={sectionKey} className="mb-6 last:mb-0">
+                      <div className="flex justify-between items-center mb-3">
+                        <h3 className="text-lg font-semibold text-gray-800">{section.name}</h3>
+                        <div className="flex items-center">
+                          <span className="text-sm text-gray-600 mr-2">
+                            {sectionProgress.completed}/{sectionProgress.total}
+                          </span>
+                          <span className="text-sm font-medium">{sectionPercentage}%</span>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        {section.items.map(item => (
+                          <div 
+                            key={item.id} 
+                            className={`flex items-center p-3 rounded border ${item.completed ? 'bg-green-50 border-green-100' : 'bg-white border-gray-200'}`}
+                          >
+                            <input
+                              type="checkbox"
+                              id={item.id}
+                              checked={item.completed || false}
+                              onChange={() => toggleItemCompletion(categoryKey, sectionKey, item.id)}
+                              className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+                            />
+                            <label 
+                              htmlFor={item.id} 
+                              className={`ml-2 text-sm font-medium ${
+                                item.completed ? 'line-through text-gray-500' : 'text-gray-700'
+                              }`}
+                            >
+                              {item.text}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+
+      <div className="text-sm text-gray-500 mt-4">
+        Your progress is saved automatically in your browser's local storage.
+      </div>
+    </div>
+  );
+};
+
+export default ModularizationChecklist;
